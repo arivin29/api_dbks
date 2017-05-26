@@ -1,0 +1,83 @@
+<div ng-show="$state.current.name === 'master.mpart.detail.routine'">
+    <div class="header">
+        <h3>Routine Maintenance
+            <small><a ui-sref="master.mpart.detail.routine.add" class="btn btn-white btn-xs pull-right">Add Routine</a></small>
+        </h3>
+
+    </div>
+
+    <table class="table table-bordered table-hover issue-tracker">
+        <tr class="bg-info">
+            <th rowspan="1" width="60px">No</th>
+            <th>Code</th>
+            <th rowspan="2">atachapter</th>
+            <th title="Flight hours ">F/H from</th>
+            <th>Cycle From</th>
+            <th>Calendar From</th>
+            <th rowspan="3" width="50px">time unit</th>
+            <th rowspan="2">Remaks</th>
+            <th>Reference</th>
+            <th rowspan="2">#</th>
+        </tr>
+        <tr class="bg-info">
+            <th>Location</th>
+            <th>Description</th>
+            <th title="Flight hours ">F/H to</th>
+            <th>Cycle To</th>
+            <th>Calendar To</th>
+            <th>Repetitions</th>
+        </tr>
+        <tbody>
+        <tr ng-repeat="x in routine.data">
+            <td>
+                {{ $index+1}}
+                <hr>
+                <span class="label label-info btn-block">{{ x.on_location }}</span>
+            </td>
+            <td>
+                {{ x.maintenance_code}}
+                <hr>
+                {{ x.description_maintenance}}
+            </td>
+            <td>
+                {{ x.atachapter}}
+            </td>
+            <td>
+                {{ x.flight_hours_from}}
+                <hr>
+                {{ x.flight_hours_to}}
+            </td>
+            <td>
+                {{ x.cycle_from}}
+                <hr>
+                {{ x.cycle_to}}
+            </td>
+            <td>
+                {{ x.time_range_form}}
+                <hr>
+                {{ x.time_range_to}}
+            </td>
+            <td>
+                {{ x.time_unit}}
+            </td>
+            <td>
+                {{ x.note_maintenance}}
+            </td>
+            <td>
+                -
+                <hr>
+                {{ x.repetitions}}
+            </td>
+            <td>
+                <a ui-sref="master.mpart.detail.routine.edit({id_maintenance:x.id_maintenance})"
+                   class="btn btn-white btn-xs btn-block" > Edit</a>
+                <hr>
+                <a title="doble click for delete" ng-dblclick="delete(x.id_maintenance)"
+                   class="btn btn-white btn-xs btn-block" > Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<ui-view></ui-view>

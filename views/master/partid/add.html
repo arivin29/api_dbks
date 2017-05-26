@@ -1,0 +1,54 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Part Id</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.partid')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>partid</label>
+                    <input placeholder="Enter partid" ng-model="partid.partid" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>childname partid</label>
+                    <input placeholder="Enter childname partid" ng-model="partid.childname_partid" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Is Serial Number ?</label>
+                    <select required class="form-control " required select2 ng-model="partid.issingle"
+                            ng-options="x as x for x in issingle" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6 b-r">
+                <div class="form-group">
+                    <label>description</label>
+                    <textarea ng-model="partid.description" class="form-control"></textarea>
+                </div>
+            </div>
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+    </form>
+
+</div>

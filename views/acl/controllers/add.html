@@ -1,0 +1,73 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Controller</h5>
+        <div class="ibox-tools">
+            <!--<a class="collapse-link">-->
+                <!--<i class="fa fa-chevron-up"></i>-->
+            <!--</a>-->
+            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                <!--<i class="fa fa-wrench"></i>-->
+            <!--</a>-->
+            <!--<ul class="dropdown-menu dropdown-controller">-->
+                <!--<li><a href="#">Config option 1</a>-->
+                <!--</li>-->
+                <!--<li><a href="#">Config option 2</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <a ng-click="backButton('acl.controllers')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+                <div class="form-group">
+                    <label>Modul</label>
+                    <select required class="form-control " required select2 ng-model="controller.id_modul"
+                            ng-options="x.id_modul*1 as x.modul for x in master.modul" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Controller Name</label>
+                    <input ng-model="controller.controllers" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Controller Method </label>
+                    <input ng-model="controller.method" class="form-control" type="text">
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Segment </label>
+                    <input ng-model="controller.no_segment" class="form-control" type="number">
+                </div>
+
+                <div class="form-group">
+                    <label>Action</label>
+                    <select required class="form-control " required select2 ng-model="controller.perintah"
+                            ng-options="x as x for x in master.perintah" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Description </label>
+                    <textarea ng-model="controller.ket_controllers" class="form-control"></textarea>
+                </div>
+
+                <div>
+                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Save</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>

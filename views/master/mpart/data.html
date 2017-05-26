@@ -1,0 +1,157 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Master Part</h5>
+                    <div class="ibox-tools">
+                        <a ng-show="$state.current.name === 'master.mpart'" ui-sref="master.mpart.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>part number</label>
+                                <input placeholder="part number" class="form-control" ng-model="filters.part_number" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>keyword</label>
+                                <input placeholder="Enter Keyword" ng-model="filters.keyword" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>description </label>
+                                <input placeholder="Enter Keyword" ng-model="filters.description_mpart" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>life time limit</label>
+                                <select required class="form-control " required select2 ng-model="filters.id_life_time_limit"
+                                        ng-options="x.id_life_time_limit*1 as x.childname_life_time_limit for x in master.life_time_limit" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Part Id</label>
+                                <select required class="form-control " required select2 ng-model="filters.id_partid"
+                                        ng-options="x.id_partid*1 as x.partid for x in master.partid" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>ATA Chapter</label>
+                                <select required class="form-control " required select2 ng-model="filters.id_ata"
+                                        ng-options="x.id_ata*1 as x.code_ata for x in master.ata" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="table-responsive" id="table-scroll" full-scroll="">
+                        <table class="table table-hover issue-tracker">
+                            <thead fix-head="">
+                            <tr>
+                                <th width="2px">No</th>
+                                <th>Status</th>
+                                <th>Part Number</th>
+                                <th>Keyword</th>
+                                <th>Description</th>
+                                <th>Part Id</th>
+                                <th>ATA Chapter</th>
+                                <th>Group</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in datas.data">
+                                <td>{{ $index +1 + (datas.perpage*(datas.current_page - 1)) }}</td>
+                                <td>
+                                    <span class="label label-{{x.status_mpart=='ON'?'primary':'warning'}}">{{x.status_mpart}}</span>
+                                </td>
+                                <td class="issue-info">
+                                        {{x.part_number}}
+
+                                </td>
+                                <td class="issue-info"> {{x.keyword}} </td>
+                                <td class="issue-info"> {{x.description_mpart}} </td>
+                                <td>
+                                    {{x.partid}}
+                                </td>
+                                <td  class="issue-info">
+                                    <a href="#">
+                                        {{x.code_ata}} - {{x.mfigure_index}} - {{x.mitem_index}}
+                                    </a>
+
+                                    <small>
+                                        {{x.ata}}
+                                    </small>
+                                </td>
+
+                                <td>
+                                    <span class="pie">{{x.name_group}}</span>
+                                </td>
+                                <td class="text-right">
+                                    <a ui-sref="master.mpart.edit({id_mpart:x.id_mpart})" ng-click="gotoTop()" class="btn btn-white btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                    <a ui-sref="master.mpart.detail({id_mpart:x.id_mpart})" class="btn btn-white btn-xs"><i class="fa fa-eye"></i> View</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="btn-group" ng-init="datas.current_page = datas.current_page+1">
+                    <button type="button" ng-show="datas.current_page*1 > 1 " ng-click="filter(datas.current_page*1 - 1)" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                    <button class="btn btn-white" ng-show="datas.current_page -2 > 0 " ng-click="filter(datas.current_page*1 - 2)">{{datas.current_page*1 -2 }}</button>
+                    <button class="btn btn-white" ng-show="datas.current_page -1 > 0 " ng-click="filter(datas.current_page*1 - 1)">{{datas.current_page*1 -1 }}</button>
+                    <button class="btn btn-white active">{{datas.current_page}}</button>
+                    <button class="btn btn-white" ng-if="(datas.current_page*1 +1) <= datas.last_page " ng-click="filter(datas.current_page*1 + 1)">{{datas.current_page*1 +1}}</button>
+                    <button class="btn btn-white" ng-if="datas.current_page*1 +2 <=  datas.last_page " ng-click="filter(datas.current_page*1 + 2)">{{datas.current_page*1 +2}}</button>
+                    <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    setTimeout(function(){
+        tableScroll()
+    })
+</script>
+

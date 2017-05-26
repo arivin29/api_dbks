@@ -1,0 +1,107 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="profile-element" uib-dropdown>
+                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+                    <a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">Muhammad Arifin</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Koding # <b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                        <li><a ui-sref="app.profile">Profile</a></li>
+                        <li><a ui-sref="app.contacts">Contacts</a></li>
+                        <li><a ui-sref="mailbox.inbox">Mailbox</a></li>
+                        <li class="divider"></li>
+                        <li><a ui-sref="login">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="store.mpart"><i class="fa fa-gears"></i>
+                    <span class="nav-label">{{ 'Part' | uppercase }}</span>
+                </a>
+            </li>
+
+
+
+            <li ng-class="{active: $state.includes('pr')}">
+                <a href="#"><i class="fa fa-envelope-o"></i>
+                    <span class="nav-label">{{ 'Purchase Req' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('pr')}">
+                    <li ui-sref-active="active"><a ui-sref="store.pr">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="store.pr_item">Item</a></li>
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('pris')}">
+                <a href="#"><i class="fa fa-envelope-o"></i>
+                    <span class="nav-label">{{ 'PRIS' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('pris')}">
+                    <li ui-sref-active="active"><a ui-sref="store.pris">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="store.pris_item">Item</a></li>
+                </ul>
+            </li>
+
+
+
+            <li ng-class="{active: $state.includes('piro')}">
+                <a href="#"><i class="fa fa-envelope-o"></i>
+                    <span class="nav-label">{{ 'PIRO' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('piro')}">
+                    <li ui-sref-active="active"><a ui-sref="store.piro">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="store.pr_add">Item</a></li>
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="store.transfer_qa"><i class="fa fa-paper-plane"></i>
+                    <span class="nav-label">{{ 'Transfer Parts (QA)' | uppercase }}</span>
+                </a>
+            </li>
+
+            <li ng-class="{active: $state.includes('pmtr')}">
+                <a href="#"><i class="fa fa-random"></i>
+                    <span class="nav-label">{{ 'PMTR (OUT)' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('pris')}">
+                    <li ui-sref-active="active"><a ui-sref="store.pmtr_request_out">Request Out</a></li>
+                    <li ui-sref-active="active"><a ui-sref="store.received">Received</a></li>
+                    <!--<li ui-sref-active="active"><a ui-sref="store.pmtr_item">Item</a></li>-->
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('pmtr')}">
+                <a href="#"><i class="fa fa-random"></i>
+                    <span class="nav-label">{{ 'PMTR (IN)' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('pris')}">
+                    <li ui-sref-active="active"><a ui-sref="store.pmtr_request_in">request In</a></li>
+                    <li ui-sref-active="active"><a ui-sref="store.transfer">Transfer</a></li>
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="store.rpd"><i class="fa fa-cogs"></i>
+                    <span class="nav-label">{{ 'RPD' | uppercase }}</span>
+                </a>
+            </li>
+
+
+
+        </ul>
+
+    </div>
+</nav>

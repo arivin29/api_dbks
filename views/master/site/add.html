@@ -1,0 +1,77 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Site</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.site')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>Name site</label>
+                    <input placeholder="Enter name site" ng-model="site.site" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Parent</label>
+                    <select required class="form-control " required select2 ng-model="site.parent_site"
+                            ng-options="x.id_site*1 as x.site for x in master.parent" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>type site</label>
+                    <input placeholder="Enter type site" ng-model="site.type_site" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>code site</label>
+                    <input placeholder="Enter code site" ng-model="site.code_site" class="form-control" type="text">
+                </div>
+
+            </div>
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>Telephone</label>
+                    <input placeholder="Enter telephone" ng-model="site.telephone" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Fax</label>
+                    <input placeholder="Enter fax" ng-model="site.fax" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control" ng-model="site.status_site">
+                        <option value="1">On</option>
+                        <option value="0">Off</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>address</label>
+                    <textarea ng-model="site.address" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <hr>
+                <div class="pull-left">
+                    <p>Please check from before save*</p>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                        <i class="fa fa-save"></i> &nbsp;
+                        <strong> Save</strong></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>

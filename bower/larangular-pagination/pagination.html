@@ -1,0 +1,16 @@
+<ul class="la-pagination">
+	<li ng-class="{disabled: pageAttr.currentPage == 1}" ng-click="getPaginate(previous)"><span aria-hidden="true">&laquo;</span></li>
+	<div ng-if="showFirst" style="display:inline !important">
+		<li ng-click="getPaginate(1)"><span aria-hidden="true">1</span></li>
+		<li><span aria-hidden="true">...</span></li>
+	</div>
+
+	<li ng-repeat="page in pages" ng-class="{active: pageAttr.currentPage == page, disabled: pageAttr.currentPage == page}" ng-click="getPaginate(page)"><span>{{page}}</span></li>
+
+	<div ng-if="showLast" style="display:inline !important">
+		<li><span aria-hidden="true">...</span></li>
+		<li ng-click="getPaginate(pageAttr.lastPage)"><span aria-hidden="true">{{pageAttr.lastPage}}</span></li>
+	</div>
+
+	<li ng-class="{disabled: pageAttr.currentPage == pageAttr.lastPage}" ng-click="getPaginate(next)"><span>&raquo</span></li>
+</ul>

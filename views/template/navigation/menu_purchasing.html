@@ -1,0 +1,138 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="profile-element" uib-dropdown>
+                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+                    <a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">Muhammad Arifin</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Koding # <b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                        <li><a ui-sref="app.profile">Profile</a></li>
+                        <li><a ui-sref="app.contacts">Contacts</a></li>
+                        <li><a ui-sref="mailbox.inbox">Mailbox</a></li>
+                        <li class="divider"></li>
+                        <li><a ui-sref="login">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li ng-class="{active: $state.includes('dashboards')}">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">{{ 'DASHBOARD' | translate }}</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('dashboards')}">
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_1">{{ 'DASHBOARD' | translate }} v.1</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_2">{{ 'DASHBOARD' | translate }} v.2</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_3">{{ 'DASHBOARD' | translate }} v.3</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_4_1">{{ 'DASHBOARD' | translate }} v.4</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_5">{{ 'DASHBOARD' | translate }} v.5 </a></li>
+                </ul>
+            </li>
+
+
+            <li ui-sref-active="active">
+                <a ui-sref="purchasing.vendor"><i class="fa fa-address-book-o"></i>
+                    <span class="nav-label">{{ 'Vendor' | uppercase }}</span>
+                </a>
+            </li>
+
+            <li ng-class="{active: $state.includes('pr')}">
+                <a href="#"><i class="fa fa-envelope-o"></i>
+                    <span class="nav-label">{{ 'Purchase Req' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('pr')}">
+                    <li ui-sref-active="active"><a ui-sref="purchasing.pr">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="purchasing.po_add">Item</a></li>
+                </ul>
+            </li>
+
+            <!--<li ng-class="{active: $state.includes('po')}">-->
+                <!--<a href="#"><i class="fa fa-shopping-cart"></i>-->
+                    <!--<span class="nav-label">{{ 'Purchase Order' | uppercase }}</span><span class="fa arrow"></span>-->
+                <!--</a>-->
+                <!--<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('po')}">-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.po({status:'draft'})">Draft</a></li>-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.po({status:'acc'})">Acc</a></li>-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.po({status:'grn'})">GRN</a></li>-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.po({status:'cencel'})">Cancel</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <li ui-sref-active="active">
+                <a ui-sref="purchasing.po"><i class="fa fa-shopping-cart"></i>
+                    <span class="nav-label">{{ 'Purchase Order (PO)' | uppercase }}</span>
+                </a>
+            </li>
+
+            <li ng-class="{active: $state.includes('grn')}">
+                <a href="#"><i class="fa fa-send"></i>
+                    <span class="nav-label">{{ 'GRN' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('grn')}">
+                    <li ui-sref-active="active"><a ui-sref="purchasing.grn">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="purchasing.grn_item">Item</a></li>
+                </ul>
+            </li>
+
+
+
+            <li ng-class="{active: $state.includes('rpd')}">
+                <a href="#"><i class="fa fa-cogs"></i>
+                    <span class="nav-label">{{ 'rpd' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('rpd')}">
+                    <li ui-sref-active="active"><a ui-sref="purchasing.rpd">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="purchasing.rpd_item">Item</a></li>
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="purchasing.price"><i class="fa fa-trophy"></i>
+                    <span class="nav-label">{{ 'Price Quotation ' | uppercase }}</span>
+                </a>
+            </li>
+
+            <li ng-class="{active: $state.includes('warranty')}">
+                <a href="#"><i class="fa fa-diamond"></i>
+                    <span class="nav-label">{{ 'warranty' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('warranty')}">
+                    <li ui-sref-active="active"><a ui-sref="purchasing.warranty">Warranty List</a></li>
+                    <li ui-sref-active="active"><a ui-sref="purchasing.warranty_claim">Warranty Claim</a></li>
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="purchasing.wo"><i class="fa fa-wrench"></i>
+                    <span class="nav-label">{{ 'Purchase Order (WO)' | uppercase }}</span>
+                </a>
+            </li>
+
+            <!--<li ng-class="{active: $state.includes('wo')}">-->
+                <!--<a href="#"><i class="fa fa-wrench"></i>-->
+                    <!--<span class="nav-label">{{ 'Work Order' | uppercase }}</span><span class="fa arrow"></span>-->
+                <!--</a>-->
+                <!--<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('po')}">-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.wo({status:'draft'})">Draft</a></li>-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.wo({status:'acc'})">Acc</a></li>-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.wo({status:'grn'})">GRN</a></li>-->
+                    <!--<li ui-sref-active="active"><a ui-sref="purchasing.wo({status:'cencel'})">Cancel</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+
+
+
+
+            <li class="landing_link">
+                <a ui-sref="landing"><i class="fa fa-star"></i> <span class="nav-label">{{ 'LANDING' | translate }}</span> <span class="label label-warning pull-right">NEW</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

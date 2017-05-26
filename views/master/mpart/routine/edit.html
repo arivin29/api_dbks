@@ -1,0 +1,119 @@
+<h3>
+    <span ng-click="backParent()"><i class="fa fa-arrow-left text-info pointer"></i> | </span>
+    Edit Routine Maintenance
+</h3>
+
+<form ng-submit="submitForm()" >
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="form-group">
+                <label>Maintenan Code</label>
+                <select required class="form-control " ng-change="ngChange()" required select2 ng-model="maintenance.id_maintenance_code"
+                        ng-options="x.id_maintenance_code as x.maintenance_code for x in master.code" >
+                    <option value="">-- please choose --</option>
+                </select>
+                <p>{{ maintenance.description_maintenance }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="form-group">
+                <!--<label>Part Category</label>-->
+                <label class="col-sm-12 control-label" style="padding-left: 0">In Location<br>
+                </label>
+                <div class="col-sm-5">
+                    <div>
+                        <label> <input icheck type="radio" value="ac" ng-model="maintenance.on_location"> A/C </label>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div>
+                        <label> <input icheck type="radio" value="store" ng-model="maintenance.on_location"> Store </label>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>repetitions</label>
+                <input placeholder="" ng-model="maintenance.repetitions" class="form-control" type="number" >
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>atachapter </label>
+                <input placeholder="" ng-model="maintenance.atachapter" class="form-control" type="text" >
+            </div>
+        </div>
+
+        <div class="col-md-6" style="clear: both">
+            <div class="form-group">
+                <label>Cycle from</label>
+                <input placeholder="" ng-model="maintenance.cycle_from" class="form-control" type="number" step="0.01" >
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Cycle to</label>
+                <input placeholder="" ng-model="maintenance.cycle_to" class="form-control" type="number" step="0.01" >
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>flight hours from</label>
+                <input placeholder="" ng-model="maintenance.flight_hours_from" class="form-control" type="number" step="0.01" >
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>flight hours to</label>
+                <input placeholder="" ng-model="maintenance.flight_hours_to" class="form-control" type="number" step="0.01" >
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>time range form</label>
+                <input placeholder="" ng-model="maintenance.time_range_form" class="form-control" type="number" step="0.01" >
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>time range to</label>
+                <input placeholder="" ng-model="maintenance.time_range_to" class="form-control" type="number" step="0.01" >
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>time range to</label>
+                 <select required class="form-control " ng-change="" required select2 ng-model="maintenance.time_unit"
+                         ng-options="x as x for x in master.time_unit" >
+                     <option value="">-- please choose --</option>
+                 </select>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Remarks maintenance</label>
+                <textarea ng-model="maintenance.note_maintenance" class="form-control"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+<button class="btn btn-sm btn-primary m-t-n-xs" ng-click="submitForm()" type="submit">
+    <i class="fa fa-save"></i> &nbsp;
+    <strong> Save</strong>
+</button>

@@ -1,0 +1,82 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Aircraft Type</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="master.actype.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.length}} issue(s).</strong>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Status</th>
+                                    <th>Actype</th>
+                                    <th>Ac Category</th>
+                                    <th>Number Engine</th>
+                                    <th>Engine type</th>
+                                    <th>Manufacrure Engine</th>
+                                    <th>Manufacrure AC</th>
+                                    <th>Description</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in datas">
+                                    <td class="text-center">
+                                        <span class="label label-{{x.is_deleted==0?'primary':'warning'}}">{{x.is_deleted==0?'Aktif':'NonAktif'}}</span>
+                                    </td>
+                                    <td class="issue-info">
+                                            {{x.actype}}
+                                    </td>
+                                    <td class="issue-info">
+                                        {{x.ac_category}}
+                                    </td>
+                                    <td>
+                                        {{x.number_engine}}
+                                    </td>
+                                    <td>
+                                        {{x.engine_type}}
+                                    </td>
+                                    <td>
+                                        {{x.engine_manufacture}}
+                                    </td>
+                                    <td>
+                                        {{x.ac_manufacture}}
+                                    </td>
+                                    <td>
+                                        {{x.description}}
+                                    </td>
+                                    <td class="text-center">
+                                        <a ui-sref="master.actype.edit({id_actype:x.id_actype})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                        <a ng-dblclick="delete(x.id_actype)" class="btn btn-white btn-xs"> Delete</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

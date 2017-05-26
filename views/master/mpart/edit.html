@@ -1,0 +1,219 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Edit Master Part</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.mpart')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>Parent</label>
+                    <div class="input-group">
+                        <input disabled type="text" ng-model="keyword" class="form-control">
+                        <span class="input-group-btn">
+                            <button ng-click="popupSearchParent()" onclick="Melayang()" type="button" class="btn btn-primary">Select Parent</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>keyword</label>
+                    <input placeholder="Enter Keyword" ng-model="mpart.keyword" class="form-control" type="text">
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-6">childname</label>
+                    <label class="col-md-6">Unit</label>
+                    <div class="col-md-6">
+                        <input placeholder="childname" ng-model="mpart.childname" class="form-control col-md-6" type="text">
+                    </div>
+                    <div class="col-md-6">
+                        <input placeholder="Enter unit" ng-model="mpart.unit" class="form-control col-md-6" type="text">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>part number</label>
+                    <input placeholder="part number" class="form-control" ng-model="mpart.part_number" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>life time limit</label>
+                    <select required class="form-control " required select2 ng-model="mpart.id_life_time_limit"
+                            ng-options="x.id_life_time_limit*1 as x.life_time_limit for x in master.life_time_limit" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>life limit cycle</label>
+                        <input placeholder="Enter tsn_cycle" class="form-control" ng-model="mpart.life_limit_cycle" type="number">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>life limit hours</label>
+                        <input placeholder="Enter tsnhours" class="form-control" ng-model="mpart.life_limit_hours" type="number">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>life limit Variabel</label>
+                        <select required class="form-control " required select2 ng-model="mpart.life_limit_var"
+                                ng-options="x as x for x in variabel" >
+                            <option value="">-- please choose --</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>life limit value</label>
+                        <input placeholder="Enter tsnhours" class="form-control" ng-model="mpart.life_limit_val" type="number">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Part Id</label>
+                    <select required class="form-control " required select2 ng-model="mpart.id_partid"
+                            ng-options="x.id_partid*1 as x.partid for x in master.partid" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Condition Monitoring</label>
+                    <select required class="form-control " required select2 ng-model="mpart.id_condition_monitoring"
+                            ng-options="x.id_condition_monitoring*1 as x.condition_monitoring for x in master.condition_monitoring" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 form-group">
+                        <label>ATA Chapter</label>
+                        <select required class="form-control " required select2 ng-model="mpart.id_ata"
+                                ng-options="x.id_ata*1 as x.code_ata for x in master.ata" >
+                            <option value="">-- please choose --</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="text-danger">Figure Index</label>
+                        <input required placeholder="88" ng-model="mpart.mfigure_index" class="form-control" type="text">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="text-danger">Item Index</label>
+                        <input placeholder="78" ng-model="mpart.mitem_index" class="form-control" type="text">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Group</label>
+                    <select required class="form-control " required select2 ng-model="mpart.id_group"
+                            ng-options="x.id_group*1 as x.name_group for x in master.group" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Part Category</label>
+                    <select required class="form-control " required select2 ng-model="mpart.id_part_category"
+                            ng-options="x.id_part_category*1 as x.category for x in master.category" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <!--<label>Part Category</label>-->
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Status Part<br>
+                        <small class="text-navy">Custom elements</small>
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="ON" ng-model="mpart.status_mpart"> On </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="OFF" ng-model="mpart.status_mpart"> Off </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
+    </form>
+
+</div>
+
+<div class="popUp" style="display: none">
+    <div class="bg-black"></div>
+
+    <div class="ibox-content">
+        <h2>
+            {{parents.data.total}} results found for: <span class="text-navy">“Parent No”</span>
+            <a onclick="colosePopup()" class="close-link pull-right">
+                <i class="fa fa-times"></i>
+            </a>
+        </h2>
+        <small>Request time (0.23 seconds)</small>
+
+        <div class="search-form">
+            <form action="index.html" method="get" class="ng-pristine ng-valid">
+                <div class="input-group">
+                    <input placeholder="Keyword or Keyword" name="search" ng-model="param.pencarian" class="form-control input-lg" type="text">
+
+                    <div class="input-group-btn">
+                        <a class="btn btn-lg btn-primary" ng-click="popupSearchParent()" type="submit">
+                            Search
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <br>
+
+        <div class="full-height-scroll" full-scroll>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Part Number</th>
+                        <th>Keyword</th>
+                        <th>Keyword</th>
+                        <th>Part Id</th>
+                        <th>ATA Achapter</th>
+                        <th pull-right>#</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td>Parent</td>
+                        <td colspan="4"> <i>Choose this as a parent</i></td>
+                        <td class="client-status pull-right pointer" ng-click="selectParent(0,'This as a parent')"><span class="label label-warning">Select</span></td>
+                    </tr>
+
+                    <tr ng-repeat="x in parents.data.data">
+                        <td><a ng-click="client = 1" class="client-link">{{x.part_number}}</a></td>
+                        <td> {{x.keyword}}</td>
+                        <td> {{x.keyword}}</td>
+                        <td> {{x.partid}}</td>
+                        <td> {{x.ata}}</td>
+                        <td class="client-status pull-right pointer" ng-click="selectParent(x.id_mpart,x.keyword)"><span class="label label-primary">Select</span></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

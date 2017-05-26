@@ -1,0 +1,76 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="profile-element" uib-dropdown>
+                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+                    <a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">Muhammad Arifin</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Koding # <b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                        <li><a ui-sref="app.profile">Profile</a></li>
+                        <li><a ui-sref="app.contacts">Contacts</a></li>
+                        <li><a ui-sref="mailbox.inbox">Mailbox</a></li>
+                        <li class="divider"></li>
+                        <li><a ui-sref="login">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li ng-class="{active: $state.includes('dashboards')}">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">{{ 'DASHBOARD' | translate }}</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('dashboards')}">
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_1">{{ 'DASHBOARD' | translate }} v.1</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_2">{{ 'DASHBOARD' | translate }} v.2</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_3">{{ 'DASHBOARD' | translate }} v.3</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_4_1">{{ 'DASHBOARD' | translate }} v.4</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_5">{{ 'DASHBOARD' | translate }} v.5 </a></li>
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="engineer.wp"><i class="fa fa-ticket"></i>
+                    <span class="nav-label">{{ 'Work Packet' | uppercase }}</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="engineer.maintenance"><i class="fa fa-ticket"></i>
+                    <span class="nav-label">{{ 'Last Maintenance' | uppercase }}</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="engineer.rti"><i class="fa fa-repeat"></i>
+                    <span class="nav-label">{{ 'RTI' | uppercase }}</span>
+                </a>
+            </li>
+ 
+            <li ng-class="{active: $state.includes('pris')}">
+                <a href="#"><i class="fa fa-envelope-o"></i>
+                    <span class="nav-label">{{ 'PRIS' | uppercase }}</span><span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('pris')}">
+                    <li ui-sref-active="active"><a ui-sref="engineer.pris">Data</a></li>
+                    <li ui-sref-active="active"><a ui-sref="engineer.pris_item">Item</a></li>
+                </ul>
+            </li>
+
+
+
+
+            <li class="landing_link">
+                <a ui-sref="landing"><i class="fa fa-star"></i> <span class="nav-label">{{ 'LANDING' | translate }}</span> <span class="label label-warning pull-right">NEW</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

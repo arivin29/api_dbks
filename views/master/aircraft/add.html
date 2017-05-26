@@ -1,0 +1,81 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Master Part</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.aircraft')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+
+                    <div class="form-group">
+                        <label>registration number</label>
+                        <input placeholder="Enter registration number" ng-model="aircraft.registration_number" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Actype</label>
+                        <select required class="form-control " required select2 ng-model="aircraft.id_actype"
+                                ng-options="x.id_actype*1 as x.actype for x in master.actype" >
+                            <option value="">-- please choose --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>tendurance</label>
+                        <input placeholder="Enter tendurance" ng-model="aircraft.tendurance" class="form-control" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>reason regschange</label>
+                        <input placeholder="Enter reason regschange" class="form-control" ng-model="aircraft.reason_regschange" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>serial number</label>
+                        <input placeholder="Enter serial number" class="form-control" ng-model="aircraft.serial_number" type="text">
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label>hasapu</label>
+                        <input placeholder="Enter hasapu" class="form-control" ng-model="aircraft.hasapu" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>keyword</label>
+                        <input placeholder="Enter keyword" class="form-control" ng-model="aircraft.keyword" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>purchase date {{aircraft.purchasedate}}</label>
+                        <input required placeholder="Enter purchase date" class="form-control" datepicker ng-model="aircraft.purchasedate"  type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>description</label>
+                        <textarea ng-model="aircraft.description_aircraft" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

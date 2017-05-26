@@ -1,0 +1,134 @@
+ <div class="row" id="detail_fix">
+     <div class="col-lg-2 p-r-0 border-right">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title bg-info">
+                 <h5>{{ mpart.part_number }}</h5>
+
+             </div>
+             <div class="ibox-content no-kiri-kanan border-left border-right">
+                 <ul class="list-group elements-list">
+                     <li class="list-group-item" ui-sref-active="active">
+                         <a ui-sref="master.mpart.detail({id_mpart:mpart.id_mpart})" >
+                             <strong>Detail Part</strong>
+                         </a>
+                     </li>
+                     <li class="list-group-item" ui-sref-active="active">
+                         <a ui-sref="master.mpart.detail.routine">
+                             <strong>Routine Maintenance </strong>
+                         </a>
+
+                     </li>
+                     <!--<li class="list-group-item" ui-sref-active="active">-->
+                         <!--<a ui-sref="master.mpart.detail.inspection">-->
+                             <!--<strong>Schedule Inspection</strong>-->
+                         <!--</a>-->
+                     <!--</li>-->
+
+
+                 </ul>
+             </div>
+             <div class="ibox-footer">
+                        <span class="pull-right">
+                          The righ side of the footer
+                    </span>
+
+             </div>
+         </div>
+
+     </div>
+
+     <div class="col-lg-10 p-l-0">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title ">
+                 <h5 style="padding-left: 10px;">{{ mpart.keyword }}</h5>
+
+                 <div  class="ng-scope">
+                     <div class="ibox-tools dropdown" uib-dropdown="">
+                         <a ng-click="backButton('master.mpart')"><i class="fa fa-times"></i></a>
+                     </div>
+                 </div>
+             </div>
+             <div class="ibox-content border-left border-right" full-scroll="">
+                 <div ng-show="$state.current.name === 'master.mpart.detail'">
+                     <json-formatter json="mpart" open="0"></json-formatter>
+                     <div class="row">
+                         <div class="col-lg-5">
+                             <table class="table padding-kecil table-mail">
+                                 <tr>
+                                     <td width="40%">Keyword</td>
+                                     <td  width="60%">: {{ mpart.keyword }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Part Number</td>
+                                     <td>: {{ mpart.part_number }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Part ID</td>
+                                     <td>: {{ mpart.partid }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Unit</td>
+                                     <td>:  {{ mpart.unit }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td><b>ATA Chapter</b></td>
+                                     <td>: {{ mpart.code_ata }} - {{ mpart.mfigure_index }} - {{ mpart.mitem_index }}</td>
+                                 </tr>
+
+                             </table>
+
+                         </div>
+                         <div class="col-lg-7" id="cluster_info">
+                             <table class="table padding-kecil table-mail">
+                                 <tr>
+                                     <td width="40%">Category</td>
+                                     <td  width="60%">: {{ mpart.category }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>life time limit</td>
+                                     <td>: {{ mpart.life_time_limit }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>life limit cycle</td>
+                                     <td>: {{ mpart.life_limit_cycle }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>life limit hours</td>
+                                     <td>:  {{ mpart.life_limit_hours }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td><b>Description</b></td>
+                                     <td>: {{ mpart.description_mpart }}</td>
+                                 </tr>
+
+                             </table>
+
+                         </div>
+                     </div>
+
+                 </div>
+
+                 <ui-view></ui-view>
+
+
+             </div>
+             <div class="ibox-footer">
+                 <span class="pull-right">
+                          The righ side of the footer
+                 </span>
+                 Isi Form Dengan Benar
+             </div>
+         </div>
+
+     </div>
+
+
+
+ </div>
+
+ <script>
+
+     setTimeout(function(){
+         fixDetailHeight()
+     })
+ </script>

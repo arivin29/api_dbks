@@ -1,0 +1,63 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Type of Work</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.type_ofwork')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input placeholder="Enter name" ng-model="type_ofwork.name" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input placeholder="Enter email" ng-model="type_ofwork.email" class="form-control" type="email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input placeholder="Enter password" class="form-control" ng-model="type_ofwork.password" type="password">
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Group</label>
+                    <select required class="form-control " required select2 ng-model="type_ofwork.id_groups"
+                            ng-options="x.id_groups*1 as x.m_groups for x in master.group" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Site</label>
+                    <select required class="form-control " required select2 ng-model="type_ofwork.id_site"
+                            ng-options="x.id_site*1 as x.site for x in master.site" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <hr>
+                <div class="pull-left">
+                    <p>Please check from before save*</p>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                        <i class="fa fa-save"></i> &nbsp;
+                        <strong> Save</strong></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>

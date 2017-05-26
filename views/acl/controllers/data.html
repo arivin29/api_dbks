@@ -1,0 +1,100 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Controllers</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="acl.controllers.add" class="btn btn-primary btn-xs">Add new Controller</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="m-b-lg">
+
+                        <div class="input-group">
+                            <input type="text" placeholder="Search issue by name..." class=" form-control">
+                            <span class="input-group-btn">
+                                        <button type="button" class="btn btn-white"> Search</button>
+                                    </span>
+                        </div>
+                        <div class="m-t-md">
+
+                            <!--<div class="pull-right">-->
+                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-comments"></i> </button>-->
+                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-user"></i> </button>-->
+                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-list"></i> </button>-->
+                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-pencil"></i> </button>-->
+                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-print"></i> </button>-->
+                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-cogs"></i> </button>-->
+                            <!--</div>-->
+
+                            <strong>Found 61 issues.</strong>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Modul/Contoller</th>
+                                    <th>Uri</th>
+                                    <th>Method</th>
+                                    <th>Action</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in controllers.data">
+                                <td>
+                                    {{$index+1}}
+                                </td>
+                                <td class="issue-info">
+                                    <a href="#">
+                                        {{x.modul}}
+                                    </a>
+
+                                    <small>
+                                        {{x.controllers}}
+                                    </small>
+                                </td>
+                                <td>
+                                    {{x.uri_modul}}/{{x.uri_controllers}}/{{x.method}}
+                                </td>
+                                <td>
+                                    {{x.method}}
+                                </td>
+                                <td>
+                                    {{x.perintah}}
+                                </td>
+                                <td>
+                                    <span class="pie">{{x.telepon}}</span>
+                                </td>
+                                <td class="text-right">
+                                    <a ui-sref="acl.controllers.edit({id_controller:x.id_controllers})" class="btn btn-white btn-xs"> Edit</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

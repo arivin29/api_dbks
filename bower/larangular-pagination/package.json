@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "larangular-pagination",
+        "scope": null,
+        "escapedName": "larangular-pagination",
+        "name": "larangular-pagination",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\ARIFIN\\darazona_client"
+    ]
+  ],
+  "_from": "larangular-pagination@latest",
+  "_id": "larangular-pagination@1.0.0",
+  "_inCache": true,
+  "_location": "/larangular-pagination",
+  "_nodeVersion": "0.10.25",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/larangular-pagination-1.0.0.tgz_1461638127792_0.5626169284805655"
+  },
+  "_npmUser": {
+    "name": "moisesphelipe",
+    "email": "contato.moisesfelipe@gmail.com"
+  },
+  "_npmVersion": "3.8.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "larangular-pagination",
+    "scope": null,
+    "escapedName": "larangular-pagination",
+    "name": "larangular-pagination",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/larangular-pagination/-/larangular-pagination-1.0.0.tgz",
+  "_shasum": "4ccd877404cdbb1abe89a02be17d27a8975a823e",
+  "_shrinkwrap": null,
+  "_spec": "larangular-pagination",
+  "_where": "C:\\ARIFIN\\darazona_client",
+  "author": {
+    "name": "=Moises @moisesphelipe",
+    "email": "="
+  },
+  "bugs": {
+    "url": "https://github.com/moisesphelipe/larangular-pagination/issues"
+  },
+  "dependencies": {},
+  "description": "This package provider a simple way to use pagination with Laravel and angular",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "4ccd877404cdbb1abe89a02be17d27a8975a823e",
+    "tarball": "https://registry.npmjs.org/larangular-pagination/-/larangular-pagination-1.0.0.tgz"
+  },
+  "homepage": "https://github.com/moisesphelipe/larangular-pagination#readme",
+  "keywords": [
+    "Laravel",
+    "Angular",
+    "Pagination",
+    "Larangular"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "moisesphelipe",
+      "email": "contato.moisesfelipe@gmail.com"
+    }
+  ],
+  "name": "larangular-pagination",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moisesphelipe/larangular-pagination.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

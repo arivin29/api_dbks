@@ -1,0 +1,87 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Edit Actype</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('acl.actype')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>Actype</label>
+                    <input placeholder="Enter actype" ng-model="actype.actype" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Number Of Engine*</label>
+                    <input placeholder="Enter number engine" ng-model="actype.number_engine" class="form-control" type="number">
+                </div>
+                <div class="form-group">
+                    <!--<label>Part Category</label>-->
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Category*
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="fixed" ng-model="mpart.ac_category"> Fixed </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="rotary" ng-model="mpart.ac_category"> Rotarys </label>
+                        </div>
+
+                    </div>
+
+                    <br />
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Engine Type*</label>
+                    <input placeholder="Enter wingtype" ng-model="actype.engine_type" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Manufacture Engine*</label>
+                    <input placeholder="Enter wingtype" ng-model="actype.engine_manufacture" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Manufacture Aircraft*</label>
+                    <input placeholder="Enter wingtype" ng-model="actype.ac_manufacture" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea ng-model="actype.description" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <!--<div class="col-sm-12">-->
+            <!--<div class="form-group">-->
+            <!--<label>description</label>-->
+            <!--<textarea ng-model="mpart.description" class="form-control"></textarea>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <div class="col-sm-12">
+                <hr>
+                <div class="pull-left">
+                    <p>Please check from before save*</p>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                        <i class="fa fa-save"></i> &nbsp;
+                        <strong> Save</strong></button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--</form>-->
+
+</div>
