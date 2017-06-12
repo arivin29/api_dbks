@@ -2,16 +2,6 @@ var app = angular.module('inspinia');
 app.service('myHelp', ['$q','$http','$state' ,function($q, $http,$state) {
 
 
-    if(($state.current.name).split(",",1)[0] =='acl')
-    {
-        var BASE_URL = 'http://arivin.xyz/ames/public';
-    }
-    else
-    {
-        var BASE_URL = 'http://arivin.xyz/ames_site/public/api/v1';
-    }
-
-
     this.getParam = function(url, data) {
         var query = {
             params: data,

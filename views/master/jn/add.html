@@ -1,0 +1,39 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Jenisnilai</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.jn')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-6 b-r">
+
+                <div class="form-group">
+                    <label>Jenis nilai</label>
+                    <input placeholder="Enter code Jenis nilai" ng-model="jn.jenis" class="form-control" type="text">
+                </div>
+
+            </div>
+
+            <div class="col-sm-12">
+                <hr>
+                <div class="pull-left">
+                    <p>Please check from before save*</p>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                        <i class="fa fa-save"></i> &nbsp;
+                        <strong> Save</strong></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>

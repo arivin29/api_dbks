@@ -22,8 +22,8 @@
 // Other libraries are loaded dynamically in the config.js file using the library ocLazyLoad
 
 var DEBUG=true;
-var BASE_URL = 'http://arivin.xyz/ames/public';
 var BASE_URL = 'http://arivin.xyz/ames_site/public/api/v1';
+var BASE_URL = 'http://localhost/site_sbks/public/api/v1';
 
 var app = angular.module('inspinia');
 
