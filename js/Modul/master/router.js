@@ -595,6 +595,326 @@ function configMaster($stateProvider) {
         controller:"master.absen.edit"
     })    
 
+    /*-----------------------------------------
+      Tnilai ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.pnilai', {
+        url: "/pnilai",
+        templateUrl: "views/master/pnilai/data.html",
+        data: { pageTitle: 'pnilai' },
+        controller:"master.pnilai"
+    })
+    .state('master.pnilai.detail', {
+        url: "/detail/:id_pengaturan_nilai",
+        templateUrl: "views/master/pnilai/data.detail.html",
+        data: { pageTitle: 'pnilai' },
+        controller:"master.pnilai.detail"
+    })
+    .state('master.pnilai.add', {
+        url: "/create",
+        templateUrl: "views/master/pnilai/add.html",
+        data: { pageTitle: 'pnilai' },
+        controller:"master.pnilai.add"
+    })
+
+    .state('master.pnilai.edit', {
+        url: "/edit/:id_pengaturan_nilai",
+        templateUrl: "views/master/pnilai/edit.html",
+        data: { pageTitle: 'pnilai' },
+        controller:"master.pnilai.edit"
+    })
+
+    /*-----------------------------------------
+      Nilai ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.nilai', {
+        url: "/nilai",
+        templateUrl: "views/master/nilai/data.html",
+        data: { pageTitle: 'nilai' },
+        controller:"master.nilai"
+    })
+    .state('master.nilai.detail', {
+        url: "/detail/:id_nilai",
+        templateUrl: "views/master/nilai/data.detail.html",
+        data: { pageTitle: 'nilai' },
+        controller:"master.nilai.detail"
+    })
+    .state('master.nilai.add', {
+        url: "/create",
+        templateUrl: "views/master/nilai/add.html",
+        data: { pageTitle: 'nilai' },
+        controller:"master.nilai.add"
+    })
+
+    .state('master.nilai.edit', {
+        url: "/edit/:id_nilai",
+        templateUrl: "views/master/nilai/edit.html",
+        data: { pageTitle: 'nilai' },
+        controller:"master.nilai.edit"
+    })
+
+    /*-----------------------------------------
+      Muridkelas ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.muridkelas', {
+        url: "/muridkelas",
+        templateUrl: "views/master/muridkelas/data.html",
+        data: { pageTitle: 'muridkelas' },
+        controller:"master.muridkelas"
+    })
+    .state('master.muridkelas.detail', {
+        url: "/detail/:id_murid_kelas",
+        templateUrl: "views/master/muridkelas/data.detail.html",
+        data: { pageTitle: 'muridkelas' },
+        controller:"master.muridkelas.detail"
+    })
+    .state('master.muridkelas.add', {
+        url: "/create",
+        templateUrl: "views/master/muridkelas/add.html",
+        data: { pageTitle: 'muridkelas' },
+        controller:"master.muridkelas.add"
+    })
+
+    .state('master.muridkelas.edit', {
+        url: "/edit/:id_murid_kelas",
+        templateUrl: "views/master/muridkelas/edit.html",
+        data: { pageTitle: 'muridkelas' },
+        controller:"master.muridkelas.edit"
+    })
+
+    /*-----------------------------------------
+      Murid ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.murid', {
+        url: "/murid",
+        templateUrl: "views/master/murid/data.html",
+        data: { pageTitle: 'murid' },
+        controller:"master.murid"
+    })
+    .state('master.murid.detail', {
+        url: "/detail/:id_murid",
+        templateUrl: "views/master/murid/data.detail.html",
+        data: { pageTitle: 'murid' },
+        controller:"master.murid.detail"
+    })
+    .state('master.murid.add', {
+        url: "/create",
+        templateUrl: "views/master/murid/add.html",
+        data: { pageTitle: 'murid' },
+        controller:"master.murid.add"
+    })
+
+    .state('master.murid.edit', {
+        url: "/edit/:id_murid",
+        templateUrl: "views/master/murid/edit.html",
+        data: { pageTitle: 'murid' },
+        controller:"master.murid.edit"
+    })
+
+    /*-----------------------------------------
+      Gurumk ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.gurumk', {
+        url: "/gurumk",
+        templateUrl: "views/master/gurumk/data.html",
+        data: { pageTitle: 'gurumk' },
+        controller:"master.gurumk"
+    })
+    .state('master.gurumk.detail', {
+        url: "/detail/:id_guru_mk",
+        templateUrl: "views/master/gurumk/data.detail.html",
+        data: { pageTitle: 'gurumk' },
+        controller:"master.gurumk.detail"
+    })
+    .state('master.gurumk.add', {
+        url: "/create",
+        templateUrl: "views/master/gurumk/add.html",
+        data: { pageTitle: 'gurumk' },
+        controller:"master.gurumk.add"
+    })
+
+    .state('master.gurumk.edit', {
+        url: "/edit/:id_guru_mk",
+        templateUrl: "views/master/gurumk/edit.html",
+        data: { pageTitle: 'gurumk' },
+        controller:"master.gurumk.edit"
+    })
+
+    /*-----------------------------------------
+      Guru ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.guru', {
+        url: "/guru",
+        templateUrl: "views/master/guru/data.html",
+        data: { pageTitle: 'guru' },
+        controller:"master.guru"
+    })
+    .state('master.guru.detail', {
+        url: "/detail/:id_guru",
+        templateUrl: "views/master/guru/data.detail.html",
+        data: { pageTitle: 'guru' },
+        controller:"master.guru.detail"
+    })
+    .state('master.guru.add', {
+        url: "/create",
+        templateUrl: "views/master/guru/add.html",
+        data: { pageTitle: 'guru' },
+        controller:"master.guru.add"
+    })
+
+    .state('master.guru.edit', {
+        url: "/edit/:id_guru",
+        templateUrl: "views/master/guru/edit.html",
+        data: { pageTitle: 'guru' },
+        controller:"master.guru.edit"
+    })
+
+    /*-----------------------------------------
+      Buku ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.buku', {
+        url: "/buku",
+        templateUrl: "views/master/buku/data.html",
+        data: { pageTitle: 'buku' },
+        controller:"master.buku"
+    })
+    .state('master.buku.detail', {
+        url: "/detail/:id_buku",
+        templateUrl: "views/master/buku/data.detail.html",
+        data: { pageTitle: 'buku' },
+        controller:"master.buku.detail"
+    })
+    .state('master.buku.add', {
+        url: "/create",
+        templateUrl: "views/master/buku/add.html",
+        data: { pageTitle: 'buku' },
+        controller:"master.buku.add"
+    })
+
+    .state('master.buku.edit', {
+        url: "/edit/:id_buku",
+        templateUrl: "views/master/buku/edit.html",
+        data: { pageTitle: 'buku' },
+        controller:"master.buku.edit"
+    })
+
+    /*-----------------------------------------
+      Absentmt ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.absentmt', {
+        url: "/absentmt",
+        templateUrl: "views/master/absentmt/data.html",
+        data: { pageTitle: 'absentmt' },
+        controller:"master.absentmt"
+    })
+    .state('master.absentmt.detail', {
+        url: "/detail/:id_tidak_masuk_tanggal",
+        templateUrl: "views/master/absentmt/data.detail.html",
+        data: { pageTitle: 'absentmt' },
+        controller:"master.absentmt.detail"
+    })
+    .state('master.absentmt.add', {
+        url: "/create",
+        templateUrl: "views/master/absentmt/add.html",
+        data: { pageTitle: 'absentmt' },
+        controller:"master.absentmt.add"
+    })
+
+    .state('master.absentmt.edit', {
+        url: "/edit/:id_tidak_masuk_tanggal",
+        templateUrl: "views/master/absentmt/edit.html",
+        data: { pageTitle: 'absentmt' },
+        controller:"master.absentmt.edit"
+    })
+
+    /*-----------------------------------------
+      Absentm ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.absentm', {
+        url: "/absentm",
+        templateUrl: "views/master/absentm/data.html",
+        data: { pageTitle: 'absentm' },
+        controller:"master.absentm"
+    })
+    .state('master.absentm.detail', {
+        url: "/detail/:id_tidak_masuk",
+        templateUrl: "views/master/absentm/data.detail.html",
+        data: { pageTitle: 'absentm' },
+        controller:"master.absentm.detail"
+    })
+    .state('master.absentm.add', {
+        url: "/create",
+        templateUrl: "views/master/absentm/add.html",
+        data: { pageTitle: 'absentm' },
+        controller:"master.absentm.add"
+    })
+
+    .state('master.absentm.edit', {
+        url: "/edit/:id_tidak_masuk",
+        templateUrl: "views/master/absentm/edit.html",
+        data: { pageTitle: 'absentm' },
+        controller:"master.absentm.edit"
+    })
+
+    /*-----------------------------------------
+      Absenrekap ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.absenrekap', {
+        url: "/absenrekap",
+        templateUrl: "views/master/absenrekap/data.html",
+        data: { pageTitle: 'absenrekap' },
+        controller:"master.absenrekap"
+    })
+    .state('master.absenrekap.detail', {
+        url: "/detail/:id_rekap_absen",
+        templateUrl: "views/master/absenrekap/data.detail.html",
+        data: { pageTitle: 'absenrekap' },
+        controller:"master.absenrekap.detail"
+    })
+    .state('master.absenrekap.add', {
+        url: "/create",
+        templateUrl: "views/master/absenrekap/add.html",
+        data: { pageTitle: 'absenrekap' },
+        controller:"master.absenrekap.add"
+    })
+
+    .state('master.absenrekap.edit', {
+        url: "/edit/:id_rekap_absen",
+        templateUrl: "views/master/absenrekap/edit.html",
+        data: { pageTitle: 'absenrekap' },
+        controller:"master.absenrekap.edit"
+    })
+
+    /*-----------------------------------------
+      Tabsen ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.tabsen', {
+        url: "/tabsen",
+        templateUrl: "views/master/tabsen/data.html",
+        data: { pageTitle: 'tabsen' },
+        controller:"master.tabsen"
+    })
+    .state('master.tabsen.detail', {
+        url: "/detail/:id_absen",
+        templateUrl: "views/master/tabsen/data.detail.html",
+        data: { pageTitle: 'tabsen' },
+        controller:"master.tabsen.detail"
+    })
+    .state('master.tabsen.add', {
+        url: "/create",
+        templateUrl: "views/master/tabsen/add.html",
+        data: { pageTitle: 'tabsen' },
+        controller:"master.tabsen.add"
+    })
+
+    .state('master.tabsen.edit', {
+        url: "/edit/:id_absen",
+        templateUrl: "views/master/tabsen/edit.html",
+        data: { pageTitle: 'tabsen' },
+        controller:"master.tabsen.edit"
+    })
+
+
 }
 
 angular

@@ -1,0 +1,73 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Buku</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.buku')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label>Tingkat</label>
+                        <input placeholder="Enter tingkat" ng-model="buku.tingkat" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jurusan</label>
+                        <input placeholder="Enter jurusan" ng-model="buku.jurusan" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Kelas paralel</label>
+                        <input placeholder="Enter kelas paralel" class="form-control" ng-model="buku.kelas_paralel" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>ID guru</label>
+                        <input placeholder="Enter id guru" class="form-control" ng-model="buku.id_guru" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <input placeholder="Enter keterangan" class="form-control" ng-model="buku.keterangan" type="text">
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Nama file</label>
+                        <input placeholder="Enter nama file" class="form-control" ng-model="buku.nama_file" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Keyword</label>
+                        <input placeholder="Enter keyword" class="form-control" ng-model="buku.keyword" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Lokasi file</label>
+                        <input placeholder="Enter lokasi file" class="form-control" ng-model="buku.lokasi_file"  type="text">
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

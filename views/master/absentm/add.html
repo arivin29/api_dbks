@@ -1,0 +1,67 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Absen tidak masuk</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.absentm')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label>Type tidak masuk</label>
+                        <input placeholder="Enter type tidak masuk" ng-model="absentm.type_tidak_masuk" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal surat</label>
+                        <input placeholder="Enter" ng-model="absentm.tanggal_surat" class="form-control" type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>ID Murid</label>
+                        <input placeholder="Enter id murid" ng-model="absentm.id_murid" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <input placeholder="Enter keterangan" class="form-control" ng-model="absentm.keterangan" type="text">
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label>Nomor surat</label>
+                        <input placeholder="Enter nomor surat" class="form-control" ng-model="absentm.nomor_surat" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Menyetujui</label>
+                        <input placeholder="Enter" class="form-control" ng-model="absentm.menyetujui" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>ID user</label>
+                        <input placeholder="Enter" class="form-control" ng-model="absentm.id_user" type="number">
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

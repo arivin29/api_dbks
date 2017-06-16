@@ -1,0 +1,72 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Tabsen</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="master.tabsen.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.length}} issues.</strong>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                            <tr>
+                                <th>ID Murid</th>
+                                <th>Tanggal absen</th>
+                                <th>Type absen</th>
+                                <th>Tanggal upload</th>
+                                <th>Catatan</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in datas">
+                                <td>
+                                    <a href="#">
+                                        {{x.id_murid}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{x.tanggal_absen}}
+                                </td>
+                                <td>
+                                    {{x.type_absen}}
+                                </td>
+                                <td>
+                                    {{x.tanggal_upload}}
+                                </td>
+                                <td>
+                                    {{x.catatan}}
+                                </td>
+                                <td class="text-center">
+                                    <a ui-sref="master.tabsen.edit({id_absen:x.id_absen})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ng-dblclick="delete(x.id_absen)" class="btn btn-white btn-xs"> Delete</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

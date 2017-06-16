@@ -1,0 +1,77 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Rekap absen</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('master.absenrekap')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label>Tanggal rekap</label>
+                        <input placeholder="Enter" ng-model="absenrekap.tanggal_rekap" class="form-control" type="date">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tanggal absen</label>
+                        <input placeholder="Enter" ng-model="absenrekap.tanggal_absen" class="form-control" type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Masuk</label>
+                        <input placeholder="Enter masuk" class="form-control" ng-model="absenrekap.masuk" type="time">
+                    </div>
+                    <div class="form-group">
+                        <label>Keluar</label>
+                        <input placeholder="Enter keluar" class="form-control" ng-model="absenrekap.keluar" type="time">
+                    </div>
+                    <div class="form-group">
+                        <label>Lama disekolah</label>
+                        <input placeholder="Enter lama disekolah" class="form-control" ng-model="absenrekap.lama_disekolah" type="text">
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Telat</label>
+                        <input placeholder="Enter telat" class="form-control" ng-model="absenrekap.telat" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>ID murid</label>
+                        <input placeholder="Enter id murid" class="form-control" ng-model="absenrekap.id_murid"  type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>ID guru</label>
+                        <input placeholder="Enter id guru" class="form-control" ng-model="absenrekap.id_guru" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Report</label>
+                        <input placeholder="Enter report" class="form-control" ng-model="absenrekap.report" type="text">
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

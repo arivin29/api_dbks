@@ -1,0 +1,142 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Mata Pelajaran</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="master.guru.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.length}} issue(s).</strong>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                            <tr>
+                                <th>NIP</th>
+                                <th>NUPTK</th>
+                                <th>Nama</th>
+                                <th>NIK KTP</th>
+                                <th>Tempat lahir</th>
+                                <th>Tanggal lahir</th>
+                                <th>Jenis kelamin</th>
+                                <th>Nama ibu</th>
+                                <th>status_pegawai</th>
+                                <th>golongan</th>
+                                <th>TMK SK CPNS</th>
+                                <th>TMK SK Awal</th>
+                                <th>TMK SK Berakhir</th>
+                                <th>Alamat</th>
+                                <th>Provinsi</th>
+                                <th>Kabkot</th>
+                                <th>Kecamatan</th>
+                                <th>Kelurahan</th>
+                                <th>No Hp</th>
+                                <th>Agama</th>
+                                <th>Kode Pos</th>
+                                <th>Status guru</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in datas">
+                                <td>
+                                  <a href="#">
+                                      {{x.nip}}
+                                  </a>
+                                </td>
+                                <td>
+                                    {{x.nuptk}}
+                                </td>
+                                <td>
+                                    {{x.nama}}
+                                </td>
+                                <td>
+                                    {{x.nik_ktp}}
+                                </td>
+                                <td>
+                                    {{x.tempat_lahir}}
+                                </td>
+                                <td>
+                                    {{x.tanggal_lahir}}
+                                </td>
+                                <td>
+                                    {{x.jenis_kelamin}}
+                                </td>
+                                <td>
+                                    {{x.nama_ibu}}
+                                </td>
+                                <td>
+                                    {{x.status_pegawai}}
+                                </td>
+                                <td>
+                                    {{x.golongan}}
+                                </td>
+                                <td>
+                                    {{x.tmk_sk_cpns}}
+                                </td>
+                                <td>
+                                    {{x.tmk_sk_awal}}
+                                </td>
+                                <td>
+                                    {{x.tmk_sk_berakhir}}
+                                </td>
+                                <td>
+                                    {{x.alamat}}
+                                </td>
+                                <td>
+                                    {{x.provinsi}}
+                                </td>
+                                <td>
+                                    {{x.kabkot}}
+                                </td>
+                                <td>
+                                    {{x.kecamatan}}
+                                </td>
+                                <td>
+                                    {{x.kelurahan}}
+                                </td>
+                                <td>
+                                    {{x.no_hp}}
+                                </td>
+                                <td>
+                                    {{x.agama}}
+                                </td>
+                                <td>
+                                    {{x.kode_pos}}
+                                </td>
+                                <td>
+                                    {{x.status_guru}}
+                                </td>
+
+                                <td class="text-center">
+                                    <a ui-sref="master.guru.edit({id_guru:x.id_guru})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ng-dblclick="delete(x.id_guru)" class="btn btn-white btn-xs"> Delete</a>
+                                </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

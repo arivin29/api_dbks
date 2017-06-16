@@ -1,0 +1,88 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Rekap absen</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="master.absenrekap.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.length}} issue(s).</strong>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                            <tr>
+                                <th>Tanggal rekap</th>
+                                <th>Tanggal absen</th>
+                                <th>Masuk</th>
+                                <th>Keluar</th>
+                                <th>Lama disekolah</th>
+                                <th>Telat</th>
+                                <th>ID murid</th>
+                                <th>ID guru</th>
+                                <th>Reports</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in datas">
+                                <td>
+                                      {{x.tanggal_rekap}}
+                                </td>
+                                <td>
+                                      {{x.tanggal_absen}}
+                                </td>
+                                <td>
+                                      jam {{x.masuk}}
+                                </td>
+                                <td>
+                                      jam {{x.keluar}}
+                                </td>
+                                <td>
+                                    {{x.lama_disekolah}} jam
+                                </td>
+                                <td>
+                                    {{x.telat}} menit
+                                </td>
+                                <td>
+                                    {{x.id_murid}}
+                                </td>
+                                <td>
+                                    {{x.id_guru}}
+                                </td>
+                                <td>
+                                    {{x.report}}
+                                </td>
+
+                                <td class="text-center">
+                                    <a ui-sref="master.absenrekap.edit({id_rekap_absen:x.id_rekap_absen})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ng-dblclick="delete(x.id_rekap_absen)" class="btn btn-white btn-xs"> Delete</a>
+                                </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,89 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Nilai</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="master.nilai.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.length}} issue(s).</strong>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                            <tr>
+                                <th>ID Gurumk</th>
+                                <th>ID Jenis nilai</th>
+                                <th>ID Murid</th>
+                                <th>Nilai</th>
+                                <th>ID User</th>
+                                <th>Rumus</th>
+                                <th>Nilai akhir</th>
+                                <th>SMT</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in datas">
+                                <td>
+                                  <a href="#">
+                                      {{x.id_guru_mk}}
+                                  </a>
+                                </td>
+                                <td>
+                                    {{x.id_jenis_nilai}}
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        {{x.id_murid}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{x.nilai}}
+                                </td>
+                                <td>
+                                    {{x.id_user}}
+                                </td>
+                                <td>
+                                    {{x.rumus}}
+                                </td>
+                                <td>
+                                    {{x.nilai_akhir}}
+                                </td>
+                                <td>
+                                    {{x.smt}}
+                                </td>
+
+
+                                <td class="text-center">
+                                    <a ui-sref="master.nilai.edit({id_nilai:x.id_nilai})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ng-dblclick="delete(x.id_nilai)" class="btn btn-white btn-xs"> Delete</a>
+                                </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
