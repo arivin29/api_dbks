@@ -24,34 +24,20 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
+                                <th width="2px">No</th>
                                 <th>NIS</th>
                                 <th>NISN</th>
                                 <th>Nama murid</th>
                                 <th>Tempat lahir</th>
                                 <th>Tanggal lahir</th>
                                 <th>Jenis kelamin</th>
-                                <th>Hobi</th>
-                                <th>Cita-cita</th>
-                                <th>Jumlah saudara</th>
-                                <th>Alamat</th>
-                                <th>Provinsi</th>
-                                <th>Kabkot</th>
-                                <th>Kecamatan</th>
-                                <th>Kode pos</th>
-                                <th>No kk</th>
-                                <th>Nama ayah</th>
-                                <th>Pendidikan Ayah</th>
-                                <th>Pekerjaan Ayah</th>
-                                <th>Nama ibu</th>
-                                <th>Pendidikan ibu</th>
-                                <th>Pekerjaan ibu</th>
-                                <th>Status murid</th>
                                 <th>Agama</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
                                   <a href="#">
                                       {{x.nis}}
@@ -61,70 +47,23 @@
                                     {{x.nisn}}
                                 </td>
                                 <td>
-                                    {{x.nama}}
+                                    {{x.nama_murid}}
                                 </td>
                                 <td>
                                     {{x.tempat_lahir}}
                                 </td>
                                 <td>
-                                    {{x.tanggal_lahir}}
+                                    {{x.tanggal_lahir | date: "yyyy-MM-dd"}}
                                 </td>
                                 <td>
                                     {{x.jenis_kelamin}}
-                                </td>
-                                <td>
-                                    {{x.hobi}}
-                                </td>
-                                <td>
-                                    {{x.cita_cita}}
-                                </td>
-                                <td>
-                                    {{x.jumlah_saudara}}
-                                </td>
-                                <td>
-                                    {{x.alamat}}
-                                </td>
-                                <td>
-                                    {{x.provinsi}}
-                                </td>
-                                <td>
-                                    {{x.kabkot}}
-                                </td>
-                                <td>
-                                    {{x.kecamatan}}
-                                </td>
-                                <td>
-                                    {{x.kode_pos}}
-                                </td>
-                                <td>
-                                    {{x.no_kk}}
-                                </td>
-                                <td>
-                                    {{x.nama_ayah}}
-                                </td>
-                                <td>
-                                    {{x.id_pendidikan_ayah}}
-                                </td>
-                                <td>
-                                    {{x.id_pekerjaan_ayah}}
-                                </td>
-                                <td>
-                                    {{x.nama_ibu}}
-                                </td>
-                                <td>
-                                    {{x.id_pendidikan_ibu}}
-                                </td>
-                                <td>
-                                    {{x.id_pekerjaan_ibu}}
-                                </td>
-                                <td>
-                                    {{x.status_murid}}
                                 </td>
                                 <td>
                                     {{x.agama}}
                                 </td>
 
                                 <td class="text-center">
+                                    <a ui-sref="master.murid.detail({id_murid:x.id_murid})" class="btn btn-white btn-xs">View</a>
                                     <a ui-sref="master.murid.edit({id_murid:x.id_murid})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_murid)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>

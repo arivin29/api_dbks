@@ -1874,7 +1874,8 @@ app.controller('master.absen', function truncateCtrl($scope,$state,$stateParams,
 });
 
 app.controller('master.absen.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
+    
+    $scope.absen = {};
     myHelp.getDetail('/master/absen/create')
         .then(function(respons){
             $scope.master = respons.data;
@@ -1896,14 +1897,21 @@ app.controller('master.absen.add', function truncateCtrl($scope,$state,$statePar
                     errorView("error paja tu");
                 });
 
-
     };
+
+    $scope.selectParent = function(parent,keyword)
+    {
+        console.log(parent);
+        $scope.absen.parent = parent;
+        $scope.keyword=keyword;
+        colosePopup();
+    }
 
 });
 
 app.controller('master.absen.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.absen = {};
+    $scope.absen ={};
     myHelp.getParam('/master/absen/' + $stateParams.id_m_absen +'/edit')
         .then(function(respons){
             $scope.absen = respons.data;
@@ -1919,7 +1927,6 @@ app.controller('master.absen.edit', function truncateCtrl($scope,$state,$statePa
     $scope.submitForm = function() {
         var Param = clearObj($scope.absen);
 
-
         myHelp.putParam('/master/absen/'+ $stateParams.id_m_absen, Param)
             .then(function mySuccesresponse()
                 {
@@ -1932,8 +1939,15 @@ app.controller('master.absen.edit', function truncateCtrl($scope,$state,$statePa
                     errorView("error paja tu");
                 });
 
-
     };
+
+    $scope.selectParent = function(parent,keyword)
+    {
+        console.log(parent);
+        $scope.absen.parent = parent;
+        $scope.keyword=keyword;
+        colosePopup();
+    }
 
 });
 
@@ -2213,6 +2227,17 @@ app.controller('master.muridkelas.edit', function truncateCtrl($scope,$state,$st
 
 });
 
+// Detail Muridkelas
+app.controller('master.muridkelas.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.muridkelas = {};
+    myHelp.getDetail('/master/muridkelas/' + $stateParams.id_murid_kelas)
+        .then(function(respons){
+            $scope.muridkelas = respons.data;
+            $scope.param.title=$scope.muridkelas.keyword;
+        });
+});
+
 /*----------------------------------------------------------------------------------------------
  Murid
  /*----------------------------------------------------------------------------------------------*/
@@ -2303,6 +2328,17 @@ app.controller('master.murid.edit', function truncateCtrl($scope,$state,$statePa
 
     };
 
+});
+
+// Detail Murid
+app.controller('master.murid.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.murid = {};
+    myHelp.getDetail('/master/murid/' + $stateParams.id_murid)
+        .then(function(respons){
+            $scope.murid = respons.data;
+            $scope.param.title=$scope.murid.keyword;
+        });
 });
 
 /*----------------------------------------------------------------------------------------------
@@ -2487,6 +2523,17 @@ app.controller('master.guru.edit', function truncateCtrl($scope,$state,$statePar
 
     };
 
+});
+
+// Detail Guru
+app.controller('master.guru.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.guru = {};
+    myHelp.getDetail('/master/guru/' + $stateParams.id_guru)
+        .then(function(respons){
+            $scope.guru = respons.data;
+            $scope.param.title=$scope.guru.keyword;
+        });
 });
 
 /*----------------------------------------------------------------------------------------------

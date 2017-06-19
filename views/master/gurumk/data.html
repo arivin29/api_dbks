@@ -24,24 +24,26 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th>ID mata pelajaran</th>
-                                <th>ID guru</th>
+                                <th width="2px">No</th>
+                                <th>Mata pelajaran</th>
+                                <th>Nama guru</th>
                                 <th>Jam ngajar</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
                                     <a href="#">
-                                        {{x.id_mata_pelajaran}}
+                                        {{x.mata_pelajaran}}
                                     </a>
                                 </td>
                                 <td>
-                                    {{x.id_guru}}
+                                    {{x.nama_guru}}
                                 </td>
                                 <td>
-                                    jam {{x.jam_ngajar}}
+                                    jam {{x.jam_ngajar | date: "HH:mm:ss"}}
                                 </td>
                                 <td class="text-center">
                                     <a ui-sref="master.gurumk.edit({id_guru_mk:x.id_guru_mk})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>

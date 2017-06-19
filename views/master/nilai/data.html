@@ -24,11 +24,11 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
+                                <th width="2px">No</th>
                                 <th>ID Gurumk</th>
                                 <th>ID Jenis nilai</th>
-                                <th>ID Murid</th>
+                                <th>Nama murid</th>
                                 <th>Nilai</th>
-                                <th>ID User</th>
                                 <th>Rumus</th>
                                 <th>Nilai akhir</th>
                                 <th>SMT</th>
@@ -37,30 +37,28 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
                                   <a href="#">
                                       {{x.id_guru_mk}}
                                   </a>
                                 </td>
                                 <td>
-                                    {{x.id_jenis_nilai}}
+                                    {{x.jenis}} point
                                 </td>
                                 <td>
                                     <a href="#">
-                                        {{x.id_murid}}
+                                        {{x.nama_murid}}
                                     </a>
                                 </td>
                                 <td>
-                                    {{x.nilai}}
-                                </td>
-                                <td>
-                                    {{x.id_user}}
+                                    {{x.nilai | number}} point
                                 </td>
                                 <td>
                                     {{x.rumus}}
                                 </td>
                                 <td>
-                                    {{x.nilai_akhir}}
+                                    {{x.nilai_akhir | number}} point
                                 </td>
                                 <td>
                                     {{x.smt}}

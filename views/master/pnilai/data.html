@@ -24,6 +24,7 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
+                                <th width="2px">No</th>
                                 <th>ID Gurumk</th>
                                 <th>Kelas</th>
                                 <th>Batas remedial</th>
@@ -35,6 +36,7 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
                                   <a href="#">
                                       {{x.id_guru_mk}}
@@ -44,10 +46,10 @@
                                     {{x.kelas}}
                                 </td>
                                 <td>
-                                        {{x.batas_remedial}}
+                                        {{x.batas_remedial | number}} point
                                 </td>
                                 <td>
-                                    {{x.persentase}}
+                                    {{x.persentase | number}} point
                                 </td>
                                 <td>
                                     {{x.id_jenis_nilai}}

@@ -24,43 +24,45 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
+                                <th width="2px">No</th>
                                 <th>Tanggal rekap</th>
                                 <th>Tanggal absen</th>
                                 <th>Masuk</th>
                                 <th>Keluar</th>
                                 <th>Lama disekolah</th>
                                 <th>Telat</th>
-                                <th>ID murid</th>
-                                <th>ID guru</th>
+                                <th>Nama murid</th>
+                                <th>Nama guru</th>
                                 <th>Reports</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
-                                      {{x.tanggal_rekap}}
+                                      {{x.tanggal_rekap | date: "yyyy-MM-dd"}}
                                 </td>
                                 <td>
-                                      {{x.tanggal_absen}}
+                                      {{x.tanggal_absen | date: "yyyy-MM-dd"}}
                                 </td>
                                 <td>
-                                      jam {{x.masuk}}
+                                      jam {{x.masuk | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                      jam {{x.keluar}}
+                                      jam {{x.keluar | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                    {{x.lama_disekolah}} jam
+                                    {{x.lama_disekolah | number}} jam
                                 </td>
                                 <td>
-                                    {{x.telat}} menit
+                                    {{x.telat | number}} menit
                                 </td>
                                 <td>
-                                    {{x.id_murid}}
+                                    {{x.nama_murid}}
                                 </td>
                                 <td>
-                                    {{x.id_guru}}
+                                    {{x.nama_guru}}
                                 </td>
                                 <td>
                                     {{x.report}}

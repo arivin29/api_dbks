@@ -459,12 +459,6 @@ function configMaster($stateProvider) {
         data: { pageTitle: 'pendidikan' },
         controller:"master.pendidikan"
     })
-    .state('master.pendidikan.detail', {
-        url: "/detail/:id_pendidikan",
-        templateUrl: "views/master/pendidikan/data.detail.html",
-        data: { pageTitle: 'pendidikan' },
-        controller:"master.pendidikan.detail"
-    })
     .state('master.pendidikan.add', {
         url: "/create",
         templateUrl: "views/master/pendidikan/add.html",
@@ -487,12 +481,6 @@ function configMaster($stateProvider) {
         templateUrl: "views/master/pekerjaan/data.html",
         data: { pageTitle: 'pekerjaan' },
         controller:"master.pekerjaan"
-    })
-    .state('master.pekerjaan.detail', {
-        url: "/detail/:id_pekerjaan",
-        templateUrl: "views/master/pekerjaan/data.detail.html",
-        data: { pageTitle: 'pekerjaan' },
-        controller:"master.pekerjaan.detail"
     })
     .state('master.pekerjaan.add', {
         url: "/create",
@@ -517,12 +505,6 @@ function configMaster($stateProvider) {
         data: { pageTitle: 'mapel' },
         controller:"master.mapel"
     })
-    .state('master.mapel.detail', {
-        url: "/detail/:id_mata_pelajaran",
-        templateUrl: "views/master/mapel/data.detail.html",
-        data: { pageTitle: 'mapel' },
-        controller:"master.mapel.detail"
-    })
     .state('master.mapel.add', {
         url: "/create",
         templateUrl: "views/master/mapel/add.html",
@@ -545,12 +527,6 @@ function configMaster($stateProvider) {
         templateUrl: "views/master/jn/data.html",
         data: { pageTitle: 'jn' },
         controller:"master.jn"
-    })
-    .state('master.jn.detail', {
-        url: "/detail/:id_jenis_nilai",
-        templateUrl: "views/master/jn/data.detail.html",
-        data: { pageTitle: 'jn' },
-        controller:"master.jn.detail"
     })
     .state('master.jn.add', {
         url: "/create",
@@ -575,12 +551,6 @@ function configMaster($stateProvider) {
         data: { pageTitle: 'absen' },
         controller:"master.absen"
     })
-    .state('master.absen.detail', {
-        url: "/detail/:id_m_absen",
-        templateUrl: "views/master/absen/data.detail.html",
-        data: { pageTitle: 'absen' },
-        controller:"master.absen.detail"
-    })
     .state('master.absen.add', {
         url: "/create",
         templateUrl: "views/master/absen/add.html",
@@ -596,19 +566,13 @@ function configMaster($stateProvider) {
     })    
 
     /*-----------------------------------------
-      Tnilai ~~~~~~~~~~~~~~~~Mulai koding
+      Pnilai ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
     .state('master.pnilai', {
         url: "/pnilai",
         templateUrl: "views/master/pnilai/data.html",
         data: { pageTitle: 'pnilai' },
         controller:"master.pnilai"
-    })
-    .state('master.pnilai.detail', {
-        url: "/detail/:id_pengaturan_nilai",
-        templateUrl: "views/master/pnilai/data.detail.html",
-        data: { pageTitle: 'pnilai' },
-        controller:"master.pnilai.detail"
     })
     .state('master.pnilai.add', {
         url: "/create",
@@ -632,12 +596,6 @@ function configMaster($stateProvider) {
         templateUrl: "views/master/nilai/data.html",
         data: { pageTitle: 'nilai' },
         controller:"master.nilai"
-    })
-    .state('master.nilai.detail', {
-        url: "/detail/:id_nilai",
-        templateUrl: "views/master/nilai/data.detail.html",
-        data: { pageTitle: 'nilai' },
-        controller:"master.nilai.detail"
     })
     .state('master.nilai.add', {
         url: "/create",
@@ -664,8 +622,8 @@ function configMaster($stateProvider) {
     })
     .state('master.muridkelas.detail', {
         url: "/detail/:id_murid_kelas",
-        templateUrl: "views/master/muridkelas/data.detail.html",
-        data: { pageTitle: 'muridkelas' },
+        templateUrl: "views/master/muridkelas/detail.html",
+        data: { pageTitle: 'detail' },
         controller:"master.muridkelas.detail"
     })
     .state('master.muridkelas.add', {
@@ -693,8 +651,8 @@ function configMaster($stateProvider) {
     })
     .state('master.murid.detail', {
         url: "/detail/:id_murid",
-        templateUrl: "views/master/murid/data.detail.html",
-        data: { pageTitle: 'murid' },
+        templateUrl: "views/master/murid/detail.html",
+        data: { pageTitle: 'detail' },
         controller:"master.murid.detail"
     })
     .state('master.murid.add', {
@@ -719,12 +677,6 @@ function configMaster($stateProvider) {
         templateUrl: "views/master/gurumk/data.html",
         data: { pageTitle: 'gurumk' },
         controller:"master.gurumk"
-    })
-    .state('master.gurumk.detail', {
-        url: "/detail/:id_guru_mk",
-        templateUrl: "views/master/gurumk/data.detail.html",
-        data: { pageTitle: 'gurumk' },
-        controller:"master.gurumk.detail"
     })
     .state('master.gurumk.add', {
         url: "/create",
@@ -751,8 +703,8 @@ function configMaster($stateProvider) {
     })
     .state('master.guru.detail', {
         url: "/detail/:id_guru",
-        templateUrl: "views/master/guru/data.detail.html",
-        data: { pageTitle: 'guru' },
+        templateUrl: "views/master/guru/detail.html",
+        data: { pageTitle: 'detail' },
         controller:"master.guru.detail"
     })
     .state('master.guru.add', {
@@ -778,19 +730,12 @@ function configMaster($stateProvider) {
         data: { pageTitle: 'buku' },
         controller:"master.buku"
     })
-    .state('master.buku.detail', {
-        url: "/detail/:id_buku",
-        templateUrl: "views/master/buku/data.detail.html",
-        data: { pageTitle: 'buku' },
-        controller:"master.buku.detail"
-    })
     .state('master.buku.add', {
         url: "/create",
         templateUrl: "views/master/buku/add.html",
         data: { pageTitle: 'buku' },
         controller:"master.buku.add"
     })
-
     .state('master.buku.edit', {
         url: "/edit/:id_buku",
         templateUrl: "views/master/buku/edit.html",
@@ -806,12 +751,6 @@ function configMaster($stateProvider) {
         templateUrl: "views/master/absentmt/data.html",
         data: { pageTitle: 'absentmt' },
         controller:"master.absentmt"
-    })
-    .state('master.absentmt.detail', {
-        url: "/detail/:id_tidak_masuk_tanggal",
-        templateUrl: "views/master/absentmt/data.detail.html",
-        data: { pageTitle: 'absentmt' },
-        controller:"master.absentmt.detail"
     })
     .state('master.absentmt.add', {
         url: "/create",
@@ -836,12 +775,6 @@ function configMaster($stateProvider) {
         data: { pageTitle: 'absentm' },
         controller:"master.absentm"
     })
-    .state('master.absentm.detail', {
-        url: "/detail/:id_tidak_masuk",
-        templateUrl: "views/master/absentm/data.detail.html",
-        data: { pageTitle: 'absentm' },
-        controller:"master.absentm.detail"
-    })
     .state('master.absentm.add', {
         url: "/create",
         templateUrl: "views/master/absentm/add.html",
@@ -865,12 +798,6 @@ function configMaster($stateProvider) {
         data: { pageTitle: 'absenrekap' },
         controller:"master.absenrekap"
     })
-    .state('master.absenrekap.detail', {
-        url: "/detail/:id_rekap_absen",
-        templateUrl: "views/master/absenrekap/data.detail.html",
-        data: { pageTitle: 'absenrekap' },
-        controller:"master.absenrekap.detail"
-    })
     .state('master.absenrekap.add', {
         url: "/create",
         templateUrl: "views/master/absenrekap/add.html",
@@ -893,12 +820,6 @@ function configMaster($stateProvider) {
         templateUrl: "views/master/tabsen/data.html",
         data: { pageTitle: 'tabsen' },
         controller:"master.tabsen"
-    })
-    .state('master.tabsen.detail', {
-        url: "/detail/:id_absen",
-        templateUrl: "views/master/tabsen/data.detail.html",
-        data: { pageTitle: 'tabsen' },
-        controller:"master.tabsen.detail"
     })
     .state('master.tabsen.add', {
         url: "/create",

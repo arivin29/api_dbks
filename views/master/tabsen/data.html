@@ -24,7 +24,8 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th>ID Murid</th>
+                                <th width="2px">No</th>
+                                <th>Nama murid</th>
                                 <th>Tanggal absen</th>
                                 <th>Type absen</th>
                                 <th>Tanggal upload</th>
@@ -34,19 +35,20 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
                                     <a href="#">
-                                        {{x.id_murid}}
+                                        {{x.nama_murid}}
                                     </a>
                                 </td>
                                 <td>
-                                    {{x.tanggal_absen}}
+                                    {{x.tanggal_absen | date: "yyyy-MM-dd"}}
                                 </td>
                                 <td>
                                     {{x.type_absen}}
                                 </td>
                                 <td>
-                                    {{x.tanggal_upload}}
+                                    {{x.tanggal_upload | date: "yyyy-MM-dd"}}
                                 </td>
                                 <td>
                                     {{x.catatan}}

@@ -15,20 +15,23 @@
 
 
                     <div class="form-group">
-                        <label>ID Murid</label>
-                        <input placeholder="Enter id murid" ng-model="absen.id_murid" class="form-control" type="number">
+                        <label>Murid</label>
+                        <select required class="form-control " select2 ng-model="absen.id_murid"
+                            ng-options="x.id_murid*1 as x.nama_murid for x in master.murid" >
+                                <option value="">-- please choose --</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Jam masuk</label>
-                        <input placeholder="Enter jam masuk" ng-model="absen.jam_masuk" class="form-control" type="number">
+                        <input required placeholder="Enter jam masuk" ng-model="absen.jam_masuk" class="form-control" type="time">
                     </div>
                     <div class="form-group">
                         <label>Jam keluar</label>
-                        <input placeholder="Enter jam keluar" class="form-control" ng-model="absen.jam_keluar" type="number">
+                        <input required placeholder="Enter jam keluar" class="form-control" ng-model="absen.jam_keluar" type="time">
                     </div>
                     <div class="form-group">
                         <label>Lama disekolah</label>
-                        <input placeholder="Enter lama disekolah" class="form-control" ng-model="absen.lama_disekolah" type="number">
+                        <input required placeholder="Enter lama disekolah" class="form-control" ng-model="absen.lama_disekolah" type="number">
                     </div>
 
 
@@ -37,15 +40,15 @@
 
                     <div class="form-group">
                         <label>Toleransi telat</label>
-                        <input placeholder="Enter tolensi telat" class="form-control" ng-model="absen.toleransi_telat" type="number">
+                        <input required placeholder="Enter tolensi telat" class="form-control" ng-model="absen.toleransi_telat" type="number">
                     </div>
                     <div class="form-group">
                         <label>Max cuti</label>
-                        <input placeholder="Enter max cuti" class="form-control" ng-model="absen.max_cuti" type="number">
+                        <input required placeholder="Enter max cuti" class="form-control" ng-model="absen.max_cuti" type="number">
                     </div>
                     <div class="form-group">
                         <label>Max izin</label>
-                        <input placeholder="Enter max izin" class="form-control" ng-model="absen.max_izin" type="number">
+                        <input required placeholder="Enter max izin" class="form-control" ng-model="absen.max_izin" type="number">
                     </div>
                 </div>
 

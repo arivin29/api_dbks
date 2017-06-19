@@ -24,7 +24,8 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th>ID Murid</th>
+                                <th width="2px">No</th>
+                                <th>Murid</th>
                                 <th>Jam masuk</th>
                                 <th>Jam keluar</th>
                                 <th>Lama disekolah</th>
@@ -36,22 +37,23 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
+                                <td>{{ $index +1}}</td>
                                 <td>
                                     <a href="#">
-                                        {{x.id_murid}}
+                                        {{x.nama_murid}}
                                     </a>
                                 </td>
                                 <td>
-                                    {{x.jam_masuk}}
+                                    jam {{x.jam_masuk | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                        {{x.jam_keluar}}
+                                    jam {{x.jam_keluar | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                    {{x.lama_disekolah}}
+                                    {{x.lama_disekolah | number}} menit
                                 </td>
                                 <td>
-                                    {{x.toleransi_telat}}
+                                    {{x.toleransi_telat | number}} menit
                                 </td>
                                 <td>
                                     {{x.max_cuti}}
