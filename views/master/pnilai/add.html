@@ -35,8 +35,11 @@
                 <div class="col-sm-6">
 
                     <div class="form-group">
-                        <label>ID Jenis Nilai</label>
-                        <input required placeholder="Enter id jenis nilai" class="form-control" ng-model="pnilai.id_jenis_nilai" type="number">
+                    <label>Jenis nilai</label>
+                    <select required class="form-control " required select2 ng-model="pnilai.id_jenis_nilai"
+                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in master.jn" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>IF Remedial</label>

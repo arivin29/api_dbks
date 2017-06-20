@@ -2073,6 +2073,7 @@ app.controller('master.nilai', function truncateCtrl($scope,$state,$stateParams,
 
 app.controller('master.nilai.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
+    $scope.nilai = {};
     myHelp.getDetail('/master/nilai/create')
         .then(function(respons){
             $scope.master = respons.data;
@@ -2096,6 +2097,14 @@ app.controller('master.nilai.add', function truncateCtrl($scope,$state,$statePar
 
 
     };
+
+    $scope.selectParent = function(parent,keyword)
+    {
+        console.log(parent);
+        $scope.nilai.parent = parent;
+        $scope.keyword=keyword;
+        colosePopup();
+    }
 
 });
 

@@ -14,12 +14,18 @@
             <div class="col-sm-6 b-r">
 
                 <div class="form-group">
-                    <label>ID mata pelajaran</label>
-                    <input required placeholder="Enter id mapel" ng-model="gurumk.id_mata_pelajaran" class="form-control" type="text">
-                </div>
-                 <div class="form-group">
-                    <label>ID guru</label>
-                    <input required placeholder="Enter id guru" ng-model="gurumk.id_guru" class="form-control" type="text">
+                    <label>Mata pelajaran</label>
+                    <select required class="form-control " required select2 ng-model="gurumk.id_mata_pelajaran"
+                            ng-options="x.id_mata_pelajaran*1 as x.mata_pelajaran for x in master.mapel" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                <div class="form-group">
+                    <label>Nama guru</label>
+                    <select required class="form-control " required select2 ng-model="gurumk.id_guru"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in master.guru" >
+                        <option value="">-- please choose --</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Jam ngajar</label>

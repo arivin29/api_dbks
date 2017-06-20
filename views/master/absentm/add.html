@@ -22,8 +22,11 @@
                         <input required placeholder="Enter" ng-model="absentm.tanggal_surat" class="form-control" type="date">
                     </div>
                     <div class="form-group">
-                        <label>ID Murid</label>
-                        <input required placeholder="Enter id murid" ng-model="absentm.id_murid" class="form-control" type="text">
+                    <label>Nama murid</label>
+                    <select required class="form-control " required select2 ng-model="absentm.id_murid"
+                            ng-options="x.id_murid*1 as x.nama_murid for x in master.murid" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>

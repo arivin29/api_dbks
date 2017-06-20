@@ -12,14 +12,12 @@
         <div class="ibox-content">
             <div class="row">
                 <div class="col-sm-6 b-r">
-
-
                     <div class="form-group">
-                        <label>Murid</label>
-                        <select required class="form-control " select2 ng-model="absen.id_murid"
+                    <label>Nama murid</label>
+                    <select required class="form-control " required select2 ng-model="absen.id_murid"
                             ng-options="x.id_murid*1 as x.nama_murid for x in master.murid" >
-                                <option value="">-- please choose --</option>
-                        </select>
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Jam masuk</label>
@@ -44,11 +42,11 @@
                     </div>
                     <div class="form-group">
                         <label>Max cuti</label>
-                        <input required placeholder="Enter max cuti" class="form-control" ng-model="absen.max_cuti" type="number">
+                        <input placeholder="Enter max cuti" class="form-control" ng-model="absen.max_cuti" type="number">
                     </div>
                     <div class="form-group">
                         <label>Max izin</label>
-                        <input required placeholder="Enter max izin" class="form-control" ng-model="absen.max_izin" type="number">
+                        <input placeholder="Enter max izin" class="form-control" ng-model="absen.max_izin" type="number">
                     </div>
                 </div>
 

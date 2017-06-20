@@ -42,12 +42,18 @@
                         <input required placeholder="Enter telat" class="form-control" ng-model="absenrekap.telat" type="text">
                     </div>
                     <div class="form-group">
-                        <label>ID murid</label>
-                        <input required placeholder="Enter id murid" class="form-control" ng-model="absenrekap.id_murid"  type="text">
+                    <label>Nama murid</label>
+                    <select required class="form-control " required select2 ng-model="absenrekap.id_murid"
+                            ng-options="x.id_murid*1 as x.nama_murid for x in master.murid" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>ID guru</label>
-                        <input required placeholder="Enter id guru" class="form-control" ng-model="absenrekap.id_guru" type="text">
+                    <label>Nama guru</label>
+                    <select required class="form-control " required select2 ng-model="absenrekap.id_guru"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in master.guru" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Report</label>
