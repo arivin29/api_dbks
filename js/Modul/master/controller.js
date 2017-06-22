@@ -1856,6 +1856,21 @@ app.controller('master.absen', function truncateCtrl($scope,$state,$stateParams,
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/absen',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/absen/' + id, {})
@@ -1962,6 +1977,21 @@ app.controller('master.pnilai', function truncateCtrl($scope,$state,$stateParams
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/pnilai',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/pnilai/' + id, {})
@@ -2053,6 +2083,21 @@ app.controller('master.nilai', function truncateCtrl($scope,$state,$stateParams,
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/nilai',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
 
     $scope.delete = function(id)
     {
@@ -2155,6 +2200,21 @@ app.controller('master.muridkelas', function truncateCtrl($scope,$state,$statePa
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/muridkelas',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/muridkelas/' + id, {})
@@ -2252,11 +2312,30 @@ app.controller('master.muridkelas.detail', function truncateCtrl($scope,$state,$
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
+    $scope.sortType     = 'name';
+    $scope.sortReverse  = false;
+    $scope.searchKeyword   = '';
+
     myHelp.getDetail('/master/murid')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/murid',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
 
     $scope.delete = function(id)
     {
@@ -2361,6 +2440,21 @@ app.controller('master.gurumk', function truncateCtrl($scope,$state,$stateParams
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/gurumk',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/gurumk/' + id, {})
@@ -2447,11 +2541,30 @@ app.controller('master.gurumk.edit', function truncateCtrl($scope,$state,$stateP
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.guru', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
+    $scope.sortType     = 'name';
+    $scope.sortReverse  = false;
+    $scope.searchKeyword   = '';
+
     myHelp.getDetail('/master/guru')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/guru',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
 
     $scope.delete = function(id)
     {
@@ -2555,6 +2668,21 @@ app.controller('master.buku', function truncateCtrl($scope,$state,$stateParams,m
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/buku',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
 
     $scope.delete = function(id)
     {
@@ -2740,6 +2868,21 @@ app.controller('master.absentm', function truncateCtrl($scope,$state,$stateParam
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/absentm',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/absentm/' + id, {})
@@ -2923,6 +3066,21 @@ app.controller('master.tabsen', function truncateCtrl($scope,$state,$stateParams
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/tabsen',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
 
     $scope.delete = function(id)
     {

@@ -99,24 +99,36 @@
                         <input required placeholder="Enter nama ayah" class="form-control" ng-model="murid.nama_ayah" type="text">
                     </div>
                     <div class="form-group">
-                        <label>ID Pendidikan ayah</label>
-                        <input required placeholder="Enter " class="form-control" ng-model="murid.id_pendidikan_ayah" type="text">
+                    <label>Pendidikan ayah</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pendidikan_ayah"
+                            ng-options="x.id_pendidikan*1 as x.pendidikan for x in master.pendidikan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>ID Pekerjaan ayah</label>
-                        <input required placeholder="Enter " class="form-control" ng-model="murid.id_pekerjaan_ayah" type="text">
+                    <label>Pekerjaan ayah</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pekerjaan_ayah"
+                            ng-options="x.id_pekerjaan*1 as x.pekerjaan for x in master.pekerjaan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Nama ibu</label>
                         <input required placeholder="Enter nama ibu" class="form-control" ng-model="murid.nama_ibu" type="text">
                     </div>
                     <div class="form-group">
-                        <label>ID Pendidikan ibu</label>
-                        <input required placeholder="Enter " class="form-control" ng-model="murid.id_pendidikan_ibu" type="text">
+                    <label>Pendidikan ibu</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pendidikan_ibu"
+                            ng-options="x.id_pendidikan*1 as x.pendidikan for x in master.pendidikan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>ID Pekerjaan ibu</label>
-                        <input required placeholder="Enter " class="form-control" ng-model="murid.id_pekerjaan_ibu" type="text">
+                    <label>Pekerjaan ibu</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pekerjaan_ibu"
+                            ng-options="x.id_pekerjaan*1 as x.pekerjaan for x in master.pekerjaan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Status murid</label>

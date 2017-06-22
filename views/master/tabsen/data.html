@@ -19,7 +19,7 @@
                         <strong>Found {{datas.length}} issues.</strong>
 
                     </div>
-
+                    <input ng-model="searchKeyword" class="form-control" placeholder="Global search ...">
                     <div class="table-responsive">
                         <table class="table table-hover issue-tracker">
                             <thead>
@@ -34,21 +34,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas">
-                                <td>{{ $index +1}}</td>
+                            <tr ng-repeat="x in datas.data | filter: searchKeyword | limitTo:10">
                                 <td>
-                                    <a href="#">
-                                        {{x.nama_murid}}
-                                    </a>
+                                    {{ $index +1}}
                                 </td>
                                 <td>
-                                    {{x.tanggal_absen | date: "yyyy-MM-dd"}}
+                                    {{x.nama_murid}}
+                                </td>
+                                <td>
+                                    {{x.tanggal_absen | date: "yyyy/MM/dd"}}
                                 </td>
                                 <td>
                                     {{x.type_absen}}
                                 </td>
                                 <td>
-                                    {{x.tanggal_upload | date: "yyyy-MM-dd"}}
+                                    {{x.tanggal_upload | date: "yyyy/MM/dd"}}
                                 </td>
                                 <td>
                                     {{x.catatan}}
@@ -64,7 +64,15 @@
                     </div>
                 </div>
 
-
+                <div class="btn-group" ng-init="datas.current_page = datas.current_page+1">
+                    <button type="button" ng-show="datas.current_page*1 > 1 " ng-click="filter(datas.current_page*1 - 1)" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                    <button class="btn btn-white" ng-show="datas.current_page -2 > 0 " ng-click="filter(datas.current_page*1 - 2)">{{datas.current_page*1 -2 }}</button>
+                    <button class="btn btn-white" ng-show="datas.current_page -1 > 0 " ng-click="filter(datas.current_page*1 - 1)">{{datas.current_page*1 -1 }}</button>
+                    <button class="btn btn-white active">{{datas.current_page}}</button>
+                    <button class="btn btn-white" ng-if="(datas.current_page*1 +1) <= datas.last_page " ng-click="filter(datas.current_page*1 + 1)">{{datas.current_page*1 +1}}</button>
+                    <button class="btn btn-white" ng-if="datas.current_page*1 +2 <=  datas.last_page " ng-click="filter(datas.current_page*1 + 2)">{{datas.current_page*1 +2}}</button>
+                    <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
+                </div>
 
             </div>
         </div>

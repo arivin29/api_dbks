@@ -32,11 +32,11 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
-                                <td>{{ $index +1}}</td>
                                 <td>
-                                    <a href="#">
-                                        {{x.pendidikan}}
-                                    </a>
+                                    {{ $index +1}}
+                                </td>
+                                <td>
+                                    {{x.pendidikan}}
                                 </td>
                                 <td>
                                     {{x.level_pendidikan}}

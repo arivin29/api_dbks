@@ -19,44 +19,46 @@
                         <strong>Found {{datas.length}} issue(s).</strong>
 
                     </div>
-
+                    <input ng-model="searchKeyword" class="form-control" placeholder="Global search ...">
                     <div class="table-responsive">
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">No</th>
-                                <th>Tanggal rekap</th>
-                                <th>Tanggal absen</th>
-                                <th>Masuk</th>
-                                <th>Keluar</th>
+                                <th>Tgl rekap</th>
+                                <th>Tgl absen</th>
+                                <th>Masuk(jam)</th>
+                                <th>Keluar(jam)</th>
                                 <th>Lama disekolah</th>
-                                <th>Telat</th>
+                                <th>Telat(menit)</th>
                                 <th>Nama murid</th>
                                 <th>Nama guru</th>
-                                <th>Reports</th>
-                                <th class="text-center">Action</th>
+                                <th>Report</th>
+                                <th class="text-center" width="120">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas">
-                                <td>{{ $index +1}}</td>
+                            <tr ng-repeat="x in datas | filter: searchKeyword | limitTo:10">
                                 <td>
-                                      {{x.tanggal_rekap | date: "yyyy-MM-dd"}}
+                                    {{ $index +1}}
                                 </td>
                                 <td>
-                                      {{x.tanggal_absen | date: "yyyy-MM-dd"}}
+                                    {{x.tanggal_rekap | date: "yyyy/MM/dd"}}
                                 </td>
                                 <td>
-                                      jam {{x.masuk | date: "HH:mm:ss"}}
+                                    {{x.tanggal_absen | date: "yyyy/MM/dd"}}
                                 </td>
                                 <td>
-                                      jam {{x.keluar | date: "HH:mm:ss"}}
+                                    {{x.masuk | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                    {{x.lama_disekolah | number}} jam
+                                    {{x.keluar | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                    {{x.telat | number}} menit
+                                    {{x.lama_disekolah | number}}
+                                </td>
+                                <td>
+                                    {{x.telat | number}}
                                 </td>
                                 <td>
                                     {{x.nama_murid}}

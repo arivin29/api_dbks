@@ -14,12 +14,18 @@
 
                 <div class="ibox-content">
 
+                    <div class="alert alert-info">
+<!--                    Sort Type: {{ sortType }}                        
+                        Sort Reverse: {{ sortReverse }} -->
+                        Search : {{ searchKeyword }}
+                    </div>
+
                     <div class="m-b-lg">
 
                         <strong>Found {{datas.length}} issue(s).</strong>
-
+                        
                     </div>
-
+                    <input ng-model="searchKeyword" class="form-control" placeholder="Global search ...">
                     <div class="table-responsive">
                         <table class="table table-hover issue-tracker">
                             <thead>
@@ -27,7 +33,7 @@
                                 <th width="2px">No</th>
                                 <th>NIS</th>
                                 <th>NISN</th>
-                                <th>Nama murid</th>
+                                <th ng-click="sortType = 'nama_murid'">Nama murid <span class="caret"></span><span ng-show="sortType == 'nama_murid'"</span></th>
                                 <th>Tempat lahir</th>
                                 <th>Tanggal lahir</th>
                                 <th>Jenis kelamin</th>
@@ -36,12 +42,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas">
-                                <td>{{ $index +1}}</td>
+                            <tr ng-repeat="x in datas.data | orderBy:sortType:sortReverse | filter: searchKeyword | limitTo:10">
                                 <td>
-                                  <a href="#">
-                                      {{x.nis}}
-                                  </a>
+                                    {{ $index +1}}
+                                </td>
+                                <td>
+                                    {{x.nis}}
                                 </td>
                                 <td>
                                     {{x.nisn}}
@@ -53,7 +59,7 @@
                                     {{x.tempat_lahir}}
                                 </td>
                                 <td>
-                                    {{x.tanggal_lahir | date: "yyyy-MM-dd"}}
+                                    {{x.tanggal_lahir | date: "yyyy/MM/dd"}}
                                 </td>
                                 <td>
                                     {{x.jenis_kelamin}}
@@ -75,9 +81,17 @@
                     </div>
                 </div>
 
+                <div class="btn-group" ng-init="datas.current_page = datas.current_page+1">
+                    <button type="button" ng-show="datas.current_page*1 > 1 " ng-click="filter(datas.current_page*1 - 1)" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                    <button class="btn btn-white" ng-show="datas.current_page -2 > 0 " ng-click="filter(datas.current_page*1 - 2)">{{datas.current_page*1 -2 }}</button>
+                    <button class="btn btn-white" ng-show="datas.current_page -1 > 0 " ng-click="filter(datas.current_page*1 - 1)">{{datas.current_page*1 -1 }}</button>
+                    <button class="btn btn-white active">{{datas.current_page}}</button>
+                    <button class="btn btn-white" ng-if="(datas.current_page*1 +1) <= datas.last_page " ng-click="filter(datas.current_page*1 + 1)">{{datas.current_page*1 +1}}</button>
+                    <button class="btn btn-white" ng-if="datas.current_page*1 +2 <=  datas.last_page " ng-click="filter(datas.current_page*1 + 2)">{{datas.current_page*1 +2}}</button>
+                    <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
+                </div>
 
 
-            </div>
         </div>
     </div>
 

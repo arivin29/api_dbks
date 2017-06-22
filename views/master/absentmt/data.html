@@ -31,11 +31,11 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas">
-                                <td>{{ $index +1}}</td>
                                 <td>
-                                    <a href="#">
-                                        {{x.tanggal_tidak_masuk | date: "yyyy-MM-dd"}}
-                                    </a>
+                                    {{ $index +1}}
+                                </td>
+                                <td>
+                                    {{x.tanggal_tidak_masuk | date: "yyyy/MM/dd"}}
                                 </td>
                                 <td class="text-center">
                                     <a ui-sref="master.absentmt.edit({id_tidak_masuk_tanggal:x.id_tidak_masuk_tanggal})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
