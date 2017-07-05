@@ -1488,6 +1488,21 @@ app.controller('master.pendidikan', function truncateCtrl($scope,$state,$statePa
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/pendidikan',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/pendidikan/' + id, {})
@@ -1579,6 +1594,21 @@ app.controller('master.pekerjaan', function truncateCtrl($scope,$state,$statePar
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/pekerjaan',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
 
     $scope.delete = function(id)
     {
@@ -1672,6 +1702,21 @@ app.controller('master.jn', function truncateCtrl($scope,$state,$stateParams,myH
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/jn',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/jn/' + id, {})
@@ -1760,9 +1805,15 @@ app.controller('master.mapel', function truncateCtrl($scope,$state,$stateParams,
 
     myHelp.getDetail('/master/mapel')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -1852,24 +1903,15 @@ app.controller('master.absen', function truncateCtrl($scope,$state,$stateParams,
 
     myHelp.getDetail('/master/absen')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/absen',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2080,24 +2122,15 @@ app.controller('master.nilai', function truncateCtrl($scope,$state,$stateParams,
 
     myHelp.getDetail('/master/nilai')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/nilai',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2196,24 +2229,15 @@ app.controller('master.muridkelas', function truncateCtrl($scope,$state,$statePa
 
     myHelp.getDetail('/master/muridkelas')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/muridkelas',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2311,31 +2335,18 @@ app.controller('master.muridkelas.detail', function truncateCtrl($scope,$state,$
  Murid
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.sortType     = 'name';
-    $scope.sortReverse  = false;
-    $scope.searchKeyword   = '';
-
+        
     myHelp.getDetail('/master/murid')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/murid',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2436,24 +2447,15 @@ app.controller('master.gurumk', function truncateCtrl($scope,$state,$stateParams
 
     myHelp.getDetail('/master/gurumk')
         .then(function(respons){
+             $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/gurumk',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2541,30 +2543,17 @@ app.controller('master.gurumk.edit', function truncateCtrl($scope,$state,$stateP
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.guru', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.sortType     = 'name';
-    $scope.sortReverse  = false;
-    $scope.searchKeyword   = '';
-
     myHelp.getDetail('/master/guru')
         .then(function(respons){
+            $scope.entryLimit = 1; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/guru',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2665,24 +2654,15 @@ app.controller('master.buku', function truncateCtrl($scope,$state,$stateParams,m
 
     myHelp.getDetail('/master/buku')
         .then(function(respons){
+            $scope.entryLimit = 10;
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/buku',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2776,6 +2756,21 @@ app.controller('master.absentmt', function truncateCtrl($scope,$state,$statePara
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/absentmt',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
         myHelp.deleteParam('/master/absentmt/' + id, {})
@@ -2864,24 +2859,15 @@ app.controller('master.absentm', function truncateCtrl($scope,$state,$stateParam
 
     myHelp.getDetail('/master/absentm')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/absentm',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -2971,9 +2957,15 @@ app.controller('master.absenrekap', function truncateCtrl($scope,$state,$statePa
 
     myHelp.getDetail('/master/absenrekap')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
+
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -3063,24 +3055,15 @@ app.controller('master.tabsen', function truncateCtrl($scope,$state,$stateParams
 
     myHelp.getDetail('/master/tabsen')
         .then(function(respons){
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/tabsen',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
 
     $scope.delete = function(id)
     {
@@ -3151,6 +3134,104 @@ app.controller('master.tabsen.edit', function truncateCtrl($scope,$state,$stateP
                 {
                     berhasilView();
                     $state.go("master.tabsen",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
+    };
+
+});
+
+/*----------------------------------------------------------------------------------------------
+ Jurusan
+ /*----------------------------------------------------------------------------------------------*/
+app.controller('master.jurusan', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/master/jurusan')
+        .then(function(respons){
+            $scope.entryLimit = 1; 
+            $scope.datas = respons.data;
+            debugData(respons);
+        });
+
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
+
+    $scope.delete = function(id)
+    {
+        myHelp.deleteParam('/master/jurusan/' + id, {})
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("master.jurusan",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("gagal hapus, data tidak ditemukan");
+                });
+    }
+
+});
+
+app.controller('master.jurusan.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/master/jurusan/create')
+        .then(function(respons){
+            $scope.master = respons.data;
+            debugData(respons);
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.jurusan);
+
+        myHelp.postParam('/master/jurusan', Param)
+            .then(function jurusan()
+                {
+                    berhasilView();
+                    $state.go("master.jurusan",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
+    };
+
+});
+
+app.controller('master.jurusan.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.jurusan = {};
+    myHelp.getParam('/master/jurusan/' + $stateParams.id_jurusan +'/edit')
+        .then(function(respons){
+            $scope.jurusan = respons.data;
+
+            //jiko ado master
+            myHelp.getDetail('/master/jurusan/create')
+                .then(function(respons){
+                    $scope.master = respons.data;
+                    debugData(respons);
+                });
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.jurusan);
+
+
+        myHelp.putParam('/master/jurusan/'+ $stateParams.id_jurusan, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("master.jurusan",{}, { reload: true })
 
                 }
                 , function myError()

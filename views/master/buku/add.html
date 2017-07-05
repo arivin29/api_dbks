@@ -19,8 +19,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Jurusan</label>
-                        <input required placeholder="Enter jurusan" ng-model="buku.jurusan" class="form-control" type="text">
+                    <label>Jurusan</label>
+                    <select required class="form-control " required select2 ng-model="buku.id_jurusan"
+                            ng-options="x.id_jurusan*1 as x.jurusan for x in master.jurusan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Kelas paralel</label>
@@ -32,6 +35,10 @@
                             ng-options="x.id_guru*1 as x.nama_guru for x in master.guru" >
                         <option value="">-- please choose --</option>
                     </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Judul</label>
+                        <input required placeholder="Enter judul" class="form-control" ng-model="buku.judul" type="text">
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>

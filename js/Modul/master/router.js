@@ -835,6 +835,29 @@ function configMaster($stateProvider) {
         controller:"master.tabsen.edit"
     })
 
+    /*-----------------------------------------
+      Tabsen ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('master.jurusan', {
+        url: "/jurusan",
+        templateUrl: "views/master/jurusan/data.html",
+        data: { pageTitle: 'jurusan' },
+        controller:"master.jurusan"
+    })
+    .state('master.jurusan.add', {
+        url: "/create",
+        templateUrl: "views/master/jurusan/add.html",
+        data: { pageTitle: 'jurusan' },
+        controller:"master.jurusan.add"
+    })
+
+    .state('master.jurusan.edit', {
+        url: "/edit/:id_jurusan",
+        templateUrl: "views/master/jurusan/edit.html",
+        data: { pageTitle: 'jurusan' },
+        controller:"master.jurusan.edit"
+    })
+
 
 }
 

@@ -14,31 +14,44 @@
 
                 <div class="ibox-content">
 
-                    <div class="m-b-lg">
-
-                        <strong>Found {{datas.length}} issue(s).</strong>
-
+                    <div class="row">
+                        <div class="col-md-2">SizePage :
+                            <select ng-model="entryLimit" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">Filter :
+                            <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total murid</h5>
+                        </div>
                     </div>
-                    <input ng-model="searchKeyword" class="form-control" placeholder="Global search ...">
+                    <br/>
+
                     <div class="table-responsive">
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">No</th>
-                                <th>Tgl rekap</th>
-                                <th>Tgl absen</th>
+                                <th ng-click="sort_by('tanggal_rekap');" style="cursor: pointer;">Tgl lekap&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
+                                <th ng-click="sort_by('tanggal_absen');" style="cursor: pointer;">Tgl absen&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th>Masuk(jam)</th>
                                 <th>Keluar(jam)</th>
                                 <th>Lama disekolah</th>
                                 <th>Telat(menit)</th>
-                                <th>Nama murid</th>
-                                <th>Nama guru</th>
+                                <th ng-click="sort_by('nama_murid');" style="cursor: pointer;">Nama murid&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
+                                <th ng-click="sort_by('nama_guru');" style="cursor: pointer;">Nama guru&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th>Report</th>
                                 <th class="text-center" width="120">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas | filter: searchKeyword | limitTo:10">
+                            <tr ng-repeat="x in datas |filter:search|orderBy:predicate:reverse|limitTo:entryLimit"">
                                 <td>
                                     {{ $index +1}}
                                 </td>
@@ -55,7 +68,7 @@
                                     {{x.keluar | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                    {{x.lama_disekolah | number}}
+                                    {{x.lama_disekolah | number}} jam
                                 </td>
                                 <td>
                                     {{x.telat | number}}
@@ -81,8 +94,7 @@
                         </table>
                     </div>
                 </div>
-
-
+                
 
             </div>
         </div>
