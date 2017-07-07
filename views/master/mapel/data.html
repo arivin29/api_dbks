@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Mata Pelajaran</h5>
+                    <h5>Data Mata Pelajaran</h5>
                     <div class="ibox-tools">
                         <a ui-sref="master.mapel.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
@@ -17,10 +17,10 @@
                     <div class="row">
                         <div class="col-md-2">SizePage :
                             <select ng-model="entryLimit" class="form-control">
-                                <option>5</option>
                                 <option>10</option>
                                 <option>20</option>
-                                <option>50</option>
+                                <option>40</option>
+                                <option>80</option>
                                 <option>100</option>
                             </select>
                         </div>
@@ -28,7 +28,7 @@
                             <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
                         </div>
                         <div class="col-md-4">
-                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total murid</h5>
+                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total mata pelajaran</h5>
                         </div>
                     </div>
                     <br/>
@@ -36,7 +36,7 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th width="2px">No</th>
+                                <th width="2px">#No</th>
                                 <th ng-click="sort_by('mata_pelajaran');" style="cursor: pointer;">Mapel&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th>Tingkat</th>
                                 <th>Jurusan</th>

@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Rekap absen</h5>
+                    <h5>Data Rekap Absen</h5>
                     <div class="ibox-tools">
                         <a ui-sref="master.absenrekap.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
@@ -17,18 +17,19 @@
                     <div class="row">
                         <div class="col-md-2">SizePage :
                             <select ng-model="entryLimit" class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                <option>10</option>
                                 <option>50</option>
                                 <option>100</option>
+                                <option>500</option>
+                                <option>1000</option>
+                                <option>5000</option>
                             </select>
                         </div>
                         <div class="col-md-6">Filter :
                             <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
                         </div>
                         <div class="col-md-4">
-                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total murid</h5>
+                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total data rekap absen</h5>
                         </div>
                     </div>
                     <br/>
@@ -37,7 +38,7 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th width="2px">No</th>
+                                <th width="2px">#No</th>
                                 <th ng-click="sort_by('tanggal_rekap');" style="cursor: pointer;">Tgl lekap&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th ng-click="sort_by('tanggal_absen');" style="cursor: pointer;">Tgl absen&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th>Masuk(jam)</th>

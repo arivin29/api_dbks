@@ -1,8 +1,8 @@
 <div class="ibox float-e-margins pop-kecil">
     <div class="ibox-title">
-        <h5>Edit Gurumk</h5>
+        <h5>Edit Guru mata pelajaran</h5>
         <div class="ibox-tools">
-            <a ng-click="backButton('master.gurumk')" class="close-link">
+            <a ng-click="backButton('master.gurump')" class="close-link">
                 <i class="fa fa-times"></i>
             </a>
         </div>
@@ -15,21 +15,21 @@
 
                 <div class="form-group">
                     <label>Mata pelajaran</label>
-                    <select required class="form-control " required select2 ng-model="gurumk.id_mata_pelajaran"
+                    <select required class="form-control " required select2 ng-model="gurump.id_mata_pelajaran"
                             ng-options="x.id_mata_pelajaran*1 as x.mata_pelajaran for x in master.mapel" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                 <div class="form-group">
                     <label>Nama guru</label>
-                    <select required class="form-control " required select2 ng-model="gurumk.id_guru"
+                    <select required class="form-control " required select2 ng-model="gurump.id_guru"
                             ng-options="x.id_guru*1 as x.nama_guru for x in master.guru" >
                         <option value="">-- please choose --</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Jam ngajar</label>
-                    <input required placeholder="Enter jam ngajar" ng-model="gurumk.jam_ngajar" class="form-control" type="time">
+                    <input required placeholder="Enter jam ngajar" ng-model="gurump.jam_ngajar" class="form-control" type="time">
                 </div>
 
             </div>

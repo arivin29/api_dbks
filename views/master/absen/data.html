@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Absen</h5>
+                    <h5>Data Absen</h5>
                     <div class="ibox-tools">
                         <a ui-sref="master.absen.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
@@ -17,18 +17,19 @@
                     <div class="row">
                         <div class="col-md-2">SizePage :
                             <select ng-model="entryLimit" class="form-control">
-                                <option>5</option>
                                 <option>10</option>
-                                <option>20</option>
+                                <option>30</option>
                                 <option>50</option>
                                 <option>100</option>
+                                <option>200</option>
+                                <option>500</option>
                             </select>
                         </div>
                         <div class="col-md-6">Filter :
                             <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
                         </div>
                         <div class="col-md-4">
-                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total murid</h5>
+                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total data absen</h5>
                         </div>
                     </div>
                     <br/>
@@ -36,7 +37,7 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th width="2px">No</th>
+                                <th width="2px">#No</th>
                                 <th ng-click="sort_by('nama_murid');" style="cursor: pointer;">Murid&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th>Jam masuk</th>
                                 <th>Jam keluar</th>
@@ -62,7 +63,7 @@
                                     jam {{x.jam_keluar | date: "HH:mm:ss"}}
                                 </td>
                                 <td>
-                                    {{x.lama_disekolah | number}} menit
+                                    {{x.lama_disekolah | number}} jam
                                 </td>
                                 <td>
                                     {{x.toleransi_telat | number}} menit
