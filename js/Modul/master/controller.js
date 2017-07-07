@@ -2545,7 +2545,7 @@ app.controller('master.guru', function truncateCtrl($scope,$state,$stateParams,m
 
     myHelp.getDetail('/master/guru')
         .then(function(respons){
-            $scope.entryLimit = 1; 
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
@@ -3153,7 +3153,7 @@ app.controller('master.jurusan', function truncateCtrl($scope,$state,$stateParam
 
     myHelp.getDetail('/master/jurusan')
         .then(function(respons){
-            $scope.entryLimit = 1; 
+            $scope.entryLimit = 10; 
             $scope.datas = respons.data;
             debugData(respons);
         });
@@ -3251,7 +3251,6 @@ app.controller('master.kelas', function truncateCtrl($scope,$state,$stateParams,
 
     myHelp.getDetail('/master/kelas')
         .then(function(respons){
-            $scope.entryLimit = 1; 
             $scope.datas = respons.data;
             debugData(respons);
         });
