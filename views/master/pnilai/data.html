@@ -16,16 +16,16 @@
 
                     <div class="m-b-lg">
 
-                        <strong>Found {{datas.length}} issue(s).</strong>
+                        <strong>Found {{datas.data.length}} issue(s).</strong>
 
                     </div>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="table-scroll" full-scroll="">
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th>ID Gurump</th>
+                                <th>Gurump</th>
                                 <th>Kelas</th>
                                 <th>Batas remedial</th>
                                 <th>Persentase</th>
@@ -52,7 +52,7 @@
                                     {{x.persentase | number}} point
                                 </td>
                                 <td>
-                                    {{x.jenis}} point
+                                    {{x.jenis}}
                                 </td>
                                 <td>
                                     {{x.if_remedial}}
@@ -86,3 +86,8 @@
 
 
 </div>
+<script>
+    setTimeout(function(){
+        tableScroll()
+    })
+</script>

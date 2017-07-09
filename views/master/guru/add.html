@@ -51,8 +51,15 @@
                         <input required placeholder="Enter nama ibu" class="form-control" ng-model="guru.nama_ibu" type="text">
                     </div>
                     <div class="form-group">
-                        <label>Status pegawai</label>
-                        <input required placeholder="Enter status pegawai" class="form-control" ng-model="guru.status_pegawai" type="text">
+                    <label>Status Pegawai</label>
+                    <select required class="form-control " required select2 ng-model="guru.status_pegawai">
+                        <option value="">-- please choose --</option>
+                        <option value="Umum">Umum</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Produktif">Produktif</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Golongan</label>
@@ -70,45 +77,43 @@
                         <label>TMK SK Berakhir</label>
                         <input required placeholder="Enter tmk sk berakhir" class="form-control" ng-model="guru.tmk_sk_berakhir" type="date">
                     </div>
+
+                </div>
+
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label>Alamat</label>
                         <input required placeholder="Enter alamat" class="form-control" ng-model="guru.alamat" type="text">
-                    </div>
-
-                </div>
-                <div class="col-sm-6">
+                    </div>                
                     <div class="form-group">
-                        <label>ID Provinsi</label>
-                        <input required placeholder="Enter id provinsi" class="form-control" ng-model="guru.id_prov" type="number">
-                    </div>
-                    <div class="form-group">
-                        <label>Provinsi</label>
-                        <input required placeholder="Enter provinsi" class="form-control" ng-model="guru.provinsi" type="text">
+                    <label>Provinsi</label>
+                    <select required class="form-control " required select2 ng-model="guru.id_provinsi"
+                            ng-options="x.id_provinsi*1 as x.provinsi for x in master.provinsi" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>ID Kabkot</label>
-                        <input required placeholder="Enter id kabkot" class="form-control" ng-model="guru.id_kabkot" type="number">
+                    <label>Kabupaten/Kota</label>
+                    <select required class="form-control " required select2 ng-model="guru.id_kabkot"
+                            ng-options="x.id_kabkot*1 as x.kabkot for x in master.kabkot" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>Kabkot</label>
-                        <input required placeholder="Enter kabkot" class="form-control" ng-model="guru.kabkot" type="text">
+                    <label>Kecamatan</label>
+                    <select required class="form-control " required select2 ng-model="guru.id_kec"
+                            ng-options="x.id_kec*1 as x.kecamatan for x in master.kecamatan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
-                    <div class="form-group">
-                        <label>ID Kecamatan</label>
-                        <input required placeholder="Enter id kecamatan" class="form-control" ng-model="guru.id_kec" type="number">
-                    </div>                    
-                    <div class="form-group">
-                        <label>Kecamatan</label>
-                        <input required placeholder="Enter kecamatan" class="form-control" ng-model="guru.kecamatan" type="text">
+<!--                    <div class="form-group">
+                    <label>Kelurahan</label>
+                    <select required class="form-control " required select2 ng-model="guru.id_kelurahan"
+                            ng-options="x.id_kelurahan*1 as x.kelurahan for x in master.kelurahan" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
-                    <div class="form-group">
-                        <label>ID Kelurahan</label>
-                        <input required placeholder="Enter id kelurahan" class="form-control" ng-model="guru.id_kel" type="number">
-                    </div>                    
-                    <div class="form-group">
-                        <label>Kelurahan</label>
-                        <input required placeholder="Enter kelurahan" class="form-control" ng-model="guru.kelurahan" type="text">
-                    </div>
+                    -->
                     <div class="form-group">
                         <label>No Hp</label>
                         <input required placeholder="Enter no hp" class="form-control" ng-model="guru.no_hp" type="text">
@@ -122,8 +127,21 @@
                         <input required placeholder="Enter kode pos" class="form-control" ng-model="guru.kode_pos" type="number">
                     </div>
                     <div class="form-group">
-                        <label>Status guru</label>
-                        <input required placeholder="Enter status guru" class="form-control" ng-model="guru.status_guru" type="text">
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Status guru<br>
+                        <small class="text-navy">Custom elements</small>
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="ON" ng-model="guru.status_guru"> ON </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="OFF" ng-model="guru.status_guru"> OFF </label>
+                        </div>
+
+                    </div>
+
                     </div>
 
                 </div>

@@ -1,0 +1,178 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Murid</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('murid.murid')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+
+                    <div class="form-group">
+                        <label>NIS</label>
+                        <input required placeholder="Enter nis" ng-model="murid.nis" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>NISN</label>
+                        <input required placeholder="Enter nisn" ng-model="murid.nisn" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Murid</label>
+                        <input required placeholder="Enter nama" ng-model="murid.nama_murid" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Tempat lahir</label>
+                        <input required placeholder="Enter tempat lahir" class="form-control" ng-model="murid.tempat_lahir" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal lahir</label>
+                        <input required placeholder="Enter " class="form-control" ng-model="murid.tanggal_lahir" type="date">
+                    </div>
+                    <div class="form-group">
+                    <label>Jenis kelamin</label>
+                    <select required class="form-control " required select2 ng-model="murid.jenis_kelamin">
+                        <option value="">-- please choose --</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hobi</label>
+                        <input required placeholder="Enter hobi" class="form-control" ng-model="murid.hobi" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Cita-cita</label>
+                        <input required placeholder="Enter cita cita" class="form-control" ng-model="murid.cita_cita" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah saudara</label>
+                        <input required placeholder="Enter jumlah saudara" class="form-control" ng-model="murid.jumlah_saudara" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input required placeholder="Enter alamat" class="form-control" ng-model="murid.alamat" type="text">
+                    </div>
+                    <div class="form-group">
+                    <label>Provinsi</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_provinsi"
+                            ng-options="x.id_provinsi*1 as x.provinsi for x in master.provinsi" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Kabupaten/Kota</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_kabkot"
+                            ng-options="x.id_kabkot*1 as x.kabkot for x in master.kabkot" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                    <label>Kecamatan</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_kec"
+                            ng-options="x.id_kec*1 as x.kecamatan for x in master.kecamatan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>        
+<!--                    <div class="form-group">
+                    <label>Kelurahan</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_kelurahan"
+                            ng-options="x.id_kelurahan*1 as x.kelurahan for x in master.kelurahan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    -->
+                    <div class="form-group">
+                        <label>Kode pos</label>
+                        <input required placeholder="Enter kode pos" class="form-control" ng-model="murid.kode_pos" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>NO KK</label>
+                        <input required placeholder="Enter no kk" class="form-control" ng-model="murid.no_kk" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Nama ayah</label>
+                        <input required placeholder="Enter nama ayah" class="form-control" ng-model="murid.nama_ayah" type="text">
+                    </div>
+                    <div class="form-group">
+                    <label>Pendidikan ayah</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pendidikan_ayah"
+                            ng-options="x.id_pendidikan*1 as x.pendidikan for x in master.pendidikan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Pekerjaan ayah</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pekerjaan_ayah"
+                            ng-options="x.id_pekerjaan*1 as x.pekerjaan for x in master.pekerjaan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama ibu</label>
+                        <input required placeholder="Enter nama ibu" class="form-control" ng-model="murid.nama_ibu" type="text">
+                    </div>
+                    <div class="form-group">
+                    <label>Pendidikan ibu</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pendidikan_ibu"
+                            ng-options="x.id_pendidikan*1 as x.pendidikan for x in master.pendidikan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Pekerjaan ibu</label>
+                    <select required class="form-control " required select2 ng-model="murid.id_pekerjaan_ibu"
+                            ng-options="x.id_pekerjaan*1 as x.pekerjaan for x in master.pekerjaan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Agama</label>
+                        <input required placeholder="Enter agama" class="form-control" ng-model="murid.agama" type="text">
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Status murid<br>
+                        <small class="text-navy">Custom elements</small>
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="ON" ng-model="murid.status_murid"> ON </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="OFF" ng-model="murid.status_murid"> OFF </label>
+                        </div>
+
+                    </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -14,34 +14,20 @@
 
                 <div class="ibox-content">
 
-                    <div class="row">
-                        <div class="col-md-2">SizePage :
-                            <select ng-model="entryLimit" class="form-control">
-                                <option>10</option>
-                                <option>50</option>
-                                <option>100</option>
-                                <option>500</option>
-                                <option>1000</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">Filter :
-                            <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
-                        </div>
-                        <div class="col-md-4">
-                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total data buku</h5>
-                        </div>
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.data.length}} issues.</strong>
+
                     </div>
-                    <br/>
                     <div class="table-responsive">
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th>Tingkat</th>
                                 <th ng-click="sort_by('id_jurusan');" style="cursor: pointer;">Jurusan&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th ng-click="sort_by('kelas_paralel');" style="cursor: pointer;">Kelas paralel&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
+                                <th ng-click="sort_by('id_kelas');" style="cursor: pointer;">Kelas&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th ng-click="sort_by('nama_guru');" style="cursor: pointer;">Nama guru&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th ng-click="sort_by('judul');" style="cursor: pointer;">Judul&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
+                                <th>Judul</th>
                                 <th>Keterangan</th>
                                 <th>Nama file</th>
                                 <th>Keyword</th>
@@ -50,18 +36,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas |filter:search|orderBy:predicate:reverse|limitTo:entryLimit">
+                            <tr ng-repeat="x in datas.data">
                                 <td>
                                     {{ $index +1}}
-                                </td>
-                                <td>
-                                    {{x.tingkat}}
                                 </td>
                                 <td>
                                     {{x.jurusan}}
                                 </td>
                                 <td>
-                                    {{x.kelas_paralel}}
+                                    {{x.kelas}}
                                 </td>
                                 <td>
                                     {{x.nama_guru}}
@@ -92,6 +75,16 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+
+                <div class="btn-group" ng-init="datas.current_page = datas.current_page+1">
+                    <button type="button" ng-show="datas.current_page*1 > 1 " ng-click="filter(datas.current_page*1 - 1)" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                    <button class="btn btn-white" ng-show="datas.current_page -2 > 0 " ng-click="filter(datas.current_page*1 - 2)">{{datas.current_page*1 -2 }}</button>
+                    <button class="btn btn-white" ng-show="datas.current_page -1 > 0 " ng-click="filter(datas.current_page*1 - 1)">{{datas.current_page*1 -1 }}</button>
+                    <button class="btn btn-white active">{{datas.current_page}}</button>
+                    <button class="btn btn-white" ng-if="(datas.current_page*1 +1) <= datas.last_page " ng-click="filter(datas.current_page*1 + 1)">{{datas.current_page*1 +1}}</button>
+                    <button class="btn btn-white" ng-if="datas.current_page*1 +2 <=  datas.last_page " ng-click="filter(datas.current_page*1 + 2)">{{datas.current_page*1 +2}}</button>
+                    <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
                 </div>
 
             </div>

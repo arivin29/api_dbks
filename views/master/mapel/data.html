@@ -14,39 +14,25 @@
 
                 <div class="ibox-content">
 
-                    <div class="row">
-                        <div class="col-md-2">SizePage :
-                            <select ng-model="entryLimit" class="form-control">
-                                <option>10</option>
-                                <option>20</option>
-                                <option>40</option>
-                                <option>80</option>
-                                <option>100</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">Filter :
-                            <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
-                        </div>
-                        <div class="col-md-4">
-                            <h5>Colum {{ entryLimit }} of {{ datas.length }} total mata pelajaran</h5>
-                        </div>
+                    <div class="m-b-lg">
+
+                        <strong>Found {{datas.data.length}} issues.</strong>
+
                     </div>
-                    <br/>
                     <div class="table-responsive">
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th ng-click="sort_by('mata_pelajaran');" style="cursor: pointer;">Mapel&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th>Tingkat</th>
+                                <th ng-click="sort_by('mata_pelajaran');" style="cursor: pointer;">Mata Pelajaran&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
                                 <th>Jurusan</th>
-                                <th>Kelas paralel</th>
-                                <th>Status mata pelajaran</th>
+                                <th>Kelas</th>
+                                <th>Status Mata Pelajaran</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas |filter:search|orderBy:predicate:reverse|limitTo:entryLimit">
+                            <tr ng-repeat="x in datas.data">
                                 <td>
                                     {{ $index +1}}
                                 </td>
@@ -54,16 +40,13 @@
                                     {{x.mata_pelajaran}}
                                 </td>
                                 <td>
-                                    {{x.tingkat}}
-                                </td>
-                                <td>
                                     {{x.jurusan}}
                                 </td>
                                 <td>
-                                    {{x.kelas_paralel}}
+                                    {{x.kelas}}
                                 </td>
                                 <td>
-                                    {{x.status_mata_pelajaran}}
+                                    <span class="label label-{{x.status_mata_pelajaran=='Aktif'?'primary':'warning'}}">{{x.status_mata_pelajaran}}</span>
                                 </td>
 
                                 <td class="text-center">
@@ -78,6 +61,15 @@
                     </div>
                 </div>
 
+                <div class="btn-group" ng-init="datas.current_page = datas.current_page+1">
+                    <button type="button" ng-show="datas.current_page*1 > 1 " ng-click="filter(datas.current_page*1 - 1)" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                    <button class="btn btn-white" ng-show="datas.current_page -2 > 0 " ng-click="filter(datas.current_page*1 - 2)">{{datas.current_page*1 -2 }}</button>
+                    <button class="btn btn-white" ng-show="datas.current_page -1 > 0 " ng-click="filter(datas.current_page*1 - 1)">{{datas.current_page*1 -1 }}</button>
+                    <button class="btn btn-white active">{{datas.current_page}}</button>
+                    <button class="btn btn-white" ng-if="(datas.current_page*1 +1) <= datas.last_page " ng-click="filter(datas.current_page*1 + 1)">{{datas.current_page*1 +1}}</button>
+                    <button class="btn btn-white" ng-if="datas.current_page*1 +2 <=  datas.last_page " ng-click="filter(datas.current_page*1 + 2)">{{datas.current_page*1 +2}}</button>
+                    <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
+                </div>
 
             </div>
         </div>

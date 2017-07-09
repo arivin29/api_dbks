@@ -19,8 +19,11 @@
                         <input required placeholder="Enter id guru mk" ng-model="pnilai.id_guru_mp" class="form-control" type="number">
                     </div>
                     <div class="form-group">
-                        <label>Kelas</label>
-                        <input required placeholder="Enter kelas" ng-model="pnilai.kelas" class="form-control" type="text">
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="pnilai.id_kelas"
+                            ng-options="x.id_kelas*1 as x.kelas for x in master.kelas" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Batas Remedial</label>

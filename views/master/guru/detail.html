@@ -74,14 +74,6 @@
                                     <td>:  {{ guru.nama_ibu }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Status pegawai</td>
-                                    <td>:  {{ guru.status_pegawai }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Golongan</td>
-                                    <td>:  {{ guru.golongan }}</td>
-                                </tr>
-                                <tr>
                                     <td>TMK SK CPNS</td>
                                     <td>:  {{ guru.tmk_sk_cpns }}</td>
                                 </tr>
@@ -104,52 +96,44 @@
                                     <td  width="60%">: {{ guru.alamat }}</td>
                                 </tr>
                                 <tr>
-                                    <td>ID provinsi</td>
-                                    <td> {{ guru.id_prov }}</td>
-                                </tr>
-                                <tr>
                                     <td>Provinsi</td>
-                                    <td> {{ guru.provinsi }}</td>
+                                    <td> {{ guru.provinsi.provinsi }}</td>
                                 </tr>
                                 <tr>
-                                    <td>ID kabkot</td>
-                                    <td> {{ guru.id_kabkot }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Kabkot</td>
-                                    <td> {{ guru.kabkot }}</td>
-                                </tr>
-                                <tr>
-                                    <td>ID kec</td>
-                                    <td> {{ guru.id_kec }}</td>
+                                    <td>Kabupaten/Kota</td>
+                                    <td> {{ guru.kabkot.kabkot }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kecamatan</td>
-                                    <td> {{ guru.kecamatan }}</td>
-                                </tr>
-                                <tr>
-                                    <td>ID kel</td>
-                                    <td> {{ guru.id_kel }}</td>
+                                    <td> {{ guru.kecamatan.kecamatan }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kelurahan</td>
-                                    <td> {{ guru.kelurahan }}</td>
+                                    <td> {{ guru.kelurahan.kelurahan }}</td>
                                 </tr>
                                 <tr>
                                     <td>No hp</td>
                                     <td> {{ guru.no_hp }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Agama</td>
-                                    <td> {{ guru.agama }}</td>
-                                </tr>
-                                <tr>
                                     <td>Kode pos</td>
                                     <td> {{ guru.kode_pos }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Status guru</td>
-                                    <td> {{ guru.status_guru }}</td>
+                                    <td>Agama</td>
+                                    <td> {{ guru.agama }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Status pegawai</td>
+                                    <td>:  {{ guru.status_pegawai }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Golongan</td>
+                                    <td>:  {{ guru.golongan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Satatus guru</td>
+                                    <td>:<span class="label label-{{guru.status_guru=='ON'?'primary':'warning'}}"> {{ guru.status_guru }}</span></td>
                                 </tr>
                                 
 

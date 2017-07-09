@@ -13,11 +13,6 @@
                 <div class="col-sm-6 b-r">
 
                     <div class="form-group">
-                        <label>Tingkat</label>
-                        <input required placeholder="Enter tingkat" ng-model="buku.tingkat" class="form-control" type="text">
-                    </div>
-
-                    <div class="form-group">
                     <label>Jurusan</label>
                     <select required class="form-control " required select2 ng-model="buku.id_jurusan"
                             ng-options="x.id_jurusan*1 as x.jurusan for x in master.jurusan" >
@@ -39,14 +34,13 @@
                         <label>Judul</label>
                         <input required placeholder="Enter judul" class="form-control" ng-model="buku.judul" type="text">
                     </div>
+
+                </div>
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label>Keterangan</label>
                         <input required placeholder="Enter keterangan" class="form-control" ng-model="buku.keterangan" type="text">
                     </div>
-
-
-                </div>
-                <div class="col-sm-6">
                     <div class="form-group">
                         <label>Nama file</label>
                         <input required placeholder="Enter nama file" class="form-control" ng-model="buku.nama_file" type="text">

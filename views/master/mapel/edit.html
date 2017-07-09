@@ -16,11 +16,6 @@
                         <label>Mata pelajaran</label>
                         <input required placeholder="Enter mata pelajaran" ng-model="mapel.mata_pelajaran" class="form-control" type="text">
                     </div>
-
-                    <div class="form-group">
-                        <label>Tingkat</label>
-                        <input required placeholder="Enter tingkat" ng-model="mapel.tingkat" class="form-control" type="number">
-                    </div>
                     <div class="form-group">
                     <label>Jurusan</label>
                     <select required class="form-control " required select2 ng-model="mapel.id_jurusan"
@@ -29,16 +24,30 @@
                     </select>
                     </div>
 
-
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>Kelas paralel</label>
-                        <input required placeholder="Enter kelas paralel" class="form-control" ng-model="mapel.kelas_paralel" type="text">
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="mapel.id_kelas"
+                            ng-options="x.id_kelas*1 as x.kelas for x in master.kelas" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>Status mata pelajaran</label>
-                        <input required placeholder="Enter status mata pelajaran" class="form-control" ng-model="mapel.status_mata_pelajaran"  type="number">
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Status mata pelajaran<br>
+                        <small class="text-navy">Custom elements</small>
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="Aktif" ng-model="mapel.status_mata_pelajaran"> Aktif </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="Tidak" ng-model="mapel.status_mata_pelajaran"> Tidak </label>
+                        </div>
+                    </div>
+
                     </div>
 
                 </div>

@@ -1,0 +1,78 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Nilai</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('murid.nilai')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label>ID Gurump</label>
+                        <input required placeholder="Enter id guru mk" ng-model="nilai.id_guru_mp" class="form-control" type="number">
+                    </div>
+                    <div class="form-group">
+                    <label>Nama murid</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_murid"
+                            ng-options="x.id_murid*1 as x.nama_murid for x in murid.murid" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Jenis nilai</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_jenis_nilai"
+                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in murid.jn" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai</label>
+                        <input required placeholder="Enter nilai" class="form-control" ng-model="nilai.nilai" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Is remedial</label>
+                        <input required placeholder="Enter " class="form-control" ng-model="nilai.is_remedial" type="number">
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label>Rumus</label>
+                        <input required placeholder="Enter rumus" class="form-control" ng-model="nilai.rumus" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai akhir</label>
+                        <input required placeholder="Enter nilai akhir" class="form-control" ng-model="nilai.nilai_akhir" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>SMT</label>
+                        <input required placeholder="Enter smt" class="form-control" ng-model="nilai.smt" type="number">
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

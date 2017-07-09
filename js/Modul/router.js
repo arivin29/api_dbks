@@ -53,26 +53,26 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
          ------------------------------------------
          */
 
-        .state('store', {
+        .state('wilayah', {
             abstract: true,
-            url: "/store",
-            data: { menu: 'store' },
+            url: "/wilayah",
+            data: { menu: 'wilayah' },
             templateUrl: "views/template/content.html",
             resolve: {
                 lazy: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
                             name: 'inspinia',
-                            files: ['js/Modul/store/controller.js']
+                            files: ['js/Modul/wilayah/controller.js']
                         }
                     ]);
                 }]
             }
         })
-        .state('store.dashboard', {
+        .state('wilayah.dashboard', {
             url: "/dashboard",
-            templateUrl: "views/store/dashboard.html",
-            data: { pageTitle: 'store' }
+            templateUrl: "views/wilayah/dashboard.html",
+            data: { pageTitle: 'wilayah' }
         })
 
         /*-----------------------------------------
@@ -80,25 +80,25 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         ------------------------------------------
         */
 
-        .state('purchasing', {
+        .state('murid', {
             abstract: true,
-            url: "/purchasing",
-            data: { menu: 'purchasing' },
+            url: "/murid",
+            data: { menu: 'murid' },
             templateUrl: "views/template/content.html",
             resolve: {
                 lazy: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
                             name: 'inspinia',
-                            files: ['js/Modul/purchasing/controller.js']
+                            files: ['js/Modul/murid/controller.js']
                         }
                     ]);
                 }]
             }
         })
-        .state('purchasing.dashboard', {
+        .state('murid.dashboard', {
             url: "/dashboard",
-            templateUrl: "views/purchasing/dashboard.html",
+            templateUrl: "views/murid/dashboard.html",
             data: { pageTitle: 'Master' }
         })
 
