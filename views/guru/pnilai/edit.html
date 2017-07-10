@@ -19,7 +19,7 @@
                     <div class="form-group">
                     <label>Kelas</label>
                     <select required class="form-control " required select2 ng-model="pnilai.id_kelas"
-                            ng-options="x.id_kelas*1 as x.kelas for x in master.kelas" >
+                            ng-options="x.id_kelas*1 as x.kelas for x in guru.kelas" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
@@ -27,18 +27,17 @@
                         <label>Batas Remedial</label>
                         <input required placeholder="Enter batas remedial" ng-model="pnilai.batas_remedial" class="form-control" type="number">
                     </div>
+
+                </div>
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label>Persentase</label>
                         <input required placeholder="Enter persentase" class="form-control" ng-model="pnilai.persentase" type="number">
                     </div>
-
-                </div>
-                <div class="col-sm-6">
-
                     <div class="form-group">
                     <label>Jenis nilai</label>
                     <select required class="form-control " required select2 ng-model="pnilai.id_jenis_nilai"
-                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in master.jn" >
+                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in guru.jn" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
