@@ -19,14 +19,14 @@
                         <strong>Found {{datas.data.length}} issues.</strong>
 
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="table-scroll" full-scroll="">
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th ng-click="sort_by('id_jurusan');" style="cursor: pointer;">Jurusan&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th ng-click="sort_by('id_kelas');" style="cursor: pointer;">Kelas&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th ng-click="sort_by('nama_guru');" style="cursor: pointer;">Nama guru&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
+                                <th>Jurusan</th>
+                                <th>Kelas</i></th>
+                                <th>Nama guru</th>
                                 <th>Judul</th>
                                 <th>Keterangan</th>
                                 <th>Nama file</th>
@@ -91,5 +91,9 @@
         </div>
     </div>
 
-
 </div>
+<script>
+    setTimeout(function(){
+        tableScroll()
+    })
+</script>

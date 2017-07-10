@@ -49,34 +49,34 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         })
 
         /*-----------------------------------------
-         STORE ~~~~~~~~~~~~~~~~Mulai koding
+         GURU ~~~~~~~~~~~~~~~~Mulai koding
          ------------------------------------------
          */
 
-        .state('wilayah', {
+        .state('guru', {
             abstract: true,
-            url: "/wilayah",
-            data: { menu: 'wilayah' },
+            url: "/guru",
+            data: { menu: 'guru' },
             templateUrl: "views/template/content.html",
             resolve: {
                 lazy: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
                             name: 'inspinia',
-                            files: ['js/Modul/wilayah/controller.js']
+                            files: ['js/Modul/guru/controller.js']
                         }
                     ]);
                 }]
             }
         })
-        .state('wilayah.dashboard', {
+        .state('guru.dashboard', {
             url: "/dashboard",
-            templateUrl: "views/wilayah/dashboard.html",
-            data: { pageTitle: 'wilayah' }
+            templateUrl: "views/guru/dashboard.html",
+            data: { pageTitle: 'Master' }
         })
 
         /*-----------------------------------------
-        PURCHASING ~~~~~~~~~~~~~~~~Mulai koding
+        MURID ~~~~~~~~~~~~~~~~Mulai koding
         ------------------------------------------
         */
 
@@ -104,139 +104,30 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
 
         /*-----------------------------------------
-        QA ~~~~~~~~~~~~~~~~Mulai koding
+        ABSEN ~~~~~~~~~~~~~~~~Mulai koding
          ------------------------------------------
         */
 
-        .state('qa', {
+        .state('absen', {
             abstract: true,
-            url: "/qa",
-            data: { menu: 'qa' },
+            url: "/absen",
+            data: { menu: 'absen' },
             templateUrl: "views/template/content.html",
             resolve: {
                 lazy: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
                             name: 'inspinia',
-                            files: ['js/Modul/qa/controller.js']
+                            files: ['js/Modul/absen/controller.js']
                         }
                     ]);
                 }]
             }
         })
-        .state('qa.dashboard', {
+        .state('absen.dashboard', {
             url: "/dashboard",
-            templateUrl: "views/qa/dashboard.html",
+            templateUrl: "views/absen/dashboard.html",
             data: { pageTitle: 'Master' }
-        })
-
-
-        /*-----------------------------------------
-         UNITILITY ~~~~~~~~~~~~~~~~Mulai koding
-         ------------------------------------------
-        */
-
-        .state('utility', {
-            abstract: true,
-            url: "/utility",
-            data: { menu: 'utility' },
-            templateUrl: "views/template/content.html",
-            resolve: {
-                lazy: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'inspinia',
-                            files: ['js/Modul/utility/controller.js']
-                        }
-                    ]);
-                }]
-            }
-        })
-        .state('utility.currency', {
-            url: "/currency",
-            templateUrl: "views/currency/currency.html",
-            data: { pageTitle: 'Master' }
-        })
-
-        /*-----------------------------------------
-        MPC
-         ------------------------------------------
-        */
-
-        .state('mpc', {
-            abstract: true,
-            url: "/mpc",
-            data: { menu: 'mpc' },
-            templateUrl: "views/template/content.html",
-            resolve: {
-                lazy: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'inspinia',
-                            files: ['js/Modul/mpc/controller.js']
-                        }
-                    ]);
-                }]
-            }
-        })
-        .state('mpc.dashboard', {
-            url: "/dashboard",
-            templateUrl: "views/mpc/dashboard.html",
-            data: { pageTitle: 'mpc' }
-        })
-
-
-        /*-----------------------------------------
-        Engineer
-         ------------------------------------------
-        */
-
-        .state('engineer', {
-            abstract: true,
-            url: "/engineer",
-            data: { menu: 'engineer' },
-            templateUrl: "views/template/content.html",
-            resolve: {
-                lazy: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'inspinia',
-                            files: ['js/Modul/engineer/controller.js']
-                        }
-                    ]);
-                }]
-            }
-        })
-        .state('engineer.dashboard', {
-            url: "/dashboard",
-            templateUrl: "views/engineer/dashboard.html",
-            data: { pageTitle: 'engineer' }
-        })
-        /*-----------------------------------------
-        Technical Report
-         ------------------------------------------
-        */
-
-        .state('tech_rec', {
-            abstract: true,
-            url: "/tech_rec",
-            data: { menu: 'tech_rec' },
-            templateUrl: "views/template/content.html",
-            resolve: {
-                lazy: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'inspinia',
-                            files: ['js/Modul/tech_rec/controller.js']
-                        }
-                    ]);
-                }]
-            }
-        })
-        .state('tech_rec.dashboard', {
-            url: "/dashboard",
-            templateUrl: "views/tech_rec/dashboard.html",
-            data: { pageTitle: 'tech_rec' }
         })
 
 

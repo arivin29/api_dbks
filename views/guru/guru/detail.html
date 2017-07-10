@@ -1,0 +1,176 @@
+ <div class="row" id="detail_fix">
+     <div class="col-lg-2 p-r-0 border-right">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title bg-info">
+                 <h5>{{ guru.nama_guru }}</h5>
+
+             </div>
+             <div class="ibox-content no-kiri-kanan border-left border-right">
+                 <ul class="list-group elements-list">
+                     <li class="list-group-item" ui-sref-active="active">
+                         <a ui-sref="guru.guru.detail({id_guru:guru.id_guru})" >
+                             <strong>Detail guru</strong>
+                         </a>
+                     </li>
+                     <li class="list-group-item" ui-sref-active="active">
+                         <a ui-sref="guru.guru.detail.murid">
+                             <strong>Murid {{ guru.nama_guru }}</strong>
+                         </a>
+
+                     </li>
+                 </ul>
+             </div>
+             <div class="ibox-footer">
+                        <span class="pull-right">
+                          The righ side of the footer
+                    </span>
+
+             </div>
+         </div>
+
+     </div>
+
+     <div class="col-lg-10 p-l-0">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title ">
+                 <h5 style="padding-left: 10px;">{{ guru.nama_guru }}</h5>
+
+                 <div  class="ng-scope">
+                     <div class="ibox-tools dropdown" uib-dropdown="">
+                         <a ng-click="backButton('guru.guru')"><i class="fa fa-times"></i></a>
+                     </div>
+                 </div>
+             </div>
+             <div class="ibox-content border-left border-right" full-scroll="">
+                 <div ng-show="$state.current.name === 'guru.guru.detail'">
+                     <json-formatter json="guru" open="0"></json-formatter>
+                     <div class="row">
+                         <div class="col-lg-5">
+                             <table class="table padding-kecil table-mail">
+                                <tr>
+                                    <td width="40%">NIP</td>
+                                    <td  width="60%">: {{ guru.nip }}</td>
+                                </tr>
+                                <tr>
+                                    <td>NUPTK</td>
+                                    <td>: {{ guru.nuptk }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama guru</td>
+                                    <td>: {{ guru.nama_guru }}</td>
+                                </tr>
+                                <tr>
+                                    <td>NIK KTP</td>
+                                    <td>:  {{ guru.nik_ktp }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tempat lahir</td>
+                                    <td>:  {{ guru.tempat_lahir }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal lahir</td>
+                                    <td>:  {{ guru.tanggal_lahir | date: "yyyy/MM/dd" }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jenis kelamin</td>
+                                    <td>:  {{ guru.jenis_kelamin }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama ibu</td>
+                                    <td>:  {{ guru.nama_ibu }}</td>
+                                </tr>
+                                <tr>
+                                    <td>TMK SK CPNS</td>
+                                    <td>:  {{ guru.tmk_sk_cpns }}</td>
+                                </tr>
+                                <tr>
+                                    <td>TMK SK AWAL</td>
+                                    <td>:  {{ guru.tmk_sk_awal }}</td>
+                                </tr>
+                                <tr>
+                                    <td>TMK SK BERKAHIR</td>
+                                    <td>:  {{ guru.tmk_sk_berakhir }}</td>
+                                </tr>
+
+                             </table>
+
+                         </div>
+                         <div class="col-lg-7" id="cluster_info">
+                             <table class="table padding-kecil table-mail">
+                                <tr>
+                                    <td width="40%">Alamat</td>
+                                    <td  width="60%">: {{ guru.alamat }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Provinsi</td>
+                                    <td> {{ guru.provinsi.provinsi }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kabupaten/Kota</td>
+                                    <td> {{ guru.kabkot.kabkot }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kecamatan</td>
+                                    <td> {{ guru.kecamatan.kecamatan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kelurahan</td>
+                                    <td> {{ guru.kelurahan.kelurahan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>No hp</td>
+                                    <td> {{ guru.no_hp }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kode pos</td>
+                                    <td> {{ guru.kode_pos }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Agama</td>
+                                    <td> {{ guru.agama }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Status pegawai</td>
+                                    <td>:  {{ guru.status_pegawai }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Golongan</td>
+                                    <td>:  {{ guru.golongan }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Satatus guru</td>
+                                    <td>:<span class="label label-{{guru.status_guru=='ON'?'primary':'warning'}}"> {{ guru.status_guru }}</span></td>
+                                </tr>
+                                
+
+                             </table>
+
+                         </div>
+                     </div>
+
+                 </div>
+
+                 <ui-view></ui-view>
+
+
+             </div>
+             <div class="ibox-footer">
+                 <span class="pull-right">
+                          The righ side of the footer
+                 </span>
+                 Isi Form Dengan Benar
+             </div>
+         </div>
+
+     </div>
+
+
+
+ </div>
+
+ <script>
+
+     setTimeout(function(){
+         fixDetailHeight()
+     })
+ </script>

@@ -1,0 +1,68 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Edit Pengatuan Nilai</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('guru.pnilai')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label>ID Guru mp</label>
+                        <input required placeholder="Enter id guru mk" ng-model="pnilai.id_guru_mp" class="form-control" type="number">
+                    </div>
+                    <div class="form-group">
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="pnilai.id_kelas"
+                            ng-options="x.id_kelas*1 as x.kelas for x in master.kelas" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Batas Remedial</label>
+                        <input required placeholder="Enter batas remedial" ng-model="pnilai.batas_remedial" class="form-control" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Persentase</label>
+                        <input required placeholder="Enter persentase" class="form-control" ng-model="pnilai.persentase" type="number">
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                    <label>Jenis nilai</label>
+                    <select required class="form-control " required select2 ng-model="pnilai.id_jenis_nilai"
+                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in master.jn" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>IF Remedial</label>
+                        <input required placeholder="Enter" class="form-control" ng-model="pnilai.if_remedial" type="number">
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -215,113 +215,6 @@ app.controller('master.pekerjaan.edit', function truncateCtrl($scope,$state,$sta
 });
 
 /*----------------------------------------------------------------------------------------------
- Jenis nilai
- /*----------------------------------------------------------------------------------------------*/
-app.controller('master.jn', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/jn')
-        .then(function(respons){
-            $scope.datas = respons.data;
-            debugData(respons);
-        });
-
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/jn',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
-
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/master/jn/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.jn",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
-});
-
-app.controller('master.jn.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/jn/create')
-        .then(function(respons){
-            $scope.master = respons.data;
-            debugData(respons);
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.jn);
-
-        myHelp.postParam('/master/jn', Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.jn",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-app.controller('master.jn.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.jn = {};
-    myHelp.getParam('/master/jn/' + $stateParams.id_jenis_nilai +'/edit')
-        .then(function(respons){
-            $scope.jn = respons.data;
-
-            //jiko ado master
-            myHelp.getDetail('/master/jn/create')
-                .then(function(respons){
-                    $scope.master = respons.data;
-                    debugData(respons);
-                });
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.jn);
-
-
-        myHelp.putParam('/master/jn/'+ $stateParams.id_jenis_nilai, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.jn",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-/*----------------------------------------------------------------------------------------------
  Mapel
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.mapel', function truncateCtrl($scope,$state,$stateParams,myHelp){
@@ -429,117 +322,11 @@ app.controller('master.mapel.edit', function truncateCtrl($scope,$state,$statePa
 });
 
 /*----------------------------------------------------------------------------------------------
- Absen
+ Jenis nilai
  /*----------------------------------------------------------------------------------------------*/
-app.controller('master.absen', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.jn', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absen')
-        .then(function(respons){
-            $scope.datas = respons.data;
-            debugData(respons);
-        });
-
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/master/absen/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.absen",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
-});
-
-app.controller('master.absen.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.absen = {};
-    myHelp.getDetail('/master/absen/create')
-        .then(function(respons){
-            $scope.master = respons.data;
-            debugData(respons);
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.absen);
-
-        myHelp.postParam('/master/absen', Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.absen",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-    };
-
-    $scope.selectParent = function(parent,keyword)
-    {
-        console.log(parent);
-        $scope.absen.parent = parent;
-        $scope.keyword=keyword;
-        colosePopup();
-    }
-
-});
-
-app.controller('master.absen.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.absen ={};
-    myHelp.getParam('/master/absen/' + $stateParams.id_m_absen +'/edit')
-        .then(function(respons){
-            $scope.absen = respons.data;
-
-            //jiko ado master
-            myHelp.getDetail('/master/absen/create')
-                .then(function(respons){
-                    $scope.master = respons.data;
-                    debugData(respons);
-                });
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.absen);
-
-        myHelp.putParam('/master/absen/'+ $stateParams.id_m_absen, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.absen",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-    };
-
-    $scope.selectParent = function(parent,keyword)
-    {
-        console.log(parent);
-        $scope.absen.parent = parent;
-        $scope.keyword=keyword;
-        colosePopup();
-    }
-
-});
-
-/*----------------------------------------------------------------------------------------------
- Pengaturan nilai
- /*----------------------------------------------------------------------------------------------*/
-app.controller('master.pnilai', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/pnilai')
+    myHelp.getDetail('/master/jn')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
@@ -551,7 +338,7 @@ app.controller('master.pnilai', function truncateCtrl($scope,$state,$stateParams
     $scope.filter = function (page) {
         param = $scope.filters;
         param.page = page;
-        myHelp.getParam('/master/pnilai',clearObj(param))
+        myHelp.getParam('/master/jn',clearObj(param))
             .then(function(respons){
                 $scope.datas = respons.data;
                 debugData(respons);
@@ -562,11 +349,11 @@ app.controller('master.pnilai', function truncateCtrl($scope,$state,$stateParams
 
     $scope.delete = function(id)
     {
-        myHelp.deleteParam('/master/pnilai/' + id, {})
+        myHelp.deleteParam('/master/jn/' + id, {})
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.pnilai",{}, { reload: true })
+                    $state.go("master.jn",{}, { reload: true })
 
                 }
                 , function myError()
@@ -577,22 +364,22 @@ app.controller('master.pnilai', function truncateCtrl($scope,$state,$stateParams
 
 });
 
-app.controller('master.pnilai.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.jn.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/pnilai/create')
+    myHelp.getDetail('/master/jn/create')
         .then(function(respons){
             $scope.master = respons.data;
             debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.pnilai);
+        var Param = clearObj($scope.jn);
 
-        myHelp.postParam('/master/pnilai', Param)
+        myHelp.postParam('/master/jn', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.pnilai",{}, { reload: true })
+                    $state.go("master.jn",{}, { reload: true })
 
                 }
                 , function myError()
@@ -605,15 +392,15 @@ app.controller('master.pnilai.add', function truncateCtrl($scope,$state,$statePa
 
 });
 
-app.controller('master.pnilai.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.jn.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.pnilai = {};
-    myHelp.getParam('/master/pnilai/' + $stateParams.id_pengaturan_nilai +'/edit')
+    $scope.jn = {};
+    myHelp.getParam('/master/jn/' + $stateParams.id_jenis_nilai +'/edit')
         .then(function(respons){
-            $scope.pnilai = respons.data;
+            $scope.jn = respons.data;
 
             //jiko ado master
-            myHelp.getDetail('/master/pnilai/create')
+            myHelp.getDetail('/master/jn/create')
                 .then(function(respons){
                     $scope.master = respons.data;
                     debugData(respons);
@@ -621,14 +408,14 @@ app.controller('master.pnilai.edit', function truncateCtrl($scope,$state,$stateP
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.pnilai);
+        var Param = clearObj($scope.jn);
 
 
-        myHelp.putParam('/master/pnilai/'+ $stateParams.id_pengaturan_nilai, Param)
+        myHelp.putParam('/master/jn/'+ $stateParams.id_jenis_nilai, Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.pnilai",{}, { reload: true })
+                    $state.go("master.jn",{}, { reload: true })
 
                 }
                 , function myError()
@@ -639,216 +426,6 @@ app.controller('master.pnilai.edit', function truncateCtrl($scope,$state,$stateP
 
     };
 
-});
-
-/*----------------------------------------------------------------------------------------------
- Gurump
- /*----------------------------------------------------------------------------------------------*/
-app.controller('master.gurump', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/gurump')
-        .then(function(respons){
-            $scope.datas = respons.data;
-            debugData(respons);
-        });
-
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/master/gurump/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.gurump",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
-});
-
-app.controller('master.gurump.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/gurump/create')
-        .then(function(respons){
-            $scope.master = respons.data;
-            debugData(respons);
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.gurump);
-
-        myHelp.postParam('/master/gurump', Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.gurump",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-app.controller('master.gurump.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.gurump = {};
-    myHelp.getParam('/master/gurump/' + $stateParams.id_guru_mp +'/edit')
-        .then(function(respons){
-            $scope.gurump = respons.data;
-
-            //jiko ado master
-            myHelp.getDetail('/master/gurump/create')
-                .then(function(respons){
-                    $scope.master = respons.data;
-                    debugData(respons);
-                });
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.gurump);
-
-
-        myHelp.putParam('/master/gurump/'+ $stateParams.id_guru_mp, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.gurump",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-/*----------------------------------------------------------------------------------------------
- Guru
- /*----------------------------------------------------------------------------------------------*/
-app.controller('master.guru', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/guru')
-        .then(function(respons){
-            $scope.datas = respons.data;
-            debugData(respons);
-        });
-
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/guru',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
-
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/master/guru/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.guru",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
-});
-
-app.controller('master.guru.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/guru/create')
-        .then(function(respons){
-            $scope.master = respons.data;
-            debugData(respons);
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.guru);
-
-        myHelp.postParam('/master/guru', Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.guru",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-app.controller('master.guru.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.guru = {};
-    myHelp.getParam('/master/guru/' + $stateParams.id_guru +'/edit')
-        .then(function(respons){
-            $scope.guru = respons.data;
-
-            //jiko ado master
-            myHelp.getDetail('/master/guru/create')
-                .then(function(respons){
-                    $scope.master = respons.data;
-                    debugData(respons);
-                });
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.guru);
-
-
-        myHelp.putParam('/master/guru/'+ $stateParams.id_guru, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.guru",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-// Detail Guru
-app.controller('master.guru.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.guru = {};
-    myHelp.getDetail('/master/guru/' + $stateParams.id_guru)
-        .then(function(respons){
-            $scope.guru = respons.data;
-            $scope.param.title=$scope.guru.keyword;
-        });
 });
 
 /*----------------------------------------------------------------------------------------------
@@ -959,11 +536,11 @@ app.controller('master.buku.edit', function truncateCtrl($scope,$state,$statePar
 });
 
 /*----------------------------------------------------------------------------------------------
- Absentmt
+ Provinsi
  /*----------------------------------------------------------------------------------------------*/
-app.controller('master.absentmt', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.provinsi', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absentmt')
+    myHelp.getDetail('/master/provinsi')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
@@ -975,7 +552,7 @@ app.controller('master.absentmt', function truncateCtrl($scope,$state,$statePara
     $scope.filter = function (page) {
         param = $scope.filters;
         param.page = page;
-        myHelp.getParam('/master/absentmt',clearObj(param))
+        myHelp.getParam('/master/provinsi',clearObj(param))
             .then(function(respons){
                 $scope.datas = respons.data;
                 debugData(respons);
@@ -986,11 +563,11 @@ app.controller('master.absentmt', function truncateCtrl($scope,$state,$statePara
 
     $scope.delete = function(id)
     {
-        myHelp.deleteParam('/master/absentmt/' + id, {})
+        myHelp.deleteParam('/master/provinsi/' + id, {})
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absentmt",{}, { reload: true })
+                    $state.go("master.provinsi",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1001,22 +578,22 @@ app.controller('master.absentmt', function truncateCtrl($scope,$state,$statePara
 
 });
 
-app.controller('master.absentmt.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.provinsi.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absentmt/create')
+    myHelp.getDetail('/master/provinsi/create')
         .then(function(respons){
             $scope.master = respons.data;
             debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.absentmt);
+        var Param = clearObj($scope.provinsi);
 
-        myHelp.postParam('/master/absentmt', Param)
+        myHelp.postParam('/master/provinsi', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absentmt",{}, { reload: true })
+                    $state.go("master.provinsi",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1029,15 +606,15 @@ app.controller('master.absentmt.add', function truncateCtrl($scope,$state,$state
 
 });
 
-app.controller('master.absentmt.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.provinsi.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.absentmt = {};
-    myHelp.getParam('/master/absentmt/' + $stateParams.id_tidak_masuk_tanggal +'/edit')
+    $scope.provinsi = {};
+    myHelp.getParam('/master/provinsi/' + $stateParams.id_provinsi +'/edit')
         .then(function(respons){
-            $scope.absentmt = respons.data;
+            $scope.provinsi = respons.data;
 
             //jiko ado master
-            myHelp.getDetail('/master/absentmt/create')
+            myHelp.getDetail('/master/provinsi/create')
                 .then(function(respons){
                     $scope.master = respons.data;
                     debugData(respons);
@@ -1045,14 +622,14 @@ app.controller('master.absentmt.edit', function truncateCtrl($scope,$state,$stat
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.absentmt);
+        var Param = clearObj($scope.provinsi);
 
 
-        myHelp.putParam('/master/absentmt/'+ $stateParams.id_tidak_masuk_tanggal, Param)
+        myHelp.putParam('/master/provinsi/'+ $stateParams.id_provinsi, Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absentmt",{}, { reload: true })
+                    $state.go("master.provinsi",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1066,23 +643,38 @@ app.controller('master.absentmt.edit', function truncateCtrl($scope,$state,$stat
 });
 
 /*----------------------------------------------------------------------------------------------
- Absentm
+ Kabupaten/Kota
  /*----------------------------------------------------------------------------------------------*/
-app.controller('master.absentm', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kabkot', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absentm')
+    myHelp.getDetail('/master/kabkot')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/kabkot',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
-        myHelp.deleteParam('/master/absentm/' + id, {})
+        myHelp.deleteParam('/master/kabkot/' + id, {})
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absentm",{}, { reload: true })
+                    $state.go("master.kabkot",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1093,22 +685,22 @@ app.controller('master.absentm', function truncateCtrl($scope,$state,$stateParam
 
 });
 
-app.controller('master.absentm.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kabkot.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absentm/create')
+    myHelp.getDetail('/master/kabkot/create')
         .then(function(respons){
             $scope.master = respons.data;
             debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.absentm);
+        var Param = clearObj($scope.kabkot);
 
-        myHelp.postParam('/master/absentm', Param)
+        myHelp.postParam('/master/kabkot', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absentm",{}, { reload: true })
+                    $state.go("master.kabkot",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1121,15 +713,15 @@ app.controller('master.absentm.add', function truncateCtrl($scope,$state,$stateP
 
 });
 
-app.controller('master.absentm.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kabkot.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.absentm = {};
-    myHelp.getParam('/master/absentm/' + $stateParams.id_tidak_masuk +'/edit')
+    $scope.kabkot = {};
+    myHelp.getParam('/master/kabkot/' + $stateParams.id_kabkot +'/edit')
         .then(function(respons){
-            $scope.absentm = respons.data;
+            $scope.kabkot = respons.data;
 
             //jiko ado master
-            myHelp.getDetail('/master/absentm/create')
+            myHelp.getDetail('/master/kabkot/create')
                 .then(function(respons){
                     $scope.master = respons.data;
                     debugData(respons);
@@ -1137,14 +729,14 @@ app.controller('master.absentm.edit', function truncateCtrl($scope,$state,$state
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.absentm);
+        var Param = clearObj($scope.kabkot);
 
 
-        myHelp.putParam('/master/absentm/'+ $stateParams.id_tidak_masuk, Param)
+        myHelp.putParam('/master/kabkot/'+ $stateParams.id_kabkot, Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absentm",{}, { reload: true })
+                    $state.go("master.kabkot",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1158,23 +750,38 @@ app.controller('master.absentm.edit', function truncateCtrl($scope,$state,$state
 });
 
 /*----------------------------------------------------------------------------------------------
- Rekap absen
+ Kecamatan
  /*----------------------------------------------------------------------------------------------*/
-app.controller('master.absenrekap', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kecamatan', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absenrekap')
+    myHelp.getDetail('/master/kecamatan')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/kecamatan',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
-        myHelp.deleteParam('/master/absenrekap/' + id, {})
+        myHelp.deleteParam('/master/kecamatan/' + id, {})
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absenrekap",{}, { reload: true })
+                    $state.go("master.kecamatan",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1185,22 +792,22 @@ app.controller('master.absenrekap', function truncateCtrl($scope,$state,$statePa
 
 });
 
-app.controller('master.absenrekap.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kecamatan.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/absenrekap/create')
+    myHelp.getDetail('/master/kecamatan/create')
         .then(function(respons){
             $scope.master = respons.data;
             debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.absenrekap);
+        var Param = clearObj($scope.kecamatan);
 
-        myHelp.postParam('/master/absenrekap', Param)
+        myHelp.postParam('/master/kecamatan', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absenrekap",{}, { reload: true })
+                    $state.go("master.kecamatan",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1213,15 +820,15 @@ app.controller('master.absenrekap.add', function truncateCtrl($scope,$state,$sta
 
 });
 
-app.controller('master.absenrekap.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kecamatan.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.absenrekap = {};
-    myHelp.getParam('/master/absenrekap/' + $stateParams.id_rekap_absen +'/edit')
+    $scope.kecamatan = {};
+    myHelp.getParam('/master/kecamatan/' + $stateParams.id_kecamatan +'/edit')
         .then(function(respons){
-            $scope.absenrekap = respons.data;
+            $scope.kecamatan = respons.data;
 
             //jiko ado master
-            myHelp.getDetail('/master/absenrekap/create')
+            myHelp.getDetail('/master/kecamatan/create')
                 .then(function(respons){
                     $scope.master = respons.data;
                     debugData(respons);
@@ -1229,14 +836,14 @@ app.controller('master.absenrekap.edit', function truncateCtrl($scope,$state,$st
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.absenrekap);
+        var Param = clearObj($scope.kecamatan);
 
 
-        myHelp.putParam('/master/absenrekap/'+ $stateParams.id_rekap_absen, Param)
+        myHelp.putParam('/master/kecamatan/'+ $stateParams.id_kecamatan, Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.absenrekap",{}, { reload: true })
+                    $state.go("master.kecamatan",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1250,23 +857,38 @@ app.controller('master.absenrekap.edit', function truncateCtrl($scope,$state,$st
 });
 
 /*----------------------------------------------------------------------------------------------
- Tabsen
+ Kelurahan
  /*----------------------------------------------------------------------------------------------*/
-app.controller('master.tabsen', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kelurahan', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/tabsen')
+    myHelp.getDetail('/master/kelurahan')
         .then(function(respons){
             $scope.datas = respons.data;
             debugData(respons);
         });
 
+    var param = {};
+    $scope.filters = {};
+
+    $scope.filter = function (page) {
+        param = $scope.filters;
+        param.page = page;
+        myHelp.getParam('/master/kelurahan',clearObj(param))
+            .then(function(respons){
+                $scope.datas = respons.data;
+                debugData(respons);
+            });
+
+    }
+    $scope.filter(1);
+
     $scope.delete = function(id)
     {
-        myHelp.deleteParam('/master/tabsen/' + id, {})
+        myHelp.deleteParam('/master/kelurahan/' + id, {})
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.tabsen",{}, { reload: true })
+                    $state.go("master.kelurahan",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1277,22 +899,22 @@ app.controller('master.tabsen', function truncateCtrl($scope,$state,$stateParams
 
 });
 
-app.controller('master.tabsen.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kelurahan.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/master/tabsen/create')
+    myHelp.getDetail('/master/kelurahan/create')
         .then(function(respons){
             $scope.master = respons.data;
             debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.tabsen);
+        var Param = clearObj($scope.kelurahan);
 
-        myHelp.postParam('/master/tabsen', Param)
+        myHelp.postParam('/master/kelurahan', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.tabsen",{}, { reload: true })
+                    $state.go("master.kelurahan",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1305,15 +927,15 @@ app.controller('master.tabsen.add', function truncateCtrl($scope,$state,$statePa
 
 });
 
-app.controller('master.tabsen.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('master.kelurahan.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.tabsen = {};
-    myHelp.getParam('/master/tabsen/' + $stateParams.id_absen +'/edit')
+    $scope.kelurahan = {};
+    myHelp.getParam('/master/kelurahan/' + $stateParams.id_kelurahan +'/edit')
         .then(function(respons){
-            $scope.tabsen = respons.data;
+            $scope.kelurahan = respons.data;
 
             //jiko ado master
-            myHelp.getDetail('/master/tabsen/create')
+            myHelp.getDetail('/master/kelurahan/create')
                 .then(function(respons){
                     $scope.master = respons.data;
                     debugData(respons);
@@ -1321,14 +943,14 @@ app.controller('master.tabsen.edit', function truncateCtrl($scope,$state,$stateP
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.tabsen);
+        var Param = clearObj($scope.kelurahan);
 
 
-        myHelp.putParam('/master/tabsen/'+ $stateParams.id_absen, Param)
+        myHelp.putParam('/master/kelurahan/'+ $stateParams.id_kelurahan, Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("master.tabsen",{}, { reload: true })
+                    $state.go("master.kelurahan",{}, { reload: true })
 
                 }
                 , function myError()
@@ -1340,4 +962,3 @@ app.controller('master.tabsen.edit', function truncateCtrl($scope,$state,$stateP
     };
 
 });
-

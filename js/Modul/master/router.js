@@ -95,104 +95,6 @@ function configMaster($stateProvider) {
     })
 
     /*-----------------------------------------
-      Absen ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('master.absen', {
-        url: "/absen",
-        templateUrl: "views/master/absen/data.html",
-        data: { pageTitle: 'absen' },
-        controller:"master.absen"
-    })
-    .state('master.absen.add', {
-        url: "/create",
-        templateUrl: "views/master/absen/add.html",
-        data: { pageTitle: 'add absen' },
-        controller:"master.absen.add"
-    })
-
-    .state('master.absen.edit', {
-        url: "/edit/:id_m_absen",
-        templateUrl: "views/master/absen/edit.html",
-        data: { pageTitle: 'edit absen' },
-        controller:"master.absen.edit"
-    })    
-
-    /*-----------------------------------------
-      Pnilai ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('master.pnilai', {
-        url: "/pnilai",
-        templateUrl: "views/master/pnilai/data.html",
-        data: { pageTitle: 'pengaturan nilai' },
-        controller:"master.pnilai"
-    })
-    .state('master.pnilai.add', {
-        url: "/create",
-        templateUrl: "views/master/pnilai/add.html",
-        data: { pageTitle: 'add pengaturan nilai' },
-        controller:"master.pnilai.add"
-    })
-
-    .state('master.pnilai.edit', {
-        url: "/edit/:id_pengaturan_nilai",
-        templateUrl: "views/master/pnilai/edit.html",
-        data: { pageTitle: 'edit pengaturan nilai' },
-        controller:"master.pnilai.edit"
-    })
-
-    /*-----------------------------------------
-      Gurump ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('master.gurump', {
-        url: "/gurump",
-        templateUrl: "views/master/gurump/data.html",
-        data: { pageTitle: 'guru mata pelajaran' },
-        controller:"master.gurump"
-    })
-    .state('master.gurump.add', {
-        url: "/create",
-        templateUrl: "views/master/gurump/add.html",
-        data: { pageTitle: 'add guru mata pelajaran' },
-        controller:"master.gurump.add"
-    })
-
-    .state('master.gurump.edit', {
-        url: "/edit/:id_guru_mp",
-        templateUrl: "views/master/gurump/edit.html",
-        data: { pageTitle: 'edit guru mata pekerjaan' },
-        controller:"master.gurump.edit"
-    })
-
-    /*-----------------------------------------
-      Guru ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('master.guru', {
-        url: "/guru",
-        templateUrl: "views/master/guru/data.html",
-        data: { pageTitle: 'guru' },
-        controller:"master.guru"
-    })
-    .state('master.guru.detail', {
-        url: "/detail/:id_guru",
-        templateUrl: "views/master/guru/detail.html",
-        data: { pageTitle: 'detail' },
-        controller:"master.guru.detail"
-    })
-    .state('master.guru.add', {
-        url: "/create",
-        templateUrl: "views/master/guru/add.html",
-        data: { pageTitle: 'add guru' },
-        controller:"master.guru.add"
-    })
-
-    .state('master.guru.edit', {
-        url: "/edit/:id_guru",
-        templateUrl: "views/master/guru/edit.html",
-        data: { pageTitle: 'edit guru' },
-        controller:"master.guru.edit"
-    })
-
-    /*-----------------------------------------
       Buku ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
     .state('master.buku', {
@@ -215,95 +117,95 @@ function configMaster($stateProvider) {
     })
 
     /*-----------------------------------------
-      Absentmt ~~~~~~~~~~~~~~~~Mulai koding
+      Provinsi ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
-    .state('master.absentmt', {
-        url: "/absentmt",
-        templateUrl: "views/master/absentmt/data.html",
-        data: { pageTitle: 'absen tidak mmasuk tanggal' },
-        controller:"master.absentmt"
+    .state('master.provinsi', {
+        url: "/provinsi",
+        templateUrl: "views/master/provinsi/data.html",
+        data: { pageTitle: 'provinsi' },
+        controller:"master.provinsi"
     })
-    .state('master.absentmt.add', {
+    .state('master.provinsi.add', {
         url: "/create",
-        templateUrl: "views/master/absentmt/add.html",
-        data: { pageTitle: 'add absen tidak mmasuk tanggal' },
-        controller:"master.absentmt.add"
+        templateUrl: "views/master/provinsi/add.html",
+        data: { pageTitle: 'add provinsi' },
+        controller:"master.provinsi.add"
     })
 
-    .state('master.absentmt.edit', {
-        url: "/edit/:id_tidak_masuk_tanggal",
-        templateUrl: "views/master/absentmt/edit.html",
-        data: { pageTitle: 'edit absen tidak mmasuk tanggal' },
-        controller:"master.absentmt.edit"
+    .state('master.provinsi.edit', {
+        url: "/edit/:id_provinsi",
+        templateUrl: "views/master/provinsi/edit.html",
+        data: { pageTitle: 'edit provinsi' },
+        controller:"master.provinsi.edit"
     })
 
     /*-----------------------------------------
-      Absentm ~~~~~~~~~~~~~~~~Mulai koding
+      Kabkot ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
-    .state('master.absentm', {
-        url: "/absentm",
-        templateUrl: "views/master/absentm/data.html",
-        data: { pageTitle: 'absen tidak mmasuk' },
-        controller:"master.absentm"
+    .state('master.kabkot', {
+        url: "/kabkot",
+        templateUrl: "views/master/kabkot/data.html",
+        data: { pageTitle: 'kabkot' },
+        controller:"master.kabkot"
     })
-    .state('master.absentm.add', {
+    .state('master.kabkot.add', {
         url: "/create",
-        templateUrl: "views/master/absentm/add.html",
-        data: { pageTitle: 'add absen tidak mmasuk' },
-        controller:"master.absentm.add"
+        templateUrl: "views/master/kabkot/add.html",
+        data: { pageTitle: 'add kabkot' },
+        controller:"master.kabkot.add"
     })
 
-    .state('master.absentm.edit', {
-        url: "/edit/:id_tidak_masuk",
-        templateUrl: "views/master/absentm/edit.html",
-        data: { pageTitle: 'edit absen tidak mmasuk' },
-        controller:"master.absentm.edit"
+    .state('master.kabkot.edit', {
+        url: "/edit/:id_kabkot",
+        templateUrl: "views/master/kabkot/edit.html",
+        data: { pageTitle: 'edit kabkot' },
+        controller:"master.kabkot.edit"
     })
 
     /*-----------------------------------------
-      Absenrekap ~~~~~~~~~~~~~~~~Mulai koding
+      Kecamatan ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
-    .state('master.absenrekap', {
-        url: "/absenrekap",
-        templateUrl: "views/master/absenrekap/data.html",
-        data: { pageTitle: 'absenrekap' },
-        controller:"master.absenrekap"
+    .state('master.kecamatan', {
+        url: "/kecamatan",
+        templateUrl: "views/master/kecamatan/data.html",
+        data: { pageTitle: 'kecamatan' },
+        controller:"master.kecamatan"
     })
-    .state('master.absenrekap.add', {
+    .state('master.kecamatan.add', {
         url: "/create",
-        templateUrl: "views/master/absenrekap/add.html",
-        data: { pageTitle: 'add absenrekap' },
-        controller:"master.absenrekap.add"
+        templateUrl: "views/master/kecamatan/add.html",
+        data: { pageTitle: 'add kecamatan' },
+        controller:"master.kecamatan.add"
     })
 
-    .state('master.absenrekap.edit', {
-        url: "/edit/:id_rekap_absen",
-        templateUrl: "views/master/absenrekap/edit.html",
-        data: { pageTitle: 'edit absenrekap' },
-        controller:"master.absenrekap.edit"
+    .state('master.kecamatan.edit', {
+        url: "/edit/:id_kec",
+        templateUrl: "views/master/kecamatan/edit.html",
+        data: { pageTitle: 'edit kecamatan' },
+        controller:"master.kecamatan.edit"
     })
 
     /*-----------------------------------------
-      Tabsen ~~~~~~~~~~~~~~~~Mulai koding
+      Kelurahan ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
-    .state('master.tabsen', {
-        url: "/tabsen",
-        templateUrl: "views/master/tabsen/data.html",
-        data: { pageTitle: 'tabsen' },
-        controller:"master.tabsen"
+    .state('master.kelurahan', {
+        url: "/kelurahan",
+        templateUrl: "views/master/kelurahan/data.html",
+        data: { pageTitle: 'kelurahan' },
+        controller:"master.kelurahan"
     })
-    .state('master.tabsen.add', {
+    .state('master.kelurahan.add', {
         url: "/create",
-        templateUrl: "views/master/tabsen/add.html",
-        data: { pageTitle: 'add tabsen' },
-        controller:"master.tabsen.add"
+        templateUrl: "views/master/kelurahan/add.html",
+        data: { pageTitle: 'add kelurahan' },
+        controller:"master.kelurahan.add"
     })
 
-    .state('master.tabsen.edit', {
-        url: "/edit/:id_absen",
-        templateUrl: "views/master/tabsen/edit.html",
-        data: { pageTitle: 'edit tabsen' },
-        controller:"master.tabsen.edit"
+    .state('master.kelurahan.edit', {
+        url: "/edit/:id_kelurahan",
+        templateUrl: "views/master/kelurahan/edit.html",
+        data: { pageTitle: 'edit kelurahan' },
+        controller:"master.kelurahan.edit"
     })
 
 }

@@ -1,0 +1,94 @@
+
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <!--ng-show="$state.current.name === 'acl.users'"-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Data Absen</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="absen.absen.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+                <div ui-view></div>
+
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Filter</label>
+                                <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive" id="table-scroll" full-scroll="">
+                        <table class="table table-hover issue-tracker">
+                            <thead>
+                            <tr>
+                                <th width="2px">#No</th>
+                                <th>Murid</i></th>
+                                <th>Jam masuk</th>
+                                <th>Jam keluar</th>
+                                <th>Lama disekolah</th>
+                                <th>Toleransi telat</th>
+                                <th>Max cuti</th>
+                                <th>Max izin</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in datas |filter:search">
+                                <td>
+                                    {{ $index +1}}
+                                </td>
+                                <td>
+                                    {{x.nama_murid}}
+                                </td>
+                                <td>
+                                    jam {{x.jam_masuk | date: "HH:mm:ss"}}
+                                </td>
+                                <td>
+                                    jam {{x.jam_keluar | date: "HH:mm:ss"}}
+                                </td>
+                                <td>
+                                    {{x.lama_disekolah | number}} jam
+                                </td>
+                                <td>
+                                    {{x.toleransi_telat | number}} menit
+                                </td>
+                                <td>
+                                    {{x.max_cuti}}
+                                </td>
+                                <td>
+                                    {{x.max_izin}}
+                                </td>
+                                <td class="text-center">
+                                    <a ui-sref="absen.absen.edit({id_m_absen:x.id_m_absen})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ng-dblclick="delete(x.id_m_absen)" class="btn btn-white btn-xs"> Delete</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    setTimeout(function(){
+        tableScroll()
+    })
+</script>
