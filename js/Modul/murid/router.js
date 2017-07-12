@@ -34,12 +34,7 @@ function configmurid($stateProvider) {
         data: { pageTitle: 'muridkelas' },
         controller:"murid.muridkelas"
     })
-    .state('murid.muridkelas.detail', {
-        url: "/detail/:id_murid_kelas",
-        templateUrl: "views/murid/muridkelas/detail.html",
-        data: { pageTitle: 'detail' },
-        controller:"murid.muridkelas.detail"
-    })
+    
     .state('murid.muridkelas.add', {
         url: "/create",
         templateUrl: "views/murid/muridkelas/add.html",
@@ -54,80 +49,26 @@ function configmurid($stateProvider) {
         controller:"murid.muridkelas.edit"
     })
 
-    /*-----------------------------------------
-      Murid ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('murid.murid', {
-        url: "/murid",
-        templateUrl: "views/murid/murid/data.html",
-        data: { pageTitle: 'murid' },
-        controller:"murid.murid"
-    })
-    .state('murid.murid.detail', {
-        url: "/detail/:id_murid",
-        templateUrl: "views/murid/murid/detail.html",
-        data: { pageTitle: 'detail' },
-        controller:"murid.murid.detail"
-    })
-    .state('murid.murid.add', {
-        url: "/create",
-        templateUrl: "views/murid/murid/add.html",
-        data: { pageTitle: 'add murid' },
-        controller:"murid.murid.add"
-    })
+        .state('murid.muridkelas.detail', {
+            url: "/detail/:id_kelas",
+            templateUrl: "views/murid/muridkelas/detail.html",
+            data: { pageTitle: 'detail kelas' },
+            controller:"murid.muridkelas.detail"
+        })
 
-    .state('murid.murid.edit', {
-        url: "/edit/:id_murid",
-        templateUrl: "views/murid/murid/edit.html",
-        data: { pageTitle: 'edit murid' },
-        controller:"murid.murid.edit"
-    })
+        .state('murid.muridkelas.detailjurusan', {
+            url: "/detailjurusan/:id_jurusan",
+            templateUrl: "views/murid/muridkelas/detailjurusan.html",
+            data: { pageTitle: 'detail jurusan' },
+            controller:"murid.muridkelas.detailjurusan"
+        })
 
-    /*-----------------------------------------
-      Jurusan ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('murid.jurusan', {
-        url: "/jurusan",
-        templateUrl: "views/murid/jurusan/data.html",
-        data: { pageTitle: 'jurusan' },
-        controller:"murid.jurusan"
-    })
-    .state('murid.jurusan.add', {
-        url: "/create",
-        templateUrl: "views/murid/jurusan/add.html",
-        data: { pageTitle: 'add jurusan' },
-        controller:"murid.jurusan.add"
-    })
-
-    .state('murid.jurusan.edit', {
-        url: "/edit/:id_jurusan",
-        templateUrl: "views/murid/jurusan/edit.html",
-        data: { pageTitle: 'edit jurusan' },
-        controller:"murid.jurusan.edit"
-    })
-
-    /*-----------------------------------------
-      Kelas ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('murid.kelas', {
-        url: "/kelas",
-        templateUrl: "views/murid/kelas/data.html",
-        data: { pageTitle: 'kelas' },
-        controller:"murid.kelas"
-    })
-    .state('murid.kelas.add', {
-        url: "/create",
-        templateUrl: "views/murid/kelas/add.html",
-        data: { pageTitle: 'add kelas' },
-        controller:"murid.kelas.add"
-    })
-
-    .state('murid.kelas.edit', {
-        url: "/edit/:id_kelas",
-        templateUrl: "views/murid/kelas/edit.html",
-        data: { pageTitle: 'edit kelas' },
-        controller:"murid.kelas.edit"
-    })
+        .state('murid.muridkelas.detailguru', {
+            url: "/detailguru/:id_guru",
+            templateUrl: "views/murid/muridkelas/detailguru.html",
+            data: { pageTitle: 'detail guru' },
+            controller:"murid.muridkelas.detailguru"
+        })
 
 }
 

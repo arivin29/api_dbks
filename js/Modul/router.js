@@ -49,6 +49,34 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         })
 
         /*-----------------------------------------
+        ADMIN ~~~~~~~~~~~~~~~~Mulai koding
+         ------------------------------------------
+        */
+
+        .state('admin', {
+            abstract: true,
+            url: "/admin",
+            data: { menu: 'admin' },
+            templateUrl: "views/template/content.html",
+            resolve: {
+                lazy: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            name: 'inspinia',
+                            files: ['js/Modul/admin/controller.js']
+                        }
+                    ]);
+                }]
+            }
+        })
+        .state('admin.dashboard', {
+            url: "/dashboard",
+            templateUrl: "views/admin/dashboard.html",
+            data: { pageTitle: 'Admin' }
+        })
+
+
+        /*-----------------------------------------
          GURU ~~~~~~~~~~~~~~~~Mulai koding
          ------------------------------------------
          */
@@ -72,7 +100,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('guru.dashboard', {
             url: "/dashboard",
             templateUrl: "views/guru/dashboard.html",
-            data: { pageTitle: 'Master' }
+            data: { pageTitle: 'Guru' }
         })
 
         /*-----------------------------------------
@@ -99,7 +127,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('murid.dashboard', {
             url: "/dashboard",
             templateUrl: "views/murid/dashboard.html",
-            data: { pageTitle: 'Master' }
+            data: { pageTitle: 'Murid' }
         })
 
 
@@ -127,7 +155,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('absen.dashboard', {
             url: "/dashboard",
             templateUrl: "views/absen/dashboard.html",
-            data: { pageTitle: 'Master' }
+            data: { pageTitle: 'Absen' }
         })
 
 

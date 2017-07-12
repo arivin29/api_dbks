@@ -2,11 +2,12 @@
     <div class="ibox-title">
         <h5>Edit Guru</h5>
         <div class="ibox-tools">
-            <a ng-click="backButton('guru.guru')" class="close-link">
+            <a ng-click="backButton('admin.guru')" class="close-link">
                 <i class="fa fa-times"></i>
             </a>
         </div>
     </div>
+
     <form ng-submit="submitForm()" >
         <div class="ibox-content">
             <div class="row">
@@ -22,7 +23,7 @@
                         <input required placeholder="Enter nuptk" ng-model="guru.nuptk" class="form-control" type="text">
                     </div>
                     <div class="form-group">
-                        <label>Nama</label>
+                        <label>Nama guru</label>
                         <input required placeholder="Enter nama" class="form-control" ng-model="guru.nama_guru" type="text">
                     </div>
                     <div class="form-group">
@@ -64,8 +65,8 @@
                         <label>Golongan</label>
                         <input required placeholder="Enter golongan" class="form-control" ng-model="guru.golongan" type="text">
                     </div>
-
                 </div>
+
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>TMK SK CPNS</label>
@@ -82,32 +83,32 @@
                     <div class="form-group">
                         <label>Alamat</label>
                         <input required placeholder="Enter alamat" class="form-control" ng-model="guru.alamat" type="text">
-                    </div>
+                    </div>                
                     <div class="form-group">
                     <label>Provinsi</label>
                     <select required class="form-control " required select2 ng-model="guru.id_provinsi"
-                            ng-options="x.id_provinsi*1 as x.provinsi for x in guru.provinsi" >
+                            ng-options="x.id_provinsi*1 as x.provinsi for x in admin.provinsi" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                     <div class="form-group">
                     <label>Kabupaten/Kota</label>
                     <select required class="form-control " required select2 ng-model="guru.id_kabkot"
-                            ng-options="x.id_kabkot*1 as x.kabkot for x in guru.kabkot" >
+                            ng-options="x.id_kabkot*1 as x.kabkot for x in admin.kabkot" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                     <div class="form-group">
                     <label>Kecamatan</label>
                     <select required class="form-control " required select2 ng-model="guru.id_kec"
-                            ng-options="x.id_kec*1 as x.kecamatan for x in guru.kecamatan" >
+                            ng-options="x.id_kec*1 as x.kecamatan for x in admin.kecamatan" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
 <!--                    <div class="form-group">
                     <label>Kelurahan</label>
                     <select required class="form-control " required select2 ng-model="guru.id_kelurahan"
-                            ng-options="x.id_kelurahan*1 as x.kelurahan for x in guru.kelurahan" >
+                            ng-options="x.id_kelurahan*1 as x.kelurahan for x in admin.kelurahan" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>

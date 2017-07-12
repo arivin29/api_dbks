@@ -8,7 +8,7 @@
              <div class="ibox-content no-kiri-kanan border-left border-right">
                  <ul class="list-group elements-list">
                      <li class="list-group-item" ui-sref-active="active">
-                         <a ui-sref="murid.murid.detail({id_murid:murid.id_murid})" >
+                         <a ui-sref="admin.murid.detail({id_murid:murid.id_murid})" >
                              <strong>Detail Murid</strong>
                          </a>
                      </li>
@@ -31,12 +31,12 @@
 
                  <div  class="ng-scope">
                      <div class="ibox-tools dropdown" uib-dropdown="">
-                         <a ng-click="backButton('murid.murid')"><i class="fa fa-times"></i></a>
+                         <a ng-click="backButton('admin.murid')"><i class="fa fa-times"></i></a>
                      </div>
                  </div>
              </div>
              <div class="ibox-content border-left border-right" full-scroll="">
-                 <div ng-show="$state.current.name === 'murid.murid.detail'">
+                 <div ng-show="$state.current.name === 'admin.murid.detail'">
                      <json-formatter json="murid" open="0"></json-formatter>
                      <div class="row">
                          <div class="col-lg-5">
@@ -89,7 +89,6 @@
                                     <td>Kabkot</td>
                                     <td>:  {{ murid.kabkot.kabkot }}</td>
                                 </tr>
-
 
                              </table>
 

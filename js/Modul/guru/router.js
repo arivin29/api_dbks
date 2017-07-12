@@ -49,39 +49,47 @@ function configguru($stateProvider) {
     })
 
     /*-----------------------------------------
-      Guru ~~~~~~~~~~~~~~~~Mulai koding
+      Muridkelas ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
-    .state('guru.guru', {
-        url: "/guru",
-        templateUrl: "views/guru/guru/data.html",
-        data: { pageTitle: 'guru' },
-        controller:"guru.guru"
+    .state('guru.muridkelas', {
+        url: "/muridkelas",
+        templateUrl: "views/guru/muridkelas/data.html",
+        data: { pageTitle: 'muridkelas' },
+        controller:"guru.muridkelas"
     })
-    .state('guru.guru.detail', {
-        url: "/detail/:id_guru",
-        templateUrl: "views/guru/guru/detail.html",
-        data: { pageTitle: 'detail' },
-        controller:"guru.guru.detail"
-    })
-    .state('guru.guru.add', {
+    .state('guru.muridkelas.add', {
         url: "/create",
-        templateUrl: "views/guru/guru/add.html",
-        data: { pageTitle: 'add guru' },
-        controller:"guru.guru.add"
+        templateUrl: "views/guru/muridkelas/add.html",
+        data: { pageTitle: 'add muridkelas' },
+        controller:"guru.muridkelas.add"
     })
 
-    .state('guru.guru.edit', {
-        url: "/edit/:id_guru",
-        templateUrl: "views/guru/guru/edit.html",
-        data: { pageTitle: 'edit guru' },
-        controller:"guru.guru.edit"
+    .state('guru.muridkelas.edit', {
+        url: "/edit/:id_murid_kelas",
+        templateUrl: "views/guru/muridkelas/edit.html",
+        data: { pageTitle: 'edit muridkelas' },
+        controller:"guru.muridkelas.edit"
     })
-        //* ------------------ Murid -------------------*//
-        .state('guru.guru.detail.murid', {
-            url: "/murid",
-            templateUrl: "views/guru/guru/murid/data.html",
-            data: { pageTitle: 'routine' },
-            controller:"guru.guru.detail.murid"
+
+        .state('guru.muridkelas.detail', {
+            url: "/detail/:id_kelas",
+            templateUrl: "views/guru/muridkelas/detail.html",
+            data: { pageTitle: 'detail kelas' },
+            controller:"guru.muridkelas.detail"
+        })
+
+        .state('guru.muridkelas.detailjurusan', {
+            url: "/detailjurusan/:id_jurusan",
+            templateUrl: "views/guru/muridkelas/detailjurusan.html",
+            data: { pageTitle: 'detail jurusan' },
+            controller:"guru.muridkelas.detailjurusan"
+        })
+
+        .state('guru.muridkelas.detailguru', {
+            url: "/detailguru/:id_guru",
+            templateUrl: "views/guru/muridkelas/detailguru.html",
+            data: { pageTitle: 'detail guru' },
+            controller:"guru.muridkelas.detailguru"
         })
 
 }

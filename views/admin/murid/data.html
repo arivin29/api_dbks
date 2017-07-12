@@ -1,16 +1,15 @@
 
 <div class="wrapper wrapper-content  animated fadeInRight" >
-    <!--ng-show="$state.current.name === 'acl.users'"-->
-    <div class="row">
+    <div ui-view></div>
+    <div class="row" ng-show="$state.current.name === 'admin.murid'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
                     <h5>Data Murid</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="murid.murid.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="admin.murid.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
-                <div ui-view></div>
 
                 <div class="ibox-content">
 
@@ -35,9 +34,9 @@
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th ng-click="sort_by('nis');" style="cursor: pointer;">NIS&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th ng-click="sort_by('nisn');" style="cursor: pointer;">NISN&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th ng-click="sort_by('nama_murid');" style="cursor: pointer;">Nama murid&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
+                                <th>NIS</th>
+                                <th>NISN</th>
+                                <th>Nama murid</th>
                                 <th>Tempat lahir</th>
                                 <th>Tanggal lahir</th>
                                 <th>Jenis kelamin</th>
@@ -71,8 +70,8 @@
                                 </td>
 
                                 <td class="text-center">
-                                    <a ui-sref="murid.murid.detail({id_murid:x.id_murid})" class="btn btn-white btn-xs">View</a>
-                                    <a ui-sref="murid.murid.edit({id_murid:x.id_murid})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ui-sref="admin.murid.detail({id_murid:x.id_murid})" class="btn btn-white btn-xs">View</a>
+                                    <a ui-sref="admin.murid.edit({id_murid:x.id_murid})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_murid)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>
 
@@ -95,7 +94,6 @@
 
         </div>
     </div>
-
 
 </div>
 <script>

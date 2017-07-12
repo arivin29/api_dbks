@@ -7,7 +7,7 @@
                 <div class="ibox-title">
                     <h5>Data Kelas</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="murid.kelas.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="master.kelas.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
                 <div ui-view></div>
@@ -38,7 +38,7 @@
                                     {{x.kelas}}
                                 </td>
                                 <td class="text-center">
-                                    <a ui-sref="murid.kelas.edit({id_kelas:x.id_kelas})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ui-sref="master.kelas.edit({id_kelas:x.id_kelas})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_kelas)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>
                             </tr>

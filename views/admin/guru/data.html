@@ -1,16 +1,15 @@
 
 <div class="wrapper wrapper-content  animated fadeInRight" >
-    <!--ng-show="$state.current.name === 'acl.users'"-->
-    <div class="row">
+    <div ui-view></div>
+    <div class="row" ng-show="$state.current.name === 'admin.guru'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
                     <h5>Data Guru</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="guru.guru.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="admin.guru.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
-                <div ui-view></div>
 
                 <div class="ibox-content">
 
@@ -76,8 +75,8 @@
                                 </td>
 
                                 <td class="text-center">
-                                    <a ui-sref="guru.guru.detail({id_guru:x.id_guru})" class="btn btn-white btn-xs">View</a>
-                                    <a ui-sref="guru.guru.edit({id_guru:x.id_guru})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ui-sref="admin.guru.detail({id_guru:x.id_guru})" class="btn btn-white btn-xs">View</a>
+                                    <a ui-sref="admin.guru.edit({id_guru:x.id_guru})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_guru)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>
 

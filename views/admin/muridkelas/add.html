@@ -1,0 +1,103 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Input New Muridkelas</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('admin.muridkelas')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                    <label>Nama murid</label>
+                    <select required class="form-control " required select2 ng-model="muridkelas.id_murid"
+                            ng-options="x.id_murid*1 as x.nama_murid for x in admin.murid" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Jurusan</label>
+                    <select required class="form-control " required select2 ng-model="muridkelas.id_jurusan"
+                            ng-options="x.id_jurusan*1 as x.jurusan for x in admin.jurusan" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="muridkelas.id_kelas"
+                            ng-options="x.id_kelas*1 as x.kelas for x in admin.kelas" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>No Absen</label>
+                        <input required placeholder="Enter no absen" class="form-control" ng-model="muridkelas.no_absen" type="number">
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Status murid<br>
+                        <small class="text-navy">Custom elements</small>
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="ON" ng-model="muridkelas.status_murid"> ON </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label> <input icheck type="radio" value="OFF" ng-model="muridkelas.status_murid"> OFF </label>
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label>Tanggal Berlaku</label>
+                        <input required placeholder="Enter " class="form-control" ng-model="muridkelas.tanggal_berlaku" type="date">
+                    </div>
+                    <div class="form-group">
+                    <label>Guru Wali Kelas</label>
+                    <select required class="form-control " required select2 ng-model="muridkelas.id_guru_wali_kelas"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>SMT</label>
+                        <input required placeholder="Enter smt" class="form-control" ng-model="muridkelas.smt" type="text">
+                    </div>
+                    <div class="form-group">
+                    <label>Nama guru</label>
+                    <select required class="form-control " required select2 ng-model="muridkelas.id_guru"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -111,12 +111,6 @@ app.controller('absen.absen.edit', function truncateCtrl($scope,$state,$statePar
  /*----------------------------------------------------------------------------------------------*/
 app.controller('absen.absentmt', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/absen/absentmt')
-        .then(function(respons){
-            $scope.datas = respons.data;
-            debugData(respons);
-        });
-
     var param = {};
     $scope.filters = {};
 

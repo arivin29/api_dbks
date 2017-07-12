@@ -20,8 +20,11 @@
                     </select>
                     </div>
                     <div class="form-group">
-                        <label>Kelas paralel</label>
-                        <input required placeholder="Enter kelas paralel" class="form-control" ng-model="buku.kelas_paralel" type="text">
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="buku.id_kelas"
+                            ng-options="x.id_kelas*1 as x.kelas for x in master.kelas" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                     <label>Nama guru</label>

@@ -1,0 +1,59 @@
+ <div class="row" id="detail_fix">
+
+     <div class="col-lg-12">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title ">
+                 <div  class="ng-scope">
+                     <div class="ibox-tools dropdown" uib-dropdown="">
+                         <a ng-click="backButton('admin.muridkelas')"><i class="fa fa-times"></i></a>
+                     </div>
+                 </div>
+             </div>
+             <div class="ibox-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nama murid</label>
+                            <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
+                           </div>
+                    </div>
+                </div>
+                <div class="table-responsive" id="table-scroll" full-scroll="">
+                    <table class="table table-hover issue-tracker">
+                        <thead>
+                        <tr>
+                            <th width="2px">#No</th>
+                            <th width="10%">Jurusan</th>
+                            <th>Nama murid</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="x in muridkelas.jurusan|filter:search">
+                            <td>
+                                {{ $index +1}}
+                            </td>
+                            <td>
+                                {{x.jurusan}}
+                            </td>
+                            <td>
+                                {{x.nama_murid}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+<script>
+    setTimeout(function(){
+        fixDetailHeight()
+    })
+</script>

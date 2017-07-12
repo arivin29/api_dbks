@@ -1,48 +1,18 @@
  <div class="row" id="detail_fix">
-     <div class="col-lg-2 p-r-0 border-right">
-         <div class="ibox float-e-margins">
-             <div class="ibox-title bg-info">
-                 <h5>{{ guru.nama_guru }}</h5>
 
-             </div>
-             <div class="ibox-content no-kiri-kanan border-left border-right">
-                 <ul class="list-group elements-list">
-                     <li class="list-group-item" ui-sref-active="active">
-                         <a ui-sref="guru.guru.detail({id_guru:guru.id_guru})" >
-                             <strong>Detail guru</strong>
-                         </a>
-                     </li>
-                     <li class="list-group-item" ui-sref-active="active">
-                         <a ui-sref="guru.guru.detail.murid">
-                             <strong>Murid {{ guru.nama_guru }}</strong>
-                         </a>
-
-                     </li>
-                 </ul>
-             </div>
-             <div class="ibox-footer">
-                        <span class="pull-right">
-                          The righ side of the footer
-                    </span>
-
-             </div>
-         </div>
-
-     </div>
-
-     <div class="col-lg-10 p-l-0">
+     <div class="col-lg-12">
          <div class="ibox float-e-margins">
              <div class="ibox-title ">
                  <h5 style="padding-left: 10px;">{{ guru.nama_guru }}</h5>
 
                  <div  class="ng-scope">
                      <div class="ibox-tools dropdown" uib-dropdown="">
-                         <a ng-click="backButton('guru.guru')"><i class="fa fa-times"></i></a>
+                         <a ng-click="backButton('admin.guru')"><i class="fa fa-times"></i></a>
                      </div>
                  </div>
              </div>
              <div class="ibox-content border-left border-right" full-scroll="">
-                 <div ng-show="$state.current.name === 'guru.guru.detail'">
+                 <div ng-show="$state.current.name === 'admin.guru.detail'">
                      <json-formatter json="guru" open="0"></json-formatter>
                      <div class="row">
                          <div class="col-lg-5">
@@ -103,31 +73,32 @@
                                 </tr>
                                 <tr>
                                     <td>Provinsi</td>
-                                    <td> {{ guru.provinsi.provinsi }}</td>
+                                    <td>: {{ guru.provinsi.provinsi }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kabupaten/Kota</td>
-                                    <td> {{ guru.kabkot.kabkot }}</td>
+                                    <td>: {{ guru.kabkot.kabkot }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kecamatan</td>
-                                    <td> {{ guru.kecamatan.kecamatan }}</td>
+                                    <td>: {{ guru.kecamatan.kecamatan }}</td>
                                 </tr>
-                                <tr>
+<!--                                <tr>
                                     <td>Kelurahan</td>
                                     <td> {{ guru.kelurahan.kelurahan }}</td>
                                 </tr>
+                                -->
                                 <tr>
                                     <td>No hp</td>
-                                    <td> {{ guru.no_hp }}</td>
+                                    <td>: {{ guru.no_hp }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kode pos</td>
-                                    <td> {{ guru.kode_pos }}</td>
+                                    <td>: {{ guru.kode_pos }}</td>
                                 </tr>
                                 <tr>
                                     <td>Agama</td>
-                                    <td> {{ guru.agama }}</td>
+                                    <td>: {{ guru.agama }}</td>
                                 </tr>
                                 <tr>
                                     <td>Status pegawai</td>
@@ -149,9 +120,7 @@
                      </div>
 
                  </div>
-
                  <ui-view></ui-view>
-
 
              </div>
              <div class="ibox-footer">
