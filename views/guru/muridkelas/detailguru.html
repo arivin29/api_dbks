@@ -40,7 +40,16 @@
                                 {{ $index +1}}
                             </td>
                             <td>
-                                {{x.nama_guru}}
+                                <div class="profile-element" uib-dropdown>
+                                    <a uib-dropdown-toggle href>
+                                        <span class="clear">
+                                            <span class="text-muted text-xs block"><strong>{{x.nama_guru | uppercase}}</strong>
+                                        </span>
+                                    </a>
+                                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                                        <li><a ui-sref="guru.muridkelas.profileguru({id_guru:x.id_guru})">View profile</a></li>
+                                        </ul>
+                                </div>
                             </td>
                             <td>
                                 {{x.nama_murid}}

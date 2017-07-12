@@ -69,6 +69,13 @@ function configguru($stateProvider) {
             controller:"guru.muridkelas.detailguru"
         })
 
+        .state('guru.muridkelas.profileguru', {
+            url: "/profileguru/:id_guru",
+            templateUrl: "views/guru/muridkelas/profileguru.html",
+            data: { pageTitle: 'detail guru' },
+            controller:"guru.muridkelas.profileguru"
+        })
+
 }
 
 angular

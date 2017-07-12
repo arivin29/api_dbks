@@ -1,0 +1,145 @@
+ <div class="row" id="detail_fix">
+
+     <div class="col-lg-12">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title ">
+                 <h5 style="padding-left: 10px;">{{ x.nama_guru }}</h5>
+
+                 <div  class="ng-scope">
+                     <div class="ibox-tools dropdown" uib-dropdown="">
+                         <a ng-click="backButton('guru.muridkelas')"><i class="fa fa-times"></i></a>
+                     </div>
+                 </div>
+             </div>
+             <div class="ibox-content border-left border-right" full-scroll="">
+                 <div ng-show="$state.current.name === 'guru.muridkelas.profileguru'">
+                     <json-formatter json="muridkelas" open="0"></json-formatter>
+                     <div class="row">
+                         <div class="col-lg-5">
+                             <table class="table padding-kecil table-mail">
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td width="40%">NIP</td>
+                                    <td  width="60%">: {{ x.nip }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>NUPTK</td>
+                                    <td>: {{ x.nuptk }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Nama guru</td>
+                                    <td>: {{ x.nama_guru }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>NIK KTP</td>
+                                    <td>:  {{ x.nik_ktp }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Tempat lahir</td>
+                                    <td>:  {{ x.tempat_lahir }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Tanggal lahir</td>
+                                    <td>:  {{ x.tanggal_lahir | date: "yyyy/MM/dd" }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Jenis kelamin</td>
+                                    <td>:  {{ x.jenis_kelamin }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Nama ibu</td>
+                                    <td>:  {{ x.nama_ibu }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>TMK SK CPNS</td>
+                                    <td>:  {{ x.tmk_sk_cpns }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>TMK SK AWAL</td>
+                                    <td>:  {{ x.tmk_sk_awal }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>TMK SK BERKAHIR</td>
+                                    <td>:  {{ x.tmk_sk_berakhir }}</td>
+                                </tr>
+
+                             </table>
+
+                         </div>
+                         <div class="col-lg-7" id="cluster_info">
+                             <table class="table padding-kecil table-mail">
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td width="40%">Alamat</td>
+                                    <td  width="60%">: {{ x.alamat }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Provinsi</td>
+                                    <td>: {{ x.provinsi }} -</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Kabupaten/Kota</td>
+                                    <td>: {{ x.kabkot }} -</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Kecamatan</td>
+                                    <td>: {{ x.kecamatan }} -</td>
+                                </tr>
+<!--                                <tr>
+                                    <td>Kelurahan</td>
+                                    <td> {{ guru.kelurahan.kelurahan }}</td>
+                                </tr>
+                                -->
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>No hp</td>
+                                    <td>: {{ x.no_hp }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Kode pos</td>
+                                    <td>: {{ x.kode_pos }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Agama</td>
+                                    <td>: {{ x.agama }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Status pegawai</td>
+                                    <td>:  {{ x.status_pegawai }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Golongan</td>
+                                    <td>:  {{ x.golongan }}</td>
+                                </tr>
+                                <tr ng-repeat="x in muridkelas.guru|limitTo:1">
+                                    <td>Satatus guru</td>
+                                    <td>:<span class="label label-{{guru.status_guru=='ON'?'primary':'warning'}}"> {{ x.status_guru }}</span></td>
+                                </tr>
+                                
+
+                             </table>
+
+                         </div>
+                     </div>
+
+                 </div>
+                 <ui-view></ui-view>
+
+             </div>
+             <div class="ibox-footer">
+                 <span class="pull-right">
+                          The righ side of the footer
+                 </span>
+                 Isi Form Dengan Benar
+             </div>
+         </div>
+
+     </div>
+
+
+
+ </div>
+
+ <script>
+
+     setTimeout(function(){
+         fixDetailHeight()
+     })
+ </script>

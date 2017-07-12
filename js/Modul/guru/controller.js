@@ -225,3 +225,14 @@ app.controller('guru.muridkelas.detailguru', function truncateCtrl($scope,$state
             $scope.param.title=$scope.muridkelas.keyword;
         });
 });
+
+// Profile guru
+app.controller('guru.muridkelas.profileguru', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.muridkelas = {};
+    myHelp.getDetail('/guru/muridkelas/' + $stateParams.id_guru)
+        .then(function(respons){
+            $scope.muridkelas = respons.data;
+            $scope.param.title=$scope.muridkelas.keyword;
+        });
+});
