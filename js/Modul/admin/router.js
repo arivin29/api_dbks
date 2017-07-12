@@ -32,6 +32,29 @@ function configadmin($stateProvider) {
     })
 
     /*-----------------------------------------
+      Gurump ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('admin.gurump', {
+        url: "/gurump",
+        templateUrl: "views/admin/gurump/data.html",
+        data: { pageTitle: 'guru mata pelajaran' },
+        controller:"admin.gurump"
+    })
+    .state('admin.gurump.add', {
+        url: "/create",
+        templateUrl: "views/admin/gurump/add.html",
+        data: { pageTitle: 'add guru mata pelajaran' },
+        controller:"admin.gurump.add"
+    })
+
+    .state('admin.gurump.edit', {
+        url: "/edit/:id_guru_mp",
+        templateUrl: "views/admin/gurump/edit.html",
+        data: { pageTitle: 'edit guru mata pekerjaan' },
+        controller:"admin.gurump.edit"
+    })
+
+    /*-----------------------------------------
       Murid ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
     .state('admin.murid', {

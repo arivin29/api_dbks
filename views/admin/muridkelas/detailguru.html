@@ -9,7 +9,7 @@
                      </div>
                  </div>
              </div>
-             <div class="ibox-content">
+             <div class="ibox-content" id="table-scroll" full-scroll="">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -43,6 +43,44 @@
                             </td>
                             <td>
                                 {{x.nama_murid}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div><br/>
+                <div class="ibox-title">
+                    <h5>Jam ngajar</h5>
+                    <div class="ibox-tools">
+                        <a ng-click="backButton('admin.muridkelas')" class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" id="table-scroll" full-scroll="">
+                <div class="table-responsive" id="table-scroll" full-scroll="">
+                    <table class="table table-hover table-bordered issue-tracker">
+                        <thead>
+                        <tr>
+                            <th width="2px">#No</th>
+                            <th width="10%">Nama guru</th>
+                            <th>Mata pelajaran</th>
+                            <th>Jam ngajar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="x in muridkelas.gurump|filter:search">
+                            <td>
+                                {{ $index +1}}
+                            </td>
+                            <td>
+                                {{x.nama_guru}}
+                            </td>
+                            <td>
+                                {{x.mata_pelajaran}}
+                            </td>
+                            <td>
+                                jam {{x.jam_ngajar | date: "HH:mm:ss"}}
                             </td>
                         </tr>
                         </tbody>

@@ -1,13 +1,13 @@
 
 <div class="wrapper wrapper-content  animated fadeInRight" >
     <div ui-view></div>
-    <div class="row" ng-show="$state.current.name === 'guru.gurump'">
+    <div class="row" ng-show="$state.current.name === 'admin.gurump'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
                     <h5>Data Guru Mata Pelajaran</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="guru.gurump.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="admin.gurump.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                                     jam {{x.jam_ngajar | date: "HH:mm:ss"}}
                                 </td>
                                 <td class="text-center">
-                                    <a ui-sref="guru.gurump.edit({id_guru_mp:x.id_guru_mp})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ui-sref="admin.gurump.edit({id_guru_mp:x.id_guru_mp})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_guru_mp)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>
                             </tr>

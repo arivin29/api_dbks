@@ -26,29 +26,6 @@ function configguru($stateProvider) {
     })
 
     /*-----------------------------------------
-      Gurump ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('guru.gurump', {
-        url: "/gurump",
-        templateUrl: "views/guru/gurump/data.html",
-        data: { pageTitle: 'guru mata pelajaran' },
-        controller:"guru.gurump"
-    })
-    .state('guru.gurump.add', {
-        url: "/create",
-        templateUrl: "views/guru/gurump/add.html",
-        data: { pageTitle: 'add guru mata pelajaran' },
-        controller:"guru.gurump.add"
-    })
-
-    .state('guru.gurump.edit', {
-        url: "/edit/:id_guru_mp",
-        templateUrl: "views/guru/gurump/edit.html",
-        data: { pageTitle: 'edit guru mata pekerjaan' },
-        controller:"guru.gurump.edit"
-    })
-
-    /*-----------------------------------------
       Muridkelas ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
     .state('guru.muridkelas', {

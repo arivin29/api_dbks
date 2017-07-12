@@ -113,6 +113,98 @@ app.controller('admin.guru.detail', function truncateCtrl($scope,$state,$statePa
 });
 
 /*----------------------------------------------------------------------------------------------
+ Gurump
+ /*----------------------------------------------------------------------------------------------*/
+app.controller('admin.gurump', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/admin/gurump')
+        .then(function(respons){
+            $scope.datas = respons.data;
+            debugData(respons);
+        });
+
+    $scope.delete = function(id)
+    {
+        myHelp.deleteParam('/admin/gurump/' + id, {})
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("admin.gurump",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("gagal hapus, data tidak ditemukan");
+                });
+    }
+
+});
+
+app.controller('admin.gurump.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/admin/gurump/create')
+        .then(function(respons){
+            $scope.admin = respons.data;
+            debugData(respons);
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.gurump);
+
+        myHelp.postParam('/admin/gurump', Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("admin.gurump",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
+    };
+
+});
+
+app.controller('admin.gurump.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.gurump = {};
+    myHelp.getParam('/admin/gurump/' + $stateParams.id_guru_mp +'/edit')
+        .then(function(respons){
+            $scope.gurump = respons.data;
+
+            //jiko ado guru
+            myHelp.getDetail('/admin/gurump/create')
+                .then(function(respons){
+                    $scope.admin = respons.data;
+                    debugData(respons);
+                });
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.gurump);
+
+
+        myHelp.putParam('/admin/gurump/'+ $stateParams.id_guru_mp, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("admin.gurump",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
+    };
+
+});
+
+/*----------------------------------------------------------------------------------------------
  Murid
  /*----------------------------------------------------------------------------------------------*/
 app.controller('admin.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
