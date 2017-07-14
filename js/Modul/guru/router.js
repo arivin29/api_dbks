@@ -26,6 +26,73 @@ function configguru($stateProvider) {
     })
 
     /*-----------------------------------------
+      Isikelas ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('guru.isikelas', {
+        url: "/isikelas",
+        templateUrl: "views/guru/isikelas/data.html",
+        data: { pageTitle: 'Isikelas' },
+        controller:"guru.isikelas"
+    })
+
+    .state('guru.isikelas.add', {
+        url: "/create",
+        templateUrl: "views/guru/isikelas/add.html",
+        data: { pageTitle: 'add isi kelas' },
+        controller:"guru.isikelas.add"
+    })
+
+    .state('guru.isikelas.edit', {
+        url: "/edit/:id_isi_kelas",
+        templateUrl: "views/guru/isikelas/edit.html",
+        data: { pageTitle: 'edit isi kelas' },
+        controller:"guru.isikelas.edit"
+    })
+
+        .state('guru.isikelas.detailkelas', {
+            url: "/detailkelas/:id_kelas",
+            templateUrl: "views/guru/isikelas/detailkelas.html",
+            data: { pageTitle: 'detail kelas murid' },
+            controller:"guru.isikelas.detailkelas"
+        })
+
+        .state('guru.isikelas.detailnilai', {
+            url: "/detailnilai/:id_kelas",
+            templateUrl: "views/guru/isikelas/detailnilai.html",
+            data: { pageTitle: 'detail nilai murid' },
+            controller:"guru.isikelas.detailnilai"
+        })
+
+        .state('guru.isikelas.detailabsensi', {
+            url: "/detailabsensi/:id_kelas",
+            templateUrl: "views/guru/isikelas/detailabsensi.html",
+            data: { pageTitle: 'detail absensi murid' },
+            controller:"guru.isikelas.detailabsensi"
+        })
+
+/*        .state('guru.isikelas.detailpnilai', {
+            url: "/detailjadwal/:id_kelas",
+            templateUrl: "views/guru/isikelas/detailpnilai.html",
+            data: { pageTitle: 'detail pengaturan nilai' },
+            controller:"guru.isikelas.detailpnilai"
+        })
+*/
+        .state('guru.isikelas.detailjadwal', {
+            url: "/detailjadwal/:id_kelas",
+            templateUrl: "views/guru/isikelas/detailjadwal.html",
+            data: { pageTitle: 'detail jadwal pelajaran kelas' },
+            controller:"guru.isikelas.detailjadwal"
+        })
+
+        .state('guru.isikelas.detailjurusan', {
+            url: "/detailjurusan/:id_jurusan",
+            templateUrl: "views/guru/isikelas/detailjurusan.html",
+            data: { pageTitle: 'detail jurusan' },
+            controller:"guru.isikelas.detailjurusan"
+        })
+
+
+    /*-----------------------------------------
       Muridkelas ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
     .state('guru.muridkelas', {
@@ -47,34 +114,6 @@ function configguru($stateProvider) {
         data: { pageTitle: 'edit muridkelas' },
         controller:"guru.muridkelas.edit"
     })
-
-        .state('guru.muridkelas.detail', {
-            url: "/detail/:id_kelas",
-            templateUrl: "views/guru/muridkelas/detail.html",
-            data: { pageTitle: 'detail kelas' },
-            controller:"guru.muridkelas.detail"
-        })
-
-        .state('guru.muridkelas.detailjurusan', {
-            url: "/detailjurusan/:id_jurusan",
-            templateUrl: "views/guru/muridkelas/detailjurusan.html",
-            data: { pageTitle: 'detail jurusan' },
-            controller:"guru.muridkelas.detailjurusan"
-        })
-
-        .state('guru.muridkelas.detailguru', {
-            url: "/detailguru/:id_guru",
-            templateUrl: "views/guru/muridkelas/detailguru.html",
-            data: { pageTitle: 'detail guru' },
-            controller:"guru.muridkelas.detailguru"
-        })
-
-        .state('guru.muridkelas.profileguru', {
-            url: "/profileguru/:id_guru",
-            templateUrl: "views/guru/muridkelas/profileguru.html",
-            data: { pageTitle: 'detail guru' },
-            controller:"guru.muridkelas.profileguru"
-        })
 
 }
 

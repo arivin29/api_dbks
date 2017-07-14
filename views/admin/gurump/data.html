@@ -34,8 +34,10 @@
                             <tr>
                                 <th width="2px">#No</th>
                                 <th>Mata pelajaran</th>
-                                <th>Nama guru</th>
+                                <th>Kelas</th>
                                 <th>Jam ngajar</th>
+                                <th>Hari</th>
+                                <th>Guru Mata Pelajaran</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
@@ -43,15 +45,19 @@
                             <tr ng-repeat="x in datas|filter:search">
                                 <td>{{ $index +1}}</td>
                                 <td>
-                                    <a href="#">
-                                        {{x.mata_pelajaran}}
-                                    </a>
+                                    {{x.mata_pelajaran | uppercase}}
                                 </td>
                                 <td>
-                                    {{x.nama_guru}}
+                                    {{x.kelas}}
                                 </td>
                                 <td>
                                     jam {{x.jam_ngajar | date: "HH:mm:ss"}}
+                                </td>
+                                <td>
+                                    {{x.hari}}
+                                </td>
+                                <td>
+                                    {{x.nama_guru}}
                                 </td>
                                 <td class="text-center">
                                     <a ui-sref="admin.gurump.edit({id_guru_mp:x.id_guru_mp})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>

@@ -1,0 +1,107 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Edit Nilai</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('admin.nilai')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                    <label>Nama murid</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_murid"
+                            ng-options="x.id_murid*1 as x.nama_murid for x in admin.murid" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Mata pelajaran</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_mata_pelajaran"
+                            ng-options="x.id_mata_pelajaran*1 as x.mata_pelajaran for x in admin.mapel" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_kelas"
+                            ng-options="x.id_kelas*1 as x.kelas for x in admin.kelas" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Nama guru</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_guru"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai ulangan satu</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_satu" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai ulangan dua</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_dua" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai ulangan UTS</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_uts" type="number">
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Nilai ulangan tiga</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_tiga" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai ulangan empat</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_empat" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai ulangan UAS</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_uas" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Is remedial</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.is_remedial" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Rumus</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.rumus" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai akhir</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.nilai_akhir" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>SMT</label>
+                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.smt" type="number">
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

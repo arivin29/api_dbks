@@ -102,6 +102,166 @@ app.controller('guru.pnilai.edit', function truncateCtrl($scope,$state,$statePar
 });
 
 /*----------------------------------------------------------------------------------------------
+ Isi Kelas
+ /*----------------------------------------------------------------------------------------------*/
+app.controller('guru.isikelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/guru/isikelas')
+        .then(function(respons){
+            $scope.datas = respons.data;
+            debugData(respons);
+        });
+
+    $scope.delete = function(id)
+    {
+        myHelp.deleteParam('/guru/isikelas/' + id, {})
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("guru.isikelas",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("gagal hapus, data tidak ditemukan");
+                });
+    }
+
+});
+
+app.controller('guru.isikelas.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/guru/isikelas/create')
+        .then(function(respons){
+            $scope.guru = respons.data;
+            debugData(respons);
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.isikelas);
+
+        myHelp.postParam('/guru/isikelas', Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("guru.isikelas",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
+    };
+
+});
+
+app.controller('guru.isikelas.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.isikelas = {};
+    myHelp.getParam('/guru/isikelas/' + $stateParams.id_isi_kelas +'/edit')
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+
+            //jiko ado murid
+            myHelp.getDetail('/guru/isikelas/create')
+                .then(function(respons){
+                    $scope.guru = respons.data;
+                    debugData(respons);
+                });
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.isikelas);
+
+
+        myHelp.putParam('/guru/isikelas/'+ $stateParams.id_isi_kelas, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("guru.isikelas",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
+    };
+
+});
+
+// Detail kelas
+app.controller('guru.isikelas.detailkelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.isikelas = {};
+    myHelp.getDetail('/guru/isikelas/' + $stateParams.id_kelas)
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            $scope.param.title=$scope.isikelas.keyword;
+        });
+});
+
+// Detail nilai
+app.controller('guru.isikelas.detailnilai', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.isikelas = {};
+    myHelp.getDetail('/guru/isikelas/' + $stateParams.id_kelas)
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            $scope.param.title=$scope.isikelas.keyword;
+        });
+});
+
+// Detail absensi
+app.controller('guru.isikelas.detailabsensi', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.isikelas = {};
+    myHelp.getDetail('/guru/isikelas/' + $stateParams.id_kelas)
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            $scope.param.title=$scope.isikelas.keyword;
+        });
+});
+
+/*
+// Detail pengaturan nilai
+app.controller('guru.isikelas.detailpnilai', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.isikelas = {};
+    myHelp.getDetail('/guru/isikelas/' + $stateParams.id_kelas)
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            $scope.param.title=$scope.isikelas.keyword;
+        });
+});
+*/
+
+// Detail jadwal
+app.controller('guru.isikelas.detailjadwal', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.isikelas = {};
+    myHelp.getDetail('/guru/isikelas/' + $stateParams.id_kelas)
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            $scope.param.title=$scope.isikelas.keyword;
+        });
+});
+
+// Detail jurusan
+app.controller('guru.isikelas.detailjurusan', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.param = {};
+    $scope.isikelas = {};
+    myHelp.getDetail('/guru/isikelas/' + $stateParams.id_jurusan)
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            $scope.param.title=$scope.isikelas.keyword;
+        });
+});
+
+/*----------------------------------------------------------------------------------------------
  Murid kelas
  /*----------------------------------------------------------------------------------------------*/
 app.controller('guru.muridkelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
@@ -193,46 +353,3 @@ app.controller('guru.muridkelas.edit', function truncateCtrl($scope,$state,$stat
 
 });
 
-// Detail kelas
-app.controller('guru.muridkelas.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.muridkelas = {};
-    myHelp.getDetail('/guru/muridkelas/' + $stateParams.id_kelas)
-        .then(function(respons){
-            $scope.muridkelas = respons.data;
-            $scope.param.title=$scope.muridkelas.keyword;
-        });
-});
-
-// Detail jurusan
-app.controller('guru.muridkelas.detailjurusan', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.muridkelas = {};
-    myHelp.getDetail('/guru/muridkelas/' + $stateParams.id_jurusan)
-        .then(function(respons){
-            $scope.muridkelas = respons.data;
-            $scope.param.title=$scope.muridkelas.keyword;
-        });
-});
-
-// Detail guru
-app.controller('guru.muridkelas.detailguru', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.muridkelas = {};
-    myHelp.getDetail('/guru/muridkelas/' + $stateParams.id_guru)
-        .then(function(respons){
-            $scope.muridkelas = respons.data;
-            $scope.param.title=$scope.muridkelas.keyword;
-        });
-});
-
-// Profile guru
-app.controller('guru.muridkelas.profileguru', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.muridkelas = {};
-    myHelp.getDetail('/guru/muridkelas/' + $stateParams.id_guru)
-        .then(function(respons){
-            $scope.muridkelas = respons.data;
-            $scope.param.title=$scope.muridkelas.keyword;
-        });
-});

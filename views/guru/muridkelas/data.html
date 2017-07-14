@@ -32,16 +32,11 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th width="2px">#No</th>
+                                <th width="10">#No</th>
                                 <th>Nama murid</th>
                                 <th>Jurusan</th>
                                 <th>Kelas</th>
-                                <th>No absen</th>
-                                <th>Status murid</th>
-                                <th>Tgl.berlaku</th>
-                                <th>Guru</th>
-                                <th>SMT</th>
-                                <th class="text-center">Action</th>
+                                <th>Wali kelas</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -50,66 +45,15 @@
                                     {{ $index +1}}
                                 </td>
                                 <td>
-                                    {{x.nama_murid}}
+                                    {{ x.nama_murid }}
                                 </td>
                                 <td>
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href>
-                                            <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{x.jurusan | uppercase}}</strong>
-                                            </span>
-                                        </a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.muridkelas.detailjurusan({id_jurusan:x.id_jurusan})">View jurusan</a></li>
-                                        </ul>
-                                    </div>
+                                    {{ x.jurusan | uppercase }}
                                 </td>
                                 <td>
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href>
-                                            <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{x.kelas | uppercase}}</strong>
-                                            </span>
-                                        </a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.muridkelas.detail({id_kelas:x.id_kelas})">View kelas</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
+                                    {{x.kelas}}
                                 <td>
-                                    {{x.no_absen}}
-                                </td>
-                                <td>
-                                    <span class="label label-{{x.status_murid=='ON'?'primary':'warning'}}">{{x.status_murid}}</span>
-                                </td>
-                                <td>
-                                    {{x.tanggal_berlaku | date: "yyyy/MM/dd"}}
-                                </td>
-                                <td>
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href>
-                                            <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{x.nama_guru}}</strong>
-                                            </span>
-                                        </a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.muridkelas.detailguru({id_guru:x.id_guru})">View guru</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    {{x.smt}}
-                                </td>
-
-                                <td class="text-center">
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href class="btn btn-white btn-xs">Category Detail</a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.muridkelas.detail({id_kelas:x.id_kelas})">View kelas</a></li>
-                                            <li><a ui-sref="guru.muridkelas.detailjurusan({id_jurusan:x.id_jurusan})">View jurusan</a><li>
-                                            <li><a ui-sref="guru.muridkelas.detailguru({id_guru:x.id_guru})">View guru</a><li>
-                                        </ul>
-                                    </div>
+                                    {{ x.nama_guru}}
                                 </td>
                             </tr>
 

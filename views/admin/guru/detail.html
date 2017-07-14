@@ -1,6 +1,30 @@
  <div class="row" id="detail_fix">
+    <div class="col-lg-2 p-r-0 border-right">
+         <div class="ibox float-e-margins">
+             <div class="ibox-title bg-info">
+                 <h5>{{ guru.nama_guru }}</h5>
 
-     <div class="col-lg-12">
+             </div>
+             <div class="ibox-content no-kiri-kanan border-left border-right">
+                 <ul class="list-group elements-list">
+                     <li class="list-group-item" ui-sref-active="active">
+                         <a ui-sref="admin.guru.detail({id_guru:guru.id_guru})" >
+                             <strong>Detail Guru</strong>
+                         </a>
+                     </li>
+                 </ul>
+             </div>
+             <div class="ibox-footer">
+                        <span class="pull-right">
+                          The righ side of the footer
+                    </span>
+
+             </div>
+         </div>
+
+     </div>
+
+     <div class="col-lg-10 p-l-0">
          <div class="ibox float-e-margins">
              <div class="ibox-title ">
                  <h5 style="padding-left: 10px;">{{ guru.nama_guru }}</h5>

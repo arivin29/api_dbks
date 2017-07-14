@@ -7,7 +7,7 @@
                 <div class="ibox-title">
                     <h5>Data Nilai</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="murid.nilai.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="admin.nilai.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
                 <div ui-view></div>
@@ -34,13 +34,13 @@
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th>Gurump</th>
-                                <th>Jenis nilai</i></th>
-                                <th>Nama murid</i></th>
-                                <th>Nilai</i></th>
-                                <th>Rumus</th>
-                                <th>Nilai akhir</th>
-                                <th>SMT</th>
+                                <th>Nama murid</th>
+                                <th width="130">Kelas</th>
+                                <th>Mata pelajaran</th>
+                                <th>Guru mata pelajaran</th>
+                                <th>N Ulngn Satu</th>
+                                <th>N Ulngn Dua</th>
+                                <th>Is remedial</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
@@ -50,30 +50,30 @@
                                     {{ $index +1}}
                                 </td>
                                 <td>
-                                    {{x.id_guru_mp}}
-                                </td>
-                                <td>
-                                    {{x.jenis}}
-                                </td>
-                                <td>
                                     {{x.nama_murid}}
                                 </td>
                                 <td>
-                                    {{x.nilai | number}} point
+                                    {{x.kelas}}
                                 </td>
                                 <td>
-                                    {{x.rumus}}
+                                    {{x.mata_pelajaran}}
                                 </td>
                                 <td>
-                                    {{x.nilai_akhir | number}} point
+                                    {{x.nama_guru}}
                                 </td>
                                 <td>
-                                    {{x.smt}}
+                                    <span class="label label-{{x.nilai_satu=='50'?'warning':'primary'}}">{{x.nilai_satu}}</span>
                                 </td>
-
+                                <td>
+                                    <span class="label label-{{x.nilai_dua=='50'?'warning':'primary'}}">{{x.nilai_dua}}</span>
+                                </td>
+                                <td>
+                                    {{x.is_remedial}}
+                                </td>
 
                                 <td class="text-center">
-                                    <a ui-sref="murid.nilai.edit({id_nilai:x.id_nilai})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                    <a ui-sref="admin.nilai.detailnilai({id_nilai:x.id_nilai})" class="btn btn-white btn-xs">View nilai</a>
+                                    <a ui-sref="admin.nilai.edit({id_nilai:x.id_nilai})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_nilai)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>
 

@@ -1,46 +1,42 @@
 
 <div class="wrapper wrapper-content  animated fadeInRight" >
     <div ui-view></div>
-    <div class="row" ng-show="$state.current.name === 'murid.muridkelas'">
+    <div class="row" ng-show="$state.current.name === 'admin.isikelas'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Data Murid Kelas</h5>
+                    <h5>Data Isi Kelas</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="murid.muridkelas.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="admin.isikelas.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
 
                 <div class="ibox-content">
 
-                   <div class="row">
+                    <div class="m-b-lg">
+                        <strong>Found {{datas.length}} issues.</strong>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Nama murid</label>
                                 <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label>&nbsp;</label>
                                 <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
 
                             </div>
                         </div>
                     </div>
                     <div class="table-responsive" id="table-scroll" full-scroll="">
-                        <table class="table table-hover issue-tracker">
+                        <table class="table table-bordered table-hover issue-tracker">
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th ng-click="sort_by('nama_murid');" style="cursor: pointer;">Murid&nbsp;&nbsp;<i class="glyphicon glyphicon-sort"></i></th>
-                                <th>Jurusan</th>
                                 <th>Kelas</th>
-                                <th>No absen</th>
-                                <th>Status murid</th>
-                                <th>Tgl.berlaku</th>
-                                <th>Guru</th>
-                                <th>SMT</th>
+                                <th>Jurusan</th>
+                                <th>Guru wali kelas</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
@@ -50,17 +46,14 @@
                                     {{ $index +1}}
                                 </td>
                                 <td>
-                                    {{x.nama_murid}}
-                                </td>
-                                <td>
                                     <div class="profile-element" uib-dropdown>
                                         <a uib-dropdown-toggle href>
                                             <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{x.jurusan | uppercase}}</strong>
+                                                <span class="text-muted text-xs block"><strong>{{ x.kelas }}</strong>
                                             </span>
                                         </a>
                                         <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="murid.muridkelas.detailjurusan({id_jurusan:x.id_jurusan})">View jurusan</a></li>
+                                            <li><a ui-sref="admin.isikelas.detailkelas({id_kelas:x.id_kelas})">View kelas</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -68,47 +61,26 @@
                                     <div class="profile-element" uib-dropdown>
                                         <a uib-dropdown-toggle href>
                                             <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{x.kelas | uppercase}}</strong>
+                                                <span class="text-muted text-xs block"><strong>{{ x.jurusan }}</strong>
                                             </span>
                                         </a>
                                         <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="murid.muridkelas.detail({id_kelas:x.id_kelas})">View kelas</a></li>
+                                            <li><a ui-sref="admin.isikelas.detailjurusan({id_jurusan:x.id_jurusan})">View kelas</a></li>
                                         </ul>
                                     </div>
                                 </td>
                                 <td>
-                                    {{x.no_absen}}
+                                    {{x.nama_guru}}
                                 </td>
-                                <td>
-                                    <span class="label label-{{x.status_murid=='ON'?'primary':'warning'}}">{{x.status_murid}}</span>
-                                </td>
-                                <td>
-                                    {{x.tanggal_berlaku | date: "yyyy/MM/dd"}}
-                                </td>
-                                <td>
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href>
-                                            <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{x.nama_guru}}</strong>
-                                            </span>
-                                        </a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="murid.muridkelas.detailguru({id_guru:x.id_guru})">View guru</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    {{x.smt}}
-                                </td>
-
                                 <td class="text-center">
                                     <div class="profile-element" uib-dropdown>
                                         <a uib-dropdown-toggle href class="btn btn-white btn-xs">Category Detail</a>
                                         <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="murid.muridkelas.detail({id_kelas:x.id_kelas})">View kelas</a></li>
-                                            <li><a ui-sref="murid.muridkelas.detailjurusan({id_jurusan:x.id_jurusan})">View jurusan</a><li>
-                                            <li><a ui-sref="murid.muridkelas.detailguru({id_guru:x.id_guru})">View guru</a><li>
+                                            <li><a ui-sref="admin.isikelas.detailkelas({id_kelas:x.id_kelas})">View kelas</a></li>
+                                            <li><a ui-sref="admin.isikelas.detailjurusan({id_jurusan:x.id_jurusan})">View jurusan</a><li>
                                         </ul>
+                                        <a ui-sref="admin.isikelas.edit({id_isi_kelas:x.id_isi_kelas})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
+                                        <a ng-dblclick="delete(x.id_isi_kelas)" class="btn btn-white btn-xs"> Delete</a>
                                     </div>
                                 </td>
                             </tr>
@@ -122,9 +94,5 @@
         </div>
     </div>
 
+
 </div>
-<script>
-    setTimeout(function(){
-        tableScroll()
-    })
-</script>

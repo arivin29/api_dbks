@@ -1,11 +1,16 @@
-  <div class="row" id="detail_fix">
+ <div class="row" id="detail_fix">
 
      <div class="col-lg-12">
          <div class="ibox float-e-margins">
-             <div class="ibox-title ">
+            <div class="ibox-title ">
                  <div  class="ng-scope">
                      <div class="ibox-tools dropdown" uib-dropdown="">
-                         <a ng-click="backButton('murid.muridkelas')"><i class="fa fa-times"></i></a>
+                        <a ng-click="backButton('guru.isikelas')"><i class="fa fa-times"></i></a>
+                          <table class="">
+                            <tr ng-repeat="x in isikelas.jurusan| limitTo:1">
+                              <td><h5><strong> JURUSAN : {{x.jurusan}} </strong></h5></td>
+                            </tr>
+                          </table>
                      </div>
                  </div>
              </div>
@@ -29,17 +34,13 @@
                         <thead>
                         <tr>
                             <th width="2px">#No</th>
-                            <th width="10%">Kelas</th>
                             <th>Nama murid</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="x in muridkelas.kelas|filter:search">
+                        <tr ng-repeat="x in isikelas.jurusan|filter:search">
                             <td>
                                 {{ $index +1}}
-                            </td>
-                            <td>
-                                {{x.kelas}}
                             </td>
                             <td>
                                 {{x.nama_murid}}

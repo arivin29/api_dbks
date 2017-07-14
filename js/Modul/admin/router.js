@@ -55,6 +55,36 @@ function configadmin($stateProvider) {
     })
 
     /*-----------------------------------------
+      Nilai ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('admin.nilai', {
+        url: "/nilai",
+        templateUrl: "views/admin/nilai/data.html",
+        data: { pageTitle: 'nilai' },
+        controller:"admin.nilai"
+    })
+    .state('admin.nilai.add', {
+        url: "/create",
+        templateUrl: "views/admin/nilai/add.html",
+        data: { pageTitle: 'nilai add' },
+        controller:"admin.nilai.add"
+    })
+
+    .state('admin.nilai.edit', {
+        url: "/edit/:id_nilai",
+        templateUrl: "views/admin/nilai/edit.html",
+        data: { pageTitle: 'nilai edit' },
+        controller:"admin.nilai.edit"
+    })
+
+        .state('admin.nilai.detailnilai', {
+            url: "/detailnilai/:id_nilai",
+            templateUrl: "views/admin/nilai/detailnilai.html",
+            data: { pageTitle: 'detail nilai murid' },
+            controller:"admin.nilai.detailnilai"
+        })
+
+    /*-----------------------------------------
       Murid ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
     .state('admin.murid', {
@@ -106,26 +136,72 @@ function configadmin($stateProvider) {
         controller:"admin.muridkelas.edit"
     })
 
-        .state('admin.muridkelas.detail', {
-            url: "/detail/:id_kelas",
-            templateUrl: "views/admin/muridkelas/detail.html",
-            data: { pageTitle: 'detail kelas' },
-            controller:"admin.muridkelas.detail"
+    /*-----------------------------------------
+      Isikelas ~~~~~~~~~~~~~~~~Mulai koding
+    /*---------------------------------------*/
+    .state('admin.isikelas', {
+        url: "/isikelas",
+        templateUrl: "views/admin/isikelas/data.html",
+        data: { pageTitle: 'Isikelas' },
+        controller:"admin.isikelas"
+    })
+
+    .state('admin.isikelas.add', {
+        url: "/create",
+        templateUrl: "views/admin/isikelas/add.html",
+        data: { pageTitle: 'add isi kelas' },
+        controller:"admin.isikelas.add"
+    })
+
+    .state('admin.isikelas.edit', {
+        url: "/edit/:id_isi_kelas",
+        templateUrl: "views/admin/isikelas/edit.html",
+        data: { pageTitle: 'edit isi kelas' },
+        controller:"admin.isikelas.edit"
+    })
+
+        .state('admin.isikelas.detailkelas', {
+            url: "/detailkelas/:id_kelas",
+            templateUrl: "views/admin/isikelas/detailkelas.html",
+            data: { pageTitle: 'detail kelas murid' },
+            controller:"admin.isikelas.detailkelas"
         })
 
-        .state('admin.muridkelas.detailjurusan', {
+        .state('admin.isikelas.detailnilai', {
+            url: "/detailnilai/:id_kelas",
+            templateUrl: "views/admin/isikelas/detailnilai.html",
+            data: { pageTitle: 'detail nilai murid' },
+            controller:"admin.isikelas.detailnilai"
+        })
+
+        .state('admin.isikelas.detailabsensi', {
+            url: "/detailabsensi/:id_kelas",
+            templateUrl: "views/admin/isikelas/detailabsensi.html",
+            data: { pageTitle: 'detail absensi murid' },
+            controller:"admin.isikelas.detailabsensi"
+        })
+
+/*        .state('admin.isikelas.detailpnilai', {
+            url: "/detailjadwal/:id_kelas",
+            templateUrl: "views/admin/isikelas/detailpnilai.html",
+            data: { pageTitle: 'detail pengaturan nilai' },
+            controller:"admin.isikelas.detailpnilai"
+        })
+*/
+        .state('admin.isikelas.detailjadwal', {
+            url: "/detailjadwal/:id_kelas",
+            templateUrl: "views/admin/isikelas/detailjadwal.html",
+            data: { pageTitle: 'detail jadwal pelajaran kelas' },
+            controller:"admin.isikelas.detailjadwal"
+        })
+
+        .state('admin.isikelas.detailjurusan', {
             url: "/detailjurusan/:id_jurusan",
-            templateUrl: "views/admin/muridkelas/detailjurusan.html",
+            templateUrl: "views/admin/isikelas/detailjurusan.html",
             data: { pageTitle: 'detail jurusan' },
-            controller:"admin.muridkelas.detailjurusan"
+            controller:"admin.isikelas.detailjurusan"
         })
 
-        .state('admin.muridkelas.detailguru', {
-            url: "/detailguru/:id_guru",
-            templateUrl: "views/admin/muridkelas/detailguru.html",
-            data: { pageTitle: 'detail guru' },
-            controller:"admin.muridkelas.detailguru"
-        })
 }
 
 angular
