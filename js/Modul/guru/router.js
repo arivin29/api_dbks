@@ -28,12 +28,20 @@ function configguru($stateProvider) {
     /*-----------------------------------------
       Isikelas ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
-    .state('guru.isikelas', {
-        url: "/isikelas",
-        templateUrl: "views/guru/isikelas/data.html",
-        data: { pageTitle: 'Isikelas' },
-        controller:"guru.isikelas"
-    })
+
+        .state('guru.isikelas', {
+            url: "/isikelas",
+            templateUrl: "views/guru/isikelas/data.html",
+            data: { pageTitle: 'Isikelas' },
+            controller:"guru.isikelas"
+        })
+
+        .state('guru.isikelas.detail', {
+            url: "/detail/:id_guru_mp",
+            templateUrl: "views/guru/isikelas/detail.html",
+            data: { pageTitle: 'Guru Kelas' },
+            controller:"guru.isikelas.detail"
+        })
 
     .state('guru.isikelas.add', {
         url: "/create",

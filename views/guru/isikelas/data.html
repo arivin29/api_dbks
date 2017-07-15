@@ -35,6 +35,7 @@
                             <tr>
                                 <th width="2px">#No</th>
                                 <th>Kelas</th>
+                                <th>Kelas Paralel</th>
                                 <th>Jurusan</th>
                                 <th>Guru wali kelas</th>
                                 <th>Action</th>
@@ -46,32 +47,14 @@
                                     {{ $index +1}}
                                 </td>
                                 <td>
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href>
-                                            <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{ x.kelas }}</strong>
-                                            </span>
+                                     <a ui-sref="guru.isikelas.detail({id_guru_mp:x.id_guru_mp})">
+                                            <strong>{{ x.kelas }}</strong>
                                         </a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.isikelas.detailkelas({id_kelas:x.id_kelas})">View kelas</a></li>
-                                        </ul>
-                                    </div>
                                 </td>
-                                <td>
-                                    <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href>
-                                            <span class="clear">
-                                                <span class="text-muted text-xs block"><strong>{{ x.jurusan }}</strong>
-                                            </span>
-                                        </a>
-                                        <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.isikelas.detailjurusan({id_jurusan:x.id_jurusan})">View kelas</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    {{x.nama_guru}}
-                                </td>
+                                <td>{{ x.kelas_paralel}}</td>
+                                <td>{{ x.jurusan}}</td>
+                                <td>{{ x.nama_guru_wali_kelas}}</td>
+
                                 <td>
                                     <div class="profile-element" uib-dropdown>
                                         <a uib-dropdown-toggle href class="btn btn-white btn-xs">Category Detail</a>

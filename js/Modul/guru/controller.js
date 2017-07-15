@@ -108,24 +108,19 @@ app.controller('guru.isikelas', function truncateCtrl($scope,$state,$stateParams
 
     myHelp.getDetail('/guru/isikelas')
         .then(function(respons){
-            $scope.datas = respons.data;
+            $scope.datas = respons.data.guru;
             debugData(respons);
         });
 
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/guru/isikelas/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("guru.isikelas",{}, { reload: true })
+});
 
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
+app.controller('guru.isikelas.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/guru/isikelas')
+        .then(function(respons){
+            $scope.isikelas = respons.data;
+            debugData(respons);
+        });
 
 });
 
