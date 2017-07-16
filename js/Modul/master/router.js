@@ -231,29 +231,6 @@ function configMaster($stateProvider) {
         controller:"master.jurusan.edit"
     })
 
-    /*-----------------------------------------
-      Kelas ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('master.kelas', {
-        url: "/kelas",
-        templateUrl: "views/master/kelas/data.html",
-        data: { pageTitle: 'kelas' },
-        controller:"master.kelas"
-    })
-    .state('master.kelas.add', {
-        url: "/create",
-        templateUrl: "views/master/kelas/add.html",
-        data: { pageTitle: 'add kelas' },
-        controller:"master.kelas.add"
-    })
-
-    .state('master.kelas.edit', {
-        url: "/edit/:id_kelas",
-        templateUrl: "views/master/kelas/edit.html",
-        data: { pageTitle: 'edit kelas' },
-        controller:"master.kelas.edit"
-    })
-
 }
 
 angular

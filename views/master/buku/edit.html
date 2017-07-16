@@ -21,11 +21,13 @@
                     </div>
                     <div class="form-group">
                     <label>Kelas</label>
-                    <select required class="form-control " required select2 ng-model="buku.id_kelas"
-                            ng-options="x.id_kelas*1 as x.kelas for x in master.kelas" >
+                    <select required class="form-control " required select2 ng-model="buku.kelas">
                         <option value="">-- please choose --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                     </select>
-                    </div>
+                    </div>                    
                     <div class="form-group">
                     <label>Nama guru</label>
                     <select required class="form-control " required select2 ng-model="buku.id_guru"

@@ -606,33 +606,6 @@ app.controller('master.jurusan.edit', function truncateCtrl($scope,$state,$state
 
 });
 
-/*----------------------------------------------------------------------------------------------
- Kelas
- /*----------------------------------------------------------------------------------------------*/
-app.controller('master.kelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/master/kelas')
-        .then(function(respons){
-            $scope.datas = respons.data;
-            debugData(respons);
-        });
-
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/master/kelas/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("master.kelas",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
-});
 
 app.controller('master.kelas.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
