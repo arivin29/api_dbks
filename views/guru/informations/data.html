@@ -1,60 +1,60 @@
 
-<div class="wrapper wrapper-content  animated fadeInRight">
+<div class="wrapper wrapper-content  animated fadeInRight" >
     <div ui-view></div>
-    <div class="row" ng-show="$state.current.name === 'guru.muridkelas'">
+    <div class="row" ng-show="$state.current.name === 'guru.informations'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Data Murid Kelas</h5>
+                    <h5>Data Informations</h5>
                     <div class="ibox-tools">
-                        <a ui-sref="guru.muridkelas.add" class="btn btn-primary btn-xs">Add new</a>
+                        <a ui-sref="guru.informations.add" class="btn btn-primary btn-xs">Add new</a>
                     </div>
                 </div>
 
                 <div class="ibox-content">
 
-                   <div class="row">
+                    <div class="m-b-lg">
+                        <strong>Found {{datas.length}} issues.</strong>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Nama murid</label>
                                 <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label>&nbsp;</label>
                                 <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
 
                             </div>
                         </div>
                     </div>
                     <div class="table-responsive" id="table-scroll" full-scroll="">
-                        <table class="table table-hover issue-tracker">
+                        <table class="table table-bordered table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th width="10">#No</th>
-                                <th>Nama murid</th>
-                                <th>Jurusan</th>
+                                <th width="2px">#No</th>
                                 <th>Kelas</th>
-                                <th>Wali kelas</th>
+                                <th>Kelas paralel</th>
+                                <th>Semester</th>
+                                <th>Mata pelajaran</th>
+                                <th>Jurusan</th>
+                                <th>Guru mata pelajaran</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas|filter:search">
+                                <td> {{ $index +1}} </td>
                                 <td>
-                                    {{ $index +1}}
+                                    <a ui-sref="guru.informations.detail({id_guru_mp:x.id_guru_mp})">
+                                        <strong>{{ x.kelas }}</strong>
+                                    </a>
                                 </td>
-                                <td>
-                                    {{ x.nama_murid }}
-                                </td>
-                                <td>
-                                    {{ x.jurusan | uppercase }}
-                                </td>
-                                <td>
-                                    {{x.kelas}}
-                                <td>
-                                    {{ x.nama_guru}}
-                                </td>
+                                <td>{{ x.kelas_paralel}}</td>
+                                <td>{{ x.smt}}</td>
+                                <td>{{ x.mata_pelajaran}}</td>
+                                <td>{{ x.jurusan}}</td>
+                                <td>{{ x.nama_guru}}</td>
                             </tr>
 
                             </tbody>

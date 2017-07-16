@@ -26,78 +26,43 @@ function configguru($stateProvider) {
     })
 
     /*-----------------------------------------
-      Isikelas ~~~~~~~~~~~~~~~~Mulai koding
+      Informations ~~~~~~~~~~~~~~~~Mulai koding
     /*---------------------------------------*/
 
-        .state('guru.isikelas', {
-            url: "/isikelas",
-            templateUrl: "views/guru/isikelas/data.html",
-            data: { pageTitle: 'Isikelas' },
-            controller:"guru.isikelas"
+        .state('guru.informations', {
+            url: "/informations",
+            templateUrl: "views/guru/informations/data.html",
+            data: { pageTitle: 'Informations guru' },
+            controller:"guru.informations"
         })
 
-        .state('guru.isikelas.detail', {
-            url: "/detail/:id_guru_mp",
-            templateUrl: "views/guru/isikelas/detail.html",
-            data: { pageTitle: 'Guru Kelas' },
-            controller:"guru.isikelas.detail"
+        .state('guru.informations.detail.nilai.add', {
+            url: "/create",
+            templateUrl: "views/guru/informations/nilai/add.html",
+            data: { pageTitle: 'add nilai murid' },
+            controller:"guru.informations.detail.nilai.add"
         })
 
-    .state('guru.isikelas.add', {
-        url: "/create",
-        templateUrl: "views/guru/isikelas/add.html",
-        data: { pageTitle: 'add isi kelas' },
-        controller:"guru.isikelas.add"
-    })
+            .state('guru.informations.detail', {
+                url: "/detail/:id_guru_mp",
+                templateUrl: "views/guru/informations/detail.html",
+                data: { pageTitle: 'Informations murid guru' },
+                controller:"guru.informations.detail"
+            })
 
-    .state('guru.isikelas.edit', {
-        url: "/edit/:id_isi_kelas",
-        templateUrl: "views/guru/isikelas/edit.html",
-        data: { pageTitle: 'edit isi kelas' },
-        controller:"guru.isikelas.edit"
-    })
-
-        .state('guru.isikelas.detailkelas', {
-            url: "/detailkelas/:id_kelas",
-            templateUrl: "views/guru/isikelas/detailkelas.html",
-            data: { pageTitle: 'detail kelas murid' },
-            controller:"guru.isikelas.detailkelas"
-        })
-
-        .state('guru.isikelas.detailnilai', {
-            url: "/detailnilai/:id_kelas",
-            templateUrl: "views/guru/isikelas/detailnilai.html",
-            data: { pageTitle: 'detail nilai murid' },
-            controller:"guru.isikelas.detailnilai"
-        })
-
-        .state('guru.isikelas.detailabsensi', {
-            url: "/detailabsensi/:id_kelas",
-            templateUrl: "views/guru/isikelas/detailabsensi.html",
-            data: { pageTitle: 'detail absensi murid' },
-            controller:"guru.isikelas.detailabsensi"
-        })
-
-/*        .state('guru.isikelas.detailpnilai', {
-            url: "/detailjadwal/:id_kelas",
-            templateUrl: "views/guru/isikelas/detailpnilai.html",
-            data: { pageTitle: 'detail pengaturan nilai' },
-            controller:"guru.isikelas.detailpnilai"
-        })
-*/
-        .state('guru.isikelas.detailjadwal', {
-            url: "/detailjadwal/:id_kelas",
-            templateUrl: "views/guru/isikelas/detailjadwal.html",
-            data: { pageTitle: 'detail jadwal pelajaran kelas' },
-            controller:"guru.isikelas.detailjadwal"
-        })
-
-        .state('guru.isikelas.detailjurusan', {
-            url: "/detailjurusan/:id_jurusan",
-            templateUrl: "views/guru/isikelas/detailjurusan.html",
-            data: { pageTitle: 'detail jurusan' },
-            controller:"guru.isikelas.detailjurusan"
-        })
+            .state('guru.informations.detail.nilai', {
+                url: "/nilai/:id_guru_mp",
+                templateUrl: "views/guru/informations/nilai/detail.html",
+                data: { pageTitle: 'Informations nilai murid' },
+                controller:"guru.informations.detail.nilai"
+            })
+    
+            .state('guru.informations.detail.absensi', {
+                url: "/absensi/:id_guru_mp",
+                templateUrl: "views/guru/informations/absensi/detail.html",
+                data: { pageTitle: 'Informations absensi murid' },
+                controller:"guru.informations.detail.absensi"
+            })
 
 
     /*-----------------------------------------

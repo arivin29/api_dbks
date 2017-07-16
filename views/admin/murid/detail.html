@@ -66,6 +66,14 @@
                                     <td>:  {{ murid.jenis_kelamin }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Email</td>
+                                    <td>:  {{ murid.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td>No Handphone</td>
+                                    <td>:  {{ murid.no_hp }}</td>
+                                </tr>
+                                <tr>
                                     <td>Hobi</td>
                                     <td>:  {{ murid.hobi }}</td>
                                 </tr>
@@ -85,10 +93,6 @@
                                     <td>Provinsi</td>
                                     <td>:  {{ murid.provinsi.provinsi }}</td>
                                 </tr>
-                                <tr>
-                                    <td>Kabkot</td>
-                                    <td>:  {{ murid.kabkot.kabkot }}</td>
-                                </tr>
 
                              </table>
 
@@ -96,8 +100,12 @@
                          <div class="col-lg-7" id="cluster_info">
                              <table class="table padding-kecil table-mail">
                                 <tr>
-                                    <td width="40%">Kecamatan</td>
-                                    <td  width="60%">: {{ murid.kecamatan.kecamatan }}</td>
+                                    <td width="40%">Kabkot</td>
+                                    <td  width="60%">:  {{ murid.kabkot.kabkot }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kecamatan</td>
+                                    <td>: {{ murid.kecamatan.kecamatan }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kelurahan</td>

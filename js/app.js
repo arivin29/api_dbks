@@ -23,7 +23,7 @@
 
 var DEBUG=true;
 var BASE_URL = 'http://arivin.xyz/ames_site/public/api/v1';
-var BASE_URL = 'http://arivin.xyz/site_sbks/public/api/v1';
+var BASE_URL = 'http://localhost/site_sbks/public/api/v1';
 
 var app = angular.module('inspinia');
 

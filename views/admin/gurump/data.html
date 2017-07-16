@@ -33,11 +33,12 @@
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
+                                <th>Guru mata pelajaran</th>
                                 <th>Mata pelajaran</th>
                                 <th>Kelas</th>
-                                <th>Jam ngajar</th>
-                                <th>Hari</th>
-                                <th>Guru Mata Pelajaran</th>
+                                <th>Kelas paralel</th>
+                                <th>Lama jam pelajaran</th>
+                                <th>Jurusan</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
@@ -45,19 +46,22 @@
                             <tr ng-repeat="x in datas|filter:search">
                                 <td>{{ $index +1}}</td>
                                 <td>
+                                    {{x.nama_guru}}
+                                </td>
+                                <td>
                                     {{x.mata_pelajaran | uppercase}}
                                 </td>
                                 <td>
                                     {{x.kelas}}
                                 </td>
                                 <td>
-                                    jam {{x.jam_ngajar | date: "HH:mm:ss"}}
+                                    {{x.kelas_paralel}}
                                 </td>
                                 <td>
-                                    {{x.hari}}
+                                    {{x.jam_ngajar }} jam
                                 </td>
                                 <td>
-                                    {{x.nama_guru}}
+                                    {{x.jurusan}}
                                 </td>
                                 <td class="text-center">
                                     <a ui-sref="admin.gurump.edit({id_guru_mp:x.id_guru_mp})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>

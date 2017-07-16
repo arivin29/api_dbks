@@ -16,13 +16,11 @@
                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Nama murid</label>
                                 <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label>&nbsp;</label>
                                 <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
 
                             </div>
@@ -32,52 +30,37 @@
                         <table class="table table-hover issue-tracker">
                             <thead>
                             <tr>
-                                <th width="2px">#No</th>
-                                <th>Status</th>
+                                <th width="10">#No</th>
+                                <th>Status murid</th>
                                 <th>Nama murid</th>
-                                <th>Jurusan</th>
                                 <th>Kelas</th>
-                                <th>No absen</th>
-                                <th>Tgl.berlaku</th>
-                                <th>Guru wali kelas</th>
-                                <th>SMT</th>
-                                <th class="text-center" width="200">Action</th>
+                                <th>Kelas paralel</th>
+                                <th>Jurusan</th>
+                                <th>No.absen</th>
+                                <th>Mata pelajaran</th>
+                                <th>Semester</th>
+                                <th>Guru mata pelajaran</th>
+                                <th>Tanggal berlaku</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas|filter:search">
+                                <td> {{ $index +1 }} </td>
                                 <td>
-                                    {{ $index +1}}
+                                    <span class="label label-{{x.status_murid=='Aktif'?'primary':'warning'}}">{{x.status_murid}}</span>
                                 </td>
-                                <td>
-                                    <span class="label label-{{x.status_murid=='ON'?'primary':'warning'}}">{{x.status_murid}}</span>
-                                </td>
-                                <td>
-                                    {{x.nama_murid}}
-                                </td>
-                                <td>
-                                    {{x.jurusan | uppercase}}
-                                </td>
-                                <td>
-                                    {{x.kelas | uppercase}}
-                                </td>
-                                <td>
-                                    {{x.no_absen}}
-                                </td>
-                                <td>
-                                    {{x.tanggal_berlaku | date: "yyyy/MM/dd"}}
-                                </td>
-                                <td>
-                                    {{x.nama_guru}}
-                                </td>
-                                <td>
-                                    {{x.smt}}
-                                </td>
-
+                                <td> {{ x.nama_murid }} </td>
+                                <td> {{ x.kelas }} </td>
+                                <td> {{ x.kelas_paralel }} </td>
+                                <td> {{ x.jurusan }} </td>
+                                <td> {{ x.no_absen }} </td>
+                                <td> {{ x.mata_pelajaran }} </td>
+                                <td> {{ x.smt }} </td>
+                                <td> {{ x.nama_guru }} </td>
+                                <td> {{ x.tanggal_berlaku }} </td>
                                 <td class="text-center">
                                     <a ui-sref="admin.muridkelas.edit({id_murid_kelas:x.id_murid_kelas})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_murid_kelas)" class="btn btn-white btn-xs"> Delete</a>
-                                    </div>
                                 </td>
                             </tr>
 

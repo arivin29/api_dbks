@@ -5,10 +5,10 @@
              <div class="ibox-title ">
                  <div  class="ng-scope">
                      <div class="ibox-tools dropdown" uib-dropdown="">
-                        <a ng-click="backButton('admin.isikelas')"><i class="fa fa-times"></i></a>
+                        <a ng-click="backButton('murid.murids')"><i class="fa fa-times"></i></a>
                           <table class="">
-                            <tr ng-repeat="x in isikelas.gurump| limitTo:1">
-                              <td><h5><strong> JADWAL PELAJARAN KELAS : {{x.kelas}} </strong></h5></td>
+                            <tr ng-repeat="x in murids| limitTo:1">
+                              <td><h5><strong> MURID : {{x.nama_murid | uppercase}} </strong></h5></td>
                             </tr>
                           </table>
                      </div>
@@ -17,21 +17,12 @@
              <div class="ibox-content" id="table-scroll" full-scroll="">
                 <ul class="list-group elements-list">
                     <table class="table-responsive">
-                        <tr ng-repeat="x in isikelas.kelas| limitTo:1">
-                            <td><li class="list-group-item"><a ui-sref="admin.isikelas.detailkelas({id_kelas:x.id_kelas})" >
+                        <tr ng-repeat="x in murids.data|limitTo:1">
+                            <td><li class="list-group-item" ui-sref-active="active"><a ui-sref="murid.murids.detailmurids({id_murid:x.id_murid})" >
                             <strong>Murid</strong>
                             </a></li></td>
-                            <td><li class="list-group-item"><a ui-sref="admin.isikelas.detailnilai({id_kelas:x.id_kelas})" >
-                            <strong>Nilai</strong>
-                            </a></li></td>
-                            <td><li class="list-group-item"><a ui-sref="admin.isikelas.detailabsensi({id_kelas:x.id_kelas})" >
-                            <strong>Absensi</strong>
-                            </a></li></td>
-                            <td><li class="list-group-item"><a ui-sref="admin.isikelas.detailpnilai({id_kelas:x.id_kelas})" >
-                            <strong>Pengaturan Nilai</strong>
-                            </a></li></td>
-                            <td><li class="list-group-item" ui-sref-active="active"><a ui-sref="admin.isikelas.detailjadwal({id_kelas:x.id_kelas})" >
-                            <strong>Jadwal Pelajaran</strong>
+                            <td><li class="list-group-item"><a ui-sref="murid.murids.detail({id_murid:x.id_murid})" >
+                            <strong>Tab tab</strong>
                             </a></li></td>
                         </tr>
                     </table>
@@ -49,18 +40,21 @@
                     </div>
                 </div>
                 <div class="table-responsive" id="table-scroll" full-scroll="">
-                    <table class="table table-hover table-bordered issue-tracker">
+                    <table class="table table-bordered table-hover issue-tracker">
                         <thead>
                         <tr>
                             <th width="2px">#No</th>
                             <th>Mata pelajaran</th>
-                            <th>Jam ngajar</th>
-                            <th>Hari</th>
-                            <th width="15%">Guru Mata Pelajaran</th>
+                            <th>Guru mata pelajaran</th>
+                            <th>Jumlah pertemuan</th>
+                            <th>Sakit</th>
+                            <th>Alfa</th>
+                            <th>Kehadiran</th>
+                            <th>Kelas</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="x in isikelas.gurump|filter:search">
+                        <tr ng-repeat="x in murids.data|filter:search">
                             <td>
                                 {{ $index +1}}
                             </td>
@@ -68,23 +62,32 @@
                                 {{x.mata_pelajaran}}
                             </td>
                             <td>
-                                 {{x.jam_ngajar | date: "HH:mm:ss"}}
-                            </td>
-                            <td>
-                                {{x.hari}}
-                            </td>
-                            <td>
                                 {{x.nama_guru}}
+                            </td>
+                            <td>
+                                {{x.}}
+                            </td>
+                            <td>
+                                {{x.}}
+                            </td>
+                            <td>
+                                {{x.}}
+                            </td>
+                            <td>
+                                {{x.}}
+                            </td>
+                            <td>
+                                {{x.kelas}}
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-                </div>
-                <ui-view></ui-view>
             </div>
+            <ui-view></ui-view>
         </div>
     </div>
+</div>
 <script>
     setTimeout(function(){
         fixDetailHeight()

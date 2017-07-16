@@ -1,18 +1,14 @@
 
 <div class="wrapper wrapper-content  animated fadeInRight" >
     <div ui-view></div>
-    <div class="row" ng-show="$state.current.name === 'guru.isikelas'">
+    <div class="row" ng-show="$state.current.name === 'murid.murids'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Data Isi Kelas</h5>
-                    <div class="ibox-tools">
-                        <a ui-sref="guru.isikelas.add" class="btn btn-primary btn-xs">Add new</a>
-                    </div>
+                    <h5>Data murids</h5>
                 </div>
 
                 <div class="ibox-content">
-
                     <div class="m-b-lg">
                         <strong>Found {{datas.length}} issues.</strong>
                     </div>
@@ -34,11 +30,7 @@
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
-                                <th>Kelas</th>
-                                <th>Kelas Paralel</th>
-                                <th>Jurusan</th>
-                                <th>Guru wali kelas</th>
-                                <th>Action</th>
+                                <th>Nama murid</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,20 +39,14 @@
                                     {{ $index +1}}
                                 </td>
                                 <td>
-                                     <a ui-sref="guru.isikelas.detail({id_guru_mp:x.id_guru_mp})">
-                                            <strong>{{ x.kelas }}</strong>
-                                        </a>
-                                </td>
-                                <td>{{ x.kelas_paralel}}</td>
-                                <td>{{ x.jurusan}}</td>
-                                <td>{{ x.nama_guru_wali_kelas}}</td>
-
-                                <td>
                                     <div class="profile-element" uib-dropdown>
-                                        <a uib-dropdown-toggle href class="btn btn-white btn-xs">Category Detail</a>
+                                        <a uib-dropdown-toggle href>
+                                            <span class="clear">
+                                                <span class="text-muted text-xs block"><strong>{{ x.nama_murid }}</strong>
+                                            </span>
+                                        </a>
                                         <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                                            <li><a ui-sref="guru.isikelas.detailkelas({id_kelas:x.id_kelas})">View kelas</a></li>
-                                            <li><a ui-sref="guru.isikelas.detailjurusan({id_jurusan:x.id_jurusan})">View jurusan</a><li>
+                                            <li><a ui-sref="murid.murids.detailmurids({id_murid:x.id_murid})">View murid</a></li>
                                         </ul>
                                     </div>
                                 </td>

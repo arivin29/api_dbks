@@ -1,13 +1,4 @@
 <div class="ibox float-e-margins pop-kecil">
-    <div class="ibox-title">
-        <h5>Input New Nilai</h5>
-        <div class="ibox-tools">
-            <a ng-click="backButton('admin.nilai')" class="close-link">
-                <i class="fa fa-times"></i>
-            </a>
-        </div>
-    </div>
-
     <form ng-submit="submitForm()" >
         <div class="ibox-content">
             <div class="row">
@@ -16,39 +7,39 @@
                     <div class="form-group">
                     <label>Nama murid</label>
                     <select required class="form-control " required select2 ng-model="nilai.id_murid"
-                            ng-options="x.id_murid*1 as x.nama_murid for x in admin.murid" >
+                            ng-options="x.id_murid*1 as x.nama_murid for x in guru.murid" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                     <div class="form-group">
-                        <label>Kelas</label>
-                        <select required class="form-control " required select2 ng-model="nilai.kelas">
-                            <option value="">-- please choose --</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
+                    <label>Jenis nilai</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_jenis_nilai"
+                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in guru.jn" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
-                        <label>Kelas paralel</label>
-                        <select required class="form-control " required select2 ng-model="nilai.kelas_paralel">
-                            <option value="">-- please choose --</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                        </select>
+                    <label>Kelas</label>
+                    <select required class="form-control " required select2 ng-model="nilai.kelas">
+                        <option value="">-- please choose --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Kelas paralel</label>
+                    <select required class="form-control " required select2 ng-model="nilai.kelas_paralel">
+                        <option value="">-- please choose --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
                     </div>
                     <div class="form-group">
                     <label>Mata pelajaran</label>
                     <select required class="form-control " required select2 ng-model="nilai.id_mata_pelajaran"
-                            ng-options="x.id_mata_pelajaran*1 as x.mata_pelajaran for x in admin.mapel" >
-                        <option value="">-- please choose --</option>
-                    </select>
-                    </div>
-                    <div class="form-group">
-                    <label>Jurusan</label>
-                    <select required class="form-control " required select2 ng-model="nilai.id_jurusan"
-                            ng-options="x.id_jurusan*1 as x.jurusan for x in admin.jurusan" >
+                            ng-options="x.id_mata_pelajaran*1 as x.mata_pelajaran for x in guru.mapel" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
@@ -64,24 +55,24 @@
                             <option value="6">6</option>
                         </select>
                     </div>
-
                 </div>
+
                 <div class="col-sm-6">
                     <div class="form-group">
-                    <label>Guru mata pelajaran</label>
-                    <select required class="form-control " required select2 ng-model="nilai.id_guru"
-                            ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru" >
+                        <label>Nilai</label>
+                        <input placeholder="10-100" class="form-control" ng-model="nilai.nilai" type="number">
+                    </div>
+                    <div class="form-group">
+                    <label>Jurusan</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_jurusan"
+                            ng-options="x.id_jurusan*1 as x.jurusan for x in guru.jurusan" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                     <div class="form-group">
-                        <label>Nilai</label>
-                        <input required="" placeholder="10-100" class="form-control" ng-model="nilai.nilai" type="number">
-                    </div>
-                    <div class="form-group">
-                    <label>Jenis nilai</label>
-                    <select required class="form-control " required select2 ng-model="nilai.id_jenis_nilai"
-                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in admin.jn" >
+                    <label>Guru mata pelajaran</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_guru_mapel"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in guru.guru" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>

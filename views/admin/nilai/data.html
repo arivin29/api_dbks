@@ -35,12 +35,13 @@
                             <tr>
                                 <th width="2px">#No</th>
                                 <th>Nama murid</th>
-                                <th width="130">Kelas</th>
+                                <th>Kelas</th>
+                                <th>Kelas paralel</th>
                                 <th>Mata pelajaran</th>
-                                <th>Guru mata pelajaran</th>
-                                <th>N Ulngn Satu</th>
-                                <th>N Ulngn Dua</th>
-                                <th>Is remedial</th>
+                                <th>Guru mapel</th>
+                                <th>Nilai</th>
+                                <th>Jenis nilai</th>
+                                <th>Jurusan</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
@@ -56,23 +57,25 @@
                                     {{x.kelas}}
                                 </td>
                                 <td>
+                                    {{x.kelas_paralel}}
+                                </td>
+                                <td>
                                     {{x.mata_pelajaran}}
                                 </td>
                                 <td>
                                     {{x.nama_guru}}
                                 </td>
                                 <td>
-                                    <span class="label label-{{x.nilai_satu=='50'?'warning':'primary'}}">{{x.nilai_satu}}</span>
+                                    {{x.nilai}}
                                 </td>
                                 <td>
-                                    <span class="label label-{{x.nilai_dua=='50'?'warning':'primary'}}">{{x.nilai_dua}}</span>
+                                    {{x.jenis}}
                                 </td>
                                 <td>
-                                    {{x.is_remedial}}
+                                    {{x.jurusan}}
                                 </td>
 
                                 <td class="text-center">
-                                    <a ui-sref="admin.nilai.detailnilai({id_nilai:x.id_nilai})" class="btn btn-white btn-xs">View nilai</a>
                                     <a ui-sref="admin.nilai.edit({id_nilai:x.id_nilai})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
                                     <a ng-dblclick="delete(x.id_nilai)" class="btn btn-white btn-xs"> Delete</a>
                                 </td>

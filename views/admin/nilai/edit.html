@@ -1,6 +1,6 @@
 <div class="ibox float-e-margins pop-kecil">
     <div class="ibox-title">
-        <h5>Edit Nilai</h5>
+        <h5>Input New Nilai</h5>
         <div class="ibox-tools">
             <a ng-click="backButton('admin.nilai')" class="close-link">
                 <i class="fa fa-times"></i>
@@ -21,6 +21,24 @@
                     </select>
                     </div>
                     <div class="form-group">
+                        <label>Kelas</label>
+                        <select required class="form-control " required select2 ng-model="nilai.kelas">
+                            <option value="">-- please choose --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Kelas paralel</label>
+                        <select required class="form-control " required select2 ng-model="nilai.kelas_paralel">
+                            <option value="">-- please choose --</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                     <label>Mata pelajaran</label>
                     <select required class="form-control " required select2 ng-model="nilai.id_mata_pelajaran"
                             ng-options="x.id_mata_pelajaran*1 as x.mata_pelajaran for x in admin.mapel" >
@@ -28,45 +46,44 @@
                     </select>
                     </div>
                     <div class="form-group">
-                    <label>Kelas</label>
-                    <select required class="form-control " required select2 ng-model="nilai.id_kelas"
-                            ng-options="x.id_kelas*1 as x.kelas for x in admin.kelas" >
+                    <label>Jurusan</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_jurusan"
+                            ng-options="x.id_jurusan*1 as x.jurusan for x in admin.jurusan" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                     <div class="form-group">
-                    <label>Nama guru</label>
+                        <label>Semester</label>
+                        <select required class="form-control " required select2 ng-model="nilai.smt">
+                            <option value="">-- please choose --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Guru mata pelajaran</label>
                     <select required class="form-control " required select2 ng-model="nilai.id_guru"
                             ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru" >
                         <option value="">-- please choose --</option>
                     </select>
                     </div>
                     <div class="form-group">
-                        <label>Nilai ulangan satu</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_satu" type="number">
+                        <label>Nilai</label>
+                        <input required="" placeholder="10-100" class="form-control" ng-model="nilai.nilai" type="number">
                     </div>
                     <div class="form-group">
-                        <label>Nilai ulangan dua</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_dua" type="number">
-                    </div>
-                    <div class="form-group">
-                        <label>Nilai ulangan UTS</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_uts" type="number">
-                    </div>
-
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label>Nilai ulangan tiga</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_tiga" type="number">
-                    </div>
-                    <div class="form-group">
-                        <label>Nilai ulangan empat</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_empat" type="number">
-                    </div>
-                    <div class="form-group">
-                        <label>Nilai ulangan UAS</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" min='50' max='100' ng-model="nilai.nilai_uas" type="number">
+                    <label>Jenis nilai</label>
+                    <select required class="form-control " required select2 ng-model="nilai.id_jenis_nilai"
+                            ng-options="x.id_jenis_nilai*1 as x.jenis for x in admin.jn" >
+                        <option value="">-- please choose --</option>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Is remedial</label>
@@ -74,15 +91,11 @@
                     </div>
                     <div class="form-group">
                         <label>Rumus</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.rumus" type="number">
+                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.rumus" type="text">
                     </div>
                     <div class="form-group">
                         <label>Nilai akhir</label>
                         <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.nilai_akhir" type="number">
-                    </div>
-                    <div class="form-group">
-                        <label>SMT</label>
-                        <input placeholder="Boleh dikosongkan" class="form-control" ng-model="nilai.smt" type="number">
                     </div>
 
                 </div>
