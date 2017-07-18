@@ -2,17 +2,29 @@
      <div class="col-lg-2 p-r-0 border-right">
          <div class="ibox float-e-margins">
              <div class="ibox-title bg-info">
-                 <h5>{{ murid.nama_murid }}</h5>
-
+                <table><tr ng-repeat="x in murid">
+                    <td><h5>{{ x.nama_murid }}</h5></td></tr>
+                </table>
              </div>
              <div class="ibox-content no-kiri-kanan border-left border-right">
-                 <ul class="list-group elements-list">
-                     <li class="list-group-item" ui-sref-active="active">
-                         <a ui-sref="admin.murid.detail({id_murid:murid.id_murid})" >
-                             <strong>Detail Murid</strong>
-                         </a>
-                     </li>
-                 </ul>
+                    <ul class="list-group elements-list">
+                        <table>
+                            <tr ng-repeat="x in murid"><td>
+                            <li class="list-group-item" ui-sref-active="active">
+                                <a ui-sref="admin.murid.detail({id_murid:x.id_murid})" >
+                                    <strong>Detail Murid</strong>
+                                </a>
+                            </li>
+                            <td></tr>
+                            <tr ng-repeat="x in murid"><td>
+                            <li class="list-group-item" ui-sref-active="active">
+                                <a ui-sref="admin.murid.detailmk({id_murid:x.id_murid})" >
+                                    <strong>Tab lain</strong>
+                                </a>
+                            </li>
+                            <td></tr>
+                        </table>
+                    </ul>
              </div>
              <div class="ibox-footer">
                         <span class="pull-right">
@@ -27,8 +39,6 @@
      <div class="col-lg-10 p-l-0">
          <div class="ibox float-e-margins">
              <div class="ibox-title ">
-                 <h5 style="padding-left: 10px;">{{ murid.nama_murid }}</h5>
-
                  <div  class="ng-scope">
                      <div class="ibox-tools dropdown" uib-dropdown="">
                          <a ng-click="backButton('admin.murid')"><i class="fa fa-times"></i></a>
@@ -41,57 +51,57 @@
                      <div class="row">
                          <div class="col-lg-5">
                              <table class="table padding-kecil table-mail">
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td width="40%">NIS</td>
-                                    <td  width="60%">: {{ murid.nis }}</td>
+                                    <td  width="60%">: {{ x.nis }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>NISN</td>
-                                    <td>: {{ murid.nisn }}</td>
+                                    <td>: {{ x.nisn }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Nama murid</td>
-                                    <td>: {{ murid.nama_murid }}</td>
+                                    <td>: {{ x.nama_murid }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Tempat lahir</td>
-                                    <td>:  {{ murid.tempat_lahir }}</td>
+                                    <td>:  {{ x.tempat_lahir }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Tanggal lahir</td>
-                                    <td>:  {{ murid.tanggal_lahir | date: "yyyy/MM/dd"}}</td>
+                                    <td>:  {{ x.tanggal_lahir | date: "yyyy/MM/dd"}}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Jenis kelamin</td>
-                                    <td>:  {{ murid.jenis_kelamin }}</td>
+                                    <td>:  {{ x.jenis_kelamin }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Email</td>
-                                    <td>:  {{ murid.email }}</td>
+                                    <td>:  {{ x.email }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>No Handphone</td>
-                                    <td>:  {{ murid.no_hp }}</td>
+                                    <td>:  {{ x.no_hp }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Hobi</td>
-                                    <td>:  {{ murid.hobi }}</td>
+                                    <td>:  {{ x.hobi }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Cita-cita</td>
-                                    <td>:  {{ murid.cita_cita }}</td>
+                                    <td>:  {{ x.cita_cita }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Jumlah saudara</td>
-                                    <td>:  {{ murid.jumlah_saudara }}</td>
+                                    <td>:  {{ x.jumlah_saudara }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Alamat</td>
-                                    <td>:  {{ murid.alamat }}</td>
+                                    <td>:  {{ x.alamat }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Provinsi</td>
-                                    <td>:  {{ murid.provinsi.provinsi }}</td>
+                                    <td>:  {{ x.provinsi }}</td>
                                 </tr>
 
                              </table>
@@ -99,57 +109,58 @@
                          </div>
                          <div class="col-lg-7" id="cluster_info">
                              <table class="table padding-kecil table-mail">
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td width="40%">Kabkot</td>
-                                    <td  width="60%">:  {{ murid.kabkot.kabkot }}</td>
+                                    <td  width="60%">:  {{ x.kabkot }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Kecamatan</td>
-                                    <td>: {{ murid.kecamatan.kecamatan }}</td>
+                                    <td>: {{ x.kecamatan }}</td>
                                 </tr>
-                                <tr>
+<!--                                <tr ng-repeat="x in murid">
                                     <td>Kelurahan</td>
-                                    <td>: {{ murid.kelurahan.kelurahan }}</td>
+                                    <td>: {{ x.kelurahan }}</td>
                                 </tr>
-                                <tr>
+                                -->
+                                <tr ng-repeat="x in murid">
                                     <td>Kode pos</td>
-                                    <td>: {{ murid.kode_pos }}</td>
+                                    <td>: {{ x.kode_pos }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>NOKK</td>
-                                    <td>: {{ murid.no_kk }}</td>
+                                    <td>: {{ x.no_kk }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Nama ayah</td>
-                                    <td>: {{ murid.nama_ayah }}</td>
+                                    <td>: {{ x.nama_ayah }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Pendidikan ayah</td>
-                                    <td>: {{ murid.pendidikan.pendidikan }}</td>
+                                    <td>: {{ x.pendidikan }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Pekerjaan ayah</td>
-                                    <td>: {{ murid.pekerjaan.pekerjaan }}</td>
+                                    <td>: {{ x.pekerjaan }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Nama ibu</td>
-                                    <td>: {{ murid.nama_ibu }}</td>
+                                    <td>: {{ x.nama_ibu }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Pendidikan ibu</td>
-                                    <td>: {{ murid.pendidikan.pendidikan }}</td>
+                                    <td>: {{ x.pendidikan }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Pekerjaan ibu</td>
-                                    <td>: {{ murid.pekerjaan.pekerjaan }}</td>
+                                    <td>: {{ x.pekerjaan }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Agama</td>
-                                    <td>: {{ murid.agama }}</td>
+                                    <td>: {{ x.agama }}</td>
                                 </tr>
-                                <tr>
+                                <tr ng-repeat="x in murid">
                                     <td>Satatus murid</td>
-                                    <td>:<span class="label label-{{murid.status_murid=='ON'?'primary':'warning'}}"> {{ murid.status_murid }}</span></td>
+                                    <td>:<span class="label label-{{x.status_murid=='ON'?'primary':'warning'}}"> {{ x.status_murid }}</span></td>
                                 </tr>
                                 
 

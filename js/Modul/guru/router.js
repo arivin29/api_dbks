@@ -64,30 +64,6 @@ function configguru($stateProvider) {
                 controller:"guru.informations.detail.absensi"
             })
 
-
-    /*-----------------------------------------
-      Muridkelas ~~~~~~~~~~~~~~~~Mulai koding
-    /*---------------------------------------*/
-    .state('guru.muridkelas', {
-        url: "/muridkelas",
-        templateUrl: "views/guru/muridkelas/data.html",
-        data: { pageTitle: 'muridkelas' },
-        controller:"guru.muridkelas"
-    })
-    .state('guru.muridkelas.add', {
-        url: "/create",
-        templateUrl: "views/guru/muridkelas/add.html",
-        data: { pageTitle: 'add muridkelas' },
-        controller:"guru.muridkelas.add"
-    })
-
-    .state('guru.muridkelas.edit', {
-        url: "/edit/:id_murid_kelas",
-        templateUrl: "views/guru/muridkelas/edit.html",
-        data: { pageTitle: 'edit muridkelas' },
-        controller:"guru.muridkelas.edit"
-    })
-
 }
 
 angular

@@ -5,20 +5,11 @@ var app = angular.module('inspinia');
  /*----------------------------------------------------------------------------------------------*/
 app.controller('admin.guru', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/admin/guru',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    myHelp.getDetail('/admin/guru')
+        .then(function(respons){
+            $scope.datas = respons.data.guru;
+            debugData(respons);
+    });    
 
     $scope.delete = function(id)
     {
@@ -72,7 +63,7 @@ app.controller('admin.guru.edit', function truncateCtrl($scope,$state,$statePara
         .then(function(respons){
             $scope.guru = respons.data;
 
-            //jiko ado murid
+            //jiko ado guru
             myHelp.getDetail('/admin/guru/create')
                 .then(function(respons){
                     $scope.admin = respons.data;
@@ -103,12 +94,11 @@ app.controller('admin.guru.edit', function truncateCtrl($scope,$state,$statePara
 
 // Detail Guru
 app.controller('admin.guru.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
+
     $scope.guru = {};
     myHelp.getDetail('/admin/guru/' + $stateParams.id_guru)
         .then(function(respons){
-            $scope.guru = respons.data;
-            $scope.param.title=$scope.guru.keyword;
+            $scope.guru = respons.data.getguru;
         });
 });
 
@@ -119,9 +109,9 @@ app.controller('admin.gurump', function truncateCtrl($scope,$state,$stateParams,
 
     myHelp.getDetail('/admin/gurump')
         .then(function(respons){
-            $scope.datas = respons.data;
+            $scope.datas = respons.data.gurump;
             debugData(respons);
-        });
+    });
 
         $scope.delete = function(id)
     {
@@ -206,7 +196,7 @@ app.controller('admin.gurump.edit', function truncateCtrl($scope,$state,$statePa
 
 /*----------------------------------------------------------------------------------------------
  Murid
- /*----------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------*/
 app.controller('admin.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
     var param = {};
@@ -311,7 +301,7 @@ app.controller('admin.murid.detail', function truncateCtrl($scope,$state,$stateP
     $scope.murid = {};
     myHelp.getDetail('/admin/murid/' + $stateParams.id_murid)
         .then(function(respons){
-            $scope.murid = respons.data;
+            $scope.murid = respons.data.getmurid;
         });
 });
 
@@ -462,14 +452,6 @@ app.controller('admin.nilai.add', function truncateCtrl($scope,$state,$statePara
 
     };
 
-    $scope.selectParent = function(parent,keyword)
-    {
-        console.log(parent);
-        $scope.nilai.parent = parent;
-        $scope.keyword=keyword;
-        colosePopup();
-    }
-
 });
 
 app.controller('admin.nilai.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
@@ -510,11 +492,10 @@ app.controller('admin.nilai.edit', function truncateCtrl($scope,$state,$statePar
 
 // Detail nilai
 app.controller('admin.nilai.detailnilai', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
+
     $scope.nilai = {};
     myHelp.getDetail('/admin/nilai/' + $stateParams.id_nilai)
         .then(function(respons){
             $scope.nilai = respons.data;
-            $scope.param.title=$scope.nilai.keyword;
         });
 });

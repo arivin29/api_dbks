@@ -7,19 +7,19 @@
                 <tr ng-repeat="x in informations|limitTo:1">
                 <td>
                 <ul class="nav nav-tabs" >
-                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                    <li class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
                         <a ui-sref="guru.informations.detail({id_guru_mp:x.id_guru_mp})" class="ng-binding">Murid</a>
                     </li>
-                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                    <li class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
                         <a ui-sref="guru.informations.detail.nilai({id_guru_mp:x.id_guru_mp})" class="ng-binding">Nilai</a>
                     </li>
-                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                    <li class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
                         <a ui-sref="guru.informations.detail.absensi({id_guru_mp:x.id_guru_mp})" class="ng-binding">Absensi</a>
                     </li>
-                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                    <li class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
                         <a ui-sref="guru.informations.detail.pnilai({id_guru_mp:x.id_guru_mp})" class="ng-binding">Pengaturan Nilai</a>
                     </li>
-                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                    <li class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
                         <a ui-sref="#" class="ng-binding">Tab lainnya</a>
                     </li>
                     <li class="uib-tab ng-scope ng-isolate-scope pull-right" heading="Second Tab">
@@ -33,7 +33,7 @@
             <div class="ibox-content border-left border-right" full-scroll="">
                 <table>
                 <tr ng-repeat="x in informations|limitTo:1">
-                    <td><h3>Kelas {{x.kelas}} {{x.jurusan}} {{x.kelas_paralel}} <small>jumlah {{informations.length}} murid</small></h3></td>
+                    <td><h3>Kelas {{x.kelas}} {{x.jurusan}} {{x.kelas_paralel}} <small>jumlah {{informations.length}} murid | wali kelas : <strong>{{x.nama_guru}}</strong></small></h3></td>
                 </tr>
                 </table>
                 <div ui-view></div>
@@ -65,9 +65,6 @@
                 </tr>
                 </tbody>
                 </table>
-
-                
-
 
             </div>
             <div class="ibox-footer">

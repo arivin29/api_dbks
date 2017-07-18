@@ -1,99 +1,26 @@
 var app = angular.module('inspinia');
 
 /*----------------------------------------------------------------------------------------------
- Isi Kelas
+ Murid
  /*----------------------------------------------------------------------------------------------*/
-app.controller('murid.murids', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('murid.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/murid/murids')
+    myHelp.getDetail('/murid/murid')
         .then(function(respons){
-            $scope.datas = respons.data;
+            $scope.Limit = 10;
+            $scope.datas = respons.data.murid;
             debugData(respons);
         });
 
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/murid/murids/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("murid.murids",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
 });
 
-// Detail murids
-app.controller('murid.murids.detailmurids', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.murids = {};
-    myHelp.getDetail('/murid/murids/' + $stateParams.id_murid)
+// Detail murid
+app.controller('murid.murid.detailmurid', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.murid = {};
+    myHelp.getDetail('/murid/murid/' + $stateParams.id_murid)
         .then(function(respons){
-            $scope.murids = respons.data;
-            $scope.param.title=$scope.murids.keyword;
+            $scope.murid = respons.data;
+
         });
 });
-
-/*
-
-// Detail nilai
-app.controller('murid.murids.detailnilai', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.murids = {};
-    myHelp.getDetail('/murid/murids/' + $stateParams.id_murid)
-        .then(function(respons){
-            $scope.murids = respons.data;
-            $scope.param.title=$scope.murids.keyword;
-        });
-});
-
-// Detail absensi
-app.controller('murid.murids.detailabsensi', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.murids = {};
-    myHelp.getDetail('/murid/murids/' + $stateParams.id_murid)
-        .then(function(respons){
-            $scope.murids = respons.data;
-            $scope.param.title=$scope.murids.keyword;
-        });
-});
-
-// Detail pengaturan nilai
-app.controller('murid.murids.detailpnilai', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.murids = {};
-    myHelp.getDetail('/murid/murids/' + $stateParams.id_murid)
-        .then(function(respons){
-            $scope.murids = respons.data;
-            $scope.param.title=$scope.murids.keyword;
-        });
-});
-
-// Detail jadwal
-app.controller('murid.murids.detailjadwal', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.murids = {};
-    myHelp.getDetail('/murid/murids/' + $stateParams.id_murid)
-        .then(function(respons){
-            $scope.murids = respons.data;
-            $scope.param.title=$scope.murids.keyword;
-        });
-});
-
-// Detail jurusan
-app.controller('murid.murids.detailjurusan', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param = {};
-    $scope.murids = {};
-    myHelp.getDetail('/murid/murids/' + $stateParams.id_jurusan)
-        .then(function(respons){
-            $scope.murids = respons.data;
-            $scope.param.title=$scope.murids.keyword;
-        });
-});
-
-*/

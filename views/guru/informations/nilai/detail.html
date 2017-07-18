@@ -3,9 +3,14 @@
 
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
-            <div class="ibox-tools pull-right">
-                <a ui-sref="guru.informations.detail.nilai.add" class="btn btn-primary btn-xs">Add nilai</a>
-            </div>
+                <div class="ibox-tools pull-right">
+                    <table>
+                        <tr ng-repeat="x in informations|limitTo:1"><td><h3>Pelajaran {{x.mata_pelajaran}}</h3></td></tr>
+                    </table>
+                </div>
+                
+                <div ui-view></ui-view>
+                
                 <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -29,8 +34,6 @@
                         </tr>
                 </tbody>
                 </table>
-
-                <ui-view></ui-view>
 
             </div>
             <div class="ibox-footer">

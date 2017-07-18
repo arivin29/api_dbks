@@ -15,20 +15,20 @@ app.controller('guru.informations', function truncateCtrl($scope,$state,$statePa
 
 app.controller('guru.informations.detail.nilai.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/guru/informations/create')
+    myHelp.getDetail('/guru/nilai/create')
         .then(function(respons){
             $scope.guru = respons.data;
             debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.informations);
+        var Param = clearObj($scope.nilai);
 
-        myHelp.postParam('/guru/informations', Param)
+        myHelp.postParam('/guru/nilai', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("guru.informations",{}, { reload: true })
+                    $state.go("guru.nilai",{}, { reload: true })
 
                 }
                 , function myError()

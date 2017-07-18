@@ -14,7 +14,7 @@ function configadmin($stateProvider) {
     .state('admin.guru.detail', {
         url: "/detail/:id_guru",
         templateUrl: "views/admin/guru/detail.html",
-        data: { pageTitle: 'detail' },
+        data: { pageTitle: 'Detail guru' },
         controller:"admin.guru.detail"
     })
     .state('admin.guru.add', {

@@ -306,7 +306,7 @@ app.controller('absen.absenrekap', function truncateCtrl($scope,$state,$statePar
 
     myHelp.getDetail('/absen/absenrekap')
         .then(function(respons){
-            $scope.datas = respons.data;
+            $scope.datas = respons.data.absenrekap;
             debugData(respons);
         });
 

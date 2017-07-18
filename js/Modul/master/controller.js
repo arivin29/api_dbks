@@ -5,20 +5,11 @@ var app = angular.module('inspinia');
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.pendidikan', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/pendidikan',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    myHelp.getDetail('/master/pendidikan')
+        .then(function(respons){
+            $scope.datas = respons.data;
+            debugData(respons);
+    });
 
     $scope.delete = function(id)
     {
@@ -106,20 +97,11 @@ app.controller('master.pendidikan.edit', function truncateCtrl($scope,$state,$st
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.pekerjaan', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/pekerjaan',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    myHelp.getDetail('/master/pekerjaan')
+        .then(function(respons){
+            $scope.datas = respons.data;
+            debugData(respons);
+    });
 
     $scope.delete = function(id)
     {
@@ -308,20 +290,11 @@ app.controller('master.mapel.edit', function truncateCtrl($scope,$state,$statePa
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.jn', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/jn',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    myHelp.getDetail('/master/jn')
+        .then(function(respons){
+            $scope.datas = respons.data;
+            debugData(respons);
+    });
 
     $scope.delete = function(id)
     {
@@ -409,20 +382,11 @@ app.controller('master.jn.edit', function truncateCtrl($scope,$state,$stateParam
  /*----------------------------------------------------------------------------------------------*/
 app.controller('master.buku', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    var param = {};
-    $scope.filters = {};
-
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/master/buku',clearObj(param))
-            .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
-            });
-
-    }
-    $scope.filter(1);
+    myHelp.getDetail('/master/buku')
+        .then(function(respons){
+            $scope.datas = respons.data.buku;
+            debugData(respons);
+        });
 
     $scope.delete = function(id)
     {
