@@ -184,3 +184,27 @@ label {
 table hr {
     margin: 5px 0px;
 }
+
+table.no_border td{
+    border: none !important;
+}
+
+table.table-no_border td {
+    border: none !important;
+    padding: 4px !important;
+}
+.ibox-content table.th-gray th {
+    padding-top: 13px !important;
+    padding-bottom: 14px !important;
+    background: #ebebec;
+}
+
+.ibox-content h3 {
+    border-left: 3px solid #337ab7;
+    background: #f9f9f9;
+    line-height: 36px;
+    color: #2b5f94;
+    padding-left: 6px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ddd;
+}

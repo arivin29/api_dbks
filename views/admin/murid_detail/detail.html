@@ -1,0 +1,119 @@
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row" id="detail_fix">
+        <div class="col-lg-3 p-r-0 border-right">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title bg-info">
+                    <h5>{{murid.nis}}</h5>
+                </div>
+                <div class="ibox-content no-kiri-kanan border-left border-right">
+
+                    <div class="profile-image">
+                        <img src="../../../img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
+                    </div>
+                    <table class="table no_border">
+                        <tr>
+                            <td><b> </b></td>
+                            <td class="text-right"><a class="" ui-sref="admin.murid.detail.edit"><i
+                                    class="fa fa-edit"></i> Perbarui </a></td>
+                        </tr>
+                        <tr>
+                            <td><b>NIS</b></td>
+                            <td class="text-right">{{murid.nis}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NISN</b></td>
+                            <td class="text-right">{{murid.nisn}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>nama murid</b></td>
+                            <td class="text-right">{{murid.nama_murid}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>KTP</b></td>
+                            <td class="text-right">{{murid.nik_ktp}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>NIP</b></td>
+                            <td class="text-right">{{murid.nip}}</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+                <div class="ibox-footer">
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-9 p-l-0">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title no-padding " style="padding-top: 5px !important;">
+
+                    <ul class="nav nav-tabs">
+                        <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                            <a ui-sref="admin.murid_detail.kelas" class="ng-binding">Kelas</a>
+                        </li>
+                        <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                            <a ui-sref="admin.murid_detail.mata_pelajaran" class="ng-binding">Mata Pelajaran</a>
+                        </li>
+                        <li class="uib-tab ng-scope ng-isolate-scope pull-right" heading="Second Tab">
+                            <a back-button=""><i class="fa fa-times"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibox-content border-left border-right" full-scroll="">
+
+                    <ui-view></ui-view>
+
+                </div>
+                <div class="ibox-footer">
+                 <span class="pull-right">
+                          The righ side of the footer
+                 </span>
+                    Isi Form Dengan Benar
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+
+    setTimeout(function () {
+        fixDetailHeight()
+    })
+</script>

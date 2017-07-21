@@ -1,0 +1,82 @@
+<h3>Input Nilai</h3>
+<hr>
+<form ng-submit="submitForm()">
+<div class="row">
+    <div class="col-sm-4 b-r">
+        <div class="form-group">
+            <label>Jenis nilai</label>
+            <select required class="form-control " required select2 ng-model="param.id_jenis_nilai"
+                    ng-options="x.id_jenis_nilai as x.jenis for x in jenis_nilai" >
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Batas Remedial</label>
+            <input placeholder="10-100" class="form-control" max-maxlength="100" ng-change="cek_batas_remedial()" ng-model="param.batas_remedial" type="number">
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Tanggal Rekap</label>
+            <input datepicker="" class="form-control" required ng-model="param.tanggal_rekap" type="text">
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="2px">#No</th>
+                <th>NIS</th>
+                <th>Nama murid</th>
+                <th>Nilai</th>
+                <th class="text-center">Batas Remedial</th>
+                <th>Remedial</th>
+                <th>Nilai Akhir</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in murid_nilai">
+                <td width="5%">{{ $index +1 }}</td>
+                <td width="20%">
+                    <b>{{x.nis}}</b>
+                </td>
+                <td width="30%">
+                    {{x.nama_murid}}
+                </td>
+                <td width="10%">
+                    <input class="form-control" ng-model="x.nilai">
+                </td>
+                <td width="10%">
+                    {{param.batas_remedial}}
+                </td>
+                <td width="10%" >
+                    <input ng-show="x.nilai < param.batas_remedial" class="form-control" ng-model="x.is_remedial">
+                </td>
+                <td width="10%">
+                    <input required  class="form-control" ng-model="x.nilai_akhir">
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-left">
+            <p>Please check from before save*</p>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                <i class="fa fa-save"></i> &nbsp;
+                <strong> Save</strong></button>
+        </div>
+
+    </div>
+
+</div>
+</form>

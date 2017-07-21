@@ -1,0 +1,31 @@
+<ui-view></ui-view>
+
+<div ng-show="$state.current.name === 'admin.guru.detail.gurump'">
+    <h3>Guru Mata Pelajaran
+        <a class="pull-right" ui-sref="admin.guru.detail.gurump.add">
+            <i class="fa fa-plus"></i> Add
+        </a>
+    </h3>
+
+    <table class="table table th-gray">
+        <tr>
+            <th>No</th>
+            <th>Mata Pelajaran</th>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>K.Paralel</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="x in gurumps">
+            <td>{{$index+1}}</td>
+            <td>{{x.mata_pelajaran}}</td>
+            <td>{{x.kelas}}</td>
+            <td>{{x.jurusan}}</td>
+            <td>{{x.kelas_paralel}}</td>
+            <td class="text-right">
+                <label class="label label-info pointer" ui-sref="admin.guru.detail.gurump.edit(x.id_guru_mp)"><i class="fa fa-edit"></i> </label>
+                <label class="label label-warning pointer" ng-click="delete_gurump(x.id_guru_mp)"><i class="fa fa-trash-o"></i> </label>
+            </td>
+        </tr>
+    </table>
+</div>

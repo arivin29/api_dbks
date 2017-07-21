@@ -1,178 +1,114 @@
- <div class="row" id="detail_fix">
-    <div class="col-lg-2 p-r-0 border-right">
-         <div class="ibox float-e-margins">
-             <div class="ibox-title bg-info">
-                <table><tr ng-repeat="x in guru">
-                    <td><h5>{{ x.nama_guru }}</h5></td></tr>
+<div class="row" id="detail_fix">
+    <div class="col-lg-3 p-r-0 border-right">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title bg-info">
+                <h5>{{guru.nama_guru}}</h5>
+            </div>
+            <div class="ibox-content no-kiri-kanan border-left border-right">
+
+                <div class="profile-image">
+                    <img src="../../../img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
+                </div>
+                <table class="table no_border">
+                    <tr>
+                        <td><b> </b></td>
+                        <td class="text-right"><a class="" ui-sref="admin.guru.detail.edit"><i class="fa fa-edit"></i> Perbarui </a></td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NUPTK</b></td>
+                        <td class="text-right">{{guru.nuptk}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>nama guru</b></td>
+                        <td class="text-right">{{guru.nama_guru}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>KTP</b></td>
+                        <td class="text-right">{{guru.nik_ktp}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>NIP</b></td>
+                        <td class="text-right">{{guru.nip}}</td>
+                    </tr>
+
                 </table>
-             </div>
-             <div class="ibox-content no-kiri-kanan border-left border-right">
-                    <ul class="list-group elements-list">
-                        <table>
-                            <tr ng-repeat="x in guru"><td>
-                            <li class="list-group-item" ui-sref-active="active">
-                                <a ui-sref="admin.guru.detail({id_guru:x.id_guru})" >
-                                    <strong>Detail Guru</strong>
-                                </a>
-                            </li>
-                            <td></tr>
-                            <tr ng-repeat="x in guru"><td>
-                            <li class="list-group-item" ui-sref-active="active">
-                                <a ui-sref="admin.guru.detailgm({id_guru:x.id_guru})" >
-                                    <strong>Mata pelajaran yang ditempuh</strong>
-                                </a>
-                            </li>
-                            <td></tr>
-                        </table>
-                    </ul>
-             </div>
-             <div class="ibox-footer">
-                        <span class="pull-right">
-                          The righ side of the footer
-                    </span>
 
-             </div>
-         </div>
+            </div>
+            <div class="ibox-footer">
 
-     </div>
 
-     <div class="col-lg-10 p-l-0">
-         <div class="ibox float-e-margins">
-             <div class="ibox-title ">
-                 <div  class="ng-scope">
-                     <div class="ibox-tools dropdown" uib-dropdown="">
-                         <a ng-click="backButton('admin.guru')"><i class="fa fa-times"></i></a>
-                     </div>
-                 </div>
-             </div>
-             <div class="ibox-content border-left border-right" full-scroll="">
-                 <div ng-show="$state.current.name === 'admin.guru.detail'">
-                     <json-formatter json="guru" open="0"></json-formatter>
-                     <div class="row">
-                         <div class="col-lg-5">
-                             <table class="table padding-kecil table-mail">
-                                <tr ng-repeat="x in guru">
-                                    <td width="40%">NIP</td>
-                                    <td  width="60%">: {{ x.nip }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>NUPTK</td>
-                                    <td>: {{ x.nuptk }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Nama guru</td>
-                                    <td>: {{ x.nama_guru }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>NIK KTP</td>
-                                    <td>:  {{ x.nik_ktp }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Tempat lahir</td>
-                                    <td>:  {{ x.tempat_lahir }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Tanggal lahir</td>
-                                    <td>:  {{ x.tanggal_lahir | date: "yyyy/MM/dd" }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Jenis kelamin</td>
-                                    <td>:  {{ x.jenis_kelamin }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Nama ibu</td>
-                                    <td>:  {{ x.nama_ibu }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>TMK SK CPNS</td>
-                                    <td>:  {{ x.tmk_sk_cpns }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>TMK SK AWAL</td>
-                                    <td>:  {{ x.tmk_sk_awal }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>TMK SK BERKAHIR</td>
-                                    <td>:  {{ x.tmk_sk_berakhir }}</td>
-                                </tr>
+            </div>
+        </div>
 
-                             </table>
+    </div>
 
-                         </div>
-                         <div class="col-lg-7" id="cluster_info">
-                             <table class="table padding-kecil table-mail">
-                                <tr ng-repeat="x in guru">
-                                    <td width="40%">Alamat</td>
-                                    <td  width="60%">: {{ x.alamat }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Provinsi</td>
-                                    <td>: {{ x.provinsi }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Kabupaten/Kota</td>
-                                    <td>: {{ x.kabkot }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Kecamatan</td>
-                                    <td>: {{ x.kecamatan }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Kelurahan</td>
-                                    <td> {{ x.kelurahan }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>No hp</td>
-                                    <td>: {{ x.no_hp }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Kode pos</td>
-                                    <td>: {{ x.kode_pos }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Agama</td>
-                                    <td>: {{ x.agama }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Status pegawai</td>
-                                    <td>:  {{ x.status_pegawai }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Golongan</td>
-                                    <td>:  {{ x.golongan }}</td>
-                                </tr>
-                                <tr ng-repeat="x in guru">
-                                    <td>Status guru</td>
-                                    <td>:<span class="label label-{{x.status_guru=='ON'?'primary':'warning'}}"> {{ x.status_guru }}</span></td>
-                                </tr>
-                                
+    <div class="col-lg-9 p-l-0">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title no-padding " style="padding-top: 5px !important;">
 
-                             </table>
+                <ul class="nav nav-tabs">
+                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                        <a ui-sref="admin.guru.detail.gurump" class="ng-binding">Mata
+                            Pelajaran</a>
+                    </li>
+                    <li class="uib-tab ng-scope ng-isolate-scope pull-right" heading="Second Tab">
+                        <a back-button=""><i class="fa fa-times"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ibox-content border-left border-right" full-scroll="">
 
-                         </div>
-                     </div>
+                <ui-view></ui-view>
 
-                 </div>
-                 <ui-view></ui-view>
-
-             </div>
-             <div class="ibox-footer">
+            </div>
+            <div class="ibox-footer">
                  <span class="pull-right">
                           The righ side of the footer
                  </span>
-                 Isi Form Dengan Benar
-             </div>
-         </div>
+                Isi Form Dengan Benar
+            </div>
+        </div>
 
-     </div>
+    </div>
 
 
+</div>
 
- </div>
+<script>
 
- <script>
-
-     setTimeout(function(){
-         fixDetailHeight()
-     })
- </script>
+    setTimeout(function () {
+        fixDetailHeight()
+    })
+</script>

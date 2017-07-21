@@ -1,0 +1,58 @@
+<div class="row" id="detail_fix">
+
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title" style="padding: 6px 0px 0px 0px;">
+                <ul class="nav nav-tabs" >
+                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                        <a ui-sref="guru.kelas.detail.murid({id_guru_mp:kelas.id_guru_mp})" class="ng-binding">Murid</a>
+                    </li>
+                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                        <a ui-sref="guru.kelas.detail.nilai({id_guru_mp:kelas.id_guru_mp})" class="ng-binding">Nilai</a>
+                    </li>
+                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                        <a ui-sref="guru.kelas.detail.absensi({id_guru_mp:kelas.id_guru_mp})" class="ng-binding">Absensi</a>
+                    </li>
+
+                    <li class="uib-tab ng-scope ng-isolate-scope pull-right" heading="Second Tab">
+                        <a back-button=""><i class="fa fa-times"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ibox-content border-left border-right" full-scroll="">
+
+                <div class="profile-info" style="margin-left: 0px">
+                    <div class="">
+                        <div>
+                            <h2 class="no-margins">
+                                Kelas {{kelas.kelas }} {{kelas.jurusan}}
+                                <span class="pull-right">{{kelas.kelas_paralel}}</span>
+                            </h2>
+                            <h4>{{kelas.mata_pelajaran}}</h4>
+                            <small>
+                                Semester {{kelas.smt}} > Tahun Pelajaran {{kelas.tahun_ajar}}, total {{kelas.jam_ngajar}} Jam Mengajar
+                            </small>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div ui-view></div>
+
+
+            </div>
+            <div class="ibox-footer">
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    setTimeout(function(){
+        fixDetailHeight()
+    })
+</script>

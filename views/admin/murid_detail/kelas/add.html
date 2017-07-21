@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-sm-6 b-r">
+        <div class="form-group">
+            <label>Kelas</label>
+            <select required class="form-control "
+                    ng-options="x as x for x in admin.kelas"
+                    required ng-model="muridkelas.kelas">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Kelas paralel</label>
+            <select required class="form-control " required
+                    ng-options="x as x for x in admin.paralel"
+                    ng-model="muridkelas.kelas_paralel">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Semester</label>
+            <input required class="form-control" ng-model="muridkelas.smt" type="number">
+        </div>
+        <div class="form-group">
+            <label>No.absen</label>
+            <input required placeholder="Enter no absen" class="form-control" ng-model="muridkelas.no_absen"
+                   type="number">
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label>Jurusan</label>
+            <select required class="form-control " required select2 ng-model="muridkelas.id_jurusan"
+                    ng-options="x.id_jurusan*1 as x.jurusan for x in admin.jurusan">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Tanggal Berlaku</label>
+            <input required placeholder="Enter " class="form-control" datepicker=""
+                   ng-model="muridkelas.tanggal_berlaku" type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Guru wali kelas</label>
+            <select required class="form-control " required select2 ng-model="muridkelas.id_wali_kelas"
+                    ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-12 control-label" style="padding-left: 0">Status murid</label>
+            <div class="col-sm-5">
+                <div>
+                    <label><input icheck type="radio" value="Aktif" ng-model="muridkelas.status_murid"> Aktif </label>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div>
+                    <label><input icheck type="radio" value="TidakAktif" ng-model="muridkelas.status_murid"> Tidak Aktif
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-left">
+            <p>Please check from before save*</p>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" ng-click="submitForm_kelas()">
+                <i class="fa fa-save"></i> &nbsp;
+                <strong> Save</strong></button>
+        </div>
+
+    </div>
+
+</div>
+
+

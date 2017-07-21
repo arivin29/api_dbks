@@ -1,0 +1,61 @@
+<h3>Input Absensi</h3>
+<hr>
+<form ng-submit="submitForm()">
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Tanggal Rekap</label>
+            <input datepicker="" class="form-control" required ng-model="param.tanggal_rekap" type="text">
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="2px">#No</th>
+                <th>NIS</th>
+                <th>Nama murid</th>
+                <th class="text-center" colspan="2">Kehadiran</th>
+                <th>Alasan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in murid_absensi">
+                <td width="5%">{{ $index +1 }}</td>
+                <td width="20%">
+                    <b>{{x.nis}}</b>
+                </td>
+                <td width="30%">
+                    {{x.nama_murid}}
+                </td>
+                <td width="10%">
+                    <label><input icheck type="radio" value="1" ng-model="x.kehadiran"> Hadir </label>
+                </td>
+                <td width="10%">
+                    <label><input icheck type="radio" value="0" ng-model="x.kehadiran"> Alfa </label>
+                </td>
+                <td width="20%">
+                    <input  class="form-control" ng-model="x.alasan">
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-left">
+            <p>Please check from before save*</p>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                <i class="fa fa-save"></i> &nbsp;
+                <strong> Save</strong></button>
+        </div>
+
+    </div>
+
+</div>
+</form>

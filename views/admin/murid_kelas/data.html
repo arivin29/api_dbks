@@ -1,14 +1,11 @@
 
 <div class="wrapper wrapper-content  animated fadeInRight" >
     <div ui-view></div>
-    <div class="row" ng-show="$state.current.name === 'admin.murid'">
+    <div class="row" ng-show="$state.current.name === 'admin.murid_kelas'">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Data Murid</h5>
-                    <div class="ibox-tools">
-                        <a ui-sref="admin.murid.add" class="btn btn-primary btn-xs">Add new</a>
-                    </div>
+                    <h5>Data Murid / Kelas</h5>
                 </div>
 
                 <div class="ibox-content">
@@ -27,11 +24,50 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="input-group">
                                 <label>Status</label>
                                 <select required class="form-control " required select2 ng-model="filters.status_murid"
                                         ng-options="x as x for x in status_murid" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Kelas</label>
+                                <select required class="form-control " required select2 ng-model="filters.kelas"
+                                        ng-options="x as x for x in kelas" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Paralel</label>
+                                <select required class="form-control " required select2 ng-model="filters.parelel"
+                                        ng-options="x as x for x in paralel" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2" style="clear: left">
+                            <div class="input-group">
+                                <label>Semester</label>
+                                <select required class="form-control " required select2 ng-model="filters.smt"
+                                        ng-options="x.var as x.value for x in smt" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Jurusan</label>
+                                <select required class="form-control " required select2 ng-model="filters.jurusan"
+                                        ng-options="x.id_jurusan as x.jurusan for x in jurusan" >
                                     <option value="">-- please choose --</option>
                                 </select>
                             </div>
@@ -47,52 +83,36 @@
                     </div>
 
                     <div class="table-responsive" id="table-scroll" full-scroll="">
-                        <table class="table table-hover table-bordered">
+                        <table class="table   table-bordered">
                             <thead>
                             <tr>
                                 <th width="2px">#No</th>
                                 <th>NIS</th>
-                                <th>NISN</th>
                                 <th>Nama murid</th>
-                                <th>Tempat lahir</th>
-                                <th>Tanggal lahir</th>
-                                <th>Jenis kelamin</th>
-                                <th>Agama</th>
+                                <th>Kelas</th>
+                                <th>SMT</th>
+                                <th>Jurusan</th>
+                                <th>Paralel</th>
+                                <th>Walikelas</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas">
+                            <tr ng-repeat="x in datas" class="{{config_smt!=x.smt_out ? 'bg-warning':''}}">
                                 <td>{{ $index +1 }}</td>
                                 <td>
-                                    <div class="btn-group">
-                                        <b data-toggle="dropdown" class="pointer dropdown-toggle" aria-expanded="false">{{x.nis}}</b>
-                                        <ul class="dropdown-menu">
-                                            <li><a ui-sref="admin.guru.detail.gurump({id_guru:x.id_guru})" >View</a></li>
-                                            <li class="divider"></li>
-                                            <li><a ui-sref="admin.murid.edit({id_murid:x.id_murid})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a></li>
-                                            <li><a ng-click="delete(x.id_murid)" > Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    {{x.nisn}}
+                                    <b><a ui-sref="admin.murid_detail.kelas({id_murid:x.id_murid})">{{x.nis}}</a> </b>
                                 </td>
                                 <td>
                                     {{x.nama_murid}}
                                 </td>
-                                <td>
-                                    {{x.tempat_lahir}}
-                                </td>
-                                <td>
-                                    {{x.tanggal_lahir | date: "yyyy/MM/dd"}}
-                                </td>
-                                <td>
-                                    {{x.jenis_kelamin}}
-                                </td>
-                                <td>
-                                    {{x.agama}}
-                                </td>
-
+                                <td>{{x.kelas}} </td>
+                                <td>{{x.smt}} {{x.smt_out == 0 ? 'Genap':'ganjil'}} </td>
+                                <td>{{x.jurusan}} </td>
+                                <td>{{x.kelas_paralel}} </td>
+                                <td>{{x.walikelas}} </td>
+                                <td ng-if="config_smt!=x.smt_out"> Mohon Update </td>
+                                <td ng-if="config_smt==x.smt_out"> {{x.updated_at | Mydate}} </td>
 
                             </tr>
 
@@ -111,12 +131,12 @@
                     <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
                 </div>
 
+            </div>
         </div>
-    </div>
 
-</div>
-<script>
-    setTimeout(function(){
-        tableScroll()
-    })
-</script>
+    </div>
+    <script>
+        setTimeout(function(){
+            tableScroll()
+        })
+    </script>

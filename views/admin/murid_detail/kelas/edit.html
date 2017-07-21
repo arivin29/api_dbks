@@ -1,0 +1,101 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Edit Murid kelas</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('admin.muridkelas')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <form ng-submit="submitForm()" >
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label>Nama murid</label>
+                        <select required class="form-control " required select2 ng-model="muridkelas.id_murid"
+                                ng-options="x.id_murid*1 as x.nama_murid for x in admin.murid" >
+                            <option value="">-- please choose --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Kelas</label>
+                        <select required class="form-control " required select2 ng-model="muridkelas.kelas">
+                            <option value="">-- please choose --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Kelas paralel</label>
+                        <select required class="form-control " required select2 ng-model="muridkelas.kelas_paralel">
+                            <option value="">-- please choose --</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>No.absen</label>
+                        <input required placeholder="Enter no absen" class="form-control" ng-model="muridkelas.no_absen" type="number">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Jurusan</label>
+                        <select required class="form-control " required select2 ng-model="muridkelas.id_jurusan"
+                                ng-options="x.id_jurusan*1 as x.jurusan for x in admin.jurusan" >
+                            <option value="">-- please choose --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal berlaku</label>
+                        <input required placeholder="Enter " class="form-control" ng-model="muridkelas.tanggal_berlaku" type="date">
+                    </div>
+                    
+                    <div class="form-group">
+                    <label>Guru wali kelas</label>
+                    <select required class="form-control " required select2 ng-model="muridkelas.id_wali_kelas"
+                            ng-options="x.id_guru*1 as x.nama_guru for x in admin.guru" >
+                        <option value="">-- please choose --</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-sm-12 control-label" style="padding-left: 0">Status murid<br>
+                        <small class="text-navy">Custom elements</small>
+                    </label>
+                    <div class="col-sm-5">
+                        <div>
+                            <label><input icheck type="radio" value="Aktif" ng-model="muridkelas.status_murid"> Aktif </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <label><input icheck type="radio" value="TidakAktif" ng-model="muridkelas.status_murid"> Tidak Aktif </label>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Please check from before save*</p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>

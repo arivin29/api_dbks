@@ -5,26 +5,34 @@ var app = angular.module('inspinia');
  /*----------------------------------------------------------------------------------------------*/
 app.controller('admin.guru', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/admin/guru')
-        .then(function(respons){
-            $scope.datas = respons.data.guru;
-            debugData(respons);
-    });    
+    $scope.filters = {};
+    $scope.status_guru = ['ON','OFF'];
+    $scope.months = [1,2,3,4,5,6,7,8,9,10,11,12];
+    $scope.years = [];
+    $scope.BASE_URL = BASE_URL;
 
-    $scope.delete = function(id)
+    var date = new Date();
+
+    for (var a=0; a < 5;a++)
     {
-        myHelp.deleteParam('/admin/guru/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.guru",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
+        $scope.years.push(date.getFullYear()-a);
     }
+
+    $scope.filter = function(page)
+    {
+        $scope.filters.page = page;
+        myHelp.getParam('/admin/guru',clearObj($scope.filters))
+            .then(function(respons){
+                $scope.datas = respons.data.data;
+            });
+    }
+    $scope.filter(1);
+
+    $scope.delete = function(id) {
+        deleteParam($http,$state,'/admin/guru/' + id, {}, 'admin.guru',{});
+    }
+
+
 
 });
 
@@ -63,7 +71,6 @@ app.controller('admin.guru.edit', function truncateCtrl($scope,$state,$statePara
         .then(function(respons){
             $scope.guru = respons.data;
 
-            //jiko ado guru
             myHelp.getDetail('/admin/guru/create')
                 .then(function(respons){
                     $scope.admin = respons.data;
@@ -94,94 +101,45 @@ app.controller('admin.guru.edit', function truncateCtrl($scope,$state,$statePara
 
 // Detail Guru
 app.controller('admin.guru.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
     $scope.guru = {};
     myHelp.getDetail('/admin/guru/' + $stateParams.id_guru)
         .then(function(respons){
-            $scope.guru = respons.data.getguru;
+            $scope.guru = respons.data.guru;
         });
 });
 
+
 /*----------------------------------------------------------------------------------------------
- Gurump
+ mata pelajaran
  /*----------------------------------------------------------------------------------------------*/
-app.controller('admin.gurump', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    myHelp.getDetail('/admin/gurump')
+app.controller('admin.guru.detail.gurump', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.guru = {};
+    myHelp.getParam('/admin/gurump' , {id_guru:$stateParams.id_guru})
         .then(function(respons){
-            $scope.datas = respons.data.gurump;
-            debugData(respons);
-    });
-
-        $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/admin/gurump/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.gurump",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
-    }
-
+            $scope.gurumps = respons.data.gurump;
+        });
 });
 
-app.controller('admin.gurump.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('admin.guru.detail.gurump.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.gurump = {};
+    $scope.gurump.id_guru = $stateParams.id_guru;
 
     myHelp.getDetail('/admin/gurump/create')
         .then(function(respons){
-            $scope.admin = respons.data;
-            debugData(respons);
+            $scope.mata_pelajaran = respons.data.mata_pelajaran;
+            $scope.kelas = respons.data.kelas;
+            $scope.paralel = respons.data.paralel;
+            $scope.jurusan = respons.data.jurusan;
         });
 
-    $scope.submitForm = function() {
+    $scope.submitForm_gurump = function() {
         var Param = clearObj($scope.gurump);
 
         myHelp.postParam('/admin/gurump', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("admin.gurump",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
-
-});
-
-app.controller('admin.gurump.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.gurump = {};
-    myHelp.getParam('/admin/gurump/' + $stateParams.id_guru_mp +'/edit')
-        .then(function(respons){
-            $scope.gurump = respons.data;
-
-            //jiko ado guru
-            myHelp.getDetail('/admin/gurump/create')
-                .then(function(respons){
-                    $scope.admin = respons.data;
-                    debugData(respons);
-                });
-        });
-
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.gurump);
-
-
-        myHelp.putParam('/admin/gurump/'+ $stateParams.id_guru_mp, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.gurump",{}, { reload: true })
+                    $state.go("^",{}, { reload: true })
 
                 }
                 , function myError()
@@ -199,34 +157,23 @@ app.controller('admin.gurump.edit', function truncateCtrl($scope,$state,$statePa
 /*----------------------------------------------------------------------------------------------*/
 app.controller('admin.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    var param = {};
     $scope.filters = {};
+    $scope.status_murid = ['ON','OFF'];
+    $scope.BASE_URL = BASE_URL;
 
-    $scope.filter = function (page) {
-        param = $scope.filters;
-        param.page = page;
-        myHelp.getParam('/admin/murid',clearObj(param))
+
+    $scope.filter = function(page)
+    {
+        $scope.filters.page = page;
+        myHelp.getParam('/admin/murid',clearObj($scope.filters))
             .then(function(respons){
-                $scope.datas = respons.data;
-                debugData(respons);
+                $scope.datas = respons.data.murid;
             });
-
     }
     $scope.filter(1);
 
-    $scope.delete = function(id)
-    {
-        myHelp.deleteParam('/admin/murid/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.murid",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
+    $scope.delete = function(id) {
+        deleteParam($http,$state,'/admin/murid/' + id, {}, 'admin.murid',{});
     }
 
 });
@@ -295,60 +242,73 @@ app.controller('admin.murid.edit', function truncateCtrl($scope,$state,$statePar
 
 });
 
-// Detail Murid
-app.controller('admin.murid.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.murid = {};
-    myHelp.getDetail('/admin/murid/' + $stateParams.id_murid)
-        .then(function(respons){
-            $scope.murid = respons.data.getmurid;
-        });
-});
-
 /*----------------------------------------------------------------------------------------------
  Murid kelas
  /*----------------------------------------------------------------------------------------------*/
-app.controller('admin.muridkelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('admin.murid_kelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/admin/muridkelas')
-        .then(function(respons){ 
-            $scope.datas = respons.data.murid;
-            debugData(respons);
-        });
+    $scope.filters = {};
+    $scope.status_murid = ['ON','OFF'];
+    $scope.BASE_URL = BASE_URL;
 
-    $scope.delete = function(id)
+    $scope.filter = function(page)
     {
-        myHelp.deleteParam('/admin/muridkelas/' + id, {})
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.muridkelas",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("gagal hapus, data tidak ditemukan");
-                });
+        $scope.filters.page = page;
+        myHelp.getParam('/admin/murid_kelas',clearObj($scope.filters))
+            .then(function(respons){
+                $scope.datas = respons.data.data;
+                $scope.smt = respons.data.smt;
+                $scope.kelas = respons.data.kelas;
+                $scope.jurusan = respons.data.jurusan;
+                $scope.paralel = respons.data.paralel;
+                $scope.config_smt = respons.data.config_smt;
+            });
     }
-
+    $scope.filter(1);
 });
 
-app.controller('admin.muridkelas.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    myHelp.getDetail('/admin/muridkelas/create')
+/*----------------------------------------------------------------------------------------------
+ mata pelajaran
+ /*----------------------------------------------------------------------------------------------*/
+app.controller('admin.murid_detail', function truncateCtrl($http,$scope,$state,$stateParams,myHelp){
+    $scope.guru = {};
+    myHelp.getDetail('/admin/murid/' + $stateParams.id_murid)
+        .then(function(respons){
+            $scope.murid = respons.data.murid;
+        });
+
+    myHelp.getDetail('/admin/murid_kelas/' + $stateParams.id_murid)
+        .then(function(respons){
+            $scope.kelas = respons.data.kelas;
+        });
+});
+
+app.controller('admin.murid_detail.kelas', function truncateCtrl($http,$scope,$state,$stateParams,myHelp){
+    $scope.muridkelas = {};
+    $scope.delete_murid_kelas = function (id) {
+        deleteParam($http,$state,'/admin/murid_kelas/' + id, {}, 'admin.murid_detail.kelas',{});
+    }
+});
+
+
+app.controller('admin.murid_detail.kelas.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/admin/murid_kelas/create')
         .then(function(respons){
             $scope.admin = respons.data;
             debugData(respons);
         });
 
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.muridkelas);
+    $scope.submitForm_kelas = function() {
 
-        myHelp.postParam('/admin/muridkelas', Param)
+        $scope.muridkelas.id_murid = $stateParams.id_murid;
+        var Param = clearObj($scope.muridkelas);
+        myHelp.postParam('/admin/murid_kelas', Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("admin.muridkelas",{}, { reload: true })
+                    $state.go("^",{}, { reload: true })
 
                 }
                 , function myError()
@@ -361,41 +321,28 @@ app.controller('admin.muridkelas.add', function truncateCtrl($scope,$state,$stat
 
 });
 
-app.controller('admin.muridkelas.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
-
-    $scope.muridkelas = {};
-    myHelp.getParam('/admin/muridkelas/' + $stateParams.id_murid_kelas +'/edit')
+app.controller('admin.murid_detail.kelas', function truncateCtrl($http,$scope,$state,$stateParams,myHelp){
+    $scope.guru = {};
+    myHelp.getDetail('/admin/murid_kelas/' + $stateParams.id_murid)
         .then(function(respons){
-            $scope.muridkelas = respons.data;
-
-            //jiko ado murid
-            myHelp.getDetail('/admin/muridkelas/create')
-                .then(function(respons){
-                    $scope.admin = respons.data;
-                    debugData(respons);
-                });
+            $scope.kelas = respons.data.kelas;
         });
 
-    $scope.submitForm = function() {
-        var Param = clearObj($scope.muridkelas);
+    $scope.delete_murid_kelas = function (id) {
+        deleteParam($http,$state,'/admin/murid_kelas/' + id, {}, 'admin.murid_detail.kelas',{});
+    }
+});
 
-
-        myHelp.putParam('/admin/muridkelas/'+ $stateParams.id_murid_kelas, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.muridkelas",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("error paja tu");
-                });
-
-
-    };
+app.controller('admin.murid_detail.mata_pelajaran', function truncateCtrl($http,$scope,$state,$stateParams,myHelp){
+    $scope.guru = {};
+    myHelp.getParam('/admin/murid_mp' , {id_murid:$stateParams.id_murid})
+        .then(function(respons){
+            $scope.mata_pelajarans = respons.data.murid_mp;
+        });
 
 });
+
+
 
 /*----------------------------------------------------------------------------------------------
  Nilai

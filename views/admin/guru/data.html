@@ -12,28 +12,44 @@
                 </div>
 
                 <div class="ibox-content">
-                    <div class="m-b-lg">
-                        <strong>Found {{datas.length}} issues.</strong>
-                    </div>
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <input placeholder="Filter" ng-model="search" ng-change="filter()" class="form-control" type="text">
+                                <label>NIP</label>
+                                <input placeholder="" ng-model="filters.nip" class="form-control" type="text">
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Nama Guru</label>
+                                <input placeholder="" ng-model="filters.nama_guru" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <label>Status</label>
+                                <select required class="form-control " required select2 ng-model="filters.status_guru"
+                                        ng-options="x as x for x in status_guru" >
+                                    <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="col-md-2">
                             <div class="form-group">
+                                <label>&nbsp;</label>
                                 <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
-
                             </div>
                         </div>
+
                     </div>
                     <div class="table-responsive" id="table-scroll" full-scroll="">
-                        <table class="table table-hover issue-tracker">
+                        <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th width="2px">#No</th>
                                 <th>NIP</th>
                                 <th>NUPTK</th>
                                 <th>Nama guru</th>
@@ -42,16 +58,21 @@
                                 <th>Tanggal lahir</th>
                                 <th>Jenis kelamin</th>
                                 <th>status_pegawai</th>
-                                <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr ng-repeat="x in datas|filter:search">
                                 <td>
-                                    {{ $index +1}}
-                                </td>
-                                <td>
-                                    {{x.nip}}
+
+                                    <div class="btn-group">
+                                        <b data-toggle="dropdown" class="pointer dropdown-toggle" aria-expanded="false">{{x.nip}}</b>
+                                        <ul class="dropdown-menu">
+                                            <li><a ui-sref="admin.guru.detail.gurump({id_guru:x.id_guru})" >View</a></li>
+                                            <li class="divider"></li>
+                                            <li><a ui-sref="admin.guru.edit({id_guru:x.id_guru})" ng-click="gotoTop()" > Edit</a></li>
+                                            <li><a ng-click="delete(x.id_guru)" > Delete</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     {{x.nuptk}}
@@ -74,13 +95,6 @@
                                 <td>
                                     {{x.status_pegawai}}
                                 </td>
-
-                                <td class="text-center">
-                                    <a ui-sref="admin.guru.detail({id_guru:x.id_guru})" class="btn btn-white btn-xs">View</a>
-                                    <a ui-sref="admin.guru.edit({id_guru:x.id_guru})" ng-click="gotoTop()" class="btn btn-white btn-xs"> Edit</a>
-                                    <a ng-dblclick="delete(x.id_guru)" class="btn btn-white btn-xs"> Delete</a>
-                                </td>
-
                             </tr>
 
                             </tbody>

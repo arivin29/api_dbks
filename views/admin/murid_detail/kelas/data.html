@@ -1,0 +1,43 @@
+<ui-view></ui-view>
+
+<div ng-show="$state.current.name === 'admin.murid_detail.kelas'">
+    <h3>Riwayat Kelas
+        <a class="pull-right" ui-sref="admin.murid_detail.kelas.add">
+            <i class="fa fa-plus"></i> Add
+        </a>
+    </h3>
+
+    <div class="table-responsive" id="table-scroll" full-scroll="">
+        <table class="table  th-gray table-bordered">
+            <thead>
+            <tr>
+                <th>Kelas</th>
+                <th>SMT</th>
+                <th>Jurusan</th>
+                <th>Paralel</th>
+                <th>Walikelas</th>
+                <th>Status</th>
+                <th>Keterangan</th>
+                <th>#</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in kelas">
+
+                <td>{{x.kelas}} </td>
+                <td>{{x.smt}} {{x.smt_out == 0 ? 'Genap':'ganjil'}} </td>
+                <td>{{x.jurusan}} </td>
+                <td>{{x.kelas_paralel}} </td>
+                <td>{{x.nama_guru}} </td>
+                <td>{{x.status_murid}} </td>
+                <td>{{x.keterangan}} </td>
+                <td class="text-right">
+                    <label class="label label-warning pointer" ng-click="delete_murid_kelas(x.id_murid_kelas)"><i class="fa fa-trash-o"></i> </label>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

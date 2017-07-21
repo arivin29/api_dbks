@@ -1,0 +1,58 @@
+<ui-view></ui-view>
+
+<div ng-show="$state.current.name === 'guru.kelas.detail.nilai'">
+    <h3>Rekap Nilai
+        <a class="pull-right" ui-sref="guru.kelas.detail.nilai.add">
+            <i class="fa fa-plus"></i> Input
+        </a>
+    </h3>
+    <div class="ibox-content no-padding" ng-repeat="x in nilais">
+        <br>
+        <div class="row">
+            <div class="col-md-2 text-center">
+                <div class="profile-image">
+                    <img src="../../../img/a5.jpg" class="img-circle circle-border m-b-md" style="width: 100%; height: auto" alt="profile">
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h4 style="font-size: 16px">
+                    <a href="#" class="text-navy">
+                        {{x.nama_murid}} <span class="pull-right">{{x.nis}} </span>
+                    </a>
+                </h4>
+                <dl class="small m-b-none">
+                    <table class="table table-bordered th-gray">
+                        <tr>
+                            <th>No</th>
+                            <th>Jenis Nilai</th>
+                            <th>Batas Minimum</th>
+                            <th>Persentase</th>
+                            <th>Nilai</th>
+                            <th>Remedial</th>
+                            <th>Nilai AKhir</th>
+                            <th>Tanggal</th>
+                        </tr>
+                        <tr ng-repeat="y in x.nilai">
+                            <td>{{$index+1}}</td>
+                            <td>{{y.jenis}}</td>
+                            <td>{{y.batas_remedial}}</td>
+                            <td>{{y.persentase}}</td>
+                            <td>{{y.nilai}}</td>
+                            <td>{{y.is_remedial}}</td>
+                            <td>{{y.nilai_akhir}}</td>
+                            <td>{{y.tanggal_rekap | Mydate}}</td>
+                        </tr>
+                    </table>
+                </dl>
+
+                <div class="m-t-sm">
+                    <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
+                    |
+                    <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+</div>

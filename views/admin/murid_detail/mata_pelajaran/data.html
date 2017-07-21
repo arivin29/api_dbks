@@ -1,0 +1,50 @@
+<ui-view></ui-view>
+
+<div ng-show="$state.current.name === 'admin.murid_detail.mata_pelajaran'">
+
+    <div class="ibox-content no-padding" ng-repeat="x in mata_pelajarans">
+        <div class="table-responsive">
+
+            <h4 style="font-size: 16px">
+                <a href="#" class="text-navy">
+                    {{x.mata_pelajaran}}
+                </a>
+            </h4>
+            <p class="small">
+                It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is
+            </p>
+            <dl class="small m-b-none">
+                <dt>List Nilai</dt>
+
+                <table class="table table-bordered th-gray">
+                    <tr>
+                        <th>Jenis Nilai</th>
+                        <th>Batas Minimum</th>
+                        <th>Persentase</th>
+                        <th>Nilai</th>
+                        <th>Remedial</th>
+                        <th>Nilai AKhir</th>
+                    </tr>
+                    <tr ng-repeat="y in x.nilai">
+                        <td>{{y.jenis}}</td>
+                        <td>{{y.batas_remedial}}</td>
+                        <td>{{y.persentase}}</td>
+                        <td>{{y.nilai}}</td>
+                        <td>{{y.is_remedial}}</td>
+                        <td>{{y.nilai_akhir}}</td>
+                    </tr>
+                </table>
+            </dl>
+
+            <div class="m-t-sm">
+                <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
+                |
+                <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+            </div>
+
+        </div>
+        <br>
+
+    </div>
+</div>

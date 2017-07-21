@@ -1,0 +1,58 @@
+
+<div class="row">
+    <div class="col-sm-6 b-r">
+
+        <div class="form-group">
+            <label>Mata pelajaran</label>
+            <select required class="form-control " required select2 ng-model="gurump.id_mata_pelajaran"
+                    ng-options="x.id_mata_pelajaran*1 as (x.mata_pelajaran +' ' + x.kelas + '(' + x.jurusan +')' ) for x in mata_pelajaran" >
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Total jam Ngajar</label>
+            <input required ng-model="gurump.jam_ngajar" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>Kelas</label>
+            <select required class="form-control " required
+                    ng-options="x as x for x in kelas"
+                    ng-model="gurump.kelas">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-6">
+
+        <div class="form-group">
+            <label>Kelas paralel</label>
+            <select required class="form-control " required
+                    ng-options="x as x for x in paralel"
+                    ng-model="gurump.kelas_paralel">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Jurusan</label>
+            <select required class="form-control " required select2 ng-model="gurump.id_jurusan"
+                    ng-options="x.id_jurusan*1 as x.jurusan for x in jurusan" >
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-left">
+            <p>Please check from before save*</p>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" ng-click="submitForm_gurump()" >
+                <i class="fa fa-save"></i> &nbsp;
+                <strong> Save</strong></button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>NIS</label>
+            <input placeholder="" ng-model="filters.nip" class="form-control" type="text">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Nama Murid</label>
+            <input placeholder="" ng-model="filters.nama_murid" class="form-control" type="text">
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="input-group">
+            <label>Status</label>
+            <select required class="form-control " required select2 ng-model="filters.status_murid"
+                    ng-options="x as x for x in status_murid">
+                <option value="">-- please choose --</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+            <label>&nbsp;</label>
+            <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="table-responsive" id="table-scroll" full-scroll="">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th width="2px">#No</th>
+            <th>NIS</th>
+            <th>NISN</th>
+            <th>Nama murid</th>
+            <th>Tempat lahir</th>
+            <th>Tanggal lahir</th>
+            <th>Jenis kelamin</th>
+            <th>Agama</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in murid">
+            <td>{{ $index +1 }}</td>
+            <td>
+                <div class="btn-group">
+                    <b data-toggle="dropdown" class="pointer dropdown-toggle" aria-expanded="false">{{x.nis}}</b>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="admin.guru.detail.gurump({id_guru:x.id_guru})">View</a></li>
+                        <li class="divider"></li>
+                        <li><a ui-sref="admin.murid.edit({id_murid:x.id_murid})" ng-click="gotoTop()"
+                               class="btn btn-white btn-xs"> Edit</a></li>
+                        <li><a ng-click="delete(x.id_murid)"> Delete</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                {{x.nisn}}
+            </td>
+            <td>
+                {{x.nama_murid}}
+            </td>
+            <td>
+                {{x.tempat_lahir}}
+            </td>
+            <td>
+                {{x.tanggal_lahir | date: "yyyy/MM/dd"}}
+            </td>
+            <td>
+                {{x.jenis_kelamin}}
+            </td>
+            <td>
+                {{x.agama}}
+            </td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
