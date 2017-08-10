@@ -5,7 +5,7 @@
     <div class="col-sm-4">
         <div class="form-group">
             <label>Tanggal Rekap</label>
-            <input datepicker="" class="form-control" required ng-model="param.tanggal_rekap" type="text">
+            <input datepicker="" class="form-control" required ng-model="absen.tanggal_rekap" type="text">
         </div>
     </div>
 
@@ -21,7 +21,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="x in murid_absensi">
+            <tr ng-repeat="x in absen_murid">
                 <td width="5%">{{ $index +1 }}</td>
                 <td width="20%">
                     <b>{{x.nis}}</b>
@@ -32,7 +32,7 @@
                 <td width="10%">
                     <label><input icheck type="radio" value="1" ng-model="x.kehadiran"> Hadir </label>
                 </td>
-                <td width="10%">
+                <td width="10%" ng-init="x.kehadiran=1">
                     <label><input icheck type="radio" value="0" ng-model="x.kehadiran"> Alfa </label>
                 </td>
                 <td width="20%">

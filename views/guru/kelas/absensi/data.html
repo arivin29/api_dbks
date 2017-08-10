@@ -8,22 +8,22 @@
     </h3>
     <table class="table table-bordered">
         <tr>
-            <th width="50px" rowspan="2">No</th>
-            <th rowspan="2">NIS</th>
-            <th rowspan="2">Nama Siswa</th>
-            <th class="text-center" colspan="{{total}}">Kehadiran</th>
+            <th width="50px" >No</th>
+            <th>Tanggal Absen</th>
+            <th>Hadir</th>
+            <th>Alfa</th>
             <th>Total</th>
-        </tr>
-        <tr>
-            <td ng-repeat=" n in [] | range:total ">Per{{$index+1}}</td>
-            <td>{{total}}</td>
         </tr>
         <tr ng-repeat="x in absensis">
             <td>{{$index+1}}</td>
-            <td>{{x.nis}}</td>
-            <td>{{x.nama_murid}}</td>
-            <td class="text-center" ng-repeat="y in x.absen" title="{{y.alasan}}">{{y.kehadiran ==1 ? '&#10004;' :'&#88;'}}</td>
-            <td></td>
+            <td>
+                <a ui-sref="guru.kelas.detail.absensi.detail({id_absen_kelas:x.id_absen_kelas})">
+                    <b>{{x.tanggal_rekap | Mydate }}</b>
+                </a>
+            </td>
+            <td>{{x.hadir }}</td>
+            <td>{{x.alfa }}</td>
+            <td>{{x.total }}</td>
         </tr>
     </table>
 

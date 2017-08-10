@@ -80,29 +80,30 @@ app.controller('guru.kelas.detail.absensi', function truncateCtrl($scope,$state,
     myHelp.getParam('/guru/absensi', {id_guru_mp: $stateParams.id_guru_mp})
         .then(function(respons){
             $scope.absensis = respons.data.absensis;
-            $scope.total = respons.data.total;
+        });
+});
+
+app.controller('guru.kelas.detail.absensi.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.murid = {};
+    myHelp.getParam('/guru/absensi_detail', {id_absen_kelas: $stateParams.id_absen_kelas})
+        .then(function(respons){
+            $scope.absen_murid = respons.data.absen_murid;
         });
 });
 
 app.controller('guru.kelas.detail.absensi.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.param={};
+
     myHelp.getParam('/guru/absensi/create',{id_guru_mp:$stateParams.id_guru_mp})
         .then(function(respons){
-            $scope.murid_absensi = respons.data.murid_absensi;
+            $scope.absen = respons.data.absen;
+            $scope.absen_murid = respons.data.absen_murid;
         });
 
-    $scope.cek_batas_remedial = function () {
-        if($scope.param.batas_remedial > 99)
-        {
-            errorView("absensi Remedial minimal < 100");
-            return false;
-        }
-    }
 
     $scope.submitForm = function() {
-        $scope.cek_batas_remedial();
 
-        var Param = clearObj({absensi:$scope.murid_absensi,param:$scope.param});
+        var Param = clearObj({absensi:$scope.absen_murid,param:$scope.absen});
         myHelp.putParam('/guru/absensi/' + $stateParams.id_guru_mp, Param)
             .then(function mySuccesresponse()
                 {

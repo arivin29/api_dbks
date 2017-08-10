@@ -1,0 +1,46 @@
+<h3>Detail Absensi</h3>
+<div class="row">
+
+    <div class="col-sm-12">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="2px">#No</th>
+                <th>NIS</th>
+                <th>Nama murid</th>
+                <th class="text-center" colspan="1">Kehadiran</th>
+                <th>Alasan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in absen_murid">
+                <td width="5%">{{ $index +1 }}</td>
+                <td width="20%">
+                    <b>{{x.nis}}</b>
+                </td>
+                <td width="30%">
+                    {{x.nama_murid}}
+                </td>
+                <td width="10%">
+                    {{ x.kehadiran =1 ? 'Hadir':'Alfa' }}
+                </td>
+                <td width="20%">
+                    {{x.alasan}}
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" back-button="">
+                <i class="fa fa-arrow-left"></i> &nbsp;
+                <strong> Back </strong></button>
+        </div>
+
+    </div>
+
+</div>

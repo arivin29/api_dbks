@@ -76,6 +76,13 @@ function configguru($stateProvider) {
             controller: "guru.kelas.detail.absensi.add"
         })
 
+        .state('guru.kelas.detail.absensi.detail', {
+            url: "/detail/:id_absen_kelas",
+            templateUrl: "views/guru/kelas/absensi/detail.html",
+            data: {pageTitle: 'Detail absensi murid'},
+            controller: "guru.kelas.detail.absensi.detail"
+        })
+
 }
 
 angular
