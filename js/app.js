@@ -25,6 +25,7 @@ var DEBUG=true;
 var BASE_URL = 'http://arivin.xyz/ames_site/public/api/v1';
 var BASE_URL = 'http://arivin.xyz/site_sbks/public/api/v1';
 
+
 var app = angular.module('inspinia');
 
 app.run( ['$rootScope', '$state', '$stateParams','$window','$http','$location', '$anchorScroll',
