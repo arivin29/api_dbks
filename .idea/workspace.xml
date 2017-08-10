@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8c4c1f3-c7f0-4ab9-b7ee-a9e8d0697e95" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/guru/gurump/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/murid_detail/detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/murid_detail/mata_pelajaran/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/murid_kelas/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/murid_kelas/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/murid_kelas/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/absensi/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/absensi/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/murid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/nilai/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/guru/kelas/nilai/data.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/admin/gurump/data.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/admin/muridkelas/data.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/admin/gurump/add.html" afterPath="$PROJECT_DIR$/views/admin/guru/gurump/add.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/admin/gurump/edit.html" afterPath="$PROJECT_DIR$/views/admin/guru/gurump/edit.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/admin/muridkelas/add.html" afterPath="$PROJECT_DIR$/views/admin/murid_detail/kelas/add.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/admin/muridkelas/edit.html" afterPath="$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/custom.css" afterPath="$PROJECT_DIR$/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Modul/admin/controller.js" afterPath="$PROJECT_DIR$/js/Modul/admin/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Modul/admin/router.js" afterPath="$PROJECT_DIR$/js/Modul/admin/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Modul/guru/controller.js" afterPath="$PROJECT_DIR$/js/Modul/guru/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Modul/guru/router.js" afterPath="$PROJECT_DIR$/js/Modul/guru/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/guru/data.html" afterPath="$PROJECT_DIR$/views/admin/guru/data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/guru/detail.html" afterPath="$PROJECT_DIR$/views/admin/guru/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/murid/data.html" afterPath="$PROJECT_DIR$/views/admin/murid/data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/template/navigation/menu_admin.html" afterPath="$PROJECT_DIR$/views/template/navigation/menu_admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/template/navigation/menu_guru.html" afterPath="$PROJECT_DIR$/views/template/navigation/menu_guru.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/template/topnavbar.html" afterPath="$PROJECT_DIR$/views/template/topnavbar.html" />
-    </list>
+    <list default="true" id="a8c4c1f3-c7f0-4ab9-b7ee-a9e8d0697e95" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -76,8 +41,8 @@
       <file leaf-file-name="data.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/guru/kelas/absensi/data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="78" lean-forward="false" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
+            <state relative-caret-position="638">
+              <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -698,12 +663,12 @@
       <workItem from="1499652277156" duration="162000" />
       <workItem from="1500036239605" duration="2592000" />
       <workItem from="1500515350986" duration="36450000" />
-      <workItem from="1500619792151" duration="5554000" />
+      <workItem from="1500619792151" duration="7102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45473000" />
+    <option name="totallyTimeSpent" value="47021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1107,8 +1072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/guru/kelas/absensi/data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="78" lean-forward="false" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
+        <state relative-caret-position="638">
+          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
           <folding />
         </state>
       </provider>
