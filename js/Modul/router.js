@@ -12,7 +12,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
     IdleProvider.idle(5); // in seconds
     IdleProvider.timeout(120); // in seconds
 
-    $urlRouterProvider.otherwise("/admin/guru");
+    $urlRouterProvider.otherwise("/logins");
 
     $ocLazyLoadProvider.config({
         // Set to true if you want to see what and when is dynamically loaded
@@ -25,6 +25,13 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         MASTER ~~~~~~~~~~~~~~~~Mulai koding
         ------------------------------------------
         */
+        .state('logins', {
+            url: "/logins",
+            templateUrl: "views/user/login.html",
+            data: { pageTitle: 'Login', specialClass: 'gray-bg' },
+            controller: "logins"
+        })
+
 
         .state('master', {
             abstract: true,

@@ -49,7 +49,7 @@
 <body ng-app="inspinia" class="{{$state.current.data.specialClass}}" landing-scrollspy id="page-top">
 
 <!-- Main view  -->
-<div ui-view></div>
+<div class="box-body" ui-view></div>
 
 <!-- jQuery and Bootstrap -->
 <script src="js/jquery/jquery-3.1.1.min.js"></script>
@@ -96,6 +96,8 @@
 <script src="bower_components/jstree/dist/jstree.js"></script>
 <script src="bower_components/ng-js-tree/dist/ngJsTree.min.js"></script>
 <!--<script src="https://rawgit.com/ezraroi/ngJsTree/master/dist/ngJsTree.js"></script>-->
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
 <script type="text/javascript" src="bower_components/angular-fixed-table-header/src/fixed-table-header.min.js"></script>
 
 <!--
@@ -114,6 +116,7 @@
 
 <script src="js/help.js"></script>
 <script src="js/Modul/router.js"></script>
+<script src="js/Modul/Auth.js"></script>
 
 <script src="js/Modul/master/router.js"></script>
 <script src="js/Modul/admin/router.js"></script>
@@ -121,8 +124,8 @@
 <script src="js/Modul/murid/router.js"></script>
 <script src="js/Modul/absen/router.js"></script>
 
-<!-- <script src="js/Modul/User/router.js"></script> -->
-<!-- <script src="js/Modul/User/controller.js"></script> -->
+ <script src="js/Modul/User/router.js"></script>
+ <script src="js/Modul/User/controller.js"></script>
 
 <!-- <script src="js/Modul/purchasing/router.js"></script> -->
 <!-- <script src="js/Modul/qa/router.js"></script> -->

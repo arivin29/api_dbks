@@ -181,6 +181,11 @@ label {
     border-bottom-left-radius: 2px !important;;
 }
 
+.login {
+    background: url(../img/BACKGROUND_LOGIN.png);
+    background-size: cover;
+    height: 100%;
+}
 table hr {
     margin: 5px 0px;
 }

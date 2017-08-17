@@ -15,7 +15,9 @@
         'checklist-model',
         'ui.utils.masks',
         'ui.footable','ngJsTree',
-        'fixed.table.header'
+        'fixed.table.header',
+        'Auth',
+        'angular-jwt'
     ])
 })();
 

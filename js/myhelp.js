@@ -1,6 +1,20 @@
 var app = angular.module('inspinia');
 app.service('myHelp', ['$q','$http','$state' ,function($q, $http,$state) {
 
+    this.getParam_noToken = function(url, data) {
+        var query = {
+            params: data,
+            headers : {'Accept' : 'application/json'}
+        };
+        return $http({
+            url: BASE_URL + url,
+            skipAuthorization: true,
+            method: 'GET',
+            params: data
+        });
+        return $http.get(BASE_URL + url, query);
+    };
+
 
     this.getParam = function(url, data) {
         var query = {

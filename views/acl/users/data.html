@@ -33,7 +33,7 @@
                                 <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-cogs"></i> </button>-->
                             <!--</div>-->
 
-                            <strong>Found 61 issues.</strong>
+                            <strong>Found {{datas.length }} users.</strong>
 
 
 
@@ -47,13 +47,13 @@
                                 <tr>
                                     <th>Status</th>
                                     <th>Name</th>
-                                    <th>Locations</th>
-                                    <th>Address</th>
+                                    <th>Tipe</th>
+                                    <th>email</th>
                                     <th>Telephone</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in users.data">
+                            <tr ng-repeat="x in datas">
                                 <td>
                                     <span class="label label-{{x.status==1?'primary':'warning'}}">{{x.status==1?'Aktif':'NonAktif'}}</span>
                                 </td>
@@ -61,16 +61,12 @@
                                     <a href="#">
                                         {{x.name}}
                                     </a>
-
-                                    <small>
-                                        {{x.email}}
-                                    </small>
                                 </td>
                                 <td>
-                                    {{x.code_site}} {{x.site}}
+                                   {{x.tipe | uppercase }}
                                 </td>
                                 <td>
-                                    {{x.alamat}}
+                                    {{x.email}}
                                 </td>
                                 <td>
                                     <span class="pie">{{x.telepon}}</span>
