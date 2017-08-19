@@ -28,6 +28,11 @@
                     Users
                 </a>
             </li>
+            <li ng-if=" curren_menu() =='admin'">
+                <a ui-sref="master.dashboard" aria-haspopup="true" aria-expanded="false">
+                    Master
+                </a>
+            </li>
             <li uib-dropdown="" class="dropdown">
                 <a href="" uib-dropdown-toggle="" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                     Tools <span class="caret"></span>
