@@ -98,7 +98,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas" class="{{config_smt!=x.smt_out ? 'bg-warning':''}}">
+                            <tr ng-repeat="x in datas.data" class="{{config_smt!=x.smt_out ? 'bg-warning':''}}">
                                 <td>{{ $index +1 }}</td>
                                 <td>
                                     <b><a ui-sref="admin.murid_detail.kelas({id_murid:x.id_murid})">{{x.nis}}</a> </b>
