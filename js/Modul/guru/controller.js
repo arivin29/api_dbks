@@ -53,7 +53,26 @@ app.controller('guru.kelas.detail.nilai.add', function truncateCtrl($scope,$stat
             errorView("Nilai Remedial minimal < 100");
             return false;
         }
+
+        $scope.murid_nilai.map(function(x) {
+            x.is_remedial = $scope.param.batas_remedial ;
+            return x
+        });
+
     }
+    $scope.autoNilai = function (id_nilai) {
+
+        // var index;
+        // $scope.murid_nilai.some(function(entry, i) {
+        //     index = i;
+        //     return entry.id_nilai == id_nilai;
+        // });
+        //
+        // $scope.murid_nilai.indexOf(index).nilai_akhir=$scope.murid_nilai.indexOf(index).nilai;
+
+    }
+
+
 
     $scope.submitForm = function() {
         $scope.cek_batas_remedial();
@@ -103,7 +122,7 @@ app.controller('guru.kelas.detail.absensi.add', function truncateCtrl($scope,$st
 
     $scope.submitForm = function() {
 
-        var Param = clearObj({absensi:$scope.absen_murid,param:$scope.absen});
+        var Param = clearObj({absen:$scope.absen_murid,absen_murid:$scope.absen});
         myHelp.putParam('/guru/absensi/' + $stateParams.id_guru_mp, Param)
             .then(function mySuccesresponse()
                 {

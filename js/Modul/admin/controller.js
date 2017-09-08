@@ -155,7 +155,7 @@ app.controller('admin.guru.detail.gurump.add', function truncateCtrl($scope,$sta
 /*----------------------------------------------------------------------------------------------
  Murid
 /*----------------------------------------------------------------------------------------------*/
-app.controller('admin.murid', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('admin.murid', function truncateCtrl($http,$scope,$state,$stateParams,myHelp){
 
     $scope.filters = {};
     $scope.status_murid = ['ON','OFF'];

@@ -47,8 +47,8 @@
                 <td width="30%">
                     {{x.nama_murid}}
                 </td>
-                <td width="10%">
-                    <input class="form-control" ng-model="x.nilai">
+                <td width="10%" >
+                    <input  ng-change="autoNilai(x.id_nilai)" class="form-control" ng-model="x.nilai">
                 </td>
                 <td width="10%">
                     {{param.batas_remedial}}
@@ -57,7 +57,7 @@
                     <input ng-show="x.nilai < param.batas_remedial" class="form-control" ng-model="x.is_remedial">
                 </td>
                 <td width="10%">
-                    <input required  class="form-control" ng-model="x.nilai_akhir">
+                    <input required ng-init="" class="form-control" ng-model="x.nilai_akhir">
                 </td>
 
             </tr>
