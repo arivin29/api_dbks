@@ -26,6 +26,30 @@ function configguru($stateProvider) {
         })
 
         /*-----------------------------------------
+         SOAL ~~~~~~~~~~~~~~~~Mulai koding
+         /*---------------------------------------*/
+
+        .state('guru.soal', {
+            url: "/soal",
+            templateUrl: "views/guru/soal/data.html",
+            data: {pageTitle: 'soal guru'},
+            controller: "guru.soal"
+        })
+        .state('guru.soal.add', {
+            url: "/add",
+            templateUrl: "views/guru/soal/add.html",
+            data: {pageTitle: 'soal guru'},
+            controller: "guru.soal.add"
+        })
+        .state('guru.soal.edit', {
+            url: "/edit/:id_soal",
+            templateUrl: "views/guru/soal/edit.html",
+            data: {pageTitle: 'soal guru'},
+            controller: "guru.soal.edit"
+        })
+
+
+        /*-----------------------------------------
          Informations ~~~~~~~~~~~~~~~~Mulai koding
          /*---------------------------------------*/
 
@@ -81,6 +105,29 @@ function configguru($stateProvider) {
             templateUrl: "views/guru/kelas/absensi/detail.html",
             data: {pageTitle: 'Detail absensi murid'},
             controller: "guru.kelas.detail.absensi.detail"
+        })
+
+
+        /*-----------------------------------------
+        SOAL UJIAN
+        /*---------------------------------------*/
+        .state('guru.kelas.detail.ujian', {
+            url: "/ujian",
+            templateUrl: "views/guru/kelas/ujian/data.html",
+            data: {pageTitle: 'Informations absensi murid'},
+            controller: "guru.kelas.detail.ujian"
+        })
+        .state('guru.kelas.detail.ujian.add', {
+            url: "/create",
+            templateUrl: "views/guru/kelas/ujian/add.html",
+            data: {pageTitle: 'add absensi murid'},
+            controller: "guru.kelas.detail.ujian.add"
+        })
+        .state('guru.kelas.detail.ujian.detail', {
+            url: "/detail/:id_ujian",
+            templateUrl: "views/guru/kelas/ujian/detail.html",
+            data: {pageTitle: 'Detail ujian murid'},
+            controller: "guru.kelas.detail.ujian.detail"
         })
 
 }

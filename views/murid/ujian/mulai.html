@@ -1,0 +1,64 @@
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row" id="detail_fix">
+        <div class="col-lg-2 p-r-0 border-right">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title bg-info">
+                    <h5>{{murid.nis}}</h5>
+                </div>
+                <div class="ibox-content no-kiri-kanan border-left border-right">
+                    <div style="padding: 10px;">
+                        <strong>Total Soal</strong><br>
+                        {{soal_jawaban.length}} Soal<br>
+                        <strong>Mulai Ujian</strong><br>
+                        {{jawaban.tanggal_ujuan}}
+                    </div>
+
+                    <table class="table no_border">
+                        <tr>
+                            <td width="40%">NIS</td>
+                            <td  width="60%">: {{murid.nis }}</td>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+                <div class="ibox-footer">
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-10 p-l-0">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title no-padding " style="padding-top: 5px !important;">
+
+
+                </div>
+                <div class="ibox-content border-left border-right" full-scroll="">
+
+                    <ui-view></ui-view>
+
+                </div>
+                <div class="ibox-footer">
+                 <span class="pull-right">
+
+                 </span>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+
+    setTimeout(function () {
+        fixDetailHeight()
+    })
+</script>

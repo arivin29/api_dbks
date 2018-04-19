@@ -12,12 +12,32 @@ function configmurid($stateProvider) {
         controller:"murid.murid"
     })
 
-        .state('murid.murid.detailmurids', {
-            url: "/detail/:id_murid",
-            templateUrl: "views/murid/detail.html",
+        .state('murid.murid.kelas', {
+            url: "/kelas",
+            templateUrl: "views/murid/murid/kelas.html",
             data: { pageTitle: 'detail murid' },
-            controller:"murid.murids.detail"
+            controller:"murid.murid.kelas"
         })
+        .state('murid.ujian', {
+            url: "/ujian",
+            templateUrl: "views/murid/ujian/data.html",
+            data: { pageTitle: 'Datas ujian' },
+            controller:"murid.ujian"
+        })
+        .state('murid.ujian.mulai', {
+            url: "/mulai/:id",
+            templateUrl: "views/murid/ujian/mulai.html",
+            data: {pageTitle: 'Datas mulai'},
+            controller: "murid.ujian.mulai"
+        })
+        .state('murid.ujian.detail', {
+            url: "/detail/:id",
+            templateUrl: "views/murid/ujian/detail.html",
+            data: { pageTitle: 'Datas mulai' },
+            controller:"murid.detail"
+        })
+
+
 
 }
 

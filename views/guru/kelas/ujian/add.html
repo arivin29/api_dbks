@@ -1,0 +1,115 @@
+
+<form ng-submit="submitForm()">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label>Judul</label>
+            <input ng-change="simpan_wae()" class="form-control" required ng-model="ujian.judul" type="text">
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label>Keterangan</label>
+            <textarea class="form-control" ng-model="ujian.ketarangan"></textarea>
+        </div>
+    </div>
+
+
+    <div class="col-sm-6">
+        <div ng-repeat="x in soal">
+            <table class="table">
+                <tr>
+                    <td width="40px">{{$index+1}}.</td>
+                    <td>
+                        {{x.soal}}</p>
+                    </td>
+                    <td>
+                        <a title="Hapus" class="pull-right" ng-click="delete(x.id_ujian_soal)" ><i class="fa fa-times"></i> </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul class="nav nav-list">
+                            <li>A. {{x.a}}</li>
+                            <li>B. {{x.b}}</li>
+                            <li>C. {{x.c}}</li>
+                            <li>D. {{x.d}}</li>
+                            <li ng-if="x.e">E. {{x.e}}</li>
+                        </ul>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="40px">#</th>
+                <th width="40px">No</th>
+                <th>Soal</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in pertanyaan">
+                <td>
+                    <a ng-click="masuaan(x.id_soal)"><i class="fa fa-arrow-left"></i> </a>
+                </td>
+                <td>
+                    {{$index+1}}
+                </td>
+                <td>
+                    <b>{{x.soal}}</b>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Lama/Waktu Ujian (menit)</label>
+            <input ng-change="simpan_wae()" class="form-control"  required ng-model="ujian.waktu" type="number">
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Tanggal mulai</label>
+            <input  class="form-control" datepicker="" required ng-model="ujian.tanggal_ujian" type="text">
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Tanggal Selesai</label>
+            <input  class="form-control" datepicker="" required ng-model="ujian.tanggal_ujian_sampai" type="text">
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label>Aturan</label>
+            <textarea  ng-change="simpan_wae()" class="form-control" ng-model="ujian.aturan"></textarea>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-left">
+            <p>Please check from before save*</p>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                <i class="fa fa-save"></i> &nbsp;
+                <strong> SImpan </strong></button>
+        </div>
+
+    </div>
+
+</div>
+</form>

@@ -13,20 +13,22 @@
                     <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
                         <a ui-sref="guru.kelas.detail.absensi({id_guru_mp:kelas.id_guru_mp})" class="ng-binding">Absensi</a>
                     </li>
+                    <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="Second Tab">
+                        <a ui-sref="guru.kelas.detail.ujian({id_guru_mp:kelas.id_guru_mp})" class="ng-binding">Ujian</a>
+                    </li>
 
                     <li class="uib-tab ng-scope ng-isolate-scope pull-right" heading="Second Tab">
                         <a back-button=""><i class="fa fa-times"></i></a>
                     </li>
                 </ul>
             </div>
-            <div class="ibox-content border-left border-right" full-scroll="">
+            <div class="ibox-content border-left border-right" style="overflow: auto">
 
                 <div class="profile-info" style="margin-left: 0px">
                     <div class="">
                         <div>
                             <h2 class="no-margins">
-                                Kelas {{kelas.kelas }} {{kelas.jurusan}}
-                                <span class="pull-right">{{kelas.kelas_paralel}}</span>
+                                Kelas {{kelas.kelas }}{{kelas.kelas_paralel}} {{kelas.jurusan}}
                             </h2>
                             <h4>{{kelas.mata_pelajaran}}</h4>
                             <small>

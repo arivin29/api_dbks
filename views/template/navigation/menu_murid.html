@@ -31,11 +31,13 @@
                 <a ui-sref="murid.murid"><i class="fa fa-bandcamp"></i>
                     <span class="nav-label">{{ 'Information Murid' | uppercase }}</span>
                 </a>
-            </li>             
-
-            <li class="landing_link">
-                <a ui-sref="landing"><i class="fa fa-star"></i> <span class="nav-label">{{ 'LANDING' | translate }}</span> <span class="label label-warning pull-right">NEW</span></a>
             </li>
+            <li ui-sref-active="active">
+                <a ui-sref="murid.ujian"><i class="fa fa-bandcamp"></i>
+                    <span class="nav-label">{{ 'Ujian' | uppercase }}</span>
+                </a>
+            </li>
+
         </ul>
 
     </div>

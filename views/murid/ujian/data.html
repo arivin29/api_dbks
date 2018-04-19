@@ -1,0 +1,38 @@
+<ui-view></ui-view>
+<div class="wrapper wrapper-content  animated fadeInRight" ng-show="$state.current.name === 'murid.ujian'">
+
+
+<div class="row" >
+    <div class="col-md-3" ng-repeat="x in ujian">
+        <div class="ibox-content text-center">
+            <h1>{{x.judul | uppercase}}</h1>
+            <div class="m-b-sm">
+                <img alt="image" class="img-circle" src="img/a8.jpg">
+            </div>
+            <p class="font-bold">{{x.mata_pelajran}}</p>
+            <div>
+                <span>{{x.kelas}}</span> |
+                <span>{{x.jurusan}}</span> |
+                <span>{{x.kelas_paralel}}</span>
+            </div>
+
+            <div class="text-center">
+                <a class="btn btn-xs btn-white">{{x.tanggal_ujian | Mydate}} </a>
+                <a class="btn btn-xs btn-white">{{x.tanggal_ujian_sampai | Mydate}} </a>
+                <a class="btn btn-xs btn-white">{{x.waktu}} Mnenit </a>
+            </div>
+        </div>
+        <div class="ibox-footer">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a ui-sref="murid.ujian.mulai({id:x.id_ujian})"  class="btn btn-{{x.warna}} btn-rounded btn-block"  ><i class="fa fa-ticket"></i> Mulai</a>
+                </div>
+                <div class="col-lg-6">
+                    <a  class="btn btn-primary btn-rounded btn-block"> Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

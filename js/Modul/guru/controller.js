@@ -3,6 +3,69 @@ var app = angular.module('inspinia');
 /*----------------------------------------------------------------------------------------------
  Informations
  /*----------------------------------------------------------------------------------------------*/
+app.controller('guru.soal', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.filters = {};
+
+    $scope.filter =function () {
+        myHelp.getParam('/guru/soal',clearObj($scope.filters))
+            .then(function(respons){
+                $scope.datas = respons.data.soal;
+                $scope.master_smt = respons.data.master_smt;
+                $scope.master_mp = respons.data.master_mp;
+            });
+    }
+
+    $scope.filter();
+
+});
+
+
+app.controller('guru.soal.add', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    $scope.abc = ['a','b','c','d','e'];
+
+    $scope.submitForm = function() {
+
+        var file = $scope.myFile;
+        var fd = new FormData();
+        fd.append('name_file', file);
+        fd.append('smt', clearInt($scope.param.smt));
+        fd.append('id_mata_pelajaran', clearInt($scope.param.id_mata_pelajaran));
+        fd.append('soal', $scope.param.soal);
+        fd.append('a', $scope.param.a);
+        fd.append('b', $scope.param.b);
+        fd.append('c', $scope.param.c);
+        fd.append('d', $scope.param.d);
+        fd.append('e', $scope.param.e);
+        fd.append('jawaban', clearString($scope.param.jawaban));
+
+        console.log(fd)
+        $http.post(BASE_URL + '/guru/soal', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+            .success(function(){
+
+                $scope.filters.id_mata_pelajaran = $scope.param.id_mata_pelajaran;
+                $scope.filters.smt = $scope.param.smt;
+                $scope.filter();
+                berhasilView();
+                $state.go("^", {});
+            })
+            .error(function(){
+                errorView()
+            });
+
+    };
+
+    $scope.filter();
+
+});
+
+
+/*----------------------------------------------------------------------------------------------
+ Informations
+ /*----------------------------------------------------------------------------------------------*/
 app.controller('guru.kelas', function truncateCtrl($scope,$state,$stateParams,myHelp){
     myHelp.getDetail('/guru/kelas')
         .then(function(respons){
@@ -128,6 +191,116 @@ app.controller('guru.kelas.detail.absensi.add', function truncateCtrl($scope,$st
                 {
                     berhasilView();
                     $state.go("^",{}, { reload: true });
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+    };
+
+});
+
+
+/*----------------------------------
+UJIAN
+----------------------------------*/
+
+
+app.controller('guru.kelas.detail.ujian', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.murid = {};
+    $scope.filter =  function () {
+        myHelp.getParam('/guru/ujian', {id_guru_mp: $stateParams.id_guru_mp})
+            .then(function(respons){
+                $scope.data = respons.data.data;
+            });
+    }
+    $scope.filter();
+});
+
+app.controller('guru.kelas.detail.ujian.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/guru/ujian/' + $stateParams.id_ujian)
+        .then(function(respons){
+            $scope.ujian = respons.data.ujian;
+        });
+
+    myHelp.getDetail('/guru/ujian_soal/' + $stateParams.id_ujian)
+        .then(function(respons){
+            $scope.ujian_soal = respons.data.soal
+        });
+});
+
+app.controller('guru.kelas.detail.ujian.add', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getParam('/guru/ujian/create',{id_guru_mp:$stateParams.id_guru_mp})
+        .then(function(respons){
+            $scope.pertanyaan = respons.data.pertanyaan;
+            $scope.ujian = respons.data.ujian;
+            $scope.getSoal($scope.ujian.id_ujian);
+        });
+
+    $scope.getSoal = function (id) {
+        myHelp.getDetail('/guru/ujian_soal/' + id)
+            .then(function(respons){
+                $scope.soal = respons.data.soal;
+            });
+    }
+    $scope.delete = function (id) {
+        myHelp.delete('/guru/ujian_soal/' + id)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.getSoal($scope.ujian.id_ujian);
+                }
+                , function myError()
+                {
+                    errorView("error");
+                });
+    }
+
+    $scope.masuaan = function(id) {
+        var Param = {};
+        Param.id_soal = id;
+        Param.id_ujian = $scope.ujian.id_ujian;
+        myHelp.postParam('/guru/ujian_soal' , Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.getSoal($scope.ujian.id_ujian);
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+    };
+
+    $scope.simpan_wae = function() {
+        var Param = clearObj($scope.ujian);
+
+        myHelp.postParam('/guru/ujian' , Param)
+            .then(function mySuccesresponse()
+                {
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+    };
+
+
+    $scope.submitForm = function() {
+
+        var Param = clearObj($scope.ujian);
+        myHelp.putParam('/guru/ujian/' + $scope.ujian.id_ujian, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.filter();
+                    $state.go("^",{});
                 }
                 , function myError()
                 {

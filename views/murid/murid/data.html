@@ -1,67 +1,118 @@
-
-<div class="wrapper wrapper-content  animated fadeInRight" >
-    <div ui-view></div>
-    <div class="row" ng-show="$state.current.name === 'murid.murid'">
-        <div class="col-lg-12">
-            <div class="ibox">
-                <div class="ibox-title">
-                    <h5>Data murids</h5>
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row" id="detail_fix">
+        <div class="col-lg-3 p-r-0 border-right">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title bg-info">
+                    <h5>{{murid.nis}}</h5>
                 </div>
+                <div class="ibox-content no-kiri-kanan border-left border-right">
 
-                <div class="ibox-content">
-                    <div class="m-b-lg">
-                        <strong>Found {{datas.length}} issues.</strong>
+                    <div class="profile-image">
+                        <img src="../../../img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
                     </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <select ng-model="Limit" class="form-control">
-                                <option>5</option>
-                                <option>50</option>
-                                <option>100</option>
-                                <option>150</option>
-                                <option>All</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
+                    <table class="table no_border">
+                        <tr>
+                            <td width="40%">NIS</td>
+                            <td  width="60%">: {{murid.nis }}</td>
+                        </tr>
+                        <tr >
+                            <td>NISN</td>
+                            <td>: {{murid.nisn }}</td>
+                        </tr>
+                        <tr >
+                            <td>Nama murid</td>
+                            <td>: {{murid.nama_murid }}</td>
+                        </tr>
+                        <tr >
+                            <td>Tempat lahir</td>
+                            <td>:  {{murid.tempat_lahir }}</td>
+                        </tr>
+                        <tr >
+                            <td>Tanggal lahir</td>
+                            <td>:  {{murid.tanggal_lahir |Mydate}}</td>
+                        </tr>
+                        <tr >
+                            <td>Jenis kelamin</td>
+                            <td>:  {{murid.jenis_kelamin }}</td>
+                        </tr>
+                        <tr >
+                            <td>Email</td>
+                            <td>:  {{murid.email }}</td>
+                        </tr>
+                        <tr >
+                            <td>No Handphone</td>
+                            <td>:  {{murid.no_hp }}</td>
+                        </tr>
+                        <tr >
+                            <td>Hobi</td>
+                            <td>:  {{murid.hobi }}</td>
+                        </tr>
+                        <tr >
+                            <td>Cita-cita</td>
+                            <td>:  {{murid.cita_cita }}</td>
+                        </tr>
+                        <tr >
+                            <td>Jumlah saudara</td>
+                            <td>:  {{murid.jumlah_saudara }}</td>
+                        </tr>
+                        <tr >
+                            <td>Alamat</td>
+                            <td>:  {{murid.alamat }}</td>
+                        </tr>
+                        <tr >
+                            <td>Provinsi</td>
+                            <td>:  {{murid.provinsi }}</td>
+                        </tr>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive" id="table-scroll" full-scroll="">
-                        <table class="table table-bordered table-hover issue-tracker">
-                            <thead>
-                            <tr>
-                                <th width="2px">#No</th>
-                                <th>Nama murid</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="x in datas|filter:search|limitTo:Limit">
-                                <td>
-                                    {{ $index +1}}
-                                </td>
-                                <td>
-                                    <a ui-sref="murid.murid.detail({id_murid:x.id_murid})">
-                                        <strong>{{ x.nama_murid }}</strong>
-                                    </a>
-                                </td>
-                            </tr>
+                    </table>
 
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
+                <div class="ibox-footer">
 
+
+                </div>
             </div>
+
         </div>
+
+        <div class="col-lg-9 p-l-0">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title no-padding " style="padding-top: 5px !important;">
+
+                    <ul class="nav nav-tabs">
+                        <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                            <a ui-sref="murid.murid.kelas" class="ng-binding">Kelas</a>
+                        </li>
+                        <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
+                            <a ui-sref="admin.murid.akun" class="ng-binding">Akun</a>
+                        </li>
+                        <li class="uib-tab ng-scope ng-isolate-scope pull-right" heading="Second Tab">
+                            <a ui-sref="admin.murid_kelas"><i class="fa fa-times"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibox-content border-left border-right" full-scroll="">
+
+                    <ui-view></ui-view>
+
+                </div>
+                <div class="ibox-footer">
+                 <span class="pull-right">
+
+                 </span>
+
+                </div>
+            </div>
+
+        </div>
+
+
     </div>
-
-
 </div>
+
+<script>
+
+    setTimeout(function () {
+        fixDetailHeight()
+    })
+</script>

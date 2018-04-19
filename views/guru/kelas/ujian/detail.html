@@ -1,0 +1,74 @@
+
+<div class="row">
+
+    <div class="col-sm-12">
+         <h1 class="text-center">{{ujian.judul |uppercase}}</h1>
+         <p class="text-center">{{ujian.keterangan}}</p>
+         <p class="text-center">{{ujian.aturan}}</p>
+    </div>
+    <hr>
+
+    <div class="col-md-6">
+        <h2>Soal ({{ujian_soal.length}})</h2>
+        <div ng-repeat="x in ujian_soal">
+            <table class="table">
+                <tr>
+                    <td width="40px">{{$index+1}}.</td>
+                    <td>
+                        {{x.soal}}
+                        <img class="img-responsive" ng-if="x.foto" src="http://beon.devetek.com/site_sbks/public/soal/{{x.foto}}">
+                        </p>
+                    </td>
+                    <td width="50px">
+                        <b>{{x.jawaban | uppercase}}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul class="nav nav-list">
+                            <li>A. {{x.a}}</li>
+                            <li>B. {{x.b}}</li>
+                            <li>C. {{x.c}}</li>
+                            <li>D. {{x.d}}</li>
+                            <li ng-if="x.e">E. {{x.e}}</li>
+                        </ul>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <th width="40px">No</th>
+                <th>NIS</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+            </tr>
+            <tr ng-repeat="x in murid">
+                <th>{{$index+1}}</th>
+                <th>{{x.nis}}</th>
+                <th>{{x.nama}}</th>
+                <th>{{x.nilai}}</th>
+            </tr>
+        </table>
+    </div>
+    <hr>
+
+
+
+    <div class="col-sm-12">
+        <hr>
+        <div class="pull-right">
+            <button class="btn btn-sm btn-primary m-t-n-xs" back-button="">
+                <i class="fa fa-arrow-left"></i> &nbsp;
+                <strong> Back </strong></button>
+        </div>
+
+    </div>
+
+</div>
