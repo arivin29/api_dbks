@@ -30,6 +30,12 @@ function configmurid($stateProvider) {
             data: {pageTitle: 'Datas mulai'},
             controller: "murid.ujian.mulai"
         })
+        .state('murid.ujian.mulai.pertanyaan', {
+            url: "/pertanyaan",
+            templateUrl: "views/murid/ujian/mulai.pertanyaan.html",
+            data: {pageTitle: 'Datas mulai'},
+            controller: "murid.ujian.mulai.pertanyaan"
+        })
         .state('murid.ujian.detail', {
             url: "/detail/:id",
             templateUrl: "views/murid/ujian/detail.html",

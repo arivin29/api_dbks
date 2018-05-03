@@ -3,20 +3,24 @@
         <div class="col-lg-2 p-r-0 border-right">
             <div class="ibox float-e-margins">
                 <div class="ibox-title bg-info">
-                    <h5>{{murid.nis}}</h5>
+                    <h5>{{ujian.judul}}</h5>
                 </div>
                 <div class="ibox-content no-kiri-kanan border-left border-right">
                     <div style="padding: 10px;">
                         <strong>Total Soal</strong><br>
-                        {{soal_jawaban.length}} Soal<br>
+                        {{soal.length}} Soal<br>
                         <strong>Mulai Ujian</strong><br>
                         {{jawaban.tanggal_ujuan}}
                     </div>
 
-                    <table class="table no_border">
-                        <tr>
-                            <td width="40%">NIS</td>
-                            <td  width="60%">: {{murid.nis }}</td>
+                    <table class="table table-bordered">
+                        <tr ng-repeat="x in soal">
+                            <td width="50px">{{$index+1}}</td>
+                            <td class="{{x.jawaban != null ? 'bg-info' :''}}" >A</td>
+                            <td >B</td>
+                            <td >C</td>
+                            <td >D</td>
+                            <td >E</td>
                         </tr>
 
 
@@ -33,12 +37,38 @@
 
         <div class="col-lg-10 p-l-0">
             <div class="ibox float-e-margins">
-                <div class="ibox-title no-padding " style="padding-top: 5px !important;">
-
-
+                <div class="ibox-title  " >
+                    <h5>{{urutan}}  </h5> <span class="pull-right">{{jawaban.tanggal_ujuan}}</span>
                 </div>
                 <div class="ibox-content border-left border-right" full-scroll="">
 
+                    <div ng-show="$state.current.name === 'murid.ujian.mulai'">
+
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1>Apakah Anda yakin untuk memulai Ujian</h1>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <h1>ATUTAN DAN KETENTUAN</h1>
+                                <p>{{ujian.aturan}}</p>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <h4> {{sekarang | date:'HH:mm:ss' }} </h4>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                 <button class="btn btn-block">Batal</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                 <button ng-click="mulai()" class="btn btn-block btn-info">Mulai</button>
+                            </div>
+                        </div>
+
+                    </div>
                     <ui-view></ui-view>
 
                 </div>

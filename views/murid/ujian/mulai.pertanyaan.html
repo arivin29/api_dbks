@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>{{pertanyaan.soal}}</p>
+        <img style="max-width: 100%" ng-if="pertanyaan.foto" src="http://beon.devetek.com/site_sbks/public/soal/{{pertanyaan.foto}}">
+    </div>
+    <div class="col-md-12 ">
+        <br>
+        <strong>Jawaban</strong>
+        <table class="table">
+            <tr>
+                <td width="30px" class="text-right">
+                    <b>A.</b>
+                </td>
+                <td width="40px">
+                    <input style="height: 20px; margin: 0" type="radio" value="a" ng-model="pertanyaan.jawaban" class="form-control">
+
+                </td>
+                <td>
+                    {{pertanyaan.a | capitalize }}
+                </td>
+            </tr>
+            <tr>
+                <td width="30px" class="text-right">
+                    <b>B.</b>
+                </td>
+                <td width="40px">
+                    <input style="height: 20px; margin: 0" type="radio" value="b" ng-model="pertanyaan.jawaban" class="form-control">
+
+                </td>
+                <td>
+                    {{pertanyaan.b | capitalize }}
+                </td>
+            </tr>
+            <tr>
+                <td width="30px" class="text-right">
+                    <b>C.</b>
+                </td>
+                <td width="40px">
+                    <input style="height: 20px; margin: 0" type="radio" value="c" ng-model="pertanyaan.jawaban" class="form-control">
+                </td>
+                <td>
+                    {{pertanyaan.c | capitalize }}
+                </td>
+            </tr>
+            <tr>
+                <td width="30px" class="text-right">
+                    <b>D.</b>
+                </td>
+                <td width="40px">
+                    <input style="height: 20px; margin: 0" type="radio" value="d" ng-model="pertanyaan.jawaban" class="form-control">
+
+                </td>
+                <td>
+                    {{pertanyaan.d | capitalize }}
+                </td>
+            </tr>
+            <tr>
+                <td width="30px" class="text-right">
+                    <b>E.</b>
+                </td>
+                <td width="40px">
+                    <input style="height: 20px; margin: 0" type="radio" value="e" ng-model="pertanyaan.jawaban" class="form-control">
+
+                </td>
+                <td>
+                    {{pertanyaan.e | capitalize }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<hr>
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <button class="btn btn-block">Kembali</button>
+    </div>
+    <div class="col-md-6 text-center">
+        <button ng-click="nextTanyo()" class="btn btn-block btn-info">Selanjutnya</button>
+    </div>
+</div>
