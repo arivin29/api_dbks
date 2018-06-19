@@ -9,33 +9,74 @@
     </div>
     <div class="col-sm-12">
         <div class="form-group">
+            <label>Jenis Ujian</label>
+            <input ng-change="simpan_wae()" class="form-control" required ng-model="ujian.jenis" type="text">
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group">
             <label>Keterangan</label>
             <textarea class="form-control" ng-model="ujian.ketarangan"></textarea>
         </div>
     </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Batas KKM</label>
+            <input ng-change="simpan_wae()" class="form-control"  required ng-model="ujian.kkm" type="number">
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label>Materi Pokok</label>
+            <input ng-change="simpan_wae()" class="form-control"  required ng-model="ujian.materi_pokok" type="text">
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <h3>Pertanyaan
+            <a class="pull-right" ng-click="clikaddSoal()">
+                <i class="fa fa-plus"></i> {{lebar_soal > 0 ? 'Kembali' : 'bank Soal' }}
+            </a>
+        </h3>
+    </div>
 
 
-    <div class="col-sm-6">
+    <div class="col-sm-{{lebar_pertanyaan}}" ng-if="lebar_pertanyaan > 0">
         <div ng-repeat="x in soal">
-            <table class="table">
+            <table class="table table-bordered">
+                <tr>
+                    <th width="40px">No</th>
+                    <th>
+                        Pertanyaan
+                    </th>
+                    <th width="40px" class="text-center">
+                        Action
+                    </th>
+                </tr>
                 <tr>
                     <td width="40px">{{$index+1}}.</td>
                     <td>
-                        {{x.soal}}</p>
+                        <p ng-bind-html="x.soal"></p>
+                        <hr>
+                        <i>Indikator</i> : {{x.indikator}}
+                        <hr>
+                        <i>Materi</i> : {{x.materi}}
+                        <hr>
+                        <i>Kompetensi</i> : {{x.kompetensi}}
                     </td>
-                    <td>
-                        <a title="Hapus" class="pull-right" ng-click="delete(x.id_ujian_soal)" ><i class="fa fa-times"></i> </a>
+                    <td class="text-center">
+                        <a title="Hapus"   ng-click="delete(x.id_ujian_soal)" ><i class="fa fa-times"></i> </a>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
                         <ul class="nav nav-list">
-                            <li>A. {{x.a}}</li>
-                            <li>B. {{x.b}}</li>
-                            <li>C. {{x.c}}</li>
-                            <li>D. {{x.d}}</li>
-                            <li ng-if="x.e">E. {{x.e}}</li>
+                            <li><b>A.</b> <p ng-bind-html="x.a"></p></li>
+                            <li><b>B.</b>  <p ng-bind-html="x.b"></p></li>
+                            <li><b>C.</b>  <p ng-bind-html="x.c"></p></li>
+                            <li><b>D.</b>  <p ng-bind-html="x.d"></p></li>
+                            <li ng-if="x.e"><b>E.</b>  <p ng-bind-html="x.e"></p></li>
                         </ul>
                     </td>
                     <td></td>
@@ -46,7 +87,11 @@
         </div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-{{lebar_soal}}" ng-if="lebar_soal > 0">
+        <div class="form-group">
+            <label class="sr-only">Ketik filter</label>
+            <input type="text" ng-model="vessel_name" placeholder="Name Vessel" class="form-control">
+        </div>
         <table class="table table-hover table-bordered">
             <thead>
             <tr>
@@ -56,21 +101,28 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="x in pertanyaan">
+            <tr dir-paginate="x in pertanyaan | filter:vessel_name | itemsPerPage: 30" pagination-id="vessel">
                 <td>
-                    <a ng-click="masuaan(x.id_soal)"><i class="fa fa-arrow-left"></i> </a>
+                    <a ng-click="masuaan(x.id_soal)" title="Pilih"><i class="fa fa-arrow-left"></i> </a>
                 </td>
                 <td>
                     {{$index+1}}
                 </td>
                 <td>
-                    <b>{{x.soal}}</b>
+                    <p ng-bind-html="x.soal"></p>
+                    <hr>
+                    <i>Indikator</i> : {{x.indikator}}
+                    <hr>
+                    <i>Materi</i> : {{x.materi}}
+                    <hr>
+                    <i>Kompetensi</i> : {{x.kompetensi}}
                 </td>
 
             </tr>
 
             </tbody>
         </table>
+        <dir-pagination-controls max-size="6" pagination-id="vessel"></dir-pagination-controls>
     </div>
 
     <div class="col-sm-4">
@@ -113,3 +165,14 @@
 
 </div>
 </form>
+
+<style>
+    p img{
+        height: 200px;
+        width: auto;
+    }
+    ul p{
+        padding-left: 20px;
+        display: inline-table;
+    }
+</style>

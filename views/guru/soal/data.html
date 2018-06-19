@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content  animated fadeInRight" >
+<div class="wrapper wrapper-content  animated fadeInRight" id="detail_fix" >
     <div ui-view></div>
     <div class="row" ng-show="$state.current.name === 'guru.soal'">
         <div class="col-lg-12">
@@ -7,11 +7,11 @@
                     <h5>Bank Soal</h5>
 
                     <div class="ibox-tools">
-                        <a ui-sref="guru.soal.add" class="btn btn-primary btn-xs">Input Nilai</a>
+                        <a ui-sref="guru.soal.add" class="btn btn-primary btn-xs">Input</a>
                     </div>
                 </div>
 
-                <div class="ibox-content">
+                <div class="ibox-content" style="overflow: auto">
                     <form class="row" ng-submit="filter()">
                         <div class="col-md-6">
                             <div class="input-group">
@@ -49,6 +49,7 @@
                             <tr>
                                 <th width="40px">No</th>
                                 <th>Soal</th>
+                                <th>#</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -56,8 +57,18 @@
                                 <td>
                                     {{$index+1}}
                                 </td>
+                                <td >
+                                    <p ng-bind-html="x.soal | unsafe"></p>
+                                    <hr>
+                                    <i>Indikator</i> : {{x.indikator}}
+                                    <hr>
+                                    <i>Materi</i> : {{x.materi}}
+                                    <hr>
+                                    <i>Kompetensi</i> : {{x.kompetensi}}
+                                </td>
                                 <td>
-                                    <b><a ui-sref="guru.soal.edit({id_soal:x.id_soal})">{{x.soal}}</a> </b>
+                                     <a ng-dblclick="delete(x.id_soal)"><i class="fa fa-trash"></i>  </a> |
+                                     <a ui-sref="guru.soal.edit({id_soal:x.id_soal})"><i class="fa fa-edit"></i>  </a>
                                 </td>
 
                             </tr>
@@ -72,8 +83,17 @@
     </div>
 
 </div>
+
 <script>
+
     setTimeout(function(){
-        tableScroll()
+        fixDetailHeight()
     })
 </script>
+<style>
+    p img{
+        height: 200px;
+        width: auto;
+    }
+</style>
+

@@ -19,7 +19,11 @@ app.filter('Mydate',['$filter',  function($filter) {
         return $filter('date')(new Date(input), 'dd MMMM yyyy');
     };
 }])
-
+app.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+})
 app.filter('MakeJam',['$filter',  function($filter) {
     return function(input) {
         var panjang = input.length;

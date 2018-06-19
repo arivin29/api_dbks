@@ -1,7 +1,6 @@
-<div class="row">
+<div class="row" ng-if="selesai==false">
     <div class="col-md-12">
-        <p>{{pertanyaan.soal}}</p>
-        <img style="max-width: 100%" ng-if="pertanyaan.foto" src="http://beon.devetek.com/site_sbks/public/soal/{{pertanyaan.foto}}">
+        <p ng-bind-html="pertanyaan.soal | unsafe"></p>
     </div>
     <div class="col-md-12 ">
         <br>
@@ -16,7 +15,7 @@
 
                 </td>
                 <td>
-                    {{pertanyaan.a | capitalize }}
+                    <p ng-bind-html="pertanyaan.a | unsafe"></p>
                 </td>
             </tr>
             <tr>
@@ -28,7 +27,7 @@
 
                 </td>
                 <td>
-                    {{pertanyaan.b | capitalize }}
+                    <p ng-bind-html="pertanyaan.b | unsafe"></p>
                 </td>
             </tr>
             <tr>
@@ -39,7 +38,7 @@
                     <input style="height: 20px; margin: 0" type="radio" value="c" ng-model="pertanyaan.jawaban" class="form-control">
                 </td>
                 <td>
-                    {{pertanyaan.c | capitalize }}
+                    <p ng-bind-html="pertanyaan.c | unsafe"></p>
                 </td>
             </tr>
             <tr>
@@ -51,7 +50,7 @@
 
                 </td>
                 <td>
-                    {{pertanyaan.d | capitalize }}
+                    <p ng-bind-html="pertanyaan.d | unsafe"></p>
                 </td>
             </tr>
             <tr>
@@ -63,7 +62,7 @@
 
                 </td>
                 <td>
-                    {{pertanyaan.e | capitalize }}
+                    <p ng-bind-html="pertanyaan.e | unsafe"></p>
                 </td>
             </tr>
         </table>
@@ -74,9 +73,10 @@
 
 <div class="row">
     <div class="col-md-6 text-center">
-        <button class="btn btn-block">Kembali</button>
+        <button class="btn btn-block" ng-click="kembali()">Kembali</button>
     </div>
     <div class="col-md-6 text-center">
-        <button ng-click="nextTanyo()" class="btn btn-block btn-info">Selanjutnya</button>
+        <button ng-if="selesai==false" ng-click="nextTanyo()" class="btn btn-block btn-info">Selanjutnya</button>
+        <button ng-if="selesai"  ng-click="simpan_selesai()" class="btn btn-block btn-info">Selesai</button>
     </div>
 </div>

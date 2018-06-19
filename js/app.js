@@ -16,15 +16,23 @@
         'ui.utils.masks',
         'ui.footable','ngJsTree',
         'fixed.table.header',
+        'angularUtils.directives.dirPagination',
         'Auth',
-        'angular-jwt'
-    ])
+        'angular-jwt',
+        'froala'
+    ]).
+        value('froalaConfig', {
+            toolbarInline: false,
+            height: 300,
+            imageUploadURL: 'http://mansasi.edutech.web.id/site/public/image',
+            placeholderText: 'Enter Text Here'
+        })
 })();
 
 // Other libraries are loaded dynamically in the config.js file using the library ocLazyLoad
 
 var DEBUG=true;
-var BASE_URL = 'http://beon.devetek.com/site_sbks/public/api/v1';
+var BASE_URL = 'http://mansasi.edutech.web.id/site/public/api/v1';
 // var BASE_URL = 'http://arivin.xyz/site_sbks/public/api/v1';
 
 var app = angular.module('inspinia');

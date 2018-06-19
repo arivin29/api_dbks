@@ -5,19 +5,20 @@
          <h1 class="text-center">{{ujian.judul |uppercase}}</h1>
          <p class="text-center">{{ujian.keterangan}}</p>
          <p class="text-center">{{ujian.aturan}}</p>
+        <hr>
+        <h4 class="text-center">{{ujian.jenis}}</h4>
+        <hr>
     </div>
     <hr>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <h2>Soal ({{ujian_soal.length}})</h2>
         <div ng-repeat="x in ujian_soal">
-            <table class="table">
+            <table class="table table-bordered" width="100%">
                 <tr>
                     <td width="40px">{{$index+1}}.</td>
                     <td>
-                        {{x.soal}}
-                        <img class="img-responsive" ng-if="x.foto" src="http://beon.devetek.com/site_sbks/public/soal/{{x.foto}}">
-                        </p>
+                        <p ng-bind-html=" x.soal | unsafe"></p>
                     </td>
                     <td width="50px">
                         <b>{{x.jawaban | uppercase}}</b>
@@ -27,11 +28,11 @@
                     <td></td>
                     <td>
                         <ul class="nav nav-list">
-                            <li>A. {{x.a}}</li>
-                            <li>B. {{x.b}}</li>
-                            <li>C. {{x.c}}</li>
-                            <li>D. {{x.d}}</li>
-                            <li ng-if="x.e">E. {{x.e}}</li>
+                            <li><b>A.</b>  <p ng-bind-html=" x.a | unsafe"></p></li>
+                            <li><b>B.</b>  <p ng-bind-html=" x.b | unsafe"></p></li>
+                            <li><b>C.</b>  <p ng-bind-html=" x.c | unsafe"></p></li>
+                            <li><b>D.</b>  <p ng-bind-html=" x.d | unsafe"></p></li>
+                            <li ng-if="x.e"><b>E. </b> <p ng-bind-html=" x.e | unsafe"></p></li>
                         </ul>
                     </td>
                     <td></td>
@@ -41,24 +42,102 @@
 
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
+        <h3>Murid sudah melangsanakan Ujian</h3>
+
+
+
         <table class="table table-bordered">
-            <tr>
-                <th width="40px">No</th>
-                <th>NIS</th>
-                <th>Nama</th>
-                <th>Nilai</th>
+            <tr class="text-center">
+                <td colspan="3" rowspan="2">DATA KHUSUS
+                    SOAL PILIHAN GANDA
+                </td>
+                <td>
+                    RINCIAN KUNCI JAWABAN
+                </td>
+                <td>
+                    JML Soal
+                </td>
+                <td>
+                    JML Options
+                </td>
+                <td>
+                    SKOR BENAR
+                </td>
+                <td>
+                    SKOR SALAH
+                </td>
+                <td>
+                    SKALA NILAI
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td>{{report.jawaban}}</td>
+                <td>{{report.soal}}</td>
+                <td>{{report.pilihan}}</td>
+                <td>{{report.skor_benar}}</td>
+                <td>{{report.skor_salah}}</td>
+                <td>{{report.skala_nilai}}</td>
+            </tr>
+            <tr class="text-center">
+                <th rowspan="2">No.</th>
+                <th rowspan="2">Nama</th>
+                <th rowspan="2">L/P</th>
+                <th>RINCIAN JAWABAN SISWA</th>
+                <th colspan="2">JUMLAH</th>
+                <th rowspan="2">SKOR</th>
+                <th rowspan="2">NILAI</th>
+                <th rowspan="2">KET.</th>
+            </tr>
+            <tr class="text-center">
+                <th>-</th>
+                <th>BENAR</th>
+                <th>SALAH</th>
             </tr>
             <tr ng-repeat="x in murid">
-                <th>{{$index+1}}</th>
-                <th>{{x.nis}}</th>
-                <th>{{x.nama}}</th>
-                <th>{{x.nilai}}</th>
+                <td>{{$index+1}}</td>
+                <td>{{x.nama_murid}}</td>
+                <td></td>
+                <td>{{x.jawaban}}</td>
+                <td>{{x.benar}}</td>
+                <td>{{x.salah}}</td>
+                <td>{{x.benar}}</td>
+                <td>{{x.skor}}</td>
+                <td>{{x.keterangan}}</td>
+            </tr>
+            <tr>
+                <td colspan="6">JUMLAH </td>
+                <td>{{report_siswa.jumlah_skor | currency:''}}</td>
+                <td>{{report_siswa.jumlah_nilai | currency:''}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="6">JUMLAH TERKECIL</td>
+                <td>{{report_siswa.min_skor | currency:''}}</td>
+                <td>{{report_siswa.min_nilai | currency:''}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="6">JUMLAH TERBESAR</td>
+                <td>{{report_siswa.max_skor | currency:''}}</td>
+                <td>{{report_siswa.max_nilai | currency:''}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="6">JUMLAH RATA RATA</td>
+                <td>{{report_siswa.avg_skor | currency:''}}</td>
+                <td>{{report_siswa.avg_nilai | currency:''}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="6">JUMLAH SISWA IKUT UJIAN</td>
+                <td>{{report_siswa.siswa}}</td>
+                <td>Siswa</td>
+                <td></td>
             </tr>
         </table>
     </div>
     <hr>
-
 
 
     <div class="col-sm-12">
@@ -72,3 +151,19 @@
     </div>
 
 </div>
+
+<style>
+    p img{
+        height: 200px;
+        width: auto;
+    }
+    ul p{
+        padding-left: 20px;
+        display: inline-table;
+    }
+    table tr.text-center th {
+        text-align: center;
+    }table tr.text-center td {
+        text-align: center;
+    }
+</style>

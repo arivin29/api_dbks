@@ -3,33 +3,31 @@
 
 
 <div class="row" >
-    <div class="col-md-3" ng-repeat="x in ujian">
-        <div class="ibox-content text-center">
-            <h1>{{x.judul | uppercase}}</h1>
-            <div class="m-b-sm">
-                <img alt="image" class="img-circle" src="img/a8.jpg">
+    <div class="col-lg-4" ng-repeat="x in ujian">
+        <div class="widget-head-color-box {{x.is_puplish==1? 'navy':'yellow'}}-bg p-lg text-center">
+            <div class="m-b-md">
+                <h2 class="font-bold no-margins">
+                    {{x.judul | uppercase}}
+                </h2>
+                <small>{{x.jenis | uppercase}}</small>
             </div>
-            <p class="font-bold">{{x.mata_pelajran}}</p>
             <div>
-                <span>{{x.kelas}}</span> |
-                <span>{{x.jurusan}}</span> |
-                <span>{{x.kelas_paralel}}</span>
-            </div>
-
-            <div class="text-center">
-                <a class="btn btn-xs btn-white">{{x.tanggal_ujian | Mydate}} </a>
-                <a class="btn btn-xs btn-white">{{x.tanggal_ujian_sampai | Mydate}} </a>
-                <a class="btn btn-xs btn-white">{{x.waktu}} Mnenit </a>
+                <span>Kelas {{x.kelas}}</span> |
+                <span>Jurusan {{x.jurusan}}</span> |
+                <span>Paralel {{x.kelas_paralel}}</span>
             </div>
         </div>
-        <div class="ibox-footer">
-            <div class="row">
-                <div class="col-lg-6">
-                    <a ui-sref="murid.ujian.mulai({id:x.id_ujian})"  class="btn btn-{{x.warna}} btn-rounded btn-block"  ><i class="fa fa-ticket"></i> Mulai</a>
-                </div>
-                <div class="col-lg-6">
-                    <a  class="btn btn-primary btn-rounded btn-block"> Detail</a>
-                </div>
+        <div class="widget-text-box">
+            <h4 class="media-heading">{{x.mata_pelajran}}</h4>
+            <p>Berlaku <b>{{x.tanggal_ujian | Mydate}}</b> sampai <b>{{x.tanggal_ujian_sampai | Mydate}}</b></p>
+            <h4>{{x.waktu}} Menit</h4>
+            <div class="text-right">
+                <!--<a ng-if="x.id_murid" class="btn btn-xs btn-white"><i class="fa fa-deskpro"></i> Tampilkan </a>-->
+                <a ng-if="x.is_puplish==1 && x.id_murid == null" ui-sref="murid.ujian.mulai({id:x.id_ujian})" class="btn btn-xs btn-primary"><i class="fa fa-play"></i> Mulai</a>
+            </div>
+            <div ng-if="x.id_murid">
+                <hr>
+                <h4>Nilai {{x.nilai}} dari {{x.total_soal}} total soal</h4>
             </div>
         </div>
     </div>

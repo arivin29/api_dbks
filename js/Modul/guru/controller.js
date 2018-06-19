@@ -15,6 +15,27 @@ app.controller('guru.soal', function truncateCtrl($scope,$state,$stateParams,myH
             });
     }
 
+    $scope.froalaOptions = {
+        toolbarInline: false,
+        height: 200,
+        imageUploadURL: 'http://mansasi.edutech.web.id/site/public/image'
+    }
+
+
+    $scope.delete = function (id) {
+        myHelp.delete('/guru/soal/' + id)
+            .then(function mySuccesresponse(respon)
+                {
+                    berhasilView();
+                    $scope.filter();
+                }
+                , function myError(respon)
+                {
+                    errorView(respon.pesan);
+                });
+    }
+
+
     $scope.filter();
 
 });
@@ -55,6 +76,39 @@ app.controller('guru.soal.add', function truncateCtrl($scope,$state,$stateParams
             .error(function(){
                 errorView()
             });
+
+    };
+
+    $scope.filter();
+
+});
+
+app.controller('guru.soal.edit', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    $scope.abc = ['a','b','c','d','e'];
+
+    myHelp.getDetail('/guru/soal/' + $stateParams.id_soal)
+        .then(function(respons){
+            $scope.param = respons.data.soal;
+            $scope.master_smt = respons.data.master_smt;
+            $scope.master_mp = respons.data.master_mp;
+        });
+
+
+    $scope.submitForm = function() {
+
+        myHelp.putParam('/guru/soal/' + $stateParams.id_soal, $scope.param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("^",{}, { reload: true });
+                }
+                , function myError()
+                {
+                    errorView("error paja tu");
+                });
+
+
 
     };
 
@@ -217,6 +271,22 @@ app.controller('guru.kelas.detail.ujian', function truncateCtrl($scope,$state,$s
             });
     }
     $scope.filter();
+
+    $scope.lebar_soal = 0;
+    $scope.lebar_pertanyaan = 12;
+    $scope.clikaddSoal = function () {
+        if ($scope.lebar_soal==0)
+        {
+            $scope.lebar_soal=12;
+            $scope.lebar_pertanyaan=0;
+        }
+        else
+        {
+            $scope.lebar_soal = 0;
+            $scope.lebar_pertanyaan = 12;
+        }
+    }
+
 });
 
 app.controller('guru.kelas.detail.ujian.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
@@ -224,12 +294,17 @@ app.controller('guru.kelas.detail.ujian.detail', function truncateCtrl($scope,$s
     myHelp.getDetail('/guru/ujian/' + $stateParams.id_ujian)
         .then(function(respons){
             $scope.ujian = respons.data.ujian;
+            $scope.murid = respons.data.murid;
+            $scope.report = respons.data.report;
+            $scope.report_siswa = respons.data.report_siswa;
         });
 
     myHelp.getDetail('/guru/ujian_soal/' + $stateParams.id_ujian)
         .then(function(respons){
             $scope.ujian_soal = respons.data.soal
         });
+
+
 });
 
 app.controller('guru.kelas.detail.ujian.add', function truncateCtrl($scope,$state,$stateParams,myHelp){

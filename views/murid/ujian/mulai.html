@@ -1,6 +1,6 @@
 <div class="wrapper wrapper-content  animated fadeInRight">
     <div class="row" id="detail_fix">
-        <div class="col-lg-2 p-r-0 border-right">
+        <div class="col-lg-3 p-r-0 border-right">
             <div class="ibox float-e-margins">
                 <div class="ibox-title bg-info">
                     <h5>{{ujian.judul}}</h5>
@@ -14,19 +14,32 @@
                     </div>
 
                     <table class="table table-bordered">
+                        <tr class="bg-muted">
+                            <th width="30px">No</th>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>E</th>
+                        </tr>
                         <tr ng-repeat="x in soal">
-                            <td width="50px">{{$index+1}}</td>
-                            <td class="{{x.jawaban != null ? 'bg-info' :''}}" >A</td>
-                            <td >B</td>
-                            <td >C</td>
-                            <td >D</td>
-                            <td >E</td>
+                            <td width="30px">
+                                <a ng-click="getSoal(x.id_ujian_jawaban_soal,($index))">
+                                    {{$index+1}}
+                                </a>
+                            </td>
+                            <td class="{{x.jawaban == 'a' ? 'bg-info' :''}}" >A</td>
+                            <td class="{{x.jawaban == 'b' ? 'bg-info' :''}}" >B</td>
+                            <td class="{{x.jawaban == 'c' ? 'bg-info' :''}}" >C</td>
+                            <td class="{{x.jawaban == 'd' ? 'bg-info' :''}}" >D</td>
+                            <td class="{{x.jawaban == 'e' ? 'bg-info' :''}}" >E</td>
                         </tr>
 
 
                     </table>
 
                 </div>
+
                 <div class="ibox-footer">
 
 
@@ -35,10 +48,11 @@
 
         </div>
 
-        <div class="col-lg-10 p-l-0">
+        <div class="col-lg-9 p-l-0">
             <div class="ibox float-e-margins">
                 <div class="ibox-title  " >
-                    <h5>{{urutan}}  </h5> <span class="pull-right">{{jawaban.tanggal_ujuan}}</span>
+                    <h5>{{urutan}}  </h5> <span class="pull-right">{{countdown}}
+{{message}}</span>
                 </div>
                 <div class="ibox-content border-left border-right" full-scroll="">
 
@@ -61,7 +75,7 @@
 
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                 <button class="btn btn-block">Batal</button>
+                                 <button ui-sref="murid.ujian" class="btn btn-block">Batal</button>
                             </div>
                             <div class="col-md-6 text-center">
                                  <button ng-click="mulai()" class="btn btn-block btn-info">Mulai</button>

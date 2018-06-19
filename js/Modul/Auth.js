@@ -31,7 +31,7 @@ auth.config(function Config($httpProvider, jwtOptionsProvider) {
             return $localStorage.token;
         }],
 
-        whiteListedDomains: ['arivin.xyz','128.199.184.210','beon.devetek.com'],
+        whiteListedDomains: ['mansasi.edutech.web.id','128.199.184.210','beon.devetek.com'],
         // whiteListedDomains: ['192.168.0.247', 'localhost']
         unauthenticatedRedirectPath: '/logins'
     });
