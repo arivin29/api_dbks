@@ -14,8 +14,6 @@
         'jsonFormatter',
         'checklist-model',
         'ui.utils.masks',
-        'ui.footable','ngJsTree',
-        'fixed.table.header',
         'angularUtils.directives.dirPagination',
         'Auth',
         'angular-jwt',
@@ -39,7 +37,6 @@ var app = angular.module('inspinia');
 
 app.run( ['$rootScope', '$state', '$stateParams','$window','$http','$location', '$anchorScroll',
     function ($rootScope,   $state,   $stateParams,$window,$http,$location, $anchorScroll) {
-
 
         $rootScope.logut = function()
         {
