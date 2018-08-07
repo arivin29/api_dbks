@@ -53,6 +53,9 @@ app.controller('guru.soal.add', function truncateCtrl($scope,$state,$stateParams
         fd.append('smt', clearInt($scope.param.smt));
         fd.append('id_mata_pelajaran', clearInt($scope.param.id_mata_pelajaran));
         fd.append('soal', $scope.param.soal);
+        fd.append('kompetensi', $scope.param.kompetensi);
+        fd.append('indikator', $scope.param.indikator);
+        fd.append('materi', $scope.param.materi);
         fd.append('a', $scope.param.a);
         fd.append('b', $scope.param.b);
         fd.append('c', $scope.param.c);

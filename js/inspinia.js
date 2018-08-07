@@ -94,7 +94,7 @@ function fixDetailHeight() {
         var lebarWindow = $(window).width();
 
         var tinggi =  100;
-        $('#detail_fix .ibox-content').height(tinggiWindow - 250);
+        //$('#detail_fix .ibox-content').height(tinggiWindow - 250);
     })
 
 }
