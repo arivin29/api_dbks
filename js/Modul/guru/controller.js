@@ -346,6 +346,7 @@ app.controller('guru.kelas.detail.ujian.add', function truncateCtrl($scope,$stat
             .then(function mySuccesresponse()
                 {
                     berhasilView();
+                    $scope.clikaddSoal();
                     $scope.getSoal($scope.ujian.id_ujian);
                 }
                 , function myError()

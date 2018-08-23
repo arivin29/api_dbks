@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="ibox-content" style="overflow: auto">
-                    <form class="row" ng-submit="filter()">
+                    <div class="row"  >
                         <div class="col-md-6">
                             <div class="input-group">
                                 <label>Mata Pelajaran</label>
@@ -38,11 +38,11 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label>&nbsp;</label>
-                                <button class="btn btn-block btn-success" type="submit"><i class="fa fa-filter"></i> Filter</button>
+                                <button class="btn btn-block btn-success" ng-click="filter()"><i class="fa fa-filter"></i> Filter</button>
                             </div>
                         </div>
 
-                    </form>
+                    </div>
                     <div class="table-responsive" id="table-scroll" full-scroll="">
                         <table class="table table-hover table-bordered">
                             <thead>

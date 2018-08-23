@@ -7,9 +7,8 @@
     <list default="true" id="789036e7-e8e0-4611-9b85-26acc8fa1ce5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client_dbks" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/guru/kelas/ujian/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/guru/kelas/ujian/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/murid/murid/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/murid/murid/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/murid/murid/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/murid/murid/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Modul/guru/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/guru/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/guru/soal/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/guru/soal/data.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,95 +25,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/guru/kelas/data.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Modul/guru/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="77" column="14" lean-forward="true" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+            <state relative-caret-position="129">
+              <caret line="9" column="61" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/Modul/murid/controller.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
+            <state relative-caret-position="187">
+              <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/guru/kelas/ujian/detail.html">
+      <file leaf-file-name="myhelp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/myhelp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/murid/murid/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="91" column="10" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/murid/murid/data.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mulai.pertanyaan.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/murid/ujian/mulai.pertanyaan.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="79" column="57" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/guru/soal/add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="108" selection-start-line="52" selection-start-column="98" selection-end-line="52" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/guru/soal/data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1513">
-              <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+            <state relative-caret-position="527">
+              <caret line="67" column="37" lean-forward="true" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inspinia.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client_dbks/js/inspinia.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -123,8 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ng-repeat=&quot;x in murid&quot;</find>
-      <find>x.</find>
       <find>colo</find>
       <find>root</find>
       <find>filters</find>
@@ -152,6 +95,9 @@
       <find>soal'</find>
       <find>tim</find>
       <find>simpan_selesai</find>
+      <find>clikaddSoal</find>
+      <find>guru.soal</find>
+      <find>roots</find>
     </findStrings>
     <replaceStrings>
       <replace>murid.</replace>
@@ -180,7 +126,6 @@
         <option value="$PROJECT_DIR$/js/Modul/guru/router.js" />
         <option value="$PROJECT_DIR$/js/tools.js" />
         <option value="$PROJECT_DIR$/views/guru/soal/add.html" />
-        <option value="$PROJECT_DIR$/views/guru/soal/data.html" />
         <option value="$PROJECT_DIR$/views/template/navigation/menu_master.html" />
         <option value="$PROJECT_DIR$/views/template/navigation/menu_admin.html" />
         <option value="$PROJECT_DIR$/views/murid/murid/kelas.html" />
@@ -199,11 +144,12 @@
         <option value="$PROJECT_DIR$/views/guru/kelas/detail.html" />
         <option value="$PROJECT_DIR$/client_dbks/js/inspinia.js" />
         <option value="$PROJECT_DIR$/js/inspinia.js" />
-        <option value="$PROJECT_DIR$/js/Modul/guru/controller.js" />
         <option value="$PROJECT_DIR$/views/murid/murid/detail.html" />
         <option value="$PROJECT_DIR$/views/murid/murid/data.html" />
         <option value="$PROJECT_DIR$/js/Modul/murid/controller.js" />
         <option value="$PROJECT_DIR$/views/guru/kelas/ujian/detail.html" />
+        <option value="$PROJECT_DIR$/views/guru/soal/data.html" />
+        <option value="$PROJECT_DIR$/js/Modul/guru/controller.js" />
       </list>
     </option>
   </component>
@@ -260,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,15 +254,7 @@
               <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="guru" type="462c0819:PsiDirectoryNode" />
-              <item name="kelas" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="guru" type="462c0819:PsiDirectoryNode" />
-              <item name="kelas" type="462c0819:PsiDirectoryNode" />
-              <item name="ujian" type="462c0819:PsiDirectoryNode" />
+              <item name="soal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
@@ -343,6 +280,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -414,23 +352,26 @@
       <workItem from="1531543484711" duration="3967000" />
       <workItem from="1531827971607" duration="219000" />
       <workItem from="1533684618708" duration="2088000" />
-      <workItem from="1534116380998" duration="2742000" />
+      <workItem from="1534116380998" duration="3403000" />
+      <workItem from="1534120654207" duration="40000" />
+      <workItem from="1534985654218" duration="1662000" />
+      <workItem from="1535032239238" duration="1217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131800000" />
+    <option name="totallyTimeSpent" value="135380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1743941" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5068493" side_tool="true" weight="0.2" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49315068" visible="true" weight="0.2" />
@@ -457,24 +398,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/directives.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14603">
           <caret line="892" lean-forward="true" selection-start-line="892" selection-end-line="892" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/myhelp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -657,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/template/right_sidebar.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -695,10 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/guru/kelas/data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client_dbks/js/inspinia.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
@@ -740,16 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/guru/soal/data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/guru/soal/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -759,43 +658,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/murid/murid/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="1547">
           <caret line="91" column="10" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/murid/murid/data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="1496">
           <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/murid/ujian/mulai.pertanyaan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="79" column="57" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Modul/guru/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="77" column="14" lean-forward="true" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Modul/murid/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="2533">
           <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/guru/kelas/ujian/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        <state relative-caret-position="1309">
+          <caret line="77" selection-start-line="77" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/murid/ujian/mulai.pertanyaan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" column="57" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/guru/kelas/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_dbks/js/myhelp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myhelp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Modul/guru/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/guru/soal/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="67" column="37" lean-forward="true" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
