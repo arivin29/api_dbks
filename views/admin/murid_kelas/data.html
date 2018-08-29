@@ -74,6 +74,17 @@
                         </div>
 
                         <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Sekolah</label>
+                                <select required class="form-control " required select2 ng-model="filters.sekolah"  >
+                                    <option value="">-- please choose --</option>
+                                    <option value="mansabo"> MANSABO</option>
+                                    <option value="mansasi"> MANSASI</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
                             <div class="form-group">
                                 <label>&nbsp;</label>
                                 <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>

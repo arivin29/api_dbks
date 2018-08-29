@@ -56,7 +56,7 @@ app.controller('admin.guru.add', function truncateCtrl($scope,$state,$stateParam
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -91,7 +91,7 @@ app.controller('admin.guru.edit', function truncateCtrl($scope,$state,$statePara
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -144,7 +144,7 @@ app.controller('admin.guru.detail.gurump.add', function truncateCtrl($scope,$sta
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -198,7 +198,7 @@ app.controller('admin.murid.add', function truncateCtrl($scope,$state,$statePara
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -234,7 +234,7 @@ app.controller('admin.murid.edit', function truncateCtrl($scope,$state,$statePar
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -313,7 +313,7 @@ app.controller('admin.murid_detail.kelas.add', function truncateCtrl($scope,$sta
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -393,7 +393,7 @@ app.controller('admin.nilai.add', function truncateCtrl($scope,$state,$statePara
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -429,7 +429,7 @@ app.controller('admin.nilai.edit', function truncateCtrl($scope,$state,$statePar
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 

@@ -12,31 +12,57 @@
                 </div>
                 <div ui-view></div>
 
-                <div class="ibox-content">
+                <div class="ibox-content" ng-show="$state.current.name === 'acl.users'"  >
 
-                    <div class="m-b-lg">
-
-                        <div class="input-group">
-                            <input type="text" placeholder="Search issue by name..." class=" form-control">
-                            <span class="input-group-btn">
-                                        <button type="button" class="btn btn-white"> Search</button>
-                                    </span>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input placeholder="" ng-model="filters.name" class="form-control" type="text">
+                            </div>
                         </div>
-                        <div class="m-t-md">
 
-                            <!--<div class="pull-right">-->
-                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-comments"></i> </button>-->
-                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-user"></i> </button>-->
-                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-list"></i> </button>-->
-                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-pencil"></i> </button>-->
-                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-print"></i> </button>-->
-                                <!--<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-cogs"></i> </button>-->
-                            <!--</div>-->
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <label>Status</label>
+                                <select required class="form-control " required select2 ng-model="filters.status"  >
+                                    <option value="">-- please choose --</option>
+                                    <option value="1"> Aktif</option>
+                                    <option value="0"> NonAktif</option>
+                                </select>
+                            </div>
+                        </div>
 
-                            <strong>Found {{datas.length }} users.</strong>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Sekolah</label>
+                                <select required class="form-control " required select2 ng-model="filters.sekolah"  >
+                                    <option value="">-- please choose --</option>
+                                    <option value="mansabo"> MANSABO</option>
+                                    <option value="mansasi"> MANSASI</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Tipe</label>
+                                <select required class="form-control " required select2 ng-model="filters.murid"  >
+                                    <option value="">-- please choose --</option>
+                                    <option value="ortu"> Ortu</option>
+                                    <option value="guru"> Guru</option>
+                                    <option value="murid"> Murid</option>
+                                </select>
+                            </div>
+                        </div>
 
 
 
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button class="btn btn-block btn-success" ng-click="filter(1)"><i class="fa fa-filter"></i> Filter</button>
+                            </div>
                         </div>
 
                     </div>
@@ -49,11 +75,11 @@
                                     <th>Name</th>
                                     <th>Tipe</th>
                                     <th>email</th>
-                                    <th>Telephone</th>
+                                    <th>Sekolah</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="x in datas">
+                            <tr ng-repeat="x in datas.data">
                                 <td>
                                     <span class="label label-{{x.status==1?'primary':'warning'}}">{{x.status==1?'Aktif':'NonAktif'}}</span>
                                 </td>
@@ -69,7 +95,7 @@
                                     {{x.email}}
                                 </td>
                                 <td>
-                                    <span class="pie">{{x.telepon}}</span>
+                                    <span class="pie">{{x.sekolah}}</span>
                                 </td>
                                 <td class="text-right">
                                     <a ui-sref="acl.users.edit({id_user:x.id})" class="btn btn-white btn-xs"> Edit</a>
@@ -78,6 +104,16 @@
 
                             </tbody>
                         </table>
+
+                        <div class="btn-group" ng-init="datas.current_page = datas.current_page+1">
+                            <button type="button" ng-show="datas.current_page*1 > 1 " ng-click="filter(datas.current_page*1 - 1)" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                            <button class="btn btn-white" ng-show="datas.current_page -2 > 0 " ng-click="filter(datas.current_page*1 - 2)">{{datas.current_page*1 -2 }}</button>
+                            <button class="btn btn-white" ng-show="datas.current_page -1 > 0 " ng-click="filter(datas.current_page*1 - 1)">{{datas.current_page*1 -1 }}</button>
+                            <button class="btn btn-white active">{{datas.current_page}}</button>
+                            <button class="btn btn-white" ng-if="(datas.current_page*1 +1) <= datas.last_page " ng-click="filter(datas.current_page*1 + 1)">{{datas.current_page*1 +1}}</button>
+                            <button class="btn btn-white" ng-if="datas.current_page*1 +2 <=  datas.last_page " ng-click="filter(datas.current_page*1 + 2)">{{datas.current_page*1 +2}}</button>
+                            <button class="btn btn-white" ng-if=" datas.last_page > datas.current_page*1 > 0  " ng-click="filter(datas.current_page*1 + 1)"><i class="fa fa-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
 

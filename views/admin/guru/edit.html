@@ -84,6 +84,15 @@
                         <label>Alamat</label>
                         <input placeholder="Enter alamat guru" class="form-control" ng-model="guru.alamat" type="text">
                     </div>
+
+                    <div class="form-group">
+                        <label>Sekolah</label>
+                        <select required class="form-control " required select2 ng-model="guru.sekolah"  >
+                            <option value="">-- please choose --</option>
+                            <option value="mansabo"> MANSABO</option>
+                            <option value="mansasi"> MANSASI</option>
+                        </select>
+                    </div>
                     <!--<div class="form-group">-->
                     <!--<label>Provinsi</label>-->
                     <!--<select required class="form-control " required select2 ng-model="guru.id_provinsi"-->

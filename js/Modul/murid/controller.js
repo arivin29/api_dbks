@@ -49,7 +49,7 @@ app.controller('murid.murid.kelas', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -133,7 +133,7 @@ app.controller('murid.ujian.mulai', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
     };
 
@@ -194,7 +194,7 @@ app.controller('murid.ujian.mulai', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
     }
 
@@ -231,7 +231,7 @@ app.controller('murid.ujian.mulai', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
     }

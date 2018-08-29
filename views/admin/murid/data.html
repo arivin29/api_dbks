@@ -27,12 +27,22 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="input-group">
                                 <label>Status</label>
                                 <select required class="form-control " required select2 ng-model="filters.status_murid"
                                         ng-options="x as x for x in status_murid" >
                                     <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Sekolah</label>
+                                <select required class="form-control " required select2 ng-model="filters.sekolah"  >
+                                    <option value="">-- please choose --</option>
+                                    <option value="mansabo"> MANSABO</option>
+                                    <option value="mansasi"> MANSASI</option>
                                 </select>
                             </div>
                         </div>

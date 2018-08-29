@@ -48,7 +48,7 @@ app.controller('master.pendidikan.add', function truncateCtrl($scope,$state,$sta
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -84,7 +84,7 @@ app.controller('master.pendidikan.edit', function truncateCtrl($scope,$state,$st
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -140,7 +140,7 @@ app.controller('master.pekerjaan.add', function truncateCtrl($scope,$state,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -176,7 +176,7 @@ app.controller('master.pekerjaan.edit', function truncateCtrl($scope,$state,$sta
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -241,7 +241,7 @@ app.controller('master.mapel.add', function truncateCtrl($scope,$state,$statePar
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -277,7 +277,7 @@ app.controller('master.mapel.edit', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -333,7 +333,7 @@ app.controller('master.jn.add', function truncateCtrl($scope,$state,$stateParams
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -369,7 +369,7 @@ app.controller('master.jn.edit', function truncateCtrl($scope,$state,$stateParam
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -425,7 +425,7 @@ app.controller('master.buku.add', function truncateCtrl($scope,$state,$statePara
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -461,7 +461,7 @@ app.controller('master.buku.edit', function truncateCtrl($scope,$state,$statePar
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -526,7 +526,7 @@ app.controller('master.jurusan.add', function truncateCtrl($scope,$state,$stateP
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -562,7 +562,7 @@ app.controller('master.jurusan.edit', function truncateCtrl($scope,$state,$state
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -591,7 +591,7 @@ app.controller('master.kelas.add', function truncateCtrl($scope,$state,$statePar
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -627,7 +627,7 @@ app.controller('master.kelas.edit', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -692,7 +692,7 @@ app.controller('master.provinsi.add', function truncateCtrl($scope,$state,$state
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -728,7 +728,7 @@ app.controller('master.provinsi.edit', function truncateCtrl($scope,$state,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -793,7 +793,7 @@ app.controller('master.kabkot.add', function truncateCtrl($scope,$state,$statePa
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -829,7 +829,7 @@ app.controller('master.kabkot.edit', function truncateCtrl($scope,$state,$stateP
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -894,7 +894,7 @@ app.controller('master.kecamatan.add', function truncateCtrl($scope,$state,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -930,7 +930,7 @@ app.controller('master.kecamatan.edit', function truncateCtrl($scope,$state,$sta
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -995,7 +995,7 @@ app.controller('master.kelurahan.add', function truncateCtrl($scope,$state,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -1031,7 +1031,7 @@ app.controller('master.kelurahan.edit', function truncateCtrl($scope,$state,$sta
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 

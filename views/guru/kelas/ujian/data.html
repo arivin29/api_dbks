@@ -26,14 +26,14 @@
                 {{x.jenis}}
             </td>
             <td>
-                {{x.tanggal_ujian | Mydate}} -
+                {{x.tanggal_ujian | Mydate}} jam {{x.jam_ujian }} -
                 {{x.tanggal_ujian_sampai | Mydate}}
             </td>
             <td>{{x.waktu }} Menit</td>
             <td>{{x.soal }}</td>
             <td>{{x.sudah_ujian }}</td>
             <td>
-                <a ng-dblclick="delete(x.id_ujian)"><i class="fa fa-trash"></i>  </a> |
+                <a ng-dblclick="deleteUjian(x.id_ujian)"><i class="fa fa-trash"></i>  </a> |
                 <a ui-sref="guru.kelas.detail.ujian.edit({id_ujian:x.id_ujian})"><i class="fa fa-edit"></i>  </a>
             </td>
         </tr>

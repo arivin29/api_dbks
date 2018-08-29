@@ -80,12 +80,12 @@ app.controller('acl.users.edit', function truncateCtrl($scope,$state,$stateParam
             .then(function mySuccesresponse()
                 {
                     berhasilView();
-                    $state.go("guru.kelas",{}, { reload: true })
+                    $state.go("^",{}, { reload: true })
 
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -122,7 +122,7 @@ app.controller('acl.users.detail.akses', function truncateCtrl($scope,$state,$st
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -151,7 +151,7 @@ app.controller('acl.groups.add', function truncateCtrl($scope,$state,$stateParam
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -190,7 +190,7 @@ app.controller('acl.groups.edit', function truncateCtrl($scope,$state,$statePara
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -238,7 +238,7 @@ app.controller('acl.controllers.add', function truncateCtrl($scope,$state,$state
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -269,7 +269,7 @@ app.controller('acl.controllers.edit', function truncateCtrl($scope,$state,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 

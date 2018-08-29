@@ -40,21 +40,16 @@
 
             </div>
             <div class="col-sm-6">
-                <div class="form-group">
-                    <label>Grpup</label>
-                    <select required class="form-control " required select2 ng-model="user.id_groups"
-                            ng-options="x.id_groups*1 as x.m_groups for x in master.group" >
+                <div class="input-group">
+                    <label>Status</label>
+                    <select required class="form-control " required ng-model="user.status" >
                         <option value="">-- please choose --</option>
+                        <option value="1"> Aktif</option>
+                        <option value="0"> NonAktif</option>
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label>Site</label>
-                    <select required class="form-control " required select2 ng-model="user.id_site"
-                            ng-options="x.id_site*1 as x.site for x in master.site" >
-                        <option value="">-- please choose --</option>
-                    </select>
-                </div>
+
 
                 <div>
                     <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Save</strong></button>

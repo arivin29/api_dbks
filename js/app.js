@@ -30,10 +30,13 @@
 // Other libraries are loaded dynamically in the config.js file using the library ocLazyLoad
 
 var DEBUG=true;
-var BASE_URL = 'http://mansasi.edutech.web.id/site/public/api/v1';
+var BASE_URL = 'http://27.111.32.33/Pekerjaan/sekolah/site/public/api/v1';
 // var BASE_URL = 'http://arivin.xyz/site_sbks/public/api/v1';
 
 var app = angular.module('inspinia');
+app.run(function ($state,$rootScope) {
+    $rootScope.$state = $state;
+})
 
 app.run( ['$rootScope', '$state', '$stateParams','$window','$http','$location', '$anchorScroll',
     function ($rootScope,   $state,   $stateParams,$window,$http,$location, $anchorScroll) {

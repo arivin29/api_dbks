@@ -31,7 +31,7 @@ auth.config(function Config($httpProvider, jwtOptionsProvider) {
             return $localStorage.token;
         }],
 
-        whiteListedDomains: ['mansasi.edutech.web.id','128.199.184.210','beon.devetek.com'],
+        whiteListedDomains: ['27.111.32.33 '],
         // whiteListedDomains: ['192.168.0.247', 'localhost']
         unauthenticatedRedirectPath: '/logins'
     });
@@ -62,7 +62,7 @@ auth.run( function ($rootScope,$state,$stateParams,$window,$http,$localStorage,j
         if($localStorage.token==null)
         {
             $localStorage.token = null;
-            //errorView("error paja tu");
+            //errorView("Mohon maaf, hubungi admin");
             return false;
         }
             var bool = jwtHelper.isTokenExpired($localStorage.token);
@@ -86,7 +86,7 @@ auth.run( function ($rootScope,$state,$stateParams,$window,$http,$localStorage,j
                         , function myError()
                         {
                             $localStorage.token = null;
-                            errorView("error paja tu");
+                            errorView("Mohon maaf, hubungi admin");
                         });
 
             }

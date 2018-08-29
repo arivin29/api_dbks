@@ -27,12 +27,22 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="input-group">
                                 <label>Status</label>
                                 <select required class="form-control " required select2 ng-model="filters.status_guru"
                                         ng-options="x as x for x in status_guru" >
                                     <option value="">-- please choose --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <label>Sekolah</label>
+                                <select required class="form-control " required select2 ng-model="filters.sekolah"  >
+                                    <option value="">-- please choose --</option>
+                                    <option value="mansabo"> MANSABO</option>
+                                    <option value="mansasi"> MANSASI</option>
                                 </select>
                             </div>
                         </div>
@@ -54,11 +64,7 @@
                                 <th>NUPTK</th>
                                 <th>email login</th>
                                 <th>Nama guru</th>
-                                <th>NIK KTP</th>
-                                <th>Tempat lahir</th>
-                                <th>Tanggal lahir</th>
-                                <th>Jenis kelamin</th>
-                                <th>status_pegawai</th>
+                                <th>Sekolah</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -84,20 +90,9 @@
                                 <td>
                                     {{x.nama_guru}}
                                 </td>
+
                                 <td>
-                                    {{x.nik_ktp}}
-                                </td>
-                                <td>
-                                    {{x.tempat_lahir}}
-                                </td>
-                                <td>
-                                    {{x.tanggal_lahir | date: "yyyy/MM/dd"}}
-                                </td>
-                                <td>
-                                    {{x.jenis_kelamin}}
-                                </td>
-                                <td>
-                                    {{x.status_pegawai}}
+                                    {{x.sekolah}}
                                 </td>
                             </tr>
 

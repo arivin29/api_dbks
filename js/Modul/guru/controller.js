@@ -108,7 +108,7 @@ app.controller('guru.soal.edit', function truncateCtrl($scope,$state,$stateParam
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
 
@@ -206,7 +206,7 @@ app.controller('guru.kelas.detail.nilai.add', function truncateCtrl($scope,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
     };
@@ -251,7 +251,7 @@ app.controller('guru.kelas.detail.absensi.add', function truncateCtrl($scope,$st
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
     };
@@ -288,6 +288,19 @@ app.controller('guru.kelas.detail.ujian', function truncateCtrl($scope,$state,$s
             $scope.lebar_soal = 0;
             $scope.lebar_pertanyaan = 12;
         }
+    }
+
+    $scope.deleteUjian = function (id) {
+        myHelp.delete('/guru/ujian/' + id)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.filter();
+                }
+                , function myError()
+                {
+                    errorView("error");
+                });
     }
 
 });
@@ -351,7 +364,7 @@ app.controller('guru.kelas.detail.ujian.add', function truncateCtrl($scope,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
     };
@@ -365,7 +378,7 @@ app.controller('guru.kelas.detail.ujian.add', function truncateCtrl($scope,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
     };
@@ -383,7 +396,87 @@ app.controller('guru.kelas.detail.ujian.add', function truncateCtrl($scope,$stat
                 }
                 , function myError()
                 {
-                    errorView("error paja tu");
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+    };
+
+});
+
+app.controller('guru.kelas.detail.ujian.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getParam('/guru/ujian/' + $stateParams.id_ujian + "/edit",{})
+        .then(function(respons){
+            $scope.pertanyaan = respons.data.pertanyaan;
+            $scope.ujian = respons.data.ujian;
+            $scope.getSoal($scope.ujian.id_ujian);
+        });
+
+    $scope.getSoal = function (id) {
+        myHelp.getDetail('/guru/ujian_soal/' + id)
+            .then(function(respons){
+                $scope.soal = respons.data.soal;
+            });
+    }
+    $scope.delete = function (id) {
+        myHelp.delete('/guru/ujian_soal/' + id)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.getSoal($scope.ujian.id_ujian);
+                }
+                , function myError()
+                {
+                    errorView("error");
+                });
+    }
+
+    $scope.masuaan = function(id) {
+        var Param = {};
+        Param.id_soal = id;
+        Param.id_ujian = $scope.ujian.id_ujian;
+        myHelp.postParam('/guru/ujian_soal' , Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.clikaddSoal();
+                    $scope.getSoal($scope.ujian.id_ujian);
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+    };
+
+    $scope.simpan_wae = function() {
+        var Param = clearObj($scope.ujian);
+
+        myHelp.postParam('/guru/ujian' , Param)
+            .then(function mySuccesresponse()
+                {
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+    };
+
+
+    $scope.submitForm = function() {
+
+        var Param = clearObj($scope.ujian);
+        myHelp.putParam('/guru/ujian/' + $scope.ujian.id_ujian, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $scope.filter();
+                    $state.go("^",{});
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
                 });
 
     };

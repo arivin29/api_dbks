@@ -4,22 +4,21 @@
             <li class="nav-header">
 
                 <div class="profile-element" uib-dropdown>
-                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/><br>
                     {{curren_user().name}}
-                    </a>
 
                 </div>
                 <div class="logo-element">
-                    IN+
+                    ED
                 </div>
             </li>
 
             <li ui-sref-active="active" title="Kelas">
-                <a ui-sref="guru.kelas"><i class="fa fa-home"></i>
+                <a title="Kelas" ui-sref="guru.kelas"><i class="fa fa-home"></i>
                     <span class="nav-label">{{ 'Kelas' | uppercase }}</span>
                 </a>
             </li>
-            <li ui-sref-active="active" title="Bank Soal">
+            <li title="Bank Soal" ui-sref-active="active" title="Bank Soal">
                 <a ui-sref="guru.soal"><i class="fa fa-book"></i>
                     <span class="nav-label">{{ 'Bank Soal' | uppercase }}</span>
                 </a>

@@ -5,39 +5,24 @@
 
                 <div class="profile-element" uib-dropdown>
                     <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
-                    <a uib-dropdown-toggle href>
-                            <span class="clear">
-                                <span class="block m-t-xs">
-<!--                                    <strong class="font-bold">Muhammad Arifin</strong> -->
-                                    <strong class="font-bold">C</strong>
-                             </span>
-                                <span class="text-muted text-xs block">Koding # <b class="caret"></b></span>
-                            </span>
-                    </a>
-                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                        <li><a ui-sref="app.profile">Profile</a></li>
-                        <li><a ui-sref="app.contacts">Contacts</a></li>
-                        <li><a ui-sref="mailbox.inbox">Mailbox</a></li>
-                        <li class="divider"></li>
-                        <li><a ui-sref="login">Logout</a></li>
-                    </ul>
+
                 </div>
                 <div class="logo-element">
-                    IN+
+                    ED
                 </div>
             </li>
 
-            <li ui-sref-active="active">
+            <li ui-sref-active="active" title="Guru">
                 <a ui-sref="admin.guru"><i class="fa fa-graduation-cap"></i>
                     <span class="nav-label">{{ 'Guru' | uppercase }}</span>
                 </a>
             </li>
-            <li ui-sref-active="active">
+            <li ui-sref-active="active" title="murid">
                 <a ui-sref="admin.murid"><i class="fa fa-graduation-cap"></i>
                     <span class="nav-label">{{ 'Murid' | uppercase }}</span>
                 </a>
             </li>
-            <li ui-sref-active="active">
+            <li ui-sref-active="active" title="Kelas">
                 <a ui-sref="admin.murid_kelas"><i class="fa fa-graduation-cap"></i>
                     <span class="nav-label">{{ 'Murid Kelas' | uppercase }}</span>
                 </a>

@@ -129,6 +129,12 @@ function configguru($stateProvider) {
             data: {pageTitle: 'Detail ujian murid'},
             controller: "guru.kelas.detail.ujian.detail"
         })
+        .state('guru.kelas.detail.ujian.edit', {
+            url: "/edit/:id_ujian",
+            templateUrl: "views/guru/kelas/ujian/edit.html",
+            data: {pageTitle: 'Detail ujian murid'},
+            controller: "guru.kelas.detail.ujian.edit"
+        })
 
 }
 

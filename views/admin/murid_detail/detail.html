@@ -20,6 +20,10 @@
                             <td>: {{murid.nisn }}</td>
                         </tr>
                         <tr >
+                            <td>Sekolah</td>
+                            <td>: {{murid.sekolah }}</td>
+                        </tr>
+                        <tr >
                             <td>Nama murid</td>
                             <td>: {{murid.nama_murid }}</td>
                         </tr>
@@ -81,7 +85,7 @@
 
                     <ul class="nav nav-tabs">
                         <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
-                            <a ui-sref="murid.murid.kelas" class="ng-binding">Kelas</a>
+                            <a ui-sref="admin.murid_detail.kelas({id_murid:murid.id_murid})" class="ng-binding">Kelas</a>
                         </li>
                         <li ui-sref-active="active" class="uib-tab ng-scope ng-isolate-scope" heading="First Tab">
                             <a ui-sref="admin.murid_detail.mata_pelajaran" class="ng-binding">Mata Pelajaran</a>
