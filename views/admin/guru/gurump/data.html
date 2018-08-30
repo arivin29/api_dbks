@@ -23,7 +23,7 @@
             <td>{{x.jurusan}}</td>
             <td>{{x.kelas_paralel}}</td>
             <td class="text-right">
-                <label class="label label-info pointer" ui-sref="admin.guru.detail.gurump.edit(x.id_guru_mp)"><i class="fa fa-edit"></i> </label>
+                <label class="label label-info pointer" ui-sref="admin.guru.detail.gurump.edit({id_guru_mp:x.id_guru_mp})"><i class="fa fa-edit"></i> </label>
                 <label class="label label-warning pointer" ng-click="delete_gurump(x.id_guru_mp)"><i class="fa fa-trash-o"></i> </label>
             </td>
         </tr>

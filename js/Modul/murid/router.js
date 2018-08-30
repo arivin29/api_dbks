@@ -18,6 +18,12 @@ function configmurid($stateProvider) {
             data: { pageTitle: 'detail murid' },
             controller:"murid.murid.kelas"
         })
+        .state('murid.murid.akun', {
+            url: "/kelas",
+            templateUrl: "views/murid/murid/akun.html",
+            data: { pageTitle: 'detail murid' },
+            controller:"murid.murid.akun"
+        })
         .state('murid.ujian', {
             url: "/ujian",
             templateUrl: "views/murid/ujian/data.html",

@@ -58,6 +58,35 @@ app.controller('murid.murid.kelas', function truncateCtrl($scope,$state,$statePa
 
 
 
+app.controller('murid.murid.akun', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    myHelp.getDetail('/acl/users/' + $stateParams.id_user)
+        .then(function(respons){
+            $scope.user = respons.data;
+
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.user);
+
+        myHelp.putParam('/acl/users/' + $scope.user.id, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                   //$state.go("^",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+
+    };
+
+});
+
+
 app.controller('murid.ujian', function truncateCtrl($scope,$state,$stateParams,myHelp){
     $scope.soal = [];
     $scope.filter = function () {
@@ -129,7 +158,11 @@ app.controller('murid.ujian.mulai', function truncateCtrl($scope,$state,$statePa
 
                     //console.log('iko ' + $scope.soal[0].id_ujian_jawaban_soal)
                     $scope.getSoal($scope.soal[0].id_ujian_jawaban_soal);
-                    $state.go("murid.ujian.mulai.pertanyaan")
+                    $state.go("murid.ujian.mulai.pertanyaan");
+
+                    $scope.countdown = $localStorage.ujian.data.ujian.waktu;
+                    startCountDown();
+                    
                 }
                 , function myError()
                 {
@@ -178,8 +211,7 @@ app.controller('murid.ujian.mulai', function truncateCtrl($scope,$state,$statePa
     {
         $interval(decreamentCountdown,1000*60,$scope.countdown)
     };
-    $scope.countdown = $localStorage.ujian.data.ujian.waktu;
-    startCountDown();
+
     /*------------------------------ WAKTU --------------------------*/
 
     $scope.simpan_selesai = function () {

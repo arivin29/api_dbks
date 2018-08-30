@@ -17,7 +17,7 @@
             <th>Sudah Ujian</th>
             <th width="60px">#</th>
         </tr>
-        <tr  ng-repeat="x in data" class="bg-{{x.warna}}" ng-class="x.puplish==0 ? 'bg-warning' : ''">
+        <tr  ng-repeat="x in data"  ng-class="x.is_puplish==0 ? 'bg-warning' : ''">
             <td>{{$index+1}}</td>
             <td>
                 <a ui-sref="guru.kelas.detail.ujian.detail({id_ujian:x.id_ujian})">{{x.judul | uppercase }}</a>

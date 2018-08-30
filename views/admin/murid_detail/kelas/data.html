@@ -32,6 +32,7 @@
                 <td>{{x.status_murid}} </td>
                 <td>{{x.keterangan}} </td>
                 <td class="text-right">
+                    <a class="" ui-sref="admin.murid_detail.kelas.edit({id_murid_kelas:x.id_murid_kelas})">Edit</a>
                     <label class="label label-warning pointer" ng-click="delete_murid_kelas(x.id_murid_kelas)"><i class="fa fa-trash-o"></i> </label>
                 </td>
 

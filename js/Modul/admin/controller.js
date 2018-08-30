@@ -151,6 +151,41 @@ app.controller('admin.guru.detail.gurump.add', function truncateCtrl($scope,$sta
     };
 
 });
+app.controller('admin.guru.detail.gurump.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.gurump = {};
+
+    myHelp.getDetail('/admin/gurump/' + $stateParams.id_guru_mp)
+        .then(function(respons){
+            $scope.gurump = respons.data;
+        });
+
+    myHelp.getDetail('/admin/gurump/create')
+        .then(function(respons){
+            $scope.mata_pelajaran = respons.data.mata_pelajaran;
+            $scope.kelas = respons.data.kelas;
+            $scope.paralel = respons.data.paralel;
+            $scope.jurusan = respons.data.jurusan;
+        });
+
+    $scope.submitForm_gurump = function() {
+        var Param = clearObj($scope.gurump);
+
+        myHelp.putParam('/admin/gurump/' + $stateParams.id_guru_mp, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("^",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+
+    };
+
+});
 
 /*----------------------------------------------------------------------------------------------
  Murid
@@ -305,6 +340,41 @@ app.controller('admin.murid_detail.kelas.add', function truncateCtrl($scope,$sta
         $scope.muridkelas.id_murid = $stateParams.id_murid;
         var Param = clearObj($scope.muridkelas);
         myHelp.postParam('/admin/murid_kelas', Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("^",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+
+    };
+
+});
+
+
+app.controller('admin.murid_detail.kelas.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+
+
+    myHelp.getDetail('/admin/murid_kelas/' + $stateParams.id_murid_kelas + '/edit')
+        .then(function(respons){
+            $scope.muridkelas = respons.data;
+
+            myHelp.getDetail('/admin/murid_kelas/create')
+                .then(function(respons){
+                    $scope.admin = respons.data;
+                });
+        });
+
+    $scope.submitForm_kelas = function() {
+
+        var Param = clearObj($scope.muridkelas);
+        myHelp.putParam('/admin/murid_kelas/'+$stateParams.id_murid_kelas, Param)
             .then(function mySuccesresponse()
                 {
                     berhasilView();
