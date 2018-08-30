@@ -31,7 +31,7 @@ auth.config(function Config($httpProvider, jwtOptionsProvider) {
             return $localStorage.token;
         }],
 
-        whiteListedDomains: ['27.111.32.33 '],
+        whiteListedDomains: ['27.111.32.33'],
         // whiteListedDomains: ['192.168.0.247', 'localhost']
         unauthenticatedRedirectPath: '/logins'
     });
