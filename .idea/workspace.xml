@@ -5,23 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="789036e7-e8e0-4611-9b85-26acc8fa1ce5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client_dbks" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Modul/admin/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/admin/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Modul/murid/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/murid/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Modul/murid/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/murid/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/guru/gurump/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/guru/gurump/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/guru/kelas/ujian/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/guru/kelas/ujian/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/murid/murid/akun.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/murid/murid/akun.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/murid/murid/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/murid/murid/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_dbks/js/directives.js" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks/js/directives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_dbks/js/inspinia.js" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks/js/inspinia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Modul/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,13 +25,45 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2128291312">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Modul/admin/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="376" column="73" selection-start-line="376" selection-start-column="73" selection-end-line="376" selection-end-column="73" />
+            <state relative-caret-position="476">
+              <caret line="412" column="3" lean-forward="true" selection-start-line="412" selection-start-column="3" selection-end-line="412" selection-end-column="3" />
               <folding>
                 <element signature="e#3585#4427#0" />
               </folding>
@@ -44,16 +71,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/add.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/Modul/Auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="80" column="6" lean-forward="true" selection-end-line="80" selection-end-column="6" />
+            <state relative-caret-position="561">
+              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="80" column="6" selection-end-line="80" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1360">
@@ -62,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
-              <caret line="34" column="70" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="70" />
+              <caret line="34" column="70" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -153,7 +198,6 @@
         <option value="$PROJECT_DIR$/views/user/login.html" />
         <option value="$PROJECT_DIR$/views/template/navigation/menu_admin.html" />
         <option value="$PROJECT_DIR$/views/admin/murid/data.html" />
-        <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/views/acl/users/data.html" />
         <option value="$PROJECT_DIR$/views/acl/users/edit.html" />
         <option value="$PROJECT_DIR$/js/Modul/User/controller.js" />
@@ -166,7 +210,6 @@
         <option value="$PROJECT_DIR$/views/admin/murid/detail.html" />
         <option value="$PROJECT_DIR$/views/admin/murid_detail/detail.html" />
         <option value="$PROJECT_DIR$/js/Modul/guru/controller.js" />
-        <option value="$PROJECT_DIR$/js/Modul/Auth.js" />
         <option value="$PROJECT_DIR$/views/guru/kelas/ujian/data.html" />
         <option value="$PROJECT_DIR$/js/Modul/murid/router.js" />
         <option value="$PROJECT_DIR$/views/murid/murid/data.html" />
@@ -176,6 +219,8 @@
         <option value="$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html" />
         <option value="$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html" />
         <option value="$PROJECT_DIR$/js/Modul/admin/controller.js" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/Modul/Auth.js" />
       </list>
     </option>
   </component>
@@ -224,7 +269,7 @@
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -249,27 +294,6 @@
               <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="Modul" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Modul" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Modul" type="462c0819:PsiDirectoryNode" />
-              <item name="murid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Modul" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
@@ -387,35 +411,39 @@
       <workItem from="1535370936659" duration="3899000" />
       <workItem from="1535502506385" duration="6636000" />
       <workItem from="1535591239389" duration="4750000" />
-      <workItem from="1535628162275" duration="2253000" />
+      <workItem from="1535628162275" duration="4351000" />
+      <workItem from="1535676447861" duration="696000" />
+      <workItem from="1535687776746" duration="13000" />
+      <workItem from="1535940628598" duration="93000" />
+      <workItem from="1535946184117" duration="142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157378000" />
+    <option name="totallyTimeSpent" value="160420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1743941" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5068493" side_tool="true" weight="0.2" />
-      <window_info anchor="bottom" id="Run" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info id="npm" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17395833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49315068" visible="true" weight="0.2" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5068493" side_tool="true" weight="0.2" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49315068" visible="true" weight="0.15309446" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,11 +451,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/guru/soal/add.html">
@@ -559,13 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="84" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -709,9 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
           <caret line="89" column="25" lean-forward="true" selection-end-line="109" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Modul/Auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/guru/gurump/data.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -757,17 +763,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html">
+    <entry file="file://$PROJECT_DIR$/js/Modul/admin/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="70" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="70" />
+        <state relative-caret-position="476">
+          <caret line="412" column="3" lean-forward="true" selection-start-line="412" selection-start-column="3" selection-end-line="412" selection-end-column="3" />
+          <folding>
+            <element signature="e#3585#4427#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="80" column="6" lean-forward="true" selection-end-line="80" selection-end-column="6" />
+        <state relative-caret-position="1360">
+          <caret line="80" column="6" selection-end-line="80" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -778,13 +787,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Modul/admin/controller.js">
+    <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="376" column="73" selection-start-line="376" selection-start-column="73" selection-end-line="376" selection-end-column="73" />
-          <folding>
-            <element signature="e#3585#4427#0" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="34" column="70" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Modul/Auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
         </state>
       </provider>
     </entry>
