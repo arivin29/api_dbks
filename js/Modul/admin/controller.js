@@ -110,14 +110,126 @@ app.controller('admin.guru.detail', function truncateCtrl($scope,$state,$statePa
 
 
 /*----------------------------------------------------------------------------------------------
+ Guru
+ /*----------------------------------------------------------------------------------------------*/
+app.controller('admin.extra', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    $scope.filters = {};
+
+
+    $scope.filter = function(page)
+    {
+        $scope.filters.page = page;
+        myHelp.getParam('/admin/extra',clearObj($scope.filters))
+            .then(function(respons){
+                $scope.datas = respons.data.data;
+            });
+    }
+    $scope.filter(1);
+
+    $scope.delete = function(id) {
+        deleteParam($http,$state,'/admin/extra/' + id, {}, 'admin.extra',{});
+    }
+
+});
+
+app.controller('admin.extra.add', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    myHelp.getDetail('/admin/extra/create')
+        .then(function(respons){
+            $scope.extra = respons.data;
+            debugData(respons);
+        });
+
+    $scope.submitForm = function() {
+        var file = $scope.myFile;
+        var fd = new FormData();
+        if(file==null)
+        {
+            errorView();
+            return false;
+        }
+        fd.append('name_file', file);
+        fd.append('nama_extra', $scope.extra.nama_extra);
+        fd.append('sekolah', $scope.extra.sekolah);
+        fd.append('penangung_jawab', $scope.extra.penangung_jawab);
+        fd.append('id_extra', $scope.extra.id_extra);
+
+
+        $http.post(BASE_URL + '/admin/extra', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+            .success(function(){
+                berhasilView();
+                $state.go("^", {}, {reload: true});
+            })
+            .error(function(){
+                errorView()
+            });
+
+    };
+
+});
+
+app.controller('admin.extra.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
+
+    $scope.guru = {};
+    myHelp.getParam('/admin/guru/' + $stateParams.id_guru +'/edit')
+        .then(function(respons){
+            $scope.guru = respons.data;
+
+            myHelp.getDetail('/admin/guru/create')
+                .then(function(respons){
+                    $scope.admin = respons.data;
+                    debugData(respons);
+                });
+        });
+
+    $scope.submitForm = function() {
+        var Param = clearObj($scope.guru);
+
+
+        myHelp.putParam('/admin/guru/'+ $stateParams.id_guru, Param)
+            .then(function mySuccesresponse()
+                {
+                    berhasilView();
+                    $state.go("admin.guru",{}, { reload: true })
+
+                }
+                , function myError()
+                {
+                    errorView("Mohon maaf, hubungi admin");
+                });
+
+
+    };
+
+});
+
+// Detail Guru
+app.controller('admin.extra.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
+    $scope.guru = {};
+    myHelp.getDetail('/admin/guru/' + $stateParams.id_guru)
+        .then(function(respons){
+            $scope.guru = respons.data.guru;
+        });
+});
+
+
+/*----------------------------------------------------------------------------------------------
  mata pelajaran
  /*----------------------------------------------------------------------------------------------*/
-app.controller('admin.guru.detail.gurump', function truncateCtrl($scope,$state,$stateParams,myHelp){
+app.controller('admin.guru.detail.gurump', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
     $scope.guru = {};
     myHelp.getParam('/admin/gurump' , {id_guru:$stateParams.id_guru})
         .then(function(respons){
             $scope.gurumps = respons.data.gurump;
         });
+
+    $scope.delete_gurump = function(id) {
+        deleteParam($http,$state,'/admin/gurump/' + id, {}, 'admin.guru.detail.gurump',{});
+    }
 });
 
 app.controller('admin.guru.detail.gurump.add', function truncateCtrl($scope,$state,$stateParams,myHelp){

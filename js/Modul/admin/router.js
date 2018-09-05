@@ -153,6 +153,29 @@ function configadmin($stateProvider) {
         })
 
 
+        /*-----------------------------------------
+             EXTRA
+        /*---------------------------------------*/
+        .state('admin.extra', {
+            url: "/extra",
+            templateUrl: "views/admin/extra/data.html",
+            data: {pageTitle: 'extra'},
+            controller: "admin.extra"
+        })
+        .state('admin.extra.add', {
+            url: "/add",
+            templateUrl: "views/admin/extra/add.html",
+            data: {pageTitle: 'extra'},
+            controller: "admin.extra.add"
+        })
+        .state('admin.extra.edit', {
+            url: "/edit",
+            templateUrl: "views/admin/extra/edit.html",
+            data: {pageTitle: 'edit'},
+            controller: "admin.extra.edit"
+        })
+
+
 }
 
 angular

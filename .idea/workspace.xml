@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="789036e7-e8e0-4611-9b85-26acc8fa1ce5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/extra/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/extra/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_dbks" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client_dbks/js/directives.js" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks/js/directives.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client_dbks/js/inspinia.js" beforeDir="false" afterPath="$PROJECT_DIR$/client_dbks/js/inspinia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Modul/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Modul/admin/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/admin/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Modul/admin/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Modul/admin/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/template/navigation/menu_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/template/navigation/menu_admin.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,41 +32,46 @@
     <session id="2128291312">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="2" />
+          <entry key="html" value="5" />
+          <entry key="js" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="2" />
+          <entry key="HTML" value="5" />
+          <entry key="JavaScript" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1" />
+          <entry key="html" value="321" />
+          <entry key="js" value="131" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1" />
+          <entry key="HTML" value="321" />
+          <entry key="JavaScript" value="131" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Modul/admin/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="412" column="3" lean-forward="true" selection-start-line="412" selection-start-column="3" selection-end-line="412" selection-end-column="3" />
+            <state relative-caret-position="224">
+              <caret line="229" column="24" selection-start-line="229" selection-start-column="24" selection-end-line="229" selection-end-column="24" />
               <folding>
                 <element signature="e#3585#4427#0" />
               </folding>
@@ -71,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/Modul/Auth.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/extra/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+            <state relative-caret-position="442">
+              <caret line="33" column="69" lean-forward="true" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -83,35 +91,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="40" />
+            <state relative-caret-position="425">
+              <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/add.html">
+        <entry file="file://$PROJECT_DIR$/js/Modul/admin/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="80" column="6" selection-end-line="80" selection-end-column="6" />
+            <state relative-caret-position="467">
+              <caret line="174" column="42" lean-forward="true" selection-start-line="174" selection-start-column="42" selection-end-line="174" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html">
+        <entry file="file://$PROJECT_DIR$/views/admin/extra/data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+            <state relative-caret-position="409">
+              <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html">
+        <entry file="file://$PROJECT_DIR$/views/admin/murid/data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="70" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="70" />
+            <state relative-caret-position="544">
+              <caret line="56" column="26" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="56" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -120,9 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>put</find>
-      <find>bata</find>
-      <find>scr</find>
       <find>ful</find>
       <find>kompetensi</find>
       <find>soal'</find>
@@ -150,6 +155,9 @@
       <find>admin.guru.detail.gurump.</find>
       <find>admin.murid_detail.kelas.</find>
       <find>admin</find>
+      <find>admin.extra</find>
+      <find>form_issued</find>
+      <find>delete_gurump</find>
     </findStrings>
     <replaceStrings>
       <replace>murid.</replace>
@@ -157,6 +165,7 @@
       <replace>filters</replace>
       <replace>Mohon maaf, hubungi admin</replace>
       <replace>ED</replace>
+      <replace>extra</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\ARIFIN\Sekolah\client_dbks\views</dir>
@@ -170,10 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/guru/soal/add.html" />
-        <option value="$PROJECT_DIR$/views/murid/murid/kelas.html" />
-        <option value="$PROJECT_DIR$/views/murid/ujian/data.html" />
-        <option value="$PROJECT_DIR$/views/murid/ujian/mulai.pertanyaan.html" />
         <option value="$PROJECT_DIR$/views/murid/ujian/mulai.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/client_dbks/js/directives.js" />
@@ -196,7 +201,6 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/views/user/login.html" />
-        <option value="$PROJECT_DIR$/views/template/navigation/menu_admin.html" />
         <option value="$PROJECT_DIR$/views/admin/murid/data.html" />
         <option value="$PROJECT_DIR$/views/acl/users/data.html" />
         <option value="$PROJECT_DIR$/views/acl/users/edit.html" />
@@ -218,9 +222,14 @@
         <option value="$PROJECT_DIR$/views/admin/guru/gurump/data.html" />
         <option value="$PROJECT_DIR$/views/admin/murid_detail/kelas/data.html" />
         <option value="$PROJECT_DIR$/views/admin/murid_detail/kelas/edit.html" />
-        <option value="$PROJECT_DIR$/js/Modul/admin/controller.js" />
-        <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/Modul/Auth.js" />
+        <option value="$PROJECT_DIR$/views/template/navigation/menu_admin.html" />
+        <option value="$PROJECT_DIR$/views/admin/extra/add.html" />
+        <option value="$PROJECT_DIR$/client_dbks/js/app.js" />
+        <option value="$PROJECT_DIR$/views/admin/extra/data.html" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/Modul/admin/router.js" />
+        <option value="$PROJECT_DIR$/js/Modul/admin/controller.js" />
       </list>
     </option>
   </component>
@@ -265,9 +274,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -298,6 +306,13 @@
             <path>
               <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
               <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Modul" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -311,21 +326,27 @@
               <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="murid_detail" type="462c0819:PsiDirectoryNode" />
+              <item name="extra" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
               <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="murid_detail" type="462c0819:PsiDirectoryNode" />
-              <item name="kelas" type="462c0819:PsiDirectoryNode" />
+              <item name="murid" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
               <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client_dbks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_dbks" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,11 +363,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ARIFIN\Sekolah\client_dbks\views\admin" />
       <recent name="C:\ARIFIN\Sekolah\client_dbks\views\guru\kelas\ujian" />
       <recent name="C:\ARIFIN\Sekolah\client_dbks\js\Modul" />
       <recent name="C:\ARIFIN\Sekolah\client_dbks\views\guru\soal" />
       <recent name="C:\ARIFIN\Sekolah\client_dbks\views\murid\ujian" />
-      <recent name="C:\ARIFIN\Sekolah\client_dbks\views\murid\murid" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -415,12 +436,13 @@
       <workItem from="1535676447861" duration="696000" />
       <workItem from="1535687776746" duration="13000" />
       <workItem from="1535940628598" duration="93000" />
-      <workItem from="1535946184117" duration="142000" />
+      <workItem from="1535946184117" duration="815000" />
+      <workItem from="1536118111423" duration="5031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160420000" />
+    <option name="totallyTimeSpent" value="166124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -453,27 +475,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/guru/soal/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="108" selection-start-line="52" selection-start-column="98" selection-end-line="52" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/guru/kelas/ujian/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" selection-start-line="77" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/murid/ujian/mulai.pertanyaan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="57" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/guru/kelas/data.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -585,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/template/navigation/menu_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/acl/users/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -624,13 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/murid/data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="46" column="34" lean-forward="true" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -728,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Modul/admin/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="54" column="35" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/Modul/murid/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
@@ -763,16 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Modul/admin/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="412" column="3" lean-forward="true" selection-start-line="412" selection-start-column="3" selection-end-line="412" selection-end-column="3" />
-          <folding>
-            <element signature="e#3585#4427#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/murid_detail/kelas/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
@@ -794,17 +764,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
+    <entry file="file://$PROJECT_DIR$/js/Modul/Auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="40" />
+        <state relative-caret-position="425">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Modul/Auth.js">
+    <entry file="file://$PROJECT_DIR$/views/template/navigation/menu_admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        <state relative-caret-position="629">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/murid/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="56" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_dbks/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/extra/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/extra/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="33" column="69" lean-forward="true" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Modul/admin/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="174" column="42" lean-forward="true" selection-start-line="174" selection-start-column="42" selection-end-line="174" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Modul/admin/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="229" column="24" selection-start-line="229" selection-start-column="24" selection-end-line="229" selection-end-column="24" />
+          <folding>
+            <element signature="e#3585#4427#0" />
+          </folding>
         </state>
       </provider>
     </entry>

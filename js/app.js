@@ -40,7 +40,9 @@ app.run(function ($state,$rootScope) {
 
 app.run( ['$rootScope', '$state', '$stateParams','$window','$http','$location', '$anchorScroll',
     function ($rootScope,   $state,   $stateParams,$window,$http,$location, $anchorScroll) {
-
+        $rootScope.server = function () {
+            return 'http://app.edutech.web.id/site/public';
+        };
         $rootScope.logut = function()
         {
             store.remove('token');
