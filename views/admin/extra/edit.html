@@ -1,0 +1,61 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Edit Extra</h5>
+        <div class="ibox-tools">
+            <a ng-click="backButton('admin.extra')" class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <form ng-submit="submitForm()">
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label> Nama </label>
+                        <input required ng-model="extra.nama_extra" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Penanggung_jawab</label>
+                        <input required ng-model="extra.penangung_jawab" class="form-control" type="text">
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6 b-r">
+
+                    <div class="input-group">
+                        <label>Sekolah</label>
+                        <select required class="form-control " required   ng-model="extra.sekolah"  >
+                            <option value="">-- please choose --</option>
+                            <option value="mansabo"> MANSABO</option>
+                            <option value="mansasi"> MANSASI</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <input type="file" required file-model="myFile" class="form-control" type="file">
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Search check above dextra before saving </p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

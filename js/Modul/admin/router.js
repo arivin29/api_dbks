@@ -169,10 +169,28 @@ function configadmin($stateProvider) {
             controller: "admin.extra.add"
         })
         .state('admin.extra.edit', {
-            url: "/edit",
+            url: "/edit/:id_extra",
             templateUrl: "views/admin/extra/edit.html",
             data: {pageTitle: 'edit'},
             controller: "admin.extra.edit"
+        })
+        .state('admin.extra.detail', {
+            url: "/detail/:id_extra",
+            templateUrl: "views/admin/extra/detail.html",
+            data: {pageTitle: 'detail'},
+            controller: "admin.extra.detail"
+        })
+        .state('admin.extra.detail.add', {
+            url: "/add",
+            templateUrl: "views/admin/extra/detail.add.html",
+            data: {pageTitle: 'detail'},
+            controller: "admin.extra.detail.add"
+        })
+        .state('admin.extra.detail.edit', {
+            url: "/edit/:id_extra_activity",
+            templateUrl: "views/admin/extra/detail.edit.html",
+            data: {pageTitle: 'detail'},
+            controller: "admin.extra.detail.edit"
         })
 
 

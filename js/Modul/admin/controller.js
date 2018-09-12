@@ -172,48 +172,147 @@ app.controller('admin.extra.add', function truncateCtrl($scope,$state,$statePara
 
 });
 
-app.controller('admin.extra.edit', function truncateCtrl($scope,$state,$stateParams,myHelp){
 
-    $scope.guru = {};
-    myHelp.getParam('/admin/guru/' + $stateParams.id_guru +'/edit')
+
+app.controller('admin.extra.edit', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    myHelp.getDetail('/admin/extra/' + $stateParams.id_extra)
         .then(function(respons){
-            $scope.guru = respons.data;
-
-            myHelp.getDetail('/admin/guru/create')
-                .then(function(respons){
-                    $scope.admin = respons.data;
-                    debugData(respons);
-                });
+            $scope.extra = respons.data;
+            debugData(respons);
         });
 
     $scope.submitForm = function() {
-        var Param = clearObj($scope.guru);
+        var file = $scope.myFile;
+        var fd = new FormData();
+
+        fd.append('name_file', file);
+        fd.append('nama_extra', $scope.extra.nama_extra);
+        fd.append('sekolah', $scope.extra.sekolah);
+        fd.append('penangung_jawab', $scope.extra.penangung_jawab);
+        fd.append('id_extra', $scope.extra.id_extra);
 
 
-        myHelp.putParam('/admin/guru/'+ $stateParams.id_guru, Param)
-            .then(function mySuccesresponse()
-                {
-                    berhasilView();
-                    $state.go("admin.guru",{}, { reload: true })
-
-                }
-                , function myError()
-                {
-                    errorView("Mohon maaf, hubungi admin");
-                });
-
+        $http.post(BASE_URL + '/admin/extra', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+            .success(function(){
+                berhasilView();
+                $state.go("^", {}, {reload: true});
+            })
+            .error(function(){
+                errorView()
+            });
 
     };
 
 });
 
 // Detail Guru
-app.controller('admin.extra.detail', function truncateCtrl($scope,$state,$stateParams,myHelp){
-    $scope.guru = {};
-    myHelp.getDetail('/admin/guru/' + $stateParams.id_guru)
+app.controller('admin.extra.detail', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    myHelp.getDetail('/admin/extra/' + $stateParams.id_extra)
         .then(function(respons){
-            $scope.guru = respons.data.guru;
+            $scope.extra = respons.data.extra;
+            $scope.extra_activitys = respons.data.extra_activity;
         });
+
+    $scope.deleteActivity = function(id) {
+        deleteParam($http,$state,'/admin/extra_activity/' + id, {}, 'admin.extra.detail',{id_extra : $stateParams.id_extra});
+    }
+});
+
+
+app.controller('admin.extra.detail.add', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    myHelp.getDetail('/admin/extra_activity/create?id_extra=' + $stateParams.id_extra)
+        .then(function(respons){
+            $scope.extra_activity = respons.data;
+            debugData(respons);
+        });
+
+    $scope.submitFormActivity = function() {
+        var file = $scope.myFile;
+        var fd = new FormData();
+        if(file==null)
+        {
+            errorView();
+            return false;
+        }
+        fd.append('name_file', file);
+        fd.append('keterangan', $scope.extra_activity.keterangan);
+        fd.append('tanggal', $scope.extra_activity.tanggal);
+        fd.append('id_extra', $stateParams.id_extra);
+        fd.append('id_extra_activity', $scope.extra_activity.id_extra_activity);
+
+
+        $http.post(BASE_URL + '/admin/extra_activity', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+            .success(function(){
+                berhasilView();
+                $state.go("^", {}, {reload: true});
+            })
+            .error(function(){
+                errorView()
+            });
+
+    };
+
+});
+
+
+
+app.controller('admin.extra.detail.edit', function truncateCtrl($scope,$state,$stateParams,myHelp,$http){
+
+    myHelp.getDetail('/admin/extra_activity/' + $stateParams.id_extra_activity + '/edit')
+        .then(function(respons){
+            $scope.extra_activity = respons.data;
+            debugData(respons);
+        });
+
+    $scope.submitFormActivity = function() {
+        var file = $scope.myFile;
+        var fd = new FormData();
+        if(file==null)
+        {
+            myHelp.postParam('/admin/extra_activity', $scope.extra_activity)
+                .then(function mySuccesresponse()
+                    {
+                        berhasilView();
+                        $state.go("^",{}, { reload: true })
+
+                    }
+                    , function myError()
+                    {
+                        errorView("Mohon maaf, hubungi admin");
+                    });
+
+            return false;
+        }
+        fd.append('name_file', file);
+        fd.append('keterangan', $scope.extra_activity.keterangan);
+        fd.append('tanggal', $scope.extra_activity.tanggal);
+        fd.append('id_extra', $stateParams.id_extra);
+        fd.append('id_extra_activity', $scope.extra_activity.id_extra_activity);
+
+
+        $http.post(BASE_URL + '/admin/extra_activity', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+            .success(function(){
+                berhasilView();
+                $state.go("^", {}, {reload: true});
+            })
+            .error(function(){
+                errorView()
+            });
+
+    };
+
 });
 
 

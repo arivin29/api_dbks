@@ -1,0 +1,46 @@
+<div class="ibox float-e-margins pop-kecil">
+    <div class="ibox-title">
+        <h5>Add Activity Extra</h5>
+
+    </div>
+
+    <form ng-submit="submitFormActivity()">
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+
+                    <div class="form-group">
+                        <label> Tanggal </label>
+                        <input required date-picker="" ng-model="extra_activity.tanggal" class="form-control datepicker" type="text">
+                    </div>
+
+                </div>
+                <div class="col-sm-6 b-r">
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <input type="file" required file-model="myFile" class="form-control" type="file">
+                    </div>
+                </div>
+                <div class="col-sm-12 b-r">
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <textarea  ng-model="extra_activity.keterangan" class="form-control"  > </textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <hr>
+                    <div class="pull-left">
+                        <p>Search check above dextra before saving </p>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit">
+                            <i class="fa fa-save"></i> &nbsp;
+                            <strong> Save</strong></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,73 @@
+<div class="wrapper wrapper-content  animated fadeInRight" >
+    <div ui-view></div>
+    <div class="row" ng-show="$state.current.name === 'admin.extra.detail'">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>EXtra {{extra.nama_extra}}</h5>
+                    <div class="ibox-tools">
+                        <a ui-sref="admin.extra.detail.add" class="btn btn-primary btn-xs">Add new</a>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="{{server()}}/{{extra.foto}}">
+                        </div>
+
+                        <div class="col-md-2">
+                            <b>Penanggung Jawab</b> {{extra.penangung_jawab}}
+                        </div>
+
+                    </div>
+                    <hr>
+                    <h2>Kegiatan</h2>
+                    <hr>
+
+                    <div class="table-responsive" >
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th width="40%">Foto</th>
+                                <th>keterangan</th>
+                                <th>#</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in extra_activitys">
+                                <td>
+                                    {{$index+1}}
+                                </td>
+                                <td>
+                                    <img class="img-responsive" src="{{server()}}/{{x.foto_activity}}">
+                                </td>
+
+                                <td>
+                                    {{x.tanggal}}<hr>
+                                    {{x.keterangan}}
+                                </td>
+                                <td>
+                                    <button class="btn btn-xs btn-warning" title="Double Clik" ng-dblclick="deleteActivity(x.id_extra_activity)">Delete</button>
+                                    <button class="btn btn-xs btn-info" ui-sref="admin.extra.detail.edit({id_extra_activity:x.id_extra_activity})">Edit</button>
+                                </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    setTimeout(function(){
+        tableScroll()
+    })
+</script>
